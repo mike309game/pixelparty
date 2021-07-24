@@ -1,0 +1,12 @@
+test
+NME Tester
+@ Hello, you must be Manny. Welcome!
+@ Pleasure to meet you! My name is Tester.
+@ I'm used to test the dialogue boxes for #any bugs or anything.
+NME Manny
+@ Okay? Find where I asked.
+NME Tester
+@ Wow, no need to be an asshole.
+NME Manny
+@ No, find where the fuck I asked.
+EXT

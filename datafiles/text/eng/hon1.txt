@@ -1,0 +1,14 @@
+hon1
+NME Honstay
+@ Hello... I sense you are new here.
+@ ...Allow me to grab some information #about you...
+@ ... ... ... ... ... ... ... ...
+@ Ah yes. Hello Manny, I've been awaiting #your arrival.
+@ I am glad you are here. A mysterious power #has rolled into the Honestaries recently.
+@ I would like you to go and figure out #what is happening.
+@ Each level you will recieve 3 puzzle #pieces. This will help you reach the
+@ other Honestaries.
+NME Manny
+@ ...
+@ Dude, I was jacking off did you really #need to bring my ass out here?
+EXT

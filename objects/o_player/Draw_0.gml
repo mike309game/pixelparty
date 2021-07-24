@@ -1,0 +1,1 @@
+draw_sprite_part(s_player,0,offset*48-48,floor(ani)*48-48,48,48,x,y)
