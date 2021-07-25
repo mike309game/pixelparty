@@ -17,7 +17,7 @@ global.vars = {
 	playing : sx_nothing,
 	play : sx_nothing,
 	loopplay : 1,
-	roomgo : r_de_test,
+	roomgo : r_yisify,
 	roompt : 0,
 	roomtr : 0,
 	fakeload : r_yisify,

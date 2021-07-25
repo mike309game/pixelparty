@@ -12,7 +12,7 @@ if keyboard_check(vk_backspace)
 		//show_debug_message(vk_backspace)
 		backspace_timer += 1
 
-		if backspace_timer = 5
+		if backspace_timer = 3
 			{
 				textfield = string_delete(textfield,string_length(textfield),1)
 				backspace_timer = 0
@@ -70,6 +70,7 @@ if keyboard_check_pressed(vk_enter)
                         }
 					if instance_exists(o_player) then createdepth = o_player.depth+1
                     instance_create_depth(int64(ds_list_find_value(cmdargs,1)),int64(ds_list_find_value(cmdargs,2)),createdepth,asset_get_index(ds_list_find_value(cmdargs,0)))
+					action_comp = 1
 					break
 				}
 				case "room":
@@ -92,6 +93,7 @@ if keyboard_check_pressed(vk_enter)
 					room_goto(asset_get_index("r_"+ds_list_find_value(cmdargs,0)))
 					//show_message("'" + string(asset_get_index("r_"+ds_list_find_value(cmdargs,0))) + "'")
 					audio_stop_all()
+					action_comp = 1
 					break
 				}
 				case "playerpos":
@@ -103,6 +105,7 @@ if keyboard_check_pressed(vk_enter)
 							ds_list_insert(display_queue,0,"o_player does not exist in this room.")
 						}
 						break
+					action_comp = 1
 				}
 				case "clear":
 				{
@@ -117,11 +120,13 @@ if keyboard_check_pressed(vk_enter)
 				case "refresh":
 				{
 					room_restart()
+					action_comp = 1
 					break
 				}
 				case "restart_game":
 				{
 					game_restart();
+					action_comp = 1
 					break;
 				}
 				default:
@@ -131,3 +136,4 @@ if keyboard_check_pressed(vk_enter)
 		textfield = ""
     }
 blinktimer++
+if action_comp then instance_destroy(id)

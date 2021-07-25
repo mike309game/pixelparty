@@ -4,7 +4,7 @@
     "path": "sprites/s_de_bg/s_de_bg.yy",
   },
   "solid": false,
-  "visible": true,
+  "visible": false,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": null,

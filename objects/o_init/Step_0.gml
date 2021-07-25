@@ -1,12 +1,21 @@
 if keyboard_check_pressed(vk_escape) then game_end()
 
-if room = r_init then room_goto(r_de_test)
+if room = r_init then room_goto(r_yisify)
 
 if !instance_exists(o_console)
 	{
 		if keyboard_check_pressed(vk_alt) && global.debug.debug_enabled
 			{
 				instance_create_depth(0,0,0,o_console)
+				//show_message("create")
+			}
+	}
+	
+if !instance_exists(o_pause)
+	{
+		if keyboard_check_pressed(vk_enter) && global.player.move && instance_exists(o_player)
+			{
+				instance_create_depth(0,0,0,o_pause)
 				//show_message("create")
 			}
 	}

@@ -19,8 +19,8 @@ switch global.debug.noclip
 					if hor <> 0 || ver <> 0
 						{
 							ani += 0.1
-							audio_sound_gain(sx_walk_cute,global.setting.sound,50)
 							if !audio_is_playing(sx_walk_cute) then Sound("sx_walk_cute",0)
+							audio_sound_gain(sx_walk_cute,global.setting.sound/100,30)
 						}
 					else
 						{

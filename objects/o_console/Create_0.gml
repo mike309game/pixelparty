@@ -4,6 +4,7 @@ destroy_timer = 0
 parse = ""
 search = 0
 blinktimer = 0
+action_comp = 0
 
 display_queue = ds_list_create()
 
