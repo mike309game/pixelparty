@@ -1,1 +1,1 @@
-if place_meeting(x,y,o_player) then roomTrans(rm,pt)
+if place_meeting(x,y,o_player) then roomTrans(rm,pt,0)

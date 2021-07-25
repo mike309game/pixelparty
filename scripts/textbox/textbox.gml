@@ -1,4 +1,4 @@
-var obj = instance_create_depth(0,0,0,o_text)
+obj = instance_create_depth(0,0,0,o_text)
 
 with(obj)
 	{

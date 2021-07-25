@@ -5,7 +5,7 @@ if keyboard_check_pressed(vk_alt)
 	}
 	
 if destroy_timer >=1 then destroy_timer +=1
-if destroy_timer >= 5 then instance_destroy(self)
+if destroy_timer >= 5 then instance_destroy(id)
 
 if keyboard_check(vk_backspace)
 	{

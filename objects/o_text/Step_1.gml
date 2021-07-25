@@ -1,11 +1,10 @@
-//this code's atrocious but i'll make a quick fix for html
 if !parsed
 	{
-		var _file = file_text_open_read(working_directory + "text/"+global.setting.lang+"/"+file+".txt")
+		var _file = file_text_open_read("text/"+global.setting.lang+"/"+file+".txt")
 
 		a = 0
 
-		if file_exists(working_directory + "text/"+global.setting.lang+"/"+file+".txt")
+		if file_exists("text/"+global.setting.lang+"/"+file+".txt")
 			{
 				//show_debug_message("work")
 				while(!file_text_eof(_file))

@@ -24,4 +24,4 @@ if cuttimer > 300
 	{
 		fade = lerp(fade,0,.02)
 	}
-if cuttimer > 200 && fade <= 0.01 then instance_destroy(self)
+if cuttimer > 200 && fade <= 0.01 then instance_destroy(id)
