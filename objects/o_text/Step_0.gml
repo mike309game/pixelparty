@@ -42,7 +42,7 @@ function findText()
 						{
 							show_debug_message("Array position over 1000 or file too big! break")
 							a = 0;
-							instance_destroy(id)
+							instance_destroy(self)
 							break;
 						}
 					if tr = 2 then break;
@@ -83,7 +83,7 @@ switch tr
 		case 2:
 			{
 				if _y < 80 then _y += 1
-				if _y = 80 then instance_destroy(id)
+				if _y = 80 then instance_destroy(self)
 				break;
 			}
 	}
