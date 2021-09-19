@@ -1,0 +1,29 @@
+l1
+NME debug
+@ Level 1
+EXT
+
+l1el
+NME debug
+@ Level 1 Upper
+EXT
+
+l2
+NME debug
+@ Level 2
+EXT
+
+l3
+NME debug
+@ Level 3
+EXT
+
+hoi
+NME debug
+@ Honestary I
+EXT
+
+hoii
+NME debug
+@ Honestary II
+EXT

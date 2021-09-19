@@ -1,68 +1,219 @@
-draw_sprite_tiled(s_title_bg,0,bgX,bgY)
-draw_sprite_ext(s_title_logo,0,160,120,scale,scale,0,c_white,1)
+draw_sprite_tiled(asset_get_index("s_title_bg_"+string(bgmode)),0,bgX,bgY)
+if tstimer < 140 && tstimer > -1 then draw_sprite_ext(s_title_logo,0,160,120,scale,scale,0,c_white,1)
 draw_sprite_ext(s_fade_black,0,0,0,1,1,0,c_white,fade)
 
 draw_set_halign(fa_center)
 draw_set_valign(fa_middle)
 draw_set_color(c_black)
-draw_set_font(f_main)
-var copyright = "(c)2000 Yisi-fy LTD"
+draw_set_font(f_shop)
+switch(rand)
+	{
+		case 7:
+			{
+				var copyright = "(C)2002 YIFFI-FY LTD"
+				break;
+			}
+		default:
+			{
+				var copyright = "(C)2002 YISI-FY LTD"
+			}
+	}
+
+
+
 draw_text(160,230,copyright)
-draw_text(159,230,copyright)
-draw_text(161,230,copyright)
+
+//draw_sprite(s_title_files,0,0,0)
+
+
+//draw_text(159,230,copyright)
+//draw_text(161,230,copyright)
 
 // menu options
 
 if timer >= 340
 {
 	
-if selected[0] = 1 then draw_text(60,120,"Start Game")
-if selected[1] = 1 draw_text(250,120,"Option")
-if selected[2] = 1 draw_text(160,80,"Continue")
 
-switch selection
+switch mode
 	{
-		case 1:
+		case 0: // title
 			{
-				draw_sprite(s_arrow,0,60,110)
+				
+				if tstimer < 140 && tstimer > -1 then draw_sprite_ext(s_title_start,0,160,160,bop,bop,0,c_white,1)
+				//draw_sprite(s_title_files,0,0,0)
 				break;
 			}
-		case 2:
+		case 1: // files
 			{
-				draw_sprite(s_arrow,0,160,70)
+				for(var i = 1; i < 4; i++) // file draw
+					{
+						if tstimer > 140
+							{
+								draw_sprite_part(s_title_files,0,i*96-96,0,96,96,14+(i*96-96),sel_lerp[i-1])
+							}
+						if selection = i-1
+							{
+								sel_lerp[selection] = lerp(sel_lerp[selection],8,.2)
+							} else {
+								sel_lerp[i-1] = lerp(sel_lerp[i-1],24,.2)
+							}
+					}
+				
+				
+				if tstimer > 150 then if flash > 0 then flash -= 0.1;
+				if start_flash = 0 && tstimer < 140 then draw_sprite_ext(s_title_start,0,160,160,start_scale,start_scale,0,c_white,1);
+				
+				if tstimer > 140
+					{
+						bgmode = 1
+						var drawt = ""
+						if filefound
+							{
+								switch selection
+									{
+										case 0:
+											{
+												drawt = "new game"
+												break;
+											}
+										case 1:
+											{
+												drawt = "continue"
+												break;
+											}
+										case 2:
+											{
+												drawt = "game settings"
+												break;
+											}
+									}
+							} else {
+								if !filefound
+									{
+										drawt = "file not found!"
+									}
+							}
+						
+						draw_set_alpha(0.4)
+						draw_rectangle_color(0,153,320,165,c_black,c_black,c_black,c_black,0)
+						draw_set_alpha(1)
+						if filefound then draw_set_color(c_white) else draw_set_color(c_red)
+						
+						
+						draw_text(160,160,string_upper(drawt))
+						draw_set_color(c_black)
+					}
+				
 				break;
 			}
-		case 3:
+		case 2: // options
 			{
-				draw_sprite(s_arrow,0,250,110)
+				
+				var toDraw = ["Music Volume: "+string(global.setting.music),"Sound Volume: "+string(global.setting.sound),"Delete Save Data","Back To Menu"]
+				draw_set_alpha(0.4)
+				draw_rectangle_color(0,104+(selection*10),320,113+(selection*10),c_black,c_black,c_black,c_black,0)
+				draw_set_alpha(1)
+				draw_set_color(c_white)
+				draw_text(160,80,"game settings")
+				for(var i = 0; i < array_length(toDraw); i++)
+					{
+						draw_text(160,100+((i+1)*10),toDraw[i])
+					}
+				draw_set_color(c_black)
+				
+				if keyboard_check_pressed(ord("Z"))
+					{
+						Sound("sx_title_menu_select",0)
+						switch selection
+							{
+								case 2:
+									{
+										mode = 3
+										selection = 0
+										break;
+									}
+								case 3:
+									{
+										mode = 1
+										save_setting()
+										sel_freeze = 0
+										break;
+									}
+							}
+					}
+				var hor = keyboard_check_pressed(vk_right) - keyboard_check_pressed(vk_left)
+				if hor <> 0 
+					{
+						switch selection
+							{
+								case 0:
+									{
+										global.setting.music += 5*hor
+										audio_sound_gain(global.vars.playing,global.setting.music/100,0)
+										break;
+									}
+								case 1:
+									{
+										global.setting.sound += 5*hor
+										break;
+									}
+							}
+					}
+				
 				break;
 			}
+		case 3: // delete file
+			{
+				draw_set_alpha(0.4)
+				draw_rectangle_color(0,135+(selection*12),320,142+(selection*12),c_black,c_black,c_black,c_black,0)
+				draw_set_alpha(1)
+				
+				draw_set_color(c_white)
+				draw_text(160,100,"Are you sure you want to delete your save data?\n(This action cannot be reversed!)")
+				draw_text(160,140,"Yes")
+				draw_text(160,152,"No")
+				
+				var ver = keyboard_check_pressed(vk_down) - keyboard_check_pressed(vk_up)
+				
+				if ver <> 0 then Sound("sx_title_move",0)
+				
+				selection += ver
+				
+				if keyboard_check_pressed(ord("Z"))
+					{
+						
+						switch selection
+							{
+								case 0:
+									{
+										save_delete()
+										Sound("sx_error",0)
+										mode = 2
+										break;
+									}
+								case 1:
+									{
+										mode = 2
+										Sound("sx_title_menu_select",0)
+										break;
+									}
+							}
+					}
+			}
+		
 	}
 
-if keyboard_check_pressed(ord("Z")) && !made
-	{
-			switch selection
-				{
-					case 1:
-						{
-							Sound("sx_title_select",0)
+
+/* end sequence
+Sound("sx_title_select",0)
 							alarm_set(0,100)
 							selected[1] = 0
 							selected[2] = 0
 							made = 1
-							break;
-						}
-					case 2:
-						{
-							break;
-						}
-					case 3:
-						{
-							break;
-						}
-				}
+*/
 
-	}
+
 
 draw_sprite_ext(s_fade_white,0,0,0,1,1,0,c_white,flash)
 if timer > 350 then flash = lerp(flash,0,.02)

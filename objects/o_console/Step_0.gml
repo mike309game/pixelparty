@@ -12,13 +12,18 @@ if keyboard_check(vk_backspace)
 		//show_debug_message(vk_backspace)
 		backspace_timer += 1
 
-		if backspace_timer = 3
+		if backspace_timer = 10
 			{
 				textfield = string_delete(textfield,string_length(textfield),1)
 				backspace_timer = 0
 			}
 	} else {
 			backspace_timer = 0
+	}
+if keyboard_check_pressed(vk_backspace)
+	{
+				textfield = string_delete(textfield,string_length(textfield),1)
+				//backspace_timer = 0
 	}
 if keyboard_check_pressed(vk_anykey)
 {

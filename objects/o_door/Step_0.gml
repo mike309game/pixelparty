@@ -1,4 +1,4 @@
-if keyboard_check_pressed(ord("Z")) && place_meeting(x,y,o_player)
+if keyboard_check_pressed(ord("Z")) && place_meeting(x,y,o_player) && (!instance_exists(o_text) && !instance_exists(o_pause))
 	{
 		if !load
 			{
@@ -6,7 +6,7 @@ if keyboard_check_pressed(ord("Z")) && place_meeting(x,y,o_player)
 			}
 		else
 			{
-				global.vars.fakeload = r_l1_r1
+				global.vars.fakeload = rm
 				roomTrans(r_load,0,0)
 			}
 	}

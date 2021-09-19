@@ -1,18 +1,63 @@
 if tr = 1
 	{
+		var po = "s_manny_talk"
 		switch string_lower(name)
 			{
 				case "manny":
 					{
-						draw_sprite(s_manny_talk,0,0,0)
+						po = "s_manny_talk"
 						break;
 					}
 				case "tester":
 					{
-						draw_sprite(s_creepy_talk,0,0,0)
+						po = "s_creepy_talk"
+						break;
+					}
+				case "sign":
+					{
+						po = "s_sign_talk"
+						break;
+					}
+				case "bully":
+					{
+						po = "s_bully_talk"
+						break;
+					}
+				case "lexsie":
+					{
+						po = "s_lexsie_talk"
+						break;
+					}
+				case "dex":
+					{
+						po = "s_dex_talk"
+						break;
+					}
+				case "honstay":
+					{
+						po = "s_honstay_talk"
+						break;
+					}
+				case "...":
+					{
+						po = "s_nothing"
+						break;
+					}
+				default:
+					{
+						po = "s_creepy_talk"
 						break;
 					}
 			}
+			if p_alt = 0 
+				{
+				draw_sprite(asset_get_index(po),0,0,0)
+				} else {
+					if sprite_exists(asset_get_index(po+"_alt_"+string(p_alt)))
+						{
+							draw_sprite(asset_get_index(po+"_alt_"+string(p_alt)),0,0,0)
+						}
+				}
 	}
 if count >= string_length(text)
 	{

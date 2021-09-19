@@ -10,8 +10,8 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "sx_title_grow.wav",
-  "duration": 0.930063,
+  "soundFile": "sx_title_grow.mp3",
+  "duration": 0.672,
   "parent": {
     "name": "sound",
     "path": "folders/Sounds/sound.yy",

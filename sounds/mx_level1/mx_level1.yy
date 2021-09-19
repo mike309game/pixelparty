@@ -4,14 +4,14 @@
   "preload": false,
   "bitRate": 96,
   "sampleRate": 44100,
-  "type": 0,
+  "type": 1,
   "bitDepth": 1,
   "audioGroupId": {
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "mx_level1.mp3",
-  "duration": 39.75825,
+  "duration": 46.3935,
   "parent": {
     "name": "music",
     "path": "folders/Sounds/music.yy",

@@ -1,0 +1,113 @@
+ran0
+NME Manny
+@ Yo.
+NME Dex
+@ Welcome, kid.
+NME Manny
+@ Actually I'm 23
+NME Dex
+@ Ohohoho. Pardon me, I'm Dex.
+NME Manny
+@ Nnnice to meet you, Dex.
+NME Dex
+@ What can I help you with?
+NME Manny
+@ Do you have any wheat?
+@ Like, cooking wheat. The stuff you make #bread with.
+NME Dex
+@ I sure do. What's a guy such as yourself #need wheat for?
+NME Manny
+@ Actually it's not for me, it's for a lady #named Lexsie.
+NME Dex
+@ Ah yes, Lexsie.
+@ Nice lady, tell you what. Just for doing #that for her I'll give it to you on the-
+@ house.
+PAL 1
+NME Manny
+@ Oh wow, thanks.
+PAL 0
+NME Dex
+@ No problem, I was supposed to bring it #to her but I'm super busy today!
+NME Manny
+@ Doing what
+NME Dex
+@ ....What?
+NME Manny
+@ No I mean like, what are you busy doing.
+NME Dex
+@ Stocking my shelves! That fat bully took #a load of stuff!
+@ I can't call any authorities because they #are stuck without any puzzle keys-
+@ to get here.
+NME Manny
+@ Huh, well I'm gonna go give her the #wheat. You take care.
+NME Dex
+@ You too.
+EXT
+
+ran1
+NME Manny
+@ Hey
+NME Dex
+@ Welcome!
+NME Manny
+@ So uh...
+@ ...
+@ How's the shop?
+NME Dex
+@ Doin' great! Business is boomin'
+NME Manny
+@ ... but nobody comes here
+NME Dex
+@ Online shopping, son. It's the future #I tell ya!
+NME Manny
+@ Ah..
+EXT
+
+ran2
+NME Manny
+@ ...
+@ ...
+NME Dex
+@ ...
+@ ...
+NME Manny
+@ ...
+@ ...
+NME Dex
+@ Are you gonna buy somethin?
+PAL 1
+NME Manny
+@ Oh, yeah, right. Maybe, I don't know.
+PAL 0
+NME Dex
+@ ... Alright? Well hurry it up! #You're holding the line!
+NME Manny
+@ Oh, sorry.
+EXT
+
+ran3
+NME Manny
+@ Why are your ears so long.
+PAL 1
+NME Dex
+@ ..You got a problem with my ears?..
+PAL 0
+NME Manny
+@ Oh no I'm just wondering why they're so #long.
+NME Dex
+@ It's how I was born, all people of my #species are like this.
+NME Manny
+@ Alrighty then.
+EXT
+
+full
+PAL 2
+NME Dex
+@ Sorry, kid. You're carrying too much.
+EXT
+
+broke
+PAL 2
+NME Dex
+@ Sorry, kid. You don't have the coin for #that.
+EXT

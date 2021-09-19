@@ -1,6 +1,8 @@
+if !window_has_focus() then audio_master_gain(0) else if window_has_focus() then audio_master_gain(1)
+
 if keyboard_check_pressed(vk_escape) then game_end()
 
-if room = r_init then room_goto(r_yisify)
+if room = r_init then room_goto(global.vars.roomgo)
 
 if !instance_exists(o_console)
 	{
@@ -40,9 +42,19 @@ if !view_enabled
 					global.vars.playing = global.vars.play
 					audio_play_sound(global.vars.playing,0,global.vars.loopplay)
 					audio_sound_gain(global.vars.playing,0,0)
-					audio_sound_gain(global.vars.playing,1,100)
+					audio_sound_gain(global.vars.playing,global.setting.music/100,0)
 				}
 		}
 
 #endregion
 
+#region title scroll
+if titleloop
+	{
+		if titlecount = ds_list_size(anim_title_table)-1 then titlecount = 0
+		titlecount += 0.1
+		window_set_caption(ds_list_find_value(anim_title_table,floor(titlecount)))
+	}
+#endregion
+
+//show_debug_message(global.setting.music)

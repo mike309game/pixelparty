@@ -1,9 +1,9 @@
-function textbox(arg0, arg1) {
+function textbox(fin, fil) {
 	var obj = instance_create_depth(0,0,0,o_text)
 
 	with(obj)
 	{
-		find = arg0
-		file = arg1
+		find = fin
+		file = fil
 	}
 }

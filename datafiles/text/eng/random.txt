@@ -1,0 +1,11 @@
+shopwin
+NME ...
+@ There are tools and knick-knacks in the #display.
+EXT
+
+fountain
+NME ...
+@ The fountain is not running, wonder why.
+@ ...
+@ It looks like it hasn't ever been turned #on.
+EXT

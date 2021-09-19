@@ -1,0 +1,110 @@
+entrance
+NME Sign
+@ Hello, welcome to Yixxi.
+@ There are currently 4 people living here, #see if you can find them.
+@ Maybe they can assist you in whatever #you're doing.
+NME Manny
+@ ...
+@ You look like a 12 year old built you.
+NME Sign
+@ ...
+@ ...
+@ ...why
+EXT
+
+person1_1
+NME Lexsie
+@ Hey hon, what can I do for ya?
+NME Manny
+@ Do you know where I can find "puzzle #pieces".
+NME Lexsie
+@ I do, but you're gonna have to work for #it.
+NME Manny
+@ ...
+@ I'm not having sex with you.
+NME Lexsie
+PAL 1
+@ What? I didn't mean that you pervert.
+PAL 0
+NME Manny
+@ Woopsie
+@ Whatever, what do you want me to do.
+NME Lexsie
+@ I need some wheat for bread, my little #baby Hux needs his sandwich.
+NME Manny
+@ ...Ok, well I'm new here so where can I #get that.
+NME Lexsie
+@ There's a shop in the eastern part of the #complex.
+@ Though, there's some big purple guy #guarding it.
+@ He won't move and he's saying the store #belongs to him now.
+NME Manny
+@ Alright, I'll take care of it.
+NME Lexsie
+@ Thanks sweetheart~
+EXT
+
+bully1
+NME Manny
+@ Yo, move
+NME Bully
+@ NO THIS IS MINE STORE NOW I WANT CHIPPY
+@ AN CANDY BARS
+NME Manny
+@ ...
+@ Please
+NME Bully
+@ NO YOU LOOK LIKE POOPY NOOB
+@ YOU PLAY QUAKE 1 STILL LIKE NOOB LITTLE #BABY
+NME Manny
+@ Quake 1 isn't even bad what are you #talking about?
+NME Bully
+@ SHUT UP QAUKE 1 IS BAD UR BAD TOO PLAY #UNREAL TOURNAMENT INSTEAD NOOB TRASH
+NME Manny
+@ ...
+@ ...
+@ *sigh*
+@ Please move, I just need wheat man.
+NME Bully
+@ NO SHUT UP STUPID ROBOT GO BSOD UGLY
+NME Manny
+@ Can you shut the actual fuck up.
+NME Bully
+@ NO UGLY STUPID YOU ARE NOOB MOTHER NOOB
+NME Manny
+@ Alright, I'll tell you what you fat #little cunt.
+@ You're boring, you don't sound threatening #at all.
+@ So go fuck yourself. Go fucking crawl #into the dirty dank little hole.
+@ Where you fucking come from.
+@ You dirty dragon eating little fuckin' #spastic.
+@ ...
+@ Ok, the dragon comment was probably a #little bit fuckin' over the top.
+@ But at the end of the day you're fuckin' #boring.
+@ Every single person who's interacted #with you are fucking stupid.
+@ They're fucking ignorant little cunts.
+NME Bully
+@ ..........................#..........................
+@ ............ *sniff*
+PAL 1
+@ ..........................
+@ ......wwwwwwwwwwwwwwwwwwww
+@ wwwwwwwwwwwwAAAAAAAAAAAAAAAAAA#AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+EXT
+
+secret
+NME Sign
+@ Y29tZSBiYWNrIGxhdGVy
+@ cmlnaHQgdXAgdXAgc2VsZWN0IH#N0YXJ0IHN0YXJ0IHRyaWFuZ2xl
+NME Manny
+PAL 1
+@ What in the living fuck are you #saying??
+EXT
+
+emptyapt
+NME ...
+@ You knock but nobody's home.
+EXT
+
+
+
+
+
