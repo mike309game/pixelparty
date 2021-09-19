@@ -1,4 +1,5 @@
 timer++
+if timer > 10 then fade = lerp(fade,1,.1)
 
 if instance_exists(o_player)
 	{

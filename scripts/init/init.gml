@@ -44,7 +44,8 @@ global.shop_item_name[? "good_time"] = "Good Time"
 global.gameevent = ds_map_create()
 global.gameevent[? "hon1"] = 0
 global.gameevent[? "hon2"] = 0
-global.gameevent[? "shopfirst"] = 1
+global.gameevent[? "shopfirst"] = 0
+global.gameevent[? "l1_e1"] = 0
 
 
 global.playerinv = array_create(6,"")

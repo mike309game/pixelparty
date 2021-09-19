@@ -17,6 +17,7 @@ depth = 999
 
 if global.setting.music > 0
 	{
-		audio_play_sound(mx_shop,0,1)
+		Music("mx_shop",1)
+		//audio_play_sound(mx_shop,0,1)
 		audio_sound_gain(mx_shop,.10,0)
 	}

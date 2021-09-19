@@ -1,3 +1,3 @@
 event = "err"
 
-data = [0]
+// DATA SHOULD BE ADDED HERE THROUGH CREATION CODE

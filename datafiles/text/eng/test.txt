@@ -9,8 +9,16 @@ PAL 1
 NME Tester
 EVT sound thud
 @ woah look im sad now also waaa why u meanie pants.
+EVT wait 10 auto
+EVT sound thud
+EVT wait 10 auto
+EVT sound thud
+EVT wait 10 auto
+EVT sound thud
+EVT wait 10 auto
 PAL 0
 NME Manny
 @ No, find where the fuck I asked.
 EVT sound brap
+EVT pspawn 999 216 180
 EXT

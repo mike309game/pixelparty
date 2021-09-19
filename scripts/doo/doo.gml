@@ -67,3 +67,13 @@ function invRemove(item)
 					}
 			}
 	}
+
+function puzzleAdd(_pid,_x,_y)
+	{
+		var obj = instance_create_depth(_x,_y,0,o_piece)
+		with(obj)
+			{
+				pid = _pid
+				cut = 1
+			}
+	}

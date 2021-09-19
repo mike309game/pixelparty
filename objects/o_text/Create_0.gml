@@ -6,6 +6,8 @@ global.evtst = 0
 
 cooldown = 0
 
+wait = 0
+
 a = 0
 
 parse[0] = ""

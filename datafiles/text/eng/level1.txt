@@ -43,6 +43,27 @@ NME Lexsie
 @ Thanks sweetheart~
 EXT
 
+person1_2
+NME Lexsie
+@ Have you got that wheat for me yet?
+NME Manny
+@ Yup, right here.
+NME Lexsie
+@ Thanks hun. This'll help a lot.
+@ Now you can have your puzzle piece.
+EVT pspawn 1 128 144
+EVT event l1_e1
+EXT
+
+person1_3
+NME Lexsie
+@ ...
+@ ...
+NME Manny
+@ ...
+@ ...
+EXT
+
 bully1
 NME Manny
 @ Yo, move

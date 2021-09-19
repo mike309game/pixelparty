@@ -1,5 +1,7 @@
 //show_debug_message(array_length(parse))
 cooldown--
+wait--
+//show_debug_message("wait: "+string(wait))
 function findText()
 	{
 		var fin = ""
@@ -17,14 +19,15 @@ function findText()
 						break
 						//a = 0
 					} else {
-						a++
+						if wait <= 0 then a++
 					}
 			}
 			
-		if a  < array_length(parse) then a++
+		if a  < array_length(parse) && wait <= 0 then a++
 		
 		while(!(string_copy(fin,1,1) = "@"))
 			{
+				if wait > 0 then break;
 				if found
 					{
 						//show_debug_message("hi")
@@ -73,8 +76,32 @@ function findText()
 																			event = "sound"
 																			data[0] = asset_get_index("sx_"+ds_list_find_value(global.evts,1))
 																		}
+																	break;
+																}
+															case "pspawn":
+																{
+																	with(obj)
+																		{
+																			event = "pspawn"
+																			data[0] = int64(ds_list_find_value(global.evts,1))
+																			data[1] = int64(ds_list_find_value(global.evts,2))
+																			data[2] = int64(ds_list_find_value(global.evts,3))
+																		}
+																	break;
+																}
+															case "event":
+																{
+																	with(obj)
+																		{
+																			event = "event"
+																			data[0] = ds_list_find_value(global.evts,1)
+																		}
+																	break;
 																}
 														}
+												} else {
+													wait = int64(ds_list_find_value(global.evts,1))
+													break;
 												}
 											
 											break;
@@ -90,13 +117,14 @@ function findText()
 								}
 							//show_debug_message(string_copy(find,1,1))
 		
-							if string_copy(fin,1,1) = "@" //&& tr = 1
+							if string_copy(fin,1,1) = "@"
 								{
 									text = string_copy(parse[a],3,string_length(parse[a]))
 									text = string_hash_to_newline(text)
+									if ds_exists(global.evts,ds_type_list) then ds_list_destroy(global.evts)
 									//show_message(text+" |END")
 								} else {
-									if a  < array_length(parse) && tr != 2  then a++
+									if a  < array_length(parse) && tr != 2 && wait <= 0 then a++
 								}
 		
 		
@@ -114,6 +142,11 @@ function findText()
 						}
 				}
 			}
+function doFind()
+	{
+		findText()
+		if wait <= 0 then count = 0
+	}
 
 // Transition Mode Handling
 switch tr
@@ -165,10 +198,16 @@ switch tr
 						
 					}
 				
-				if keyboard_check_pressed(ord("Z")) && count >= string_length(text)
+				if keyboard_check_pressed(ord("Z")) && count >= string_length(text) && wait <= 0
 					{
-						findText()
-						count = 0
+						doFind()
+					}
+				if wait <= 0 && ds_exists(global.evts,ds_type_list) && !is_undefined(ds_list_find_value(global.evts,2))
+					{
+						if ds_list_find_value(global.evts,2) = "auto" && count >= string_length(text)
+							{
+								doFind()
+							}
 					}
 				if keyboard_check_pressed(ord("Z")) && count < string_length(text) && count > 1
 					{

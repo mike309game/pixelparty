@@ -120,6 +120,7 @@
     {"id":{"name":"s_hitbox","path":"sprites/s_hitbox/s_hitbox.yy",},"order":0,},
     {"id":{"name":"s_pause_bg","path":"sprites/s_pause_bg/s_pause_bg.yy",},"order":4,},
     {"id":{"name":"init_setting","path":"scripts/init_setting/init_setting.yy",},"order":4,},
+    {"id":{"name":"sx_puzzle_appear","path":"sounds/sx_puzzle_appear/sx_puzzle_appear.yy",},"order":20,},
     {"id":{"name":"s_l1_tile","path":"sprites/s_l1_tile/s_l1_tile.yy",},"order":0,},
     {"id":{"name":"s_dex_talk_alt_2","path":"sprites/s_dex_talk_alt_2/s_dex_talk_alt_2.yy",},"order":11,},
     {"id":{"name":"o_event","path":"objects/o_event/o_event.yy",},"order":6,},
