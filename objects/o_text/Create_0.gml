@@ -1,8 +1,8 @@
 file = "test"
 find = "test"
 
-evts = ds_list_create()
-evtst = 0
+global.evts = ds_list_create()
+global.evtst = 0
 
 cooldown = 0
 

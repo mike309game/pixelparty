@@ -7,9 +7,10 @@ NME Manny
 @ Okay? Find where I asked.
 PAL 1
 NME Tester
+EVT sound thud
 @ woah look im sad now also waaa why u meanie pants.
 PAL 0
 NME Manny
 @ No, find where the fuck I asked.
-EVT sound sx_brap
+EVT sound brap
 EXT

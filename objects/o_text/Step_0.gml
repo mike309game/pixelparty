@@ -45,21 +45,38 @@ function findText()
 									case "EVT":
 										{
 											
-											evts = ds_list_create()
-											evtst = 1
+											global.evts = ds_list_create()
+											global.evtst = 1
 											for(var i = 0; i < string_length(parse[a]); i++)
 												{
 													var cum = string_char_at(parse[a],i)
 													
 													if cum = " "
 														{
-															ds_list_add(evts,string_copy(parse[a],evtst,i-evtst))
-															evtst = i+1
+															ds_list_add(global.evts,string_copy(parse[a],global.evtst,i-global.evtst))
+															global.evtst = i+1
 														}
-													if i = string_length(parse[a])-1 then ds_list_add(evts,string_copy(parse[a],evtst,i-evtst+2))
+													if i = string_length(parse[a])-1 then ds_list_add(global.evts,string_copy(parse[a],global.evtst,i-global.evtst+2))
 												}
-											//ds_list_delete(evts,1)
-											show_message(ds_list_find_value(evts,2))
+											ds_list_delete(global.evts,0)
+											//show_message(ds_list_find_value(global.evts,1))
+											
+											if ds_list_find_value(global.evts,0) != "wait"
+												{
+													var obj = instance_create_depth(0,0,-999999,o_event)
+													switch ds_list_find_value(global.evts,0)
+														{
+															case "sound":
+																{
+																	with(obj)
+																		{
+																			event = "sound"
+																			data[0] = asset_get_index("sx_"+ds_list_find_value(global.evts,1))
+																		}
+																}
+														}
+												}
+											
 											break;
 										}
 									case "EXT":
