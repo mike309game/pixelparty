@@ -1,4 +1,5 @@
 //show_debug_message(array_length(parse))
+cooldown--
 function findText()
 	{
 		var fin = ""
@@ -26,7 +27,7 @@ function findText()
 			{
 				if found
 					{
-						show_debug_message("hi")
+						//show_debug_message("hi")
 							fin = string_copy(parse[a],1,3)
 					
 							switch fin
@@ -39,6 +40,26 @@ function findText()
 									case "PAL":
 										{
 											p_alt = string_copy(parse[a],5,1)
+											break;
+										}
+									case "EVT":
+										{
+											
+											evts = ds_list_create()
+											evtst = 1
+											for(var i = 0; i < string_length(parse[a]); i++)
+												{
+													var cum = string_char_at(parse[a],i)
+													
+													if cum = " "
+														{
+															ds_list_add(evts,string_copy(parse[a],evtst,i-evtst))
+															evtst = i+1
+														}
+													if i = string_length(parse[a])-1 then ds_list_add(evts,string_copy(parse[a],evtst,i-evtst+2))
+												}
+											//ds_list_delete(evts,1)
+											show_message(ds_list_find_value(evts,2))
 											break;
 										}
 									case "EXT":
@@ -131,6 +152,12 @@ switch tr
 					{
 						findText()
 						count = 0
+					}
+				if keyboard_check_pressed(ord("Z")) && count < string_length(text) && count > 1
+					{
+						if cooldown <= 0 then count = string_length(text)-1
+						cooldown = 10
+						
 					}
 				break;
 			}

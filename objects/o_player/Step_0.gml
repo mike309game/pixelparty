@@ -89,13 +89,15 @@ switch global.debug.noclip
 					}
 					
 				// nasty check
-				if place_meeting(x,y,o_hitbox) then stuck_timer++
+				
 				
 				if stuck_timer = 500 then room_restart()
 				
+				//var collides = tag_get_asset_ids("hitbox",asset_object)
 				
-				if !place_meeting(x+(spd*dash_spd*hor),y,o_hitbox) then x += spd*dash_spd*hor
-				if !place_meeting(x,y+(spd*dash_spd*ver),o_hitbox) then y += spd*dash_spd*ver
+				
+						if !place_meeting(x+(spd*dash_spd*hor),y,o_hitbox) then x += spd*dash_spd*hor
+						if !place_meeting(x,y+(spd*dash_spd*ver),o_hitbox) then y += spd*dash_spd*ver
 				
 				#region Animation
 				

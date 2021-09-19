@@ -1,6 +1,11 @@
 file = "test"
 find = "test"
 
+evts = ds_list_create()
+evtst = 0
+
+cooldown = 0
+
 a = 0
 
 parse[0] = ""

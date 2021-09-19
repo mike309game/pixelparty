@@ -1,19 +1,33 @@
 fade = clamp(fade,0,2)
-if shader_is_compiled(sh_wave)
-	{
-		shader_set(sh_wave)
-		shader_set_uniform_f(shader_get_uniform(sh_wave, "timer"), timer);
 
-		switch show
-			{
-				case "h1":
-					{
-						draw_sprite_ext(s_honestary_level1,0,160,120,fade,fade,0,c_white,fade)
-						break
-					}
-			}
-		shader_reset()
+surf = surface_create(320,240)
+if surface_exists(surf)
+	{
+		show_debug_message("surf exist")
+		surface_set_target(surf)
+			draw_clear_alpha(c_white,0)
+			if shader_is_compiled(sh_wave)
+				{
+					shader_set(sh_wave)
+					shader_set_uniform_f(shader_get_uniform(sh_wave, "timer"), timer);
+					switch show
+						{
+							case "h1":
+								{
+									draw_sprite_ext(s_honestary_level1,0,160,120,fade,fade,0,c_white,fade)
+									break
+								}
+						}
+					shader_reset()
+				}
+					
+		surface_reset_target()
+		
+		show_debug_message("drawn")
 	}
+draw_surface(surf,0,0)
+surface_free(surf)
+
 	
 if cuttimer > 50 && cuttimer < 300
 	{

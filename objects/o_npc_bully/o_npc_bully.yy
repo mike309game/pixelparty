@@ -32,6 +32,8 @@
   },
   "resourceVersion": "1.0",
   "name": "o_npc_bully",
-  "tags": [],
+  "tags": [
+    "hitbox",
+  ],
   "resourceType": "GMObject",
 }

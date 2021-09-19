@@ -5,8 +5,11 @@ NME Tester
 @ I'm used to test the dialogue boxes for #any bugs or anything.
 NME Manny
 @ Okay? Find where I asked.
+PAL 1
 NME Tester
-@ Wow, no need to be an asshole.
+@ woah look im sad now also waaa why u meanie pants.
+PAL 0
 NME Manny
 @ No, find where the fuck I asked.
+EVT sound sx_brap
 EXT

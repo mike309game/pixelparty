@@ -40,7 +40,7 @@ function invAdd(item)
 					{
 						if global.playerinv[i] = ""
 							{
-								show_debug_message("found at "+string(i))
+								//show_debug_message("found at "+string(i))
 								global.playerinv[i] = string(item)
 								return 1;
 								break;

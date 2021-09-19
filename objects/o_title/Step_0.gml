@@ -21,8 +21,8 @@ if timer = 250
 	{
 		Music("mx_title",0)
 	}
-show_debug_message("mode: "+string(mode))
-show_debug_message("tstimer: "+string(tstimer))
+//show_debug_message("mode: "+string(mode))
+//show_debug_message("tstimer: "+string(tstimer))
 #endregion
 
 switch mode
@@ -72,7 +72,7 @@ switch mode
 												case 0:
 													{
 														save_init()
-														Sound("sx_title_menu_select",0)
+														Sound("sx_newgame",0)
 														alarm_set(0,1)
 														break;
 													}

@@ -29,6 +29,8 @@
   },
   "resourceVersion": "1.0",
   "name": "o_hitbox",
-  "tags": [],
+  "tags": [
+    "hitbox",
+  ],
   "resourceType": "GMObject",
 }

@@ -54,8 +54,8 @@ if keyboard_check_pressed(vk_enter) && tr = 1 && mode = 0
 		exitPause()
 	}
 	
-selection = max(0,selection)
-selection = min(array_length(menu)-1,selection)
+//selection = max(0,selection)
+//selection = min(array_length(menu)-1,selection)
 var key = keyboard_check_pressed(vk_down) - keyboard_check_pressed(vk_up)
 if tr = 1 then selection += key
 

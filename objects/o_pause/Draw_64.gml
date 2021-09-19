@@ -27,11 +27,13 @@ if surface_exists(surf) // surface shit
 			draw_sprite_tiled(s_pause_bg,0,bgX,bgY)
 		surface_reset_target()
 		
+		//gpu_set_blendenable(1);
 		surface_set_target(surfapp)
 		gpu_set_blendmode_ext(bm_dest_alpha,bm_src_alpha_sat)
 			draw_surface(application_surface,0,0)
 		gpu_set_blendmode(bm_normal)
 		surface_reset_target()
+		//gpu_set_blendenable(0);
 
 		if (timer > 11 && tr != 2) then draw_surface_ext(surf,0,0,1,1,0,c_white,1) else if (timer >= 0 && tr = 2) then draw_surface_ext(surf,0,0,1,1,0,c_white,1)
 		if tr = 2 then draw_sprite_ext(s_pause_pause,0,pauseX,32,1,1,6,c_white,1)
@@ -81,7 +83,18 @@ switch mode
 			}
 		case 1: // options
 			{
-				var toDraw = ["Music Volume: "+string(global.setting.music),"Sound Volume: "+string(global.setting.sound),"Back To Menu"]
+				switch global.debug.build_type
+					{
+						case "ps":
+							var toDraw = ["Music Volume: "+string(global.setting.music),"Sound Volume: "+string(global.setting.sound),"Back To Menu"]
+							break;
+						case "pc":
+							var toDraw = ["Music Volume: "+string(global.setting.music),"Sound Volume: "+string(global.setting.sound),"Screen Size: "+string(global.setting.scale)+"x","Vsync: "+string(global.setting.vsync),"Fullscreen: "+string(global.setting.full),"Back To Menu"]
+							break;
+						case "web":
+							var toDraw = ["Music Volume: "+string(global.setting.music),"Sound Volume: "+string(global.setting.sound),"Back To Menu"]
+							break;
+					}
 				draw_set_alpha(0.4)
 				draw_rectangle_color(0,164+(selection*10),320,173+(selection*10),c_black,c_black,c_black,c_black,0)
 				draw_set_alpha(1)
@@ -97,49 +110,157 @@ switch mode
 					}
 				draw_set_color(c_black)
 				
-				if keyboard_check_pressed(ord("Z"))
-					{
-						Sound("sx_title_menu_select",0)
-						switch selection
-							{
-
-								case 2:
-									{
-										mode = 0
-										selection = 0
-										save_setting()
-										//sel_freeze = 0
-										break;
-									}
-							}
-				
-					}
 				var hor = keyboard_check_pressed(vk_right) - keyboard_check_pressed(vk_left)
-				if hor <> 0 
+				switch global.debug.build_type
 					{
-						switch selection
+						case "ps":
 							{
-								case 0:
+								if keyboard_check_pressed(ord("Z"))
 									{
-										global.setting.music += 5*hor
-										audio_sound_gain(global.vars.playing,global.setting.music/100,0)
-										break;
+										Sound("sx_title_menu_select",0)
+										switch selection
+											{
+
+												case 2:
+													{
+														mode = 0
+														selection = 0
+														save_setting()
+														//sel_freeze = 0
+														break;
+													}
+											}
+				
 									}
-								case 1:
+								
+								if hor <> 0 
 									{
-										global.setting.sound += 5*hor
-										break;
+										switch selection
+											{
+												case 0:
+													{
+														global.setting.music += 5*hor
+														audio_sound_gain(global.vars.playing,global.setting.music/100,0)
+														break;
+													}
+												case 1:
+													{
+														global.setting.sound += 5*hor
+														break;
+													}
+											}
 									}
+					
+									break;
 							}
-					}
-				break;
+						case "pc":
+							{
+								if keyboard_check_pressed(ord("Z"))
+									{
+										Sound("sx_title_menu_select",0)
+										switch selection
+											{
+												case 5:
+													{
+														mode = 0
+														save_setting()
+														selection = 0
+														break;
+													}
+											}
+									}
+				
+				
+								if hor <> 0 
+									{
+										switch selection
+											{
+												case 0:
+													{
+														global.setting.music += 5*hor
+														audio_sound_gain(global.vars.playing,global.setting.music/100,0)
+														break;
+													}
+												case 1:
+													{
+														global.setting.sound += 5*hor
+														break;
+													}
+												case 2:
+													{
+														global.setting.scale += hor
+														alarm_set(5,2)
+														break;
+													}
+												case 3:
+													{
+														global.setting.vsync += hor
+														display_reset(0,global.setting.vsync)
+														break;
+													}
+												case 4:
+													{
+														Sound("sx_error",0)
+														//global.setting.full += hor
+														//window_set_fullscreen(global.setting.full)
+														break;
+													}
+											}
+									}
+								break;
+							}
+						case "web":
+							{
+								if keyboard_check_pressed(ord("Z"))
+									{
+										Sound("sx_title_menu_select",0)
+										switch selection
+											{
+
+												case 2:
+													{
+														mode = 0
+														selection = 0
+														save_setting()
+														//sel_freeze = 0
+														break;
+													}
+											}
+				
+									}
+								
+								if hor <> 0 
+									{
+										switch selection
+											{
+												case 0:
+													{
+														global.setting.music += 5*hor
+														audio_sound_gain(global.vars.playing,global.setting.music/100,0)
+														break;
+													}
+												case 1:
+													{
+														global.setting.sound += 5*hor
+														break;
+													}
+											}
+									}
+					
+									break;
+							}
+	
 			}
 	}	
+	}
 	
-if surface_exists(surf)
+if surface_exists(surfapp)
 	{
-		draw_surface_ext(surfapp,surX - 4,surY-2,surS+0.02,surS+0.02,surR,c_black,1)
-		draw_surface_ext(surfapp,surX,surY,surS,surS,surR,c_white,1)
+		
+		if surS < 1 then draw_surface_ext(surfapp,surX - 4,surY-2,surS+0.02,surS+0.02,surR,c_black,1)
+		gpu_set_blendenable(0);
+		if surS < 1 then draw_surface_ext(surfapp,surX,surY,surS,surS,surR,c_white,1)
+		gpu_set_blendenable(1);
 		if tr <= 1 then draw_sprite_ext(s_pause_pause,0,pauseX,32,1,1,6,c_white,1)
 	}
 

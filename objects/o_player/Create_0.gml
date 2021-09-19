@@ -22,3 +22,4 @@ offset = 1
 text_x = -192
 idle_timer = 0
 no_draw = 0
+

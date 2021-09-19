@@ -109,7 +109,7 @@ switch menuMode
 								case 0:
 									{
 										var inadd = invAdd(string(global.shop_start_tables.l1[selection[1]]))
-										show_debug_message(inadd)
+										//show_debug_message(inadd)
 										switch inadd
 											{
 												case 0:

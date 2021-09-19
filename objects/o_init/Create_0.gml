@@ -1,9 +1,8 @@
 
-
-window_set_size(3*320,3*240)
-alarm_set(0,1)
-
 save_setting_load()
+
+window_set_size(global.setting.scale*320,global.setting.scale*240)
+alarm_set(0,1)
 
 mus_fade = 1
 titles[0] = ""
@@ -17,6 +16,8 @@ for(var i = 1; i < 65; i++)
 file_text_close(fil)
 
 #region funny title
+
+// this is mikes code dont blame me - jay
 anim_title_table = ds_list_create()
 ds_list_add(anim_title_table,"　　　　　　　　　　");
 ds_list_add(anim_title_table,"　　　　　　　　　Ｙ");

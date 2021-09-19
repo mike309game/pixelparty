@@ -15,7 +15,12 @@ if global.vars.got_puzzle = -1
 	{
 		if scale > 0 then scale -= 0.03
 	}
-if untimer = 1 then Sound("sx_puzzle_collect",0)
+if untimer = 1
+	{
+		var pitch = random_range(0.9,1.1)
+		Sound("sx_puzzle_collect",0)
+		audio_sound_pitch(sx_puzzle_collect,pitch)
+	}
 if untimer = 100
 	{
 		global.player.puzzle++

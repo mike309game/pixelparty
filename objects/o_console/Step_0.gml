@@ -38,6 +38,7 @@ ds_list_delete(display_queue,8)
 
 if keyboard_check_pressed(vk_enter)
     {
+
         cmdargs = ds_list_create()
         argstart = 1
         for(var i = 0; i < string_length(textfield); i++)

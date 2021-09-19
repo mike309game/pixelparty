@@ -9,7 +9,19 @@ switch mode
 			}
 		case 2:
 			{
-				selection = min(selection,3)
+				switch global.debug.build_type
+					{
+						case "ps":
+							selection = min(selection,3)
+							break;
+						case "pc":
+							selection = min(selection,6)
+							break;
+						case "web":
+							selection = min(selection,4)
+							break;
+					}
+				
 				break;
 			}
 		case 3:
