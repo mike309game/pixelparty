@@ -1,3 +1,7 @@
+//gpu_set_zwriteenable(1);
+//gpu_set_ztestenable(1);
+//layer_force_draw_depth(1,0);
+show_debug_overlay(1);
 // Check init_setting for proper vars
 
 global.vars = {

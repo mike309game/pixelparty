@@ -27,13 +27,11 @@ if surface_exists(surf) // surface shit
 			draw_sprite_tiled(s_pause_bg,0,bgX,bgY)
 		surface_reset_target()
 		
-		//gpu_set_blendenable(1);
+		gpu_set_blendenable(0);
 		surface_set_target(surfapp)
-		gpu_set_blendmode_ext(bm_dest_alpha,bm_src_alpha_sat)
 			draw_surface(application_surface,0,0)
-		gpu_set_blendmode(bm_normal)
 		surface_reset_target()
-		//gpu_set_blendenable(0);
+		gpu_set_blendenable(1);
 
 		if (timer > 11 && tr != 2) then draw_surface_ext(surf,0,0,1,1,0,c_white,1) else if (timer >= 0 && tr = 2) then draw_surface_ext(surf,0,0,1,1,0,c_white,1)
 		if tr = 2 then draw_sprite_ext(s_pause_pause,0,pauseX,32,1,1,6,c_white,1)
@@ -256,9 +254,8 @@ switch mode
 	
 if surface_exists(surfapp)
 	{
-		
-		if surS < 1 then draw_surface_ext(surfapp,surX - 4,surY-2,surS+0.02,surS+0.02,surR,c_black,1)
 		gpu_set_blendenable(0);
+		if surS < 1 then draw_surface_ext(surfapp,surX - 4,surY-2,surS+0.02,surS+0.02,surR,c_black,1)
 		if surS < 1 then draw_surface_ext(surfapp,surX,surY,surS,surS,surR,c_white,1)
 		gpu_set_blendenable(1);
 		if tr <= 1 then draw_sprite_ext(s_pause_pause,0,pauseX,32,1,1,6,c_white,1)
