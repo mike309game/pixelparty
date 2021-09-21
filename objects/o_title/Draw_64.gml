@@ -260,8 +260,8 @@ switch mode
 												case 4:
 													{
 														Sound("sx_error",0)
-														//global.setting.full += hor
-														//window_set_fullscreen(global.setting.full)
+														global.setting.full += hor
+														window_set_fullscreen(global.setting.full)
 														break;
 													}
 											}

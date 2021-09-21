@@ -187,7 +187,7 @@ switch mode
 												case 2:
 													{
 														global.setting.scale += hor
-														alarm_set(5,2)
+														alarm_set(0,2)
 														break;
 													}
 												case 3:

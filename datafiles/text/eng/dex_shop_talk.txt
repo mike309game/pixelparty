@@ -42,6 +42,7 @@ NME Manny
 @ Huh, well I'm gonna go give her the #wheat. You take care.
 NME Dex
 @ You too.
+EVT event shopfirst
 EXT
 
 ran1

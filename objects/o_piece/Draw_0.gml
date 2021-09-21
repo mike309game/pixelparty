@@ -8,7 +8,7 @@ if global.vars.got_puzzle = 0 || (global.vars.got_puzzle = 1 && global.vars.puz_
 			//making this look better because i hate how you made it look
 			//looks like jevil's shadow
 			matrix_set(matrix_world, matrix_build(x-1,y+24,0,0,0,0,rad + 0.3, rad/2 + 0.3, 1));
-			draw_rectangle(-2,-1,2,1,0);
+			draw_rectangle_color(-2,-1,2,1,c_black,c_black,c_black,c_black,0);
 			matrix_set(matrix_world, matrix_build_identity());
 			draw_set_alpha(1)
 			draw_sprite_ext(s_puzzle_piece,0,x,pos,scale,scale,0,c_white,fade)

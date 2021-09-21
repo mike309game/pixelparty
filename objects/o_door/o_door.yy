@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "s_de_bg_2",
-    "path": "sprites/s_de_bg_2/s_de_bg_2.yy",
+    "name": "s_debug",
+    "path": "sprites/s_debug/s_debug.yy",
   },
   "solid": false,
   "visible": true,

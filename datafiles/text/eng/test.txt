@@ -20,5 +20,14 @@ PAL 0
 NME Manny
 @ No, find where the fuck I asked.
 EVT sound brap
+EVT event de_e1
+EXT
+
+test2
+NME Tester
+@ ooga you got the booga
+@ shimmy shonga
+EVT wait 50 auto
+@ bonga
 EVT pspawn 999 216 180
 EXT
