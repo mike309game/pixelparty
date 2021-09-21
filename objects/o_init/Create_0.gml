@@ -108,3 +108,7 @@ if dopick = irandom_range(1,8)
 
 transalpha = 0
 depth = -room_height
+
+if(global.debug.debug_enabled) {
+	instance_create_depth(0,0,0,o_mikedebug);
+}
