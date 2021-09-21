@@ -4,12 +4,17 @@ switch menuMode
 			{
 					if !instance_exists(o_text)
 						{
+							if fade <= 0.5
+								{
+									dexintro = lerp(dexintro,0,.1)
+								}
 							if fade <= 0.1
 								{
+									
 									if ds_map_find_value(global.gameevent,"shopfirst") = 0
 										{
 											textbox("ran0","dex_shop_talk")
-											global.gameevent[? "shopfirst"] = 1
+											//global.gameevent[? "shopfirst"] = 1
 
 											
 										}

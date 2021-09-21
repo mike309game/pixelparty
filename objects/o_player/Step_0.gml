@@ -80,6 +80,7 @@ switch global.debug.noclip
 						#endregion
 						
 					} else {
+						text_x = lerp(text_x,-192,.05)
 						if instance_exists(o_pause) || global.vars.got_puzzle
 							{
 								hor = 0

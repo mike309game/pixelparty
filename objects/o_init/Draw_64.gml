@@ -1,4 +1,4 @@
-draw_text(0,120,"game fps: "+string(fps))
+
 #region Room Transition
 transalpha = clamp(transalpha,0,1)
 if instance_exists(o_player) || global.vars.ignoreplayer
@@ -43,3 +43,9 @@ if room_get_name(global.vars.roomgo) =  room_get_name(room)
 			}
 
 #endregion
+draw_set_halign(fa_left)
+draw_set_valign(fa_bottom)
+draw_set_font(f_shop)
+draw_set_color(make_color_rgb(current_time/2,current_time/4,current_time/6))
+if global.debug.debug_enabled then draw_text(0,244,"pixelparty debug build")
+draw_set_color(c_white)

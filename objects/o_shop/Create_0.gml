@@ -3,6 +3,7 @@ flipping = false
 fliptimer = 0
 
 dexoffset = 0
+dexintro = 16
 movedir = 0
 
 alarm_set(0,30)
@@ -13,7 +14,12 @@ fade = 1
 menuMode = 0
 selection = [0,0,0]
 
-depth = 999
+coinY = 64
+coinR = 0
+coinM = 0
+coinSurf = surface_create(320,240)
+
+depth = -999
 
 if global.setting.music > 0
 	{

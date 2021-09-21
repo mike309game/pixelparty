@@ -1,1 +1,1 @@
-//Music("mx_test",1)
+Music("mx_test",1)

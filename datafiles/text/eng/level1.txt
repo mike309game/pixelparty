@@ -109,6 +109,13 @@ PAL 1
 @ ..........................
 @ ......wwwwwwwwwwwwwwwwwwww
 @ wwwwwwwwwwwwAAAAAAAAAAAAAAAAAA#AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+EVT event l1_e2
+EXT
+
+bully2
+PAL 1
+NME Bully
+@ *sobbing*
 EXT
 
 secret
