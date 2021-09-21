@@ -1,17 +1,18 @@
 hon1
 NME Honstay
-@ Hello... I sense you are new here.
+@ Hello, I sense you are new here..
+@ Allow me to grab some information #about you..
 EVT honload
-@ ...Allow me to grab some information #about you...
-@ ... ... ... ... ... ... ... ...
-@ Ah yes. Hello Manny, I've been awaiting #your arrival.
-@ I am glad you are here. A mysterious power #has rolled into the Honestaries recently.
-@ I would like you to go and figure out #what is happening.
-@ Each level you will recieve 3 puzzle #pieces. This will help you reach the
-@ other Honestaries.
+EVT wait 150 auto
+@ Ah yes, hello Manny.
+@ You're probably wondering why I #summoned you here.
+NME Manny
+@ ...
+NME Honstay
+@ I have detected a disruption within our #space.
+@ If you could, could you please go figure #out what is happening?
+@ I would greatly appreicate it.
 NME Manny
 @ ...
 @ Okay
-NME Honstay
-@ Good luck.
 EXT

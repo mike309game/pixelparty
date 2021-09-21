@@ -135,6 +135,7 @@
     {"id":{"name":"s_bully_block","path":"sprites/s_bully_block/s_bully_block.yy",},"order":1,},
     {"id":{"name":"s_shop_item_temp","path":"sprites/s_shop_item_temp/s_shop_item_temp.yy",},"order":0,},
     {"id":{"name":"t_gl","path":"tilesets/t_gl/t_gl.yy",},"order":2,},
+    {"id":{"name":"s_lnx","path":"sprites/s_lnx/s_lnx.yy",},"order":18,},
     {"id":{"name":"mx_shop","path":"sounds/mx_shop/mx_shop.yy",},"order":6,},
     {"id":{"name":"s_shop_item_odd_key","path":"sprites/s_shop_item_odd_key/s_shop_item_odd_key.yy",},"order":3,},
     {"id":{"name":"o_text","path":"objects/o_text/o_text.yy",},"order":4,},

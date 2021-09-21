@@ -59,7 +59,7 @@ if keyboard_check_pressed(vk_enter) && tr = 1 && mode = 0
 var key = keyboard_check_pressed(vk_down) - keyboard_check_pressed(vk_up)
 if tr = 1 then selection += key
 
-if key <> 0 then Sound("sx_pause_move",0)
+if key <> 0 && tr = 1 then Sound("sx_pause_move",0)
 
 // selection
 if keyboard_check_pressed(ord("Z")) && tr = 1 && mode = 0
