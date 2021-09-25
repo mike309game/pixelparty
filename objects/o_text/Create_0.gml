@@ -19,12 +19,13 @@ shadowoffset = 2
 name = ""
 text = ""
 count = 0
+countspd = 0.5
 _y = 80
 
 tr = 0
 
 p_alt = 0
 
-depth = -9999
+depth = -9998
 
 global.player.move = 0

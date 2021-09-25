@@ -77,3 +77,14 @@ function puzzleAdd(_pid,_x,_y)
 				cut = 1
 			}
 	}
+
+function boxDestroy(_id)
+	{
+		for(var i = 0; i < instance_number(o_hitbox); i++)
+			{
+				if instance_find(o_hitbox,i)._id = _id
+					{
+						instance_destroy(instance_find(o_hitbox,i))
+					}
+			}
+	}

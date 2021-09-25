@@ -1,3 +1,4 @@
+depth = -99999
 event = "err"
 
 // DATA SHOULD BE ADDED HERE THROUGH CREATION CODE

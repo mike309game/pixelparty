@@ -5,6 +5,8 @@ if keyboard_check_pressed(vk_escape) then game_end()
 if room = r_init then room_goto(global.vars.roomgo)
 
 //base stop fucking using brackets like this
+
+// fuck you your mother is upon my penis and i am currently having sex with her vagina
 if !instance_exists(o_pause)
 	{
 		if keyboard_check_pressed(vk_enter) && global.player.move && instance_exists(o_player)

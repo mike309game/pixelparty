@@ -87,21 +87,27 @@ NME Manny
 @ Please move, I just need wheat man.
 NME Bully
 @ NO SHUT UP STUPID ROBOT GO BSOD UGLY
+PAL 2
 NME Manny
-@ Can you shut the actual fuck up.
+@ Ok you can shut the fuck up now and move
+PAL 0
 NME Bully
 @ NO UGLY STUPID YOU ARE NOOB MOTHER NOOB
+PAL 2
 NME Manny
 @ Alright, I'll tell you what you fat #little cunt.
 @ You're boring, you don't sound threatening #at all.
 @ So go fuck yourself. Go fucking crawl #into the dirty dank little hole.
 @ Where you fucking come from.
 @ You dirty dragon eating little fuckin' #spastic.
+PAL 0
 @ ...
 @ Ok, the dragon comment was probably a #little bit fuckin' over the top.
+PAL 2
 @ But at the end of the day you're fuckin' #boring.
 @ Every single person who's interacted #with you are fucking stupid.
 @ They're fucking ignorant little cunts.
+PAL 0
 NME Bully
 @ ..........................#..........................
 @ ............ *sniff*
@@ -130,6 +136,25 @@ EXT
 emptyapt
 NME ...
 @ You knock but nobody's home.
+EXT
+
+locked
+NME ...
+@ It's locked.
+EXT
+
+cat1
+NME Cat-in-a-box
+TSD 0.2
+@ Ooooaaaaaaaa!!!
+TSD 0.5
+@ Robyoto Man!! Oooohhhh!!
+@ I kyow what u are here 4!!
+@ Butt i hav a pwoblem.......
+@ Me cant move goodes..,
+EVT cbox 1
+@ can u find me a way 2 move?!?!
+@ fank u's!!!
 EXT
 
 

@@ -43,6 +43,16 @@ if tr = 1
 						po = "s_nothing"
 						break;
 					}
+				case "":
+					{
+						po = "s_nothing"
+						break;
+					}
+				case "buxy":
+					{
+						po = "s_buxy_talk"
+						break;
+					}
 				default:
 					{
 						po = "s_creepy_talk"
@@ -59,11 +69,13 @@ if tr = 1
 						}
 				}
 	}
+draw_sprite_part(asset_get_index("s_textbox_"+global.player.area),0,0,0,320,80,0,240-80+_y)
 if count >= string_length(text)
 	{
-		draw_sprite_part(asset_get_index("s_textbox_"+global.player.area),0,0,80,320,80,0,240-80+_y)
+		draw_sprite_part(s_psxbuttons,0,0,0,16,16,293,225+_y)
+		//draw_sprite_part(asset_get_index("s_textbox_"+global.player.area),0,0,80,320,80,0,240-80+_y)
 	} else {
-		draw_sprite_part(asset_get_index("s_textbox_"+global.player.area),0,0,0,320,80,0,240-80+_y)
+		
 	}
 
 draw_set_font(f_main)
@@ -73,7 +85,7 @@ draw_set_color(c_black)
 
 draw_set_alpha(0.2)
 draw_text(18+shadowoffset,198+shadowoffset+_y,string_copy(text,1,floor(count)))
-draw_text(220+shadowoffset,178+shadowoffset+_y,name)
+draw_text(205+shadowoffset,178+shadowoffset+_y,name)
 draw_set_alpha(1)
 draw_text(18,198+_y,string_copy(text,1,count))
-draw_text(220,178+_y,name)
+draw_text(205,178+_y,name)

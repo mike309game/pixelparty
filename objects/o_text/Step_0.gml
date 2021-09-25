@@ -98,6 +98,14 @@ function findText()
 																		}
 																	break;
 																}
+															case "honload":
+																{
+																	with(obj)
+																		{
+																			event = "honload"
+																		}
+																	break;
+																}
 														}
 												} else {
 													wait = int64(ds_list_find_value(global.evts,1))
@@ -105,6 +113,14 @@ function findText()
 												}
 											
 											break;
+										}
+									case "TSD":
+										{
+											var temp = string_copy(parse[a],5,string_length(parse[a]))
+											
+											countspd = real(temp)
+											show_debug_message(countspd)
+											break; 
 										}
 									case "EXT":
 										{
@@ -162,7 +178,8 @@ switch tr
 		case 1: // Dialogue
 			{
 				count = clamp(count,0,string_length(text))
-				count+=0.5
+				//show_message(countspd)
+				count+=countspd
 				
 				if count < string_length(text)
 					{
@@ -176,6 +193,11 @@ switch tr
 										case "manny":
 											{
 												audio_sound_pitch(sx_text_sound,random_range(1,1.3))
+												break;
+											}
+										case "cat-in-a-box":
+											{
+												audio_sound_pitch(sx_text_sound,random_range(1.3,1.6))
 												break;
 											}
 										case "bully":
