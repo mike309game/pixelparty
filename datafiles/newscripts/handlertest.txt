@@ -1,0 +1,7 @@
+|handler test
+
+<wait for frames>#120;
+<show message>@please work;
+<end processing>
+
+|EOF

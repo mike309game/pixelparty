@@ -1,0 +1,2 @@
+an object's creation event is ran right after an instance_create call
+not sure about the step event, probably runs the frame after instance_create

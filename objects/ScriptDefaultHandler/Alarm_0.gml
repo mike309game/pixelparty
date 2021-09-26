@@ -1,0 +1,1 @@
+myInterpreter.halted = 0; //unhalt interpreter
