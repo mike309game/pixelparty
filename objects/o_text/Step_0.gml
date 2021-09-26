@@ -185,7 +185,7 @@ switch tr
 					{
 						if !audio_is_playing(sx_text_sound)
 							{
-								Sound("sx_text_sound",0)
+								Sound(sx_text_sound,0)
 								
 								// Different Text Pitches
 								switch string_lower(name)

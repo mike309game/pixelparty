@@ -33,7 +33,7 @@
             1,
             2,
           ],"resourceVersion":"1.0","name":"imgui_setup_buffers","tags":[],"resourceType":"GMExtensionFunction",},
-      ],"constants":[],"ProxyFiles":[],"copyToTargets":-1,"order":[
+      ],"constants":[],"ProxyFiles":[],"copyToTargets":64,"order":[
         {"name":"imgui_setup","path":"extensions/imgui/imgui.yy",},
         {"name":"imgui_step","path":"extensions/imgui/imgui.yy",},
         {"name":"imgui_cleanup","path":"extensions/imgui/imgui.yy",},
@@ -53,6 +53,12 @@
   "tvosmaccompilerflags": "",
   "maclinkerflags": "",
   "tvosmaclinkerflags": "",
+  "iosplistinject": "",
+  "tvosplistinject": "",
+  "androidinject": "",
+  "androidmanifestinject": "",
+  "androidactivityinject": "",
+  "gradleinject": "",
   "androidcodeinjection": "",
   "ioscodeinjection": "",
   "tvoscodeinjection": "",
@@ -63,6 +69,10 @@
   "IncludedResources": [],
   "androidPermissions": [],
   "copyToTargets": 64,
+  "iosCocoaPods": "",
+  "tvosCocoaPods": "",
+  "iosCocoaPodDependencies": "",
+  "tvosCocoaPodDependencies": "",
   "parent": {
     "name": "mike",
     "path": "folders/mike.yy",

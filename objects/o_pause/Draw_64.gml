@@ -115,7 +115,7 @@ switch mode
 							{
 								if keyboard_check_pressed(ord("Z"))
 									{
-										Sound("sx_title_menu_select",0)
+										Sound(sx_title_menu_select,0)
 										switch selection
 											{
 
@@ -155,7 +155,7 @@ switch mode
 							{
 								if keyboard_check_pressed(ord("Z"))
 									{
-										Sound("sx_title_menu_select",0)
+										Sound(sx_title_menu_select,0)
 										switch selection
 											{
 												case 5:
@@ -198,7 +198,7 @@ switch mode
 													}
 												case 4:
 													{
-														Sound("sx_error",0)
+														Sound(sx_error,0)
 														//global.setting.full += hor
 														//window_set_fullscreen(global.setting.full)
 														break;
@@ -211,7 +211,7 @@ switch mode
 							{
 								if keyboard_check_pressed(ord("Z"))
 									{
-										Sound("sx_title_menu_select",0)
+										Sound(sx_title_menu_select,0)
 										switch selection
 											{
 

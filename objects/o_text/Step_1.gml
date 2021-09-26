@@ -1,4 +1,5 @@
 //this code's atrocious but i'll make a quick fix for html
+//ratio
 if !parsed
 	{
 		var _file = file_text_open_read(working_directory + "text/"+global.setting.lang+"/"+file+".txt")

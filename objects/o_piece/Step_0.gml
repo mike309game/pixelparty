@@ -19,7 +19,7 @@ if global.vars.got_puzzle = -1
 if untimer = 1
 	{
 		var pitch = random_range(0.9,1.1)
-		Sound("sx_puzzle_collect",0)
+		Sound(sx_puzzle_collect,0)
 		audio_sound_pitch(sx_puzzle_collect,pitch)
 	}
 if untimer = 100

@@ -1,12 +1,15 @@
 function Sound(sound,loop)
 	{
-		if !is_undefined(sound)
+		//what in the fuck
+		/*if !is_undefined(sound)
 			{
 				audio_play_sound(asset_get_index(sound),0,loop)
 				audio_sound_gain(asset_get_index(sound),global.setting.sound/100,0)
 			} else {
 				show_debug_message("oopsie poopsie sound is not real :)")
-			}
+			}*/
+		audio_play_sound(sound,0,loop);
+		audio_sound_gain(sound,global.setting.sound/100,0);
 	}
 
 function Music(play,loop)

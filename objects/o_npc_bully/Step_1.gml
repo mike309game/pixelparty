@@ -20,7 +20,7 @@ if shopbully && ds_map_find_value(global.gameevent,"l1_e2")
 				if cry <= -1
 					{
 						cry = irandom_range(30,150)
-						if distance_to_object(o_player) < 90 then Sound("sx_bully_cry",0)
+						if distance_to_object(o_player) < 90 then Sound(sx_bully_cry,0)
 					}
 			} else {
 				sprite_index = s_bully_cry
