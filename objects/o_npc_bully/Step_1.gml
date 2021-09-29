@@ -3,7 +3,7 @@ if shopbully && ds_map_find_value(global.gameevent,"l1_e2")
 	{
 		if !okdone then alarm_set(1,1)
 		x = lerp(x,go,.1)
-		instance_destroy(100194)
+		instance_destroy(100194) //WHAT ARE YOU FUCKING DOING HERE
 		find = "bully2"
 		//draw_sprite_part(s_bully_cry,0,(frame+1)*64-64,moke*80-80,64,80,x,y)
 		image_index = frame

@@ -96,7 +96,7 @@ titlecount = 0
 
 
 // funny title pick
-var dopick = irandom_range(1,8)
+/*var dopick = irandom_range(1,8)
 
 if dopick = irandom_range(1,8)
 	{
@@ -104,11 +104,24 @@ if dopick = irandom_range(1,8)
 		var titleran = irandom_range(1,65)
 		window_set_caption(titles[titleran])
 	} else { titleloop = 1 }
+*/
+//better imo
+randomize();
+if(irandom_range(0,$ff) == 63) {
+	titleloop = 1;
+} else {
+	var titleran = irandom_range(1,65)
+	window_set_caption(titles[titleran]);
+}
 
 
 transalpha = 0
-depth = -room_height
+depth = -999999999
 
+blendtester = noone;
 if(global.debug.debug_enabled) {
+	//blendtester = instance_create_depth(0,0,-999999999,o_struggle);
 	instance_create_depth(0,0,0,o_mikedebug);
 }
+
+fader_uni = shader_get_uniform(sh_fader, "fadeammt");

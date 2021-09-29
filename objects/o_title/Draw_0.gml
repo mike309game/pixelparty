@@ -1,3 +1,4 @@
+draw_gui_set;
 draw_sprite_tiled(asset_get_index("s_title_bg_"+string(bgmode)),0,bgX,bgY)
 if tstimer < 140 && tstimer > -1 then draw_sprite_ext(s_title_logo,0,160,120,scale,scale,0,c_white,1)
 draw_sprite_ext(s_fade_black,0,0,0,1,1,0,c_white,fade)
@@ -24,13 +25,14 @@ switch(rand)
 							switch os_type
 								{
 									case os_windows:
-										var copyright = "(C)2002 YISI-FY LTD - Windows"
+										var copyright = "(C)2002 YISI-FY LTD - PC"
 										break;
 									case os_macosx:
-										var copyright = "(C)2002 YISI-FY LTD - Mac OSX"
+										//var copyright = "(C)2002 YISI-FY LTD - Mac OSX"
+										var copyright = "(C)2002 YISI-FY LTD - Axetion Workstation"
 										break;
 									case os_linux:
-										var copyright = "(C)2002 YISI-FY LTD - Nerd OS"
+										var copyright = "(C)2002 YISI-FY LTD - Slow OS"
 										break;
 									case os_unknown:
 										var copyright = "(C)2002 YISI-FY LTD - what fucking os are you using"
@@ -38,10 +40,13 @@ switch(rand)
 								}
 							break;
 						case "web":
-							var copyright = "(C)2002 YISI-FY LTD - Newgrounds Version"
+							if(current_time % 848585) //yes i know it'll only show it for a single frame that's the point
+								var copyright = "(C)2002 YISI-FY LTD - Funky Version"
+							else
+								var copyright = "(C)2002 YISI-FY LTD - Newgrounds Version"
 							break;
 						default:
-							var copyright = "HOW DID YOU GET THIS ON A MOBILE OR CONSOLE????"
+							var copyright = "HOW DID YOU GET THIS ON A MOBILE OR CONSOLE????" //we do a little trolling
 							break;
 					}
 				
@@ -327,3 +332,4 @@ Sound(sx_title_select,0)
 draw_sprite_ext(s_fade_white,0,0,0,1,1,0,c_white,flash)
 if timer > 350 then flash = lerp(flash,0,.02)
 }
+draw_gui_exit;

@@ -1,2 +1,4 @@
 an object's creation event is ran right after an instance_create call
 not sure about the step event, probably runs the frame after instance_create
+
+also fading is probably gonna have to be broken in html5 since i dunno if it can do shaders (why do you even want to insist on going forward with this ng version crap?)

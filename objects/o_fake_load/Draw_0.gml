@@ -1,3 +1,4 @@
+draw_gui_set;
 if loadbar < 100
 	{
 		draw_sprite(s_loading_text,0,160,210)
@@ -8,3 +9,4 @@ else if loadbar = 100
 	{
 		alarm_set(1,1)
 	}
+draw_gui_exit;

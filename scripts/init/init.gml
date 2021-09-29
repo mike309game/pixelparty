@@ -1,7 +1,15 @@
 //gpu_set_zwriteenable(1);
 //gpu_set_ztestenable(1);
-//layer_force_draw_depth(1,0);
+//gpu_set_alphatestenable(1); //gamemaker's alpha testing is bipolar and if some object's depth is deemed Funny it'll fuck up everything half opaque
+layer_force_draw_depth(1,0);
 // Check init_setting for proper vars
+
+application_surface_draw_enable(0);
+
+//gpu_set_blendmode_ext(bm_src_alpha, bm_inv_dest_alpha);
+
+global.guisurface = noone;
+global.pausedsurface = noone;
 
 global.vars = {
 	playing : sx_nothing,

@@ -1,3 +1,4 @@
+draw_gui_set;
 if tr = 1
 	{
 		var po = "s_manny_talk"
@@ -89,3 +90,4 @@ draw_text(205+shadowoffset,178+shadowoffset+_y,name)
 draw_set_alpha(1)
 draw_text(18,198+_y,string_copy(text,1,count))
 draw_text(205,178+_y,name)
+draw_gui_exit;

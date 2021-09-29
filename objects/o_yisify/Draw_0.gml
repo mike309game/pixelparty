@@ -1,3 +1,4 @@
+draw_gui_set;
 if timer = 350 then Sound(sx_yisify,0)
 draw_sprite_ext(s_lnx,0,160,120,1,1,0,c_white,lnxfade)
 if timer > 50 && timer < 150 then lnxfade += 0.01
@@ -12,3 +13,4 @@ if timer >= 800
 		roomTrans(r_title,0,1)
 		global.vars.ignoreplayer = 1
 	}
+draw_gui_exit;

@@ -1,0 +1,1 @@
+gpu_set_blendmode_ext_sepalpha(src,dest,alphasrc,alphadest);

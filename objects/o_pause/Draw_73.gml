@@ -1,62 +1,61 @@
-surf = surface_create(320,240)
-surfapp = surface_create(320,240)
+surface_set_target(global.pausedsurface);
+
 draw_set_font(f_main)
 draw_set_halign(fa_center)
 draw_set_valign(fa_middle)
 draw_set_color(c_black)
 
 function drawMuns()
-	{
-						draw_set_halign(fa_left)
-						draw_set_valign(fa_top)
-						draw_set_color(c_white)
-						
-						draw_text(58,170,global.player.money)
-						
-						draw_set_color(c_black)
-						draw_set_halign(fa_center)
-						draw_set_valign(fa_middle)
-	}
+{
+	draw_set_halign(fa_left)
+	draw_set_valign(fa_top)
+	draw_set_color(c_white)
 
-
-if surface_exists(surf) // surface shit
-	{
-		
-		
-		surface_set_target(surf) // background and other shit
-			draw_sprite_tiled(s_pause_bg,0,bgX,bgY)
-		surface_reset_target()
-		
-		gpu_set_blendenable(0);
-		surface_set_target(surfapp)
-			draw_surface(application_surface,0,0)
-		surface_reset_target()
-		gpu_set_blendenable(1);
-
-		if (timer > 11 && tr != 2) then draw_surface_ext(surf,0,0,1,1,0,c_white,1) else if (timer >= 0 && tr = 2) then draw_surface_ext(surf,0,0,1,1,0,c_white,1)
-		if tr = 2 then draw_sprite_ext(s_pause_pause,0,pauseX,32,1,1,6,c_white,1)
-		
-		// Buttons
-				for(var i = 0; i < array_length(menu); i++)
-					{
-						if (timer > 11 && tr != 2)
-							{
-								draw_sprite_part(s_shop_ui,0,16,0,64,64,32,128) // gold counter
-						
-								drawMuns()
-							}
-						if (timer >= 0 && tr = 2)
-								{
-									draw_sprite_part(s_shop_ui,0,16,0,64,64,32,128) // gold counter
-							
-									drawMuns()
-								}
-					}
-		
-		// x4 y32 scale0.5 rot10
-		
-	}
+	draw_text(58,170,global.player.money)
 	
+	draw_set_color(c_black)
+	draw_set_halign(fa_center)
+	draw_set_valign(fa_middle)
+}
+
+//surface_reset_target()
+
+/*gpu_set_blendenable(0);
+surface_set_target(surfapp)
+	draw_surface(application_surface,0,0)
+surface_reset_target()
+gpu_set_blendenable(1);*/
+
+//???? what was the logic in this
+//if (timer > 11 && tr != 2) then draw_surface_ext(surf,0,0,1,1,0,c_white,1) else if (timer >= 0 && tr = 2) then draw_surface_ext(surf,0,0,1,1,0,c_white,1)
+
+//if((timer > 11 && tr != 2) || (timer >= 0 && tr = 2)) { //fine i guess ACTUALLY no this is useless lmfao
+draw_sprite_tiled(s_pause_bg,0,bgX,bgY);
+//}
+
+if tr = 2 then draw_sprite_ext(s_pause_pause,0,pauseX,32,1,1,6,c_white,1)
+
+// Buttons
+for(var i = 0; i < array_length(menu); i++)
+{
+	if (timer > 11 && tr != 2)
+	{
+		draw_sprite_part(s_shop_ui,0,16,0,64,64,32,128) // gold counter
+		
+		drawMuns()
+	}
+	if (timer >= 0 && tr = 2)
+	{
+		draw_sprite_part(s_shop_ui,0,16,0,64,64,32,128) // gold counter
+		
+		drawMuns()
+	}
+}
+
+// x4 y32 scale0.5 rot10
+
+
+//i'm not gonna *dare* even thinking of touching this
 switch mode
 	{
 		case 0: // pause menu
@@ -251,18 +250,19 @@ switch mode
 			}
 	}	
 	}
-	
-if surface_exists(surfapp)
-	{
-		gpu_set_blendenable(0);
-		if surS < 1 then draw_surface_ext(surfapp,surX - 4,surY-2,surS+0.02,surS+0.02,surR,c_black,1)
-		if surS < 1 then draw_surface_ext(surfapp,surX,surY,surS,surS,surR,c_white,1)
-		gpu_set_blendenable(1);
-		if tr <= 1 then draw_sprite_ext(s_pause_pause,0,pauseX,32,1,1,6,c_white,1)
-	}
 
-surface_free(surf)
-surface_free(surfapp)
+
+//draw app surf
+gpu_set_blendenable(0); //to not fuck up the honestary 1 tiles
+matrix_set(matrix_world, matrix_build(surX, surY, 0, 0, 0, surR, surS, surS, 1));
+draw_surface_ext(application_surface, -6, -5, 1.04, 1.04, 0, 0, 1);
+draw_surface_ext(application_surface, 0, 0, 1, 1, 0, c_white, 1);
+gpu_set_blendenable(1);
+draw_surface_ext(global.guisurface, 0, 0, 1, 1, 0, c_white, 1);
+matrix_set(matrix_world, matrix_build_identity());
+//if surS < 1 then draw_surface_ext(application_surface,surX - 4,surY-2,surS+0.02,surS+0.02,surR,c_black,1)
+//if surS < 1 then draw_surface_ext(application_surface,surX,surY,surS,surS,surR,c_white,1)
+if tr <= 1 then draw_sprite_ext(s_pause_pause,0,pauseX,32,1,1,6,c_white,1)
 
 draw_sprite_ext(s_fade_white,0,0,0,1,1,0,c_white,fade)
-
+surface_reset_target();
