@@ -159,6 +159,7 @@
     {"id":{"name":"mx_shop","path":"sounds/mx_shop/mx_shop.yy",},"order":6,},
     {"id":{"name":"s_shop_item_odd_key","path":"sprites/s_shop_item_odd_key/s_shop_item_odd_key.yy",},"order":3,},
     {"id":{"name":"o_npc_catbox","path":"objects/o_npc_catbox/o_npc_catbox.yy",},"order":7,},
+    {"id":{"name":"s_l2_bg","path":"sprites/s_l2_bg/s_l2_bg.yy",},"order":7,},
     {"id":{"name":"o_text","path":"objects/o_text/o_text.yy",},"order":4,},
     {"id":{"name":"s_npc_honstay","path":"sprites/s_npc_honstay/s_npc_honstay.yy",},"order":3,},
     {"id":{"name":"o_background","path":"objects/o_background/o_background.yy",},"order":2,},
