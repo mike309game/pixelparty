@@ -43,7 +43,7 @@ fn_export double imgui_step(double keycheck) {
 			return 1.0;*/
 			ImGui::CloseCurrentPopup();
 			ImGui::EndPopup();
-			return current_selected | (1 << 31);
+			return *(unsigned int*)&current_selected | (1 << 31); //naughty but go fuck yourself
 		}
 		if(ImGui::Button("oops fuck nevermind")) {
 			ImGui::CloseCurrentPopup();

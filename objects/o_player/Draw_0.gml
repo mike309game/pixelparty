@@ -9,6 +9,12 @@ if !global.vars.got_puzzle
 	
 	if !no_draw then draw_sprite_part(s_player,0,offset*48-48,floor(ani)*48-48,48,48,x,y) // DRAW PLAYER
 
+if pos
+{
+	draw_text(x+48,y,x)
+	draw_text(x+48,y+16,y)
+}
+
 //gui shit
 draw_gui_set;
 draw_rectangle_color(6+5,timer_y-16,6+5+dash_cooldown,timer_y,c_yellow,c_yellow,c_yellow,c_yellow,0)

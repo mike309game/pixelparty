@@ -173,6 +173,10 @@ if global.debug.debug_enabled
 				
 				if global.debug.noclip = 1 then show_debug_message("Noclip Enabled") else show_debug_message("Noclip Disabled") 
 			}
+		if keyboard_check_pressed(vk_tab)
+			{
+				pos ^= 1
+			}
 	}
 	
 if instance_exists(o_text)

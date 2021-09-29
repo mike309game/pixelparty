@@ -54,6 +54,11 @@ if tr = 1
 						po = "s_buxy_talk"
 						break;
 					}
+				case "dyiexy":
+					{
+						po = "s_dyiexy_talk"
+						break;
+					}
 				default:
 					{
 						po = "s_creepy_talk"

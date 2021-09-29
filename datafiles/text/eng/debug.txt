@@ -1,6 +1,6 @@
 l1
 NME debug
-@ Level 1
+@ Level 1 Entrance
 EXT
 
 l1el
@@ -10,12 +10,12 @@ EXT
 
 l2
 NME debug
-@ Level 2
+@ Level 2 Entrance
 EXT
 
 l3
 NME debug
-@ Level 3
+@ Level 3 Entrance
 EXT
 
 hoi
