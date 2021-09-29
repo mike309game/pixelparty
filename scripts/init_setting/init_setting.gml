@@ -5,7 +5,7 @@ global.debug = {
 	debug_enabled : 1,
 	noclip : 0,
 	auto_puzzle : 0,
-	build_type : "ps" // "ps" for webseries build / "pc" for actual computer build / "web" for newgrounds
+	build_type : "pc" // "ps" for webseries build / "pc" for actual computer build / "web" for newgrounds
 }
 
 global.setting = {

@@ -13,6 +13,8 @@ noclip = 0
 temphor = 0
 tempver = 0
 
+pos = 0
+
 hor = 0
 ver = 0
 
