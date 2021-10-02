@@ -1,8 +1,12 @@
 |handler test
 
 <wait for frames>#120;
-<text>@djfndjnfjsn;
-<wait for frames>#983845780;
+<start text processing>
+<text>@djfndjnfjsnA;
+<text>@hello again;
+<text>@from another command;
+<end text processing>
+
 <end processing>
 
 |EOF

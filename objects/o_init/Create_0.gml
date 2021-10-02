@@ -119,7 +119,7 @@ transalpha = 0
 depth = -999999999
 
 blendtester = noone;
-if(global.debug.debug_enabled) {
+if(global.debug.debug_enabled && os_type != os_operagx) {
 	//blendtester = instance_create_depth(0,0,-999999999,o_struggle);
 	instance_create_depth(0,0,0,o_mikedebug);
 }

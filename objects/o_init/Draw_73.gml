@@ -1,9 +1,11 @@
 draw_gui_set;
 #region Room Transition
 transalpha = clamp(transalpha,0,1)
+//show_debug_message(global.vars.roomgo);
 if instance_exists(o_player) || global.vars.ignoreplayer
 {
-	if room_get_name(global.vars.roomgo) !=  room_get_name(room)
+	//if room_get_name(global.vars.roomgo) !=  room_get_name(room) //OH MY GOD WHAT THE FUCK
+	if(global.vars.roomgo != room)
 		{
 			transalpha = lerp(transalpha,1,.1)
 			global.player.move = 0
@@ -28,17 +30,18 @@ with(blendtester) {
 	event_user(0);
 }*/
 
-window_set_caption(transalpha);
+//window_set_caption(transalpha);
 
-/*gpu_set_blendmode_ext(bm_one, bm_inv_src_alpha);
+//gpu_set_blendmode_ext(bm_one, bm_inv_src_alpha);
 
+/*gpu_set_colourwriteenable(1,1,1,0);
 switch global.vars.roomtr
 {
 	case 0:
 		{
 			//draw_sprite_ext(s_fade_white,0,0,0,1,1,0,c_white,transalpha)
 			draw_set_colour(c_white);
-			draw_set_alpha(transalpha);
+			draw_set_alpha(mouse_x / 320);
 			draw_rectangle(0,0,320,240,0);
 			draw_set_alpha(1);
 			draw_set_colour(c_white);
@@ -65,8 +68,9 @@ switch global.vars.roomtr
 			break;
 		}
 }
+gpu_set_colourwriteenable(1,1,1,1);*/
 
-gpu_set_blendmode_ext_sepalpha(bm_src_alpha, bm_inv_src_alpha, bm_src_alpha, bm_inv_src_alpha);*/
+//gpu_set_blendmode_ext_sepalpha(bm_src_alpha, bm_inv_src_alpha, bm_src_alpha, bm_inv_src_alpha);
 
 /*gpu_set_state(oldstate);
 ds_map_destroy(oldstate);*/

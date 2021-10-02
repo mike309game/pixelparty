@@ -134,7 +134,7 @@ if(!halted) {
 					halted = 1;*/
 					var text = ReadArgument();
 					with(myHandler) {
-						handlerText = text;
+						handlerText += text;
 						event_user(1);
 						show_debug_message(handlerText);
 					}
@@ -144,15 +144,15 @@ if(!halted) {
 					sectionName = ds_stack_pop(funcstack);
 					section = global.script_sections[? sectionName];
 					break;
-				case ScriptFunctionType.showdlg:
+				case ScriptFunctionType.startTextProcessing:
+					with(myHandler) {
+						event_user(2);
+					}
 					break;
-				case ScriptFunctionType.hidedlg:
-					break;
-				case ScriptFunctionType.textimmediate:
-					///TODO
-					/*var mytext = string(ReadArgument()); //i'll be kind and forgive you if you somehow put a number in there
-					ds_queue_enqueue(letterqueue,mytext);
-					event_perform(ev_alarm,1);*/
+				case ScriptFunctionType.endTextProcessing:
+					with(myHandler) {
+						event_user(3);
+					}
 					break;
 				default:
 					break;

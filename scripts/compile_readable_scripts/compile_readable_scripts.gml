@@ -21,10 +21,9 @@ enum ScriptFunctionType {
 	showMessage,
 	endProcessing,
 	text,
-	textimmediate,
 	returnToLastFunction,
-	showdlg,
-	hidedlg,
+	startTextProcessing,
+	endTextProcessing,
 }
 
 #macro scriptslocation "newscripts"
@@ -63,9 +62,8 @@ tscfuncmaps[? "show message"] = ScriptFunctionType.showMessage;
 tscfuncmaps[? "end processing"] = ScriptFunctionType.endProcessing;
 tscfuncmaps[? "store rgb in value"] = ScriptFunctionType.makeRgb;
 tscfuncmaps[? "text"] = ScriptFunctionType.text;
-tscfuncmaps[? "text immediate"] = ScriptFunctionType.textimmediate;
-tscfuncmaps[? "show dlgbox"] = ScriptFunctionType.showdlg;
-tscfuncmaps[? "hide dlgbox"] = ScriptFunctionType.hidedlg;
+tscfuncmaps[? "start text processing"] = ScriptFunctionType.startTextProcessing;
+tscfuncmaps[? "end text processing"] = ScriptFunctionType.endTextProcessing;
 #endregion
 var fname = file_find_first(working_directory + "/" + scriptslocation + "/*.txt",fa_directory);
 while(fname != "") { //compile all scripts in script directory
