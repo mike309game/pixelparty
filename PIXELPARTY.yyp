@@ -14,6 +14,7 @@
     {"id":{"name":"s_honestary_one","path":"sprites/s_honestary_one/s_honestary_one.yy",},"order":0,},
     {"id":{"name":"r_load","path":"rooms/r_load/r_load.yy",},"order":2,},
     {"id":{"name":"s_title_files","path":"sprites/s_title_files/s_title_files.yy",},"order":15,},
+    {"id":{"name":"o_sepmaker","path":"objects/o_sepmaker/o_sepmaker.yy",},"order":6,},
     {"id":{"name":"r_l1_shop","path":"rooms/r_l1_shop/r_l1_shop.yy",},"order":4,},
     {"id":{"name":"o_cloud_puff","path":"objects/o_cloud_puff/o_cloud_puff.yy",},"order":2,},
     {"id":{"name":"sx_text_sound","path":"sounds/sx_text_sound/sx_text_sound.yy",},"order":3,},

@@ -2,9 +2,11 @@
 
 <wait for frames>#120;
 <start text processing>
-<text>@djfndjnfjsnA;
-<text>@hello again;
-<text>@from another command;
+<text>@the quick brown fox jumps over the lazy dog;
+<text>@THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG;
+<text>@KSFJFNGNEHOJMHKMlnsdlgnmpermkgmpPMNSHMDMPKH-EKPQAMNPNmntpgmkhedmh;
+<text>@this USED to be lots of lag;
+<text>@!!!!????!?!?!!?!?!?llllllllliiiiiiiiiiillllllllllllllllliiiiiiiiiiillllllllllllllllliiiiiiiiiiillllllllllllllllliiiiiiiiiiillllllllllllllllliiiiiiiiiiillllllllllllllllliiiiiiiiiiillllllllllllllllliiiiiiiiiiillllllllllllllllliiiiiiiiiiillllllllllllllllliiiiiiiiiiillllllllllllllllliiiiiiiiiiillllllllllllllllliiiiiiiiiiillllllllllllllllliiiiiiiiiiillllllll;
 <end text processing>
 
 <end processing>

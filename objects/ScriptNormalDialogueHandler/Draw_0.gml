@@ -12,8 +12,20 @@ if(dialogueOpen) {
 	
 	for(var i = 1; i <= dialogueCharCount; i++) {
 		charCurrent = string_char_at(handlerText, i);
+		
+		var charSep = global.JaxFont_widths[?charCurrent];
+		if(charSep == undefined) {
+			charSep = 4;
+		}
+		
+		var charOffset = global.JaxFont_offsets[?charCurrent];
+		if(charOffset == undefined /*|| sep == 0*/) {
+			charOffset = 0;
+		}
+		
+		sep -= charOffset;
 		draw_text(18 + sep, 198 + spacing, charCurrent);
-		sep += string_width(charCurrent);
+		sep += charSep+charOffset+1;
 	}
 	
 	if(handlerWaitForInput) {

@@ -2,8 +2,8 @@ GLOBAL DEFINITION 1
 
 text stuff
 
-$text delay=#10				delay in frames between characters
+$text delay=#1				delay in frames between characters
 $text auto pause=#1			automatically wait for input when dialogue is done?
-$text auto clear=#0			automatically clear text?
+$text auto clear=#1			automatically clear text?
 
 |EOF
