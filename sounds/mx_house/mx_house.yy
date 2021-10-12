@@ -1,6 +1,6 @@
 {
   "compression": 0,
-  "volume": 0.99,
+  "volume": 1.0,
   "preload": false,
   "bitRate": 128,
   "sampleRate": 44100,
@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "mx_house.mp3",
-  "duration": 32.0523,
+  "duration": 32.05225,
   "parent": {
     "name": "music",
     "path": "folders/Sounds/music.yy",

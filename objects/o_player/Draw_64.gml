@@ -1,4 +1,4 @@
-draw_rectangle_color(6+5,timer_y-16,6+5+dash_cooldown,timer_y,c_yellow,c_yellow,c_yellow,c_yellow,0)
+draw_rectangle_color(6+5,timer_y-16,6+5+(1.3*dash_cooldown),timer_y,c_yellow,c_yellow,c_yellow,c_yellow,0)
 draw_sprite(s_cooldown_timer,0,8,timer_y)
 //draw_text(x,y,dash_cooldown)
 draw_sprite_ext(s_puzzle_collected_text,0,text_x,4+16,1,1,0,c_white,1)

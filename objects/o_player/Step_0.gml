@@ -1,8 +1,10 @@
 depth = -y
+
 switch global.debug.noclip
 	{
 		case 0:
 			{
+				
 				#region Dash shit
 				dash_spd = lerp(dash_spd,1,.03)
 				dash_cooldown-=0.5
@@ -24,12 +26,17 @@ switch global.debug.noclip
 				
 				if global.player.move
 					{
+						ahor = lerp(ahor,0,.2)
+						aver = lerp(aver,0,.2)
 						hor = keyboard_check(vk_right) - keyboard_check(vk_left)
 						ver = keyboard_check(vk_down) - keyboard_check(vk_up)
 						
 						if hor = 0 && ver = 0
 							{
 								idle_timer++
+							} else {
+								x = round(x)
+								y = round(y)
 							}
 						if idle_timer > 400
 							{
@@ -37,13 +44,19 @@ switch global.debug.noclip
 							} else {
 								text_x = lerp(text_x,-192,.08)
 							}
+							
+						if hor <> 0 || ver <> 0
+						{
+							ahor = hor
+							aver = ver
+						}
 						
 						#region dash stuff 2
 						// Dashing
 						if keyboard_check_pressed(ord("X")) && dash_cooldown <= 0 && (hor <> 0 || ver <> 0)
 							{
 								dash_spd = 4
-								dash_cooldown = 100
+								dash_cooldown = 80
 								temphor = hor
 								tempver = ver
 							}
@@ -85,20 +98,19 @@ switch global.debug.noclip
 							{
 								hor = 0
 								ver = 0
+								ahor = 0
+								aver = 0
 							}
 						
 					}
 					
-				// nasty check
-				
 				
 				if stuck_timer = 500 then room_restart()
 				
-				//var collides = tag_get_asset_ids("hitbox",asset_object)
-				
-				
-						if !place_meeting(x+(spd*dash_spd*hor),y,o_hitbox) then x += spd*dash_spd*hor
-						if !place_meeting(x,y+(spd*dash_spd*ver),o_hitbox) then y += spd*dash_spd*ver
+				if !place_meeting(x+(spd*dash_spd*ahor),y,o_hitbox) then x += spd*dash_spd*ahor
+				if !place_meeting(x,y+(spd*dash_spd*aver),o_hitbox) then y += spd*dash_spd*aver
+				if ahor = 0 then round(x)
+				if aver = 0 then round(y)
 				
 				#region Animation
 				
@@ -183,4 +195,6 @@ if instance_exists(o_text)
 	{
 		hor = 0
 		ver = 0
+		ahor = 0
+		aver = 0
 	}
