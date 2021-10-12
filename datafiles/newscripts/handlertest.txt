@@ -1,19 +1,8 @@
-"stringy stringy testie"
-"string test test teeeeeeeswdsssssttst""aniother tessseirhriejrij e e ee ;e ;e ;e e~;e;e e ´;e ´;e é ;""test with
-new
-li
-ne
-s
-
-s
-s
-"
 NEEDED zglobals1.txt
 |handler test
 
 <wait for frames>#120;
 <start text processing>
-<text>testicle,"testicle"
 <text>@the quick brown fox jumps over the lazy dog;
 <text>@THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG;
 <text>@KSFJFNGNEHOJMHKMlnsdlgnmpermkgmpPMNSHMDMPKH-EKPQAMNPNmntpgmkhedmh;

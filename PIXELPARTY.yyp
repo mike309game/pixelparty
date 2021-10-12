@@ -3,6 +3,7 @@
     {"id":{"name":"s_shop_desk","path":"sprites/s_shop_desk/s_shop_desk.yy",},"order":2,},
     {"id":{"name":"s_bully_mumble","path":"sprites/s_bully_mumble/s_bully_mumble.yy",},"order":6,},
     {"id":{"name":"o_sign","path":"objects/o_sign/o_sign.yy",},"order":5,},
+    {"id":{"name":"read_scripts","path":"scripts/read_scripts/read_scripts.yy",},"order":0,},
     {"id":{"name":"r_l2_r1","path":"rooms/r_l2_r1/r_l2_r1.yy",},"order":0,},
     {"id":{"name":"sx_yisify","path":"sounds/sx_yisify/sx_yisify.yy",},"order":4,},
     {"id":{"name":"t_l1_housing","path":"tilesets/t_l1_housing/t_l1_housing.yy",},"order":5,},
@@ -314,6 +315,7 @@
     {"CopyToMask":-1,"filePath":"datafiles/text/eng","resourceVersion":"1.0","name":"random.txt","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/newscripts","resourceVersion":"1.0","name":"handlertest.txt","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/text/eng","resourceVersion":"1.0","name":"demon.txt","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/newscripts","resourceVersion":"1.0","name":"zglobals1.txt","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/text/eng","resourceVersion":"1.0","name":"level2.txt","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
