@@ -22,7 +22,8 @@ if !view_enabled
 		view_camera[0] = camera_create_view(0, 0, 320, 240, 0, -1, 0, 0, 0, 0)
 		view_enabled = true
 		view_visible[0] = true
-		camera_apply(0)
+		//camera_apply(0) //huh?
+		camera_apply(view_camera[0]);
 	}
 
 #region Music Junk

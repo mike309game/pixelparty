@@ -32,58 +32,87 @@ enum ScriptFunctionType {
 global.script_sections = ds_map_create();
 global.script_variables = ds_map_create();
 global.script_labels = ds_map_create();
+global.script_compiled = ds_map_create();
+
+#region String -> Enum lookup tables
+global.__scriptTypeMap = ds_map_create();
+global.__scriptTypeMap[? "@"] = ScriptVariableType.string;
+global.__scriptTypeMap[? "#"] = ScriptVariableType.number;
+global.__scriptTypeMap[? "$"] = ScriptVariableType.global;
+
+global.__scriptCommandMap = ds_map_create();
+global.__scriptCommandMap[? "set value"] = ScriptFunctionType.setValue;
+global.__scriptCommandMap[? "add value"] = ScriptFunctionType.addValue;
+global.__scriptCommandMap[? "subtract value"] = ScriptFunctionType.subtractValue;
+global.__scriptCommandMap[? "and value"] = ScriptFunctionType.andValue;
+global.__scriptCommandMap[? "or value"] = ScriptFunctionType.orValue;
+global.__scriptCommandMap[? "xor value"] = ScriptFunctionType.xorValue;
+global.__scriptCommandMap[? "wait for frames"] = ScriptFunctionType.waitForFrames;
+global.__scriptCommandMap[? "wait"] = ScriptFunctionType.wait;
+global.__scriptCommandMap[? "restart processing"] = ScriptFunctionType.restartProcessing;
+global.__scriptCommandMap[? "jump to label"] = ScriptFunctionType.jumpToLabel;
+global.__scriptCommandMap[? "jump function"] = ScriptFunctionType.jumpToSection;
+global.__scriptCommandMap[? "show message"] = ScriptFunctionType.showMessage;
+global.__scriptCommandMap[? "end processing"] = ScriptFunctionType.endProcessing;
+global.__scriptCommandMap[? "store rgb in value"] = ScriptFunctionType.makeRgb;
+global.__scriptCommandMap[? "text"] = ScriptFunctionType.text;
+global.__scriptCommandMap[? "start text processing"] = ScriptFunctionType.startTextProcessing;
+global.__scriptCommandMap[? "end text processing"] = ScriptFunctionType.endTextProcessing;
+#endregion
 
 function ScriptSysMessage(arg) {
 	gml_pragma("forceinline");
 	show_debug_message("Script System: " + arg);
 }
 
+function ScriptSysWarning(arg) {
+	gml_pragma("forceinline");
+	ScriptSysMessage("Warning: " + arg);
+}
 
 ScriptSysMessage("Compiling scripts");
-#region String -> Enum lookup tables
-var tsctypemap = ds_map_create();
-tsctypemap[? "@"] = ScriptVariableType.string;
-tsctypemap[? "#"] = ScriptVariableType.number;
-tsctypemap[? "$"] = ScriptVariableType.global;
 
-var tscfuncmaps = ds_map_create();
-tscfuncmaps[? "set value"] = ScriptFunctionType.setValue;
-tscfuncmaps[? "add value"] = ScriptFunctionType.addValue;
-tscfuncmaps[? "subtract value"] = ScriptFunctionType.subtractValue;
-tscfuncmaps[? "and value"] = ScriptFunctionType.andValue;
-tscfuncmaps[? "or value"] = ScriptFunctionType.orValue;
-tscfuncmaps[? "xor value"] = ScriptFunctionType.xorValue;
-tscfuncmaps[? "wait for frames"] = ScriptFunctionType.waitForFrames;
-tscfuncmaps[? "wait"] = ScriptFunctionType.wait;
-tscfuncmaps[? "restart processing"] = ScriptFunctionType.restartProcessing;
-tscfuncmaps[? "jump to label"] = ScriptFunctionType.jumpToLabel;
-tscfuncmaps[? "jump function"] = ScriptFunctionType.jumpToSection;
-tscfuncmaps[? "show message"] = ScriptFunctionType.showMessage;
-tscfuncmaps[? "end processing"] = ScriptFunctionType.endProcessing;
-tscfuncmaps[? "store rgb in value"] = ScriptFunctionType.makeRgb;
-tscfuncmaps[? "text"] = ScriptFunctionType.text;
-tscfuncmaps[? "start text processing"] = ScriptFunctionType.startTextProcessing;
-tscfuncmaps[? "end text processing"] = ScriptFunctionType.endTextProcessing;
-#endregion
-var fname = file_find_first(working_directory + "/" + scriptslocation + "/*.txt",fa_directory);
-while(fname != "") { //compile all scripts in script directory
+function CompileScriptReadable(fname) {
+	//gml_pragma("forceinline"); //bad idea? VERY BAD IDEA LOL it'd infinitely recurse because of the needed check shit
 	ScriptSysMessage("Processing " + fname);
-	//load file into buffer
+	if(global.script_compiled[?fname] != undefined) {
+		ScriptSysMessage(fname + " has already been processed.");
+		exit;
+	}
+	var char; //this'll be both strings and ints
 	var fbuffer = buffer_load(working_directory + "/" + scriptslocation + "/" + fname);
 	var fstring = buffer_read(fbuffer,buffer_text);
 	buffer_delete(fbuffer); //free buffer
 	var fpos = 0; //pointer in file TODO: does this respect utf8 )yes it seems to
+	if(/*string_lower*/(string_copy(fstring, 1, 6)) == "NEEDED") { //check if needed files exist then if they are compiled
+		fpos = 7; //should be on the space between NEEDED and the first dependency
+		var neededFname = "";
+		//while(string_ord_at(fstring, ++fpos) != $0a) { //while character isn't a newline
+		while(1) {
+			char = string_char_at(fstring, ++fpos);
+			if(char == " " || char == "\n") { //if space is found it means we got the needed fname
+				if(global.script_compiled[?neededFname] == undefined /*&& neededFname != "\n" && neededFname != " "*/) {
+					ScriptSysMessage(fname + " requires file " + neededFname + " which hasn't been processed yet, processing.");
+					CompileScriptReadable(neededFname);
+				}
+				if(char == "\n") then break;
+				neededFname = "";
+			} else {
+				neededFname += char;
+			}
+		}
+	}
 	while(fpos <= string_length(fstring)) { //file reading loop
-		var char = string_char_at(fstring,++fpos);
+		char = string_char_at(fstring,++fpos);
 		//begin everything
-		if(char == "$") { //found a global variable
+		if(char == "$") { //found a global variable (outside section)
 			var globalname = "";
 			while(string_ord_at(fstring,++fpos) != 61) { //stop when we're at a =
 				globalname += string_char_at(fstring,fpos);
 			}
 			globalname = string_lower(globalname); //no case sensitvity to make things easier, or not idk
 			var thevalue = "";
-			var kind = tsctypemap[? string_char_at(fstring,++fpos)]; //get what kind of value we're setting to the global value
+			var kind = global.__scriptTypeMap[? string_char_at(fstring,++fpos)]; //get what kind of value we're setting to the global value
 			if(kind == undefined) { //dumb fuck
 				show_error("Script " + fname + " has defined global " + globalname + " but has not given it the type identifier.",1);
 			}
@@ -115,8 +144,15 @@ while(fname != "") { //compile all scripts in script directory
 				sectionname += string_char_at(fstring,fpos);
 			} //hopefully got the section name.
 			if(sectionname == "EOF") { //end of file
-				fname = file_find_next();
-				break;
+				//fname = file_find_next();
+				//break; //break out of file processing, should go to the last line of this func
+				
+				//i'm actually not sure wether exit or break would be better but i got a feeling exit is better because
+				//it'd immediately quit this function's scopes and not pop all context stacks n shit
+				
+				global.script_compiled[?fname] = 1; //the value doesn't matter, my code checks wether the key just exists
+				ScriptSysMessage("Done processing " + fname);
+				exit; //exit out of script compile function
 			}
 			var section = ds_list_create(); //create list of commands to be filled
 			var currentcommand = -1;
@@ -131,18 +167,18 @@ while(fname != "") { //compile all scripts in script directory
 						functionname += string_char_at(fstring,fpos);
 					}
 					islabelfunc = functionname == "label";
-					uhoh = !ds_map_exists(tscfuncmaps,functionname) && !islabelfunc;
+					uhoh = !ds_map_exists(global.__scriptCommandMap,functionname) && !islabelfunc;
 					if(uhoh) {
 						ScriptSysMessage(sectionname + " has unknown command " + functionname + ", skipping it");
 					} else if(!islabelfunc){
 						commandargs = ds_list_create();
-						commandargs[|0] = tscfuncmaps[? functionname];
+						commandargs[|0] = global.__scriptCommandMap[? functionname];
 						currentcommand++;
 					}
 					char = string_ord_at(fstring,++fpos);
 					if(char != $0A && !uhoh) {//if we've got arguments
 						while(char != $0A) {//loop to store arguments
-							var kind = tsctypemap[? string_char_at(fstring,fpos)]; //get what kind of value the argument is
+							var kind = global.__scriptTypeMap[? string_char_at(fstring,fpos)]; //get what kind of value the argument is
 							if(kind == undefined) { //dumb fuck
 								show_error("Script " + fname + " in section " + sectionname + " has provided an argument with no type identifier to a command.",1);
 							}
@@ -184,6 +220,11 @@ while(fname != "") { //compile all scripts in script directory
 		}
 	}
 }
-ds_map_destroy(tsctypemap);
-ds_map_destroy(tscfuncmaps);
+
+var char;
+var fname = file_find_first(working_directory + "/" + scriptslocation + "/*.txt",fa_directory);
+while(fname != "") { //compile all scripts in script directory
+	CompileScriptReadable(fname);
+	fname = file_find_next();
+}
 //show_message("i'm outta here");

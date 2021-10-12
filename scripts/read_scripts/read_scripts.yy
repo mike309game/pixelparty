@@ -6,7 +6,7 @@
     "path": "folders/mike/script system.yy",
   },
   "resourceVersion": "1.0",
-  "name": "compile_readable_scripts",
+  "name": "read_scripts",
   "tags": [],
   "resourceType": "GMScript",
 }

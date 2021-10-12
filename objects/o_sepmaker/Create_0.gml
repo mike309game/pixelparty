@@ -8,7 +8,6 @@ var charactersLen = array_length(characters);
 
 var surf = surface_create(64,64);
 
-var i = 0;
 var char = "";
 draw_set_font(f_main);
 for(var i = 0; i < charactersLen; i++) {
