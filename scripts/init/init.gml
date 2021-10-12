@@ -59,6 +59,7 @@ global.gameevent[? "h2_e1"] = 0
 global.gameevent[? "shopfirst"] = 0
 global.gameevent[? "l1_e1"] = 0
 global.gameevent[? "l1_e2"] = 0
+global.gameevent[? "l2_e1"] = 0
 
 
 global.playerinv = array_create(6,"")

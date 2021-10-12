@@ -31,3 +31,7 @@ EVT wait 50 auto
 @ bonga
 EVT pspawn 999 216 180
 EXT
+
+test3
+EVT l2_mg
+EXT

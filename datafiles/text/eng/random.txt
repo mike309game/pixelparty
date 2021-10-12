@@ -20,31 +20,29 @@ EXT
 
 buxy2
 NME Buxy
-@ How
-@ Did
-@ You
-@ Get
-@ Here?
+PAL 1
+EVT gamecrash
+@ /
 EXT
 
 glitch
 NME 
-@
-@
-@ &%!)%(!)))_""""""#"Uhm, mayb#e if you:::::::::::::::::::::::::::::::::::::::::::
+@ 
+@ 
+@ &%!)%(!)))_""""""#"%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 @ .
 @ .
 @ .
-@
+@ 
 wait 500 auto
-TSPD 5
+TSPD 40
 @ ERROR: level1-room9 / unable to be loaded # check with tool may be corrupt.
 @ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @ $999x9 xxxx xx9 xxx999x x9x99x x9xx99x
-@
-@
-@
-@
-@
+@ 
+@ 
+@ 
+@ 
+@ 
 @ M
 EXT
