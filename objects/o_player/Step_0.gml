@@ -33,9 +33,9 @@ switch global.debug.noclip
 							}
 						if idle_timer > 400
 							{
-								text_x = lerp(text_x,4+36,.05)
+								text_x = lerp(text_x,4+36,.08)
 							} else {
-								text_x = lerp(text_x,-192,.05)
+								text_x = lerp(text_x,-192,.08)
 							}
 						
 						#region dash stuff 2

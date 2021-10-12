@@ -1,0 +1,8 @@
+fish1
+NME Ricky
+@ hey u cant go through
+NME Manny
+@ dam.,.,..
+EVT delbox 1
+EVT event l2_e1
+EXT

@@ -106,6 +106,31 @@ function findText()
 																		}
 																	break;
 																}
+															case "gamecrash":
+																{
+																	with(obj)
+																		{
+																			event = "gamecrash"
+																		}
+																	break;
+																}
+															case "l2_mg":
+																{
+																	with(obj)
+																		{
+																			event = "l2_mg"
+																		}
+																	break;
+																}
+															case "delbox":
+																{
+																	with(obj)
+																		{
+																			event = "delbox"
+																			data[0] = int64(ds_list_find_value(global.evts,1))
+																		}
+																	break;
+																}
 														}
 												} else {
 													wait = int64(ds_list_find_value(global.evts,1))

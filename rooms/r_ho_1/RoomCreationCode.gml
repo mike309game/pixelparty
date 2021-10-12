@@ -6,5 +6,5 @@ if !ds_map_find_value(global.gameevent,"h1_e1")
 			{
 				show = "h1"
 			}
-		global.gameevent[? "hon1"] = 1
+		global.gameevent[? "h1_e1"] = 1
 	}
