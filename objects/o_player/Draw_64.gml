@@ -16,3 +16,5 @@ draw_sprite_ext(s_puzzle_collected,0,-4,4,1,1,0,c_white,1)
 
 
 
+
+

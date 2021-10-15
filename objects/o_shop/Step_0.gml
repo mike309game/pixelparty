@@ -57,6 +57,12 @@ switch menuMode
 																	roomTrans(r_l1_r5,2,0)
 																	break;
 																}
+															case "l2":
+																{
+																	global.vars.ignoreplayer = 1
+																	roomTrans(r_l2_r4,1,0)
+																	break;
+																}
 														}
 												}
 											break;

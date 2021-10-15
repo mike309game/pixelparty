@@ -4,7 +4,6 @@ switch global.debug.noclip
 	{
 		case 0:
 			{
-				
 				#region Dash shit
 				dash_spd = lerp(dash_spd,1,.03)
 				dash_cooldown-=0.5
@@ -107,10 +106,10 @@ switch global.debug.noclip
 				
 				if stuck_timer = 500 then room_restart()
 				
-				if !place_meeting(x+(spd*dash_spd*ahor),y,o_hitbox) then x += spd*dash_spd*ahor
-				if !place_meeting(x,y+(spd*dash_spd*aver),o_hitbox) then y += spd*dash_spd*aver
-				if ahor = 0 then round(x)
-				if aver = 0 then round(y)
+				if !place_meeting(x+(spd*dash_spd*ahor),y,o_hitbox) then x += spd*dash_spd*ahor else ahor = 0
+				if !place_meeting(x,y+(spd*dash_spd*aver),o_hitbox) then y += spd*dash_spd*aver else aver = 0
+				if ahor = 0 then x = round(x)
+				if aver = 0 then y = round(y)
 				
 				#region Animation
 				

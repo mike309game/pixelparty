@@ -1,0 +1,1 @@
+if ds_map_find_value(global.gameevent,"l2_e1") then image_index = 1 else image_index = 0
