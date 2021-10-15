@@ -63,6 +63,27 @@ switch string_copy(room_get_name(room),3,2)
 				
 				break;
 			}
+		case "l2":
+			{
+				
+				for(var i = 0; i < 3; i++)
+					{
+						draw_text(44+((i+1)*107-107),200,string_upper(ds_map_find_value(global.shop_item_name,global.shop_start_tables.l2[i])) ) //item names
+						draw_sprite(asset_get_index("s_shop_item_"+global.shop_start_tables.l2[i]),0,5+((i+1)*107-107),197) // item sprites
+						
+						
+						if ds_map_find_value(global.shop_item_price,global.shop_start_tables.l2[i]) > 0 // Draw Price if greater than 0
+							{
+								draw_text(65+((i+1)*107-107),218,string_upper(ds_map_find_value(global.shop_item_price,global.shop_start_tables.l2[i]) ) ) // item price
+							}
+						if ds_map_find_value(global.shop_item_price,global.shop_start_tables.l2[i]) = 0 // Draw FREE if price is 0
+							{
+								draw_text(65+((i+1)*107-107),218,"FREE!") // item price
+							}
+					}
+				
+				break;
+			}
 	}
 
 

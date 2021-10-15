@@ -13,7 +13,7 @@ function save_init()
 				ini_open(working_directory+ "pxpa_save.ini")
 				ini_write_string("ex","ex","1")
 				ini_close();
-				init()
+				//init() //no
 			}
 	}
 

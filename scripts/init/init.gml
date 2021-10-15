@@ -33,7 +33,8 @@ global.player = {
 
 global.shop_start_tables =
 	{
-		l1 : ["wheat","s_boots1","odd_key"]
+		l1 : ["wheat","s_boots1","odd_key"],
+		l2 : ["nothing","nothing","nothing"]
 	}
 
 global.shop_item_price = ds_map_create()
@@ -56,7 +57,7 @@ global.gameevent = ds_map_create()
 global.gameevent[? "de_e1"] = 0
 global.gameevent[? "h1_e1"] = 0
 global.gameevent[? "h2_e1"] = 0
-global.gameevent[? "shopfirst"] = 0
+global.gameevent[? "shopfirst"] = 1
 global.gameevent[? "l1_e1"] = 0
 global.gameevent[? "l1_e2"] = 0
 global.gameevent[? "l2_e1"] = 0

@@ -1,6 +1,6 @@
 {
   "compression": 0,
-  "volume": 1.0,
+  "volume": 0.2,
   "preload": false,
   "bitRate": 128,
   "sampleRate": 44100,
@@ -10,14 +10,14 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "mx_house.mp3",
-  "duration": 32.05225,
+  "soundFile": "sx_HELLO_DECOMPILER.mp3",
+  "duration": 324.440826,
   "parent": {
-    "name": "music",
-    "path": "folders/Sounds/music.yy",
+    "name": "sound",
+    "path": "folders/Sounds/sound.yy",
   },
   "resourceVersion": "1.0",
-  "name": "mx_house",
+  "name": "sx_HELLO_DECOMPILER",
   "tags": [],
   "resourceType": "GMSound",
 }
