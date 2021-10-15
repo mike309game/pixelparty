@@ -5,3 +5,4 @@ event_inherited();
 dialogueOpen = 0;
 dialogueCharCount = 0;
 dialogueCanProgress = 1;
+dialogueSkip = 0; //pressed x?

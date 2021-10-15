@@ -11,7 +11,7 @@ if !instance_exists(o_pause)
 	{
 		if keyboard_check_pressed(vk_enter) && global.player.move && instance_exists(o_player)
 			{
-				instance_create_depth(0,0,0,o_pause)
+				//instance_create_depth(0,0,0,o_pause)
 				//show_message("create")
 			}
 	}
