@@ -35,10 +35,10 @@ global.script_labels = ds_map_create();
 global.script_compiled = ds_map_create();
 
 #region String -> Enum lookup tables
-global.__scriptTypeMap = ds_map_create();
-global.__scriptTypeMap[? "@"] = ScriptVariableType.string;
-global.__scriptTypeMap[? "#"] = ScriptVariableType.number;
-global.__scriptTypeMap[? "$"] = ScriptVariableType.global;
+global.scriptTypeMap = ds_map_create();
+global.scriptTypeMap[? "@"] = ScriptVariableType.string;
+global.scriptTypeMap[? "#"] = ScriptVariableType.number;
+global.scriptTypeMap[? "$"] = ScriptVariableType.global;
 
 global.__scriptCommandMap = ds_map_create();
 global.__scriptCommandMap[? "set value"] = ScriptFunctionType.setValue;
@@ -71,6 +71,10 @@ function ScriptSysWarning(arg) {
 }
 
 ScriptSysMessage("Compiling scripts");
+
+function AddCommandToSection(section, command, args) { //args is an array
+	
+}
 
 function CompileScriptReadable(fname) {
 	//gml_pragma("forceinline"); //bad idea? VERY BAD IDEA LOL it'd infinitely recurse because of the needed check shit
@@ -112,7 +116,7 @@ function CompileScriptReadable(fname) {
 			}
 			globalname = string_lower(globalname); //no case sensitvity to make things easier, or not idk
 			var thevalue = "";
-			var kind = global.__scriptTypeMap[? string_char_at(fstring,++fpos)]; //get what kind of value we're setting to the global value
+			var kind = global.scriptTypeMap[? string_char_at(fstring,++fpos)]; //get what kind of value we're setting to the global value
 			if(kind == undefined) { //dumb fuck
 				show_error("Script " + fname + " has defined global " + globalname + " but has not given it the type identifier.",1);
 			}
@@ -178,7 +182,7 @@ function CompileScriptReadable(fname) {
 					char = string_ord_at(fstring,++fpos);
 					if(char != $0A && !uhoh) {//if we've got arguments
 						while(char != $0A) {//loop to store arguments
-							var kind = global.__scriptTypeMap[? string_char_at(fstring,fpos)]; //get what kind of value the argument is
+							var kind = global.scriptTypeMap[? string_char_at(fstring,fpos)]; //get what kind of value the argument is
 							if(kind == undefined) { //dumb fuck
 								show_error("Script " + fname + " in section " + sectionname + " has provided an argument with no type identifier to a command.",1);
 							}
