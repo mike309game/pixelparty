@@ -6,6 +6,4 @@ sectionName = "";					//Name of the section being processed.
 myHandler = noone;					//This interpreter's handler for special events like dialogue.
 
 //these will likely be removed because my smooth brain thought these were a good idea
-letterqueue = ds_queue_create();
-dialoguer = noone;
 funcstack = ds_stack_create();

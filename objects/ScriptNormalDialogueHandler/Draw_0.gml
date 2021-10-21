@@ -1,7 +1,7 @@
 // Inherit the parent event
 event_inherited();
 
-if(dialogueOpen) {
+if(handlerProcessText) {
 	draw_gui_set;
 	draw_sprite(s_textbox_bright, 0, 0, 240-80); //draw textbox sprite
 	
@@ -11,7 +11,8 @@ if(dialogueOpen) {
 	var charCurrent;
 	
 	draw_set_colour(0);
-	for(var i = 1; i < dialogueCharCount; i++) {
+	fmtstring_draw(18, 198, typewriter.letterList, 0, typewriter.characterCount);
+	/*for(var i = 1; i < dialogueCharCount; i++) {
 		//text commands (shake, colour, speed) only have one argument (MIGHT BE CHANGED LATER IDK)
 		//this is a while so commands can be right next to each other
 		while(string_char_at(handlerText, i) == "\\") { //character is command identifier?
@@ -38,20 +39,21 @@ if(dialogueOpen) {
 		
 		charCurrent = string_char_at(handlerText, i);
 		
-		var charSep = global.JaxFont_widths[?charCurrent];
+		var charSep = global.JaxFont_widths[?ord(charCurrent)];
 		if(charSep == undefined) {
 			charSep = 4;
 		}
 		
-		var charOffset = global.JaxFont_offsets[?charCurrent];
-		if(charOffset == undefined /*|| sep == 0*/) {
+		var charOffset = global.JaxFont_offsets[?ord(charCurrent)];
+		if(charOffset == undefined) {
 			charOffset = 0;
 		}
 		
 		sep -= charOffset;
 		draw_text(18 + sep, 198 + spacing, charCurrent);
 		sep += charSep+charOffset+1;
-	}
+		draw_point_colour(18,198,c_aqua);
+	}*/
 	
 	if(handlerWaitForInput) {
 		draw_sprite(s_psxbuttons_frames, 0, 288, 225);

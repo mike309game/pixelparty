@@ -1,0 +1,2 @@
+typewriter.Cleanup();
+delete typewriter;

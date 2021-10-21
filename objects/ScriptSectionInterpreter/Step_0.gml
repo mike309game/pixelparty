@@ -136,7 +136,7 @@ if(!halted) {
 					with(myHandler) {
 						handlerText += text;
 						event_user(1);
-						show_debug_message(handlerText);
+						//show_debug_message(handlerText);
 					}
 					break;
 				case ScriptFunctionType.returnToLastFunction:

@@ -16,7 +16,7 @@ for(var i = 0; i < charactersLen; i++) {
 	draw_clear_alpha(0,0);
 	draw_text(0,0,char);
 	surface_reset_target();
-	surface_save(surf, "C:\\fontshit\\" + string(i) + ".PNG");
+	//surface_save(surf, "C:\\fontshit\\" + string(i) + ".PNG");
 	
 	var surfbuff = buffer_create(4*64*64, buffer_fixed, 1);
 	buffer_get_surface(surfbuff, surf, 0);
@@ -32,13 +32,13 @@ for(var i = 0; i < charactersLen; i++) {
 				if(!foundoffset) {
 					foundoffset = 1;
 					offset = xx;
-					show_debug_message("global.FONTNAME_offsets[?\"" + char + "\"]=" + string(offset) + ";");
+					show_debug_message("global.FONTNAME_offsets[?" + string(ord(char)) + "]=" + string(offset) + ";");
 				}
 				gotpixels = 1;
 			}
 		}
 		if(!gotpixels && foundoffset) {
-			show_debug_message("global.FONTNAME_widths[?\"" + char + "\"]=" + string(xx-offset) + ";");
+			show_debug_message("global.FONTNAME_widths[?" + string(ord(char)) + "]=" + string(xx-offset) + ";");
 			break;
 		}
 	}
