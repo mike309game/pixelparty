@@ -20,6 +20,7 @@ global.player = {
 	area : "bright",
 	puzzle : 0,
 	money : 0,
+	dir : 0,
 	bootlvl : 0
 }
 

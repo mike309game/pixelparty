@@ -194,6 +194,7 @@
     {"id":{"name":"o_npc_fish","path":"objects/o_npc_fish/o_npc_fish.yy",},"order":10,},
     {"id":{"name":"s_title_logo","path":"sprites/s_title_logo/s_title_logo.yy",},"order":1,},
     {"id":{"name":"r_l2_shop","path":"rooms/r_l2_shop/r_l2_shop.yy",},"order":6,},
+    {"id":{"name":"r_l2_r7","path":"rooms/r_l2_r7/r_l2_r7.yy",},"order":7,},
     {"id":{"name":"o_level2_fishing","path":"objects/o_level2_fishing/o_level2_fishing.yy",},"order":1,},
     {"id":{"name":"s_honload","path":"sprites/s_honload/s_honload.yy",},"order":20,},
     {"id":{"name":"sx_pause_quit","path":"sounds/sx_pause_quit/sx_pause_quit.yy",},"order":8,},
@@ -249,6 +250,7 @@
     {"roomId":{"name":"r_l2_r5","path":"rooms/r_l2_r5/r_l2_r5.yy",},},
     {"roomId":{"name":"r_l2_r6","path":"rooms/r_l2_r6/r_l2_r6.yy",},},
     {"roomId":{"name":"r_l2_shop","path":"rooms/r_l2_shop/r_l2_shop.yy",},},
+    {"roomId":{"name":"r_l2_r7","path":"rooms/r_l2_r7/r_l2_r7.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":1,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},

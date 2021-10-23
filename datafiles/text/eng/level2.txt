@@ -1,8 +1,17 @@
 fish1
 NME Ricky
-@ hey u cant go through
+@ Hey! What do you think you're doing?
 NME Manny
-@ dam.,.,..
+@ uh
+@ going through the gate
+NME Ricky
+@ Not on my watch! Pay up bub.
+NME Manny
+@ Nah, I'm good.
+NME Ricky
+@ If you take another step I will Literally #beat you to a pulp
+NME Manny
+@ 
 EVT delbox 1
 EVT event l2_e1
 EXT
