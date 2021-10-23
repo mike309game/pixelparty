@@ -30,3 +30,7 @@ ds_map_destroy(global.script_compiled);
 ds_map_destroy(global.script_variables);
 ds_map_destroy(global.scriptTypeMap);
 ds_map_destroy(global.__scriptCommandMap);
+
+delete global.player
+delete global.vars
+delete global.shop_start_tables
