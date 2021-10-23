@@ -3,9 +3,12 @@
 /// @arg [skippable]
 
 function Typewritter(_skippable = 1) constructor {
+	text = "";
+	textLen = 0;
+	textPointer = 0;
+	
 	letterList = ds_list_create();
-	letterListLength = 0;
-	characterCount = -1;
+	letterListLen = 0;
 	canAdvance = 1;
 	advanceCountdown = -1;
 	skippable = _skippable;
@@ -16,7 +19,7 @@ function Typewritter(_skippable = 1) constructor {
 		if(--advanceCountdown == 0) {
 			canAdvance = 1;
 		}
-		if(characterCount >= letterListLength) {
+		if(textPointer >= textLen) {
 			canAdvance = 0;
 			return 1;
 		}
@@ -24,13 +27,9 @@ function Typewritter(_skippable = 1) constructor {
 			skipText = 1;
 			canAdvance = 1; //force advancing because advancing only happens when the timer is done
 		}
-		while(canAdvance && characterCount < letterListLength) {
-		//for(;characterCount < letterListLength && canAdvance; characterCount++) {
-			
-			while(letterList[|characterCount++] == 12121212) {
-				characterCount += 3;
-			}
-			//show_debug_message("step: ord=" + string(letterList[|characterCount]) + " chr=" + chr(letterList[|characterCount]));
+		while(canAdvance && textPointer < textLen) {
+			textPointer = AdvanceLetterList(letterList, text, textPointer);
+			letterListLen++;
 			
 			var textDelay = skipText ? 0 : global.script_variables[? "text delay"];
 			if(textDelay != 0) {
@@ -44,6 +43,7 @@ function Typewritter(_skippable = 1) constructor {
 	}
 	static Cleanup = function() {
 		gml_pragma("forceinline");
+		ClearLetterList(letterList);
 		ds_list_destroy(letterList);
 	}
 }

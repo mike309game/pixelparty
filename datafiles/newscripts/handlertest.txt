@@ -4,8 +4,8 @@ NEEDED zglobals1.txt
 <wait for frames>#120;
 <start text processing>
 <text>@chungu;
-<text>@\colour#123123\chungu;
-<text>@test\colour#4484541\blah \colour#5515844\blah \colour#121345\blah \colour#78787\blah;
+<text>@\ereset#0\\rainbw#0\\hshake#1\\hshamp#4\weeeeeeeeeeeeeeeeeeee \ereset#0\\colour#0\No more.;
+<text>@\ereset#0\test\colour#4484541\blah \colour#5515844\blah \colour#121345\blah \colour#78787\blah;
 <text>@testblah blah blah blah;
 <text>@test\colour#4484541\blah \colour#5515844\blah \colour#121345\blah \colour#78787\blah;
 <text>@testblah blah blah blah;

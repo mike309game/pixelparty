@@ -134,7 +134,7 @@ if(!halted) {
 					halted = 1;*/
 					var text = ReadArgument();
 					with(myHandler) {
-						handlerText += text;
+						handlerText = text;
 						event_user(1);
 						//show_debug_message(handlerText);
 					}

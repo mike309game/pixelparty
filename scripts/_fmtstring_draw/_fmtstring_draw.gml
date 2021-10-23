@@ -33,79 +33,171 @@ enum eTextFlag {
 	vertShake = 1 << 0,
 	horzShake = 1 << 1,
 	randomShake = 1 << 2,
-	rainbow = 1 << 3
+	rainbow = 1 << 3,
+	colourChanging = 1 << 4
 }
 
-///convert formatted string to ds list for optimized access for the formatted string renderer
-function fmtstring_add_to_ord_dslist(list, string){
-	var stringLen = string_length(string);
-	var char = int64(0); //hopefully saves some convs in the bit stuff below
-	for(var i = 1; i <= stringLen; i++) {
-		char = string_ord_at(string, i);
-		while(char == eLetter.backslash) { //process command
-			ds_list_add(list, 12121212); //tell drawer that there's a command
-			var cmd = string_lower(string_copy(string, ++i, COMMANDSIZE)); //get command
-			i += COMMANDSIZE; //skip to arg type
-			ds_list_add(list, string_ord_at(string, i) == eLetter.dollar); //tell if arg is value
-			var arg = "";
-			while(string_ord_at(string, ++i) != eLetter.backslash) {
-				arg += string_char_at(string, i);
-			}
-			ds_list_add(list, arg);
-			switch(cmd) {
-				case "colour":
-					ds_list_add(list, eTextCommand.colour);
-					break;
-				default:
-					show_error(string + " UNIMPLEMENTED", 0);
-					break;
-			}
-			char = string_ord_at(string, ++i); //out of terminator
-		}
-		ds_list_add(list, char);
+function Letter(
+	//common
+	_char, _flags, _txptrdiff, _colour = 0, _alpha = 1,
+	//random shake
+	_rshake_amp = 0,
+	//vertical shake
+	_vshake_amp = 0, _vshake_freq = 0,
+	//horizontal shake
+	_hshake_amp = 0, _hshake_freq = 0
+) constructor {
+	x = 0; //x offset (for shake)
+	y = 0; //y offset (for shake)
+	char = _char;
+	sep = global.JaxFont_widths[?char];
+	if(sep == undefined) {
+		sep = 4;
 	}
-	return 0;
+	offset = global.JaxFont_offsets[?char];
+	if(offset == undefined) {
+		offset = 0;
+	}
+	textPointerDifference = _txptrdiff;
+	flags = _flags;
+	if(flags & eTextFlag.colourChanging) {
+		colour = _colour;
+		alpha = _alpha;
+	}
+	if(flags & eTextFlag.horzShake) {
+		hShakeAmp = _hshake_amp;
+		hShakeFreq = _hshake_freq;
+	}
+	if(flags & eTextFlag.vertShake) {
+		vShakeAmp = _vshake_amp;
+		vShakeFreq = _vshake_freq;
+	}
+	if(flags & eTextFlag.randomShake) {
+		rShakeAmp = _rshake_amp;
+	}
+	static Update = function(iterator) {
+		if(flags & eTextFlag.randomShake) {
+			x = irandom_range(0, rShakeAmp);
+			y = irandom_range(0, rShakeAmp);
+		} else if(flags & eTextFlag.horzShake) {
+			x = cos((current_time / 250 + iterator/2)) * 2;
+		}
+	}
 }
 
-function fmtstring_draw(xx, yy, charList, start, count) {
+function AdvanceLetterList(letterList, string, stringPointerOriginal) {
+	gml_pragma("forceinline");
+	var stringPointer = stringPointerOriginal;
+	
+	var colour = 0;
+	var alpha = 1;
+	static flags = int64(0);
+	static rShakeAmp = 0;
+	static vShakeAmp = 0;
+	static vShakeFreq = 0;
+	static hShakeAmp = 0;
+	static hShakeFreq = 0;
+	
+	while(string_ord_at(string, ++stringPointer) == eLetter.backslash) {
+		var cmdName = string_lower(string_copy(string, ++stringPointer, COMMANDSIZE));
+		stringPointer += COMMANDSIZE;
+		var isValue = string_ord_at(string, stringPointer) == eLetter.dollar;
+		var arg = "";
+		while(string_ord_at(string, ++stringPointer) != eLetter.backslash) {
+			arg += string_char_at(string, stringPointer);
+		}
+		if(isValue) {
+			arg = global.script_variables[? arg];
+		}
+		switch(cmdName) {
+			case "ereset":
+				flags = 0;
+				rShakeAmp = 0;
+				vShakeAmp = 0;
+				vShakeFreq = 0;
+				hShakeAmp = 0;
+				hShakeFreq = 0;
+				break;
+			case "colour":
+				flags |= eTextFlag.colourChanging;
+				colour = real(arg);
+				break;
+			case "rainbw":
+				flags ^= eTextFlag.rainbow;
+				break;
+			case "rshake":
+				flags ^= eTextFlag.randomShake;
+				rShakeAmp = real(arg);
+				break;
+			case "hshake":
+				flags ^= eTextFlag.horzShake;
+				break;
+			case "hshamp":
+				hShakeAmp = arg;
+				break;
+			case "hshfrq":
+				hShakeFreq = arg;
+				break;
+			default:
+				show_error("bummer", 1);
+				break;
+		}
+	}
+	ds_list_add(letterList, new Letter(
+		string_char_at(string, stringPointer),
+		flags, (stringPointer - stringPointerOriginal),
+		colour, alpha, rShakeAmp, vShakeAmp, vShakeFreq, hShakeAmp, hShakeFreq
+	));
+	flags &= ~(eTextFlag.colourChanging); //this isn't toggleable so it has to be reset
+	return stringPointer;
+}
+
+function RegressLetterList(letterList, stringPointerOriginal) {
+	gml_pragma("forceinline");
+	var item = ds_list_size(letterList)-1;
+	var ptrDecreased = stringPointerOriginal - letterList[|item].textPointerDifference;
+	delete letterList[|item];
+	ds_list_delete(letterList, item);
+	return ptrDecreased;
+}
+
+function ClearLetterList(letterList) {
+	gml_pragma("forceinline");
+	var listLen = ds_list_size(letterList);
+	for(var i = 0; i < listLen; i++) {
+		delete letterList[|i];
+	}
+	ds_list_clear(letterList);
+}
+
+function fmtstring_draw(xx, yy, letterList, start) {
 	var sep = 0;
 	var spacing = 0;
-	var charCurrent = int64(0);
-	var countReal = count; //don't subtract for each letter
-	for(var i = start; i < countReal; i++) {
-		while(charList[|i] == 12121212) { //current char is 0? (is command indicator)
-			//show_debug_message("FOUND INDICATOR: ord=" + string(charList[|i]) + " chr=" + chr(charList[|i]) + " idx=" + string(i));
-			//is variable? advance
-			//it is? get variable from current item, advance to command id
-			//it's not? use current item as arg, advance to command id
-			var arg = charList[|++i] ? global.script_variables[? charList[|++i]] : charList[|++i];
-			switch(charList[|++i]) {
-				case eTextCommand.colour:
-					draw_set_colour(arg);
-					break;
-				default:
-					show_error("WHAT THE SHIT", 0);
-					break;
-			}
-			i++;
-			//show_debug_message("AFTER: ord=" + string(charList[|i]) + " chr=" + chr(charList[|i]) + " idx=" + string(i));
-		}
-		charCurrent = charList[|i]; //store current char
+	var letterCurrent = noone;
+	var count = ds_list_size(letterList);
+	draw_set_colour(0);
+	for(var i = start; i < count; i++) {
+		letterCurrent = letterList[|i];
 		
-		var charSep = global.JaxFont_widths[?charCurrent];
-		if(charSep == undefined) {
-			charSep = 4;
+		if(letterCurrent.flags & eTextFlag.colourChanging) {
+			draw_set_colour(letterCurrent.colour);
+			draw_set_alpha(letterCurrent.alpha);
+		}
+		if(letterCurrent.flags & eTextFlag.rainbow) {
+			draw_set_colour(make_colour_hsv((current_time / 10 + i*10) & 0xff, 255, 255));
 		}
 		
-		var charOffset = global.JaxFont_offsets[?charCurrent];
-		if(charOffset == undefined /*|| sep == 0*/) {
-			charOffset = 0;
-		}
+		letterCurrent.Update(i);
+		
+		var charSep = letterCurrent.sep;
+		
+		var charOffset = letterCurrent.offset;
 		
 		sep -= charOffset;
-		draw_text(xx + sep, yy + spacing, chr(charCurrent));
+		draw_text((xx + sep) + letterCurrent.x, (yy + spacing) + letterCurrent.y, letterCurrent.char);
 		sep += charSep+charOffset+1;
 	}
+	draw_set_colour(c_white);
 }
 
 //REFERENCE
