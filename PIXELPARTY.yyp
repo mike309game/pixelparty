@@ -39,6 +39,7 @@
     {"id":{"name":"s_bully_cry","path":"sprites/s_bully_cry/s_bully_cry.yy",},"order":5,},
     {"id":{"name":"o_shop","path":"objects/o_shop/o_shop.yy",},"order":7,},
     {"id":{"name":"o_honload","path":"objects/o_honload/o_honload.yy",},"order":7,},
+    {"id":{"name":"_string_read_terminated","path":"scripts/_string_read_terminated/_string_read_terminated.yy",},"order":6,},
     {"id":{"name":"s_shop_bg","path":"sprites/s_shop_bg/s_shop_bg.yy",},"order":0,},
     {"id":{"name":"o_painandsuffering","path":"objects/o_painandsuffering/o_painandsuffering.yy",},"order":6,},
     {"id":{"name":"r_l2_r2","path":"rooms/r_l2_r2/r_l2_r2.yy",},"order":1,},

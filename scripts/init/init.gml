@@ -8,6 +8,8 @@ application_surface_draw_enable(0);
 
 //gpu_set_blendmode_ext(bm_src_alpha, bm_inv_dest_alpha);
 
+global.time = 0;
+
 global.guisurface = noone;
 global.pausedsurface = noone;
 

@@ -77,8 +77,8 @@ function Letter(
 	}
 	static Update = function(iterator) {
 		if(flags & eTextFlag.randomShake) {
-			x = irandom_range(0, rShakeAmp);
-			y = irandom_range(0, rShakeAmp);
+			x = irandom_range(-rShakeAmp, rShakeAmp);
+			y = irandom_range(-rShakeAmp, rShakeAmp);
 		} else if(flags & eTextFlag.horzShake) {
 			x = cos((current_time / 250 + iterator/2)) * 2;
 		}
@@ -98,17 +98,40 @@ function AdvanceLetterList(letterList, string, stringPointerOriginal) {
 	static hShakeAmp = 0;
 	static hShakeFreq = 0;
 	
-	while(string_ord_at(string, ++stringPointer) == eLetter.backslash) {
-		var cmdName = string_lower(string_copy(string, ++stringPointer, COMMANDSIZE));
-		stringPointer += COMMANDSIZE;
-		var isValue = string_ord_at(string, stringPointer) == eLetter.dollar;
-		var arg = "";
-		while(string_ord_at(string, ++stringPointer) != eLetter.backslash) {
-			arg += string_char_at(string, stringPointer);
+	while(string_ord_at(string, ++stringPointer) == eChar.backslash) { //advance string pointer, check for command begin
+		var findResult = string_read_terminated(string, ++stringPointer, ["["], 0);
+		stringPointer = findResult[1];
+		var cmdName = findResult[0];
+		
+		//var isValue = string_ord_at(string, stringPointer) == eChar.dollar;
+		
+		var args = [];
+		var argIndex = 0;
+		
+		while(string_ord_at(string, ++stringPointer) != eChar.squareBracketR) {
+			while(string_ord_at(string, stringPointer) == $20){stringPointer++;} //allow for spaces in between args in the right side
+			var argType = string_ord_at(string, stringPointer);
+			findResult = string_read_terminated(string, ++stringPointer, [",", "]"], 0);
+			stringPointer = findResult[1];
+			if(string_ord_at(string, stringPointer) == eChar.squareBracketR) {
+				stringPointer--; //hacky as fuck but i want to get this done with by 19:00
+			}
+			switch(argType) {
+				case eChar.hash:
+					args[argIndex++] = real(findResult[0]);
+					break;
+				case eChar.dollar:
+					args[argIndex++] = global.script_variables[?findResult[0]];
+					break;
+				case eChar.at:
+					args[argIndex++] = findResult[0];
+					break;
+				default:
+					show_error("FUCK", 1);
+					break;
+			}
 		}
-		if(isValue) {
-			arg = global.script_variables[? arg];
-		}
+		
 		switch(cmdName) {
 			case "ereset":
 				flags = 0;
@@ -120,23 +143,24 @@ function AdvanceLetterList(letterList, string, stringPointerOriginal) {
 				break;
 			case "colour":
 				flags |= eTextFlag.colourChanging;
-				colour = real(arg);
+				colour = real(args[0]);
+				alpha = real(args[1]);
 				break;
 			case "rainbw":
 				flags ^= eTextFlag.rainbow;
 				break;
 			case "rshake":
 				flags ^= eTextFlag.randomShake;
-				rShakeAmp = real(arg);
+				rShakeAmp = real(args[0]);
 				break;
 			case "hshake":
 				flags ^= eTextFlag.horzShake;
 				break;
 			case "hshamp":
-				hShakeAmp = arg;
+				hShakeAmp = real(args[0]);
 				break;
 			case "hshfrq":
-				hShakeFreq = arg;
+				hShakeFreq = real(args[0]);
 				break;
 			default:
 				show_error("bummer", 1);
@@ -184,7 +208,7 @@ function fmtstring_draw(xx, yy, letterList, start) {
 			draw_set_alpha(letterCurrent.alpha);
 		}
 		if(letterCurrent.flags & eTextFlag.rainbow) {
-			draw_set_colour(make_colour_hsv((current_time / 10 + i*10) & 0xff, 255, 255));
+			draw_set_colour(make_colour_hsv((global.time + i*10) & 0xff, 255, 255));
 		}
 		
 		letterCurrent.Update(i);
