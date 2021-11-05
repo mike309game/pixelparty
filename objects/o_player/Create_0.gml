@@ -13,7 +13,7 @@ noclip = 0
 temphor = 0
 tempver = 0
 
-pos = 1
+pos = 0
 
 hor = 0
 ver = 0
@@ -21,7 +21,7 @@ ahor = 0
 aver = 0
 
 ani = 1
-offset = 1
+offset = global.player.lastoffset
 
 text_x = -192
 idle_timer = 0

@@ -4,3 +4,4 @@ animode = 1
 alarm_set(0,8)
 
 catmode = 0
+timer = 0

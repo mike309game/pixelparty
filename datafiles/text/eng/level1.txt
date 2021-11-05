@@ -75,46 +75,37 @@ NME Manny
 @ Please
 NME Bully
 @ NO YOU LOOK LIKE POOPY NOOB
-@ YOU PLAY QUAKE 1 STILL LIKE NOOB LITTLE #BABY
+@ YOU PLAY NOOB GAME LIKE MARIO
 NME Manny
-@ Quake 1 isn't even bad what are you #talking about?
+@ What's wrong with Mario?
 NME Bully
-@ SHUT UP QAUKE 1 IS BAD UR BAD TOO PLAY #UNREAL TOURNAMENT INSTEAD NOOB TRASH
+@ MARIO GAY LITTLE BABY GAME SONIC IS BETTER #HE RUNS FAST AND IS COOL
 NME Manny
-@ ...
-@ ...
-@ *sigh*
-@ Please move, I just need wheat man.
+@ Who says Mario isn't cool too?
 NME Bully
-@ NO SHUT UP STUPID ROBOT GO BSOD UGLY
+@ MARIO IS FOR GAY BABY AND SONIC IS AWESOME #HE KILLS RETARD ROBIT LIKE YOU
 PAL 2
 NME Manny
-@ Ok you can shut the fuck up now and move
+@ Ok buddy no need to be an asshole
 PAL 0
 NME Bully
-@ NO UGLY STUPID YOU ARE NOOB MOTHER NOOB
+@ NO YOU MRIO LOVER SONIC IS BETTER FUCK ROBOTS #I SPIN DASH ROIT
 PAL 2
 NME Manny
-@ Alright, I'll tell you what you fat #little cunt.
-@ You're boring, you don't sound threatening #at all.
-@ So go fuck yourself. Go fucking crawl #into the dirty dank little hole.
-@ Where you fucking come from.
-@ You dirty dragon eating little fuckin' #spastic.
-PAL 0
-@ ...
-@ Ok, the dragon comment was probably a #little bit fuckin' over the top.
-PAL 2
-@ But at the end of the day you're fuckin' #boring.
-@ Every single person who's interacted #with you are fucking stupid.
-@ They're fucking ignorant little cunts.
+@ How are you gonna say that when you built like #a chinese ao oni?
+EVT sound thud
+@ Bitch probably dont even shower or brush your #teeth you look like a meth addict from mars
+EVT sound thud
+@ You aint got no bitches or friends thats why #you ruin the days of other people
+EVT sound thud
+@ Genuinely get the fuck up out my face before #i beat you like a 70s husband beats their wife.
+EVT sound thud
 PAL 0
 NME Bully
-@ ..........................#..........................
-@ ............ *sniff*
+@ ..................
 PAL 1
-@ ..........................
-@ ......wwwwwwwwwwwwwwwwwwww
-@ wwwwwwwwwwwwAAAAAAAAAAAAAAAAAA#AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+@ ..................
+@ WWWAAAAAAAAAAAAAAAAAA
 EVT event l1_e2
 EXT
 
@@ -152,12 +143,23 @@ TSD 0.5
 @ I kyow what u are here 4!!
 @ Butt i hav a pwoblem.......
 @ Me cant move goodes..,
-EVT cbox 1
 @ can u find me a way 2 move?!?!
 @ fank u's!!!
+@ i tink i saw a wagin buket in da #housang plase!1
 EXT
 
+cat2
+NME Cat-in-a-box
+@ OMG!!!! FANK U SOS MUCHES!!!!1111
+@ NOW I KAN MOV PLASES!!!!!!
+@ HERE IS UR PUZLE PECE!!!
+EVT cbox
+EXT
 
+cat3
+NME Cat-in-a-box
+@ X3 :3 <3
+EXT
 
 
 

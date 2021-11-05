@@ -131,6 +131,14 @@ function findText()
 																		}
 																	break;
 																}
+															case "cbox":
+																{
+																	with(obj)
+																		{
+																			event = "cbox"
+																		}
+																	break;
+																}
 														}
 												} else {
 													wait = int64(ds_list_find_value(global.evts,1))

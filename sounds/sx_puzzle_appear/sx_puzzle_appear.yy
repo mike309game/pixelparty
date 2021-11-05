@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "sx_puzzle_appear.mp3",
-  "duration": 4.258,
+  "duration": 4.310167,
   "parent": {
     "name": "sound",
     "path": "folders/Sounds/sound.yy",
