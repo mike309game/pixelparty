@@ -1,5 +1,5 @@
 {
-  "compression": 0,
+  "compression": 3,
   "volume": 1.0,
   "preload": false,
   "bitRate": 128,
@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "sx_error.mp3",
-  "duration": 3.343667,
+  "duration": 7.235929,
   "parent": {
     "name": "sound",
     "path": "folders/Sounds/sound.yy",

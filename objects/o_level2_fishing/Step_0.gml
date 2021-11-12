@@ -24,7 +24,9 @@ switch game_mode
 			}
 		case 1: // ready start
 			{
-				
+				wateroffset += 0.4
+				if wateroffset >= 48 then wateroffset = 0
 			}
 	}
 show_debug_message(fade)
+shtimer++

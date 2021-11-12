@@ -11,6 +11,16 @@ NME Manny
 NME Ricky
 @ If you take another step I will Literally #beat you to a pulp
 NME Manny
+@ Oh, so you can get fired from your minimum #wage job for assault and then have 
+@ to go back to begging on the streets?
+NME Ricky
+@ ...
+NME Manny
+@ Try me i will fuck your shit up pussy
+NME Ricky
+@ ...
+@ ...Okay, sorry..
+NME Manny
 @ 
 EVT delbox 1
 EVT event l2_e1

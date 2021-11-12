@@ -49,6 +49,12 @@ switch event
 				instance_destroy(self)
 				break;
 			}
+		case "cbox":
+			{
+				o_npc_catbox.catmode = 1
+				instance_destroy(self)
+				break;
+			}
 		case "err":
 			{
 				show_debug_message("EVENT OBJECT ERROR // CHECK O_TEXT FOR DATA CASE")

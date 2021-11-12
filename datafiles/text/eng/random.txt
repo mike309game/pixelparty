@@ -22,7 +22,7 @@ buxy2
 NME Buxy
 PAL 1
 EVT gamecrash
-@ /
+@ PORN
 EXT
 
 glitch

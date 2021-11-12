@@ -23,7 +23,8 @@ global.vars = {
 	fakeload : r_yisify,
 	ignoreplayer : false,
 	got_puzzle : 0,
-	puz_pid : -1
+	puz_pid : -1,
+	puz_odd : 0
 }
 global.player = {
 	move : 1,
@@ -31,9 +32,14 @@ global.player = {
 	puzzle : 0,
 	money : 0,
 	dir : 0,
-	bootlvl : 0
+	bootlvl : 0,
+	lastoffset : 1
 }
 
+global.catparts =
+	{
+		part : [0,0,0]
+	}
 global.shop_start_tables =
 	{
 		l1 : ["wheat","s_boots1","odd_key"],
@@ -63,6 +69,7 @@ global.gameevent[? "h2_e1"] = 0
 global.gameevent[? "shopfirst"] = 1
 global.gameevent[? "l1_e1"] = 0
 global.gameevent[? "l1_e2"] = 0
+global.gameevent[? "l1_e3"] = 0
 global.gameevent[? "l2_e1"] = 0
 
 

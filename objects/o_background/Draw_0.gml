@@ -16,6 +16,11 @@ switch room_nme
 				draw_sprite_tiled(s_l1_bg,0,bgX+math,bgY+math)
 				bgX+=0.3
 				bgY+=0.3
+				if room = r_l1_r8
+					{
+						bgX+=random_range(-10,10)
+						bgY+=random_range(-10,10)
+					}
 				break;
 			}
 		case "l2":

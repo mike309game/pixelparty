@@ -66,13 +66,13 @@ switch mode
 						if (timer > 11 && tr != 2)
 							{
 								if selection = i then draw_sprite(s_pause_button,0,160+16,180+(i*17-17)) else draw_sprite(s_pause_button,0,160,180+(i*17-17))
-								if selection = i then draw_text(160+16,181+(i*17-17),menu[i]) else draw_text(160,181+(i*17-17),menu[i])
+								if selection = i then draw_text(160+16,181+(i*17-17+1),menu[i]) else draw_text(160,181+(i*17-17+1),menu[i])
 
 							}
 						if (timer >= 0 && tr = 2)
 								{
 									if selection = i then draw_sprite(s_pause_button,0,160+16,180+(i*17-17)) else draw_sprite(s_pause_button,0,160,180+(i*17-17))
-									if selection = i then draw_text(160+16,181+(i*17-17),menu[i]) else draw_text(160,181+(i*17-17),menu[i])
+									if selection = i then draw_text(160+16,181+(i*17-17+1),menu[i]) else draw_text(160,181+(i*17-17+1),menu[i])
 
 								}
 					}
