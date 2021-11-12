@@ -1,7 +1,7 @@
 test
 NME Tester
-@ Hello, you must be Manny. Welcome!
-@ Pleasure to meet you! My name is Tester.
+@ i might cut myself
+@ aorry
 @ I'm used to test the dialogue boxes for #any bugs or anything.
 NME Manny
 @ Okay? Find where I asked.

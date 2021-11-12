@@ -5,8 +5,10 @@ show_message(ord("]"));
 game_end();*/
 
 enum eChar {
-	hash = 35,
+	quote = 34,
+	hash,
 	dollar,
+	ampersand = 38,
 	zero = 48,
 	one,
 	two,
@@ -17,10 +19,14 @@ enum eChar {
 	seven,
 	eight,
 	nine,
-	at = 64,
+	semicolon = 59,
+	lt, //<
+	equal,
+	gt, //>
+	at = 64, //@
 	a,
 	b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z,
-	squareBracketL = 91, backslash, squareBracketR
+	squareBracketL = 91, backslash, squareBracketR, pipe = 124
 }
 
 //undertale moments
