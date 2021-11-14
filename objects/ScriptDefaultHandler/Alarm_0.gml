@@ -1,2 +1,2 @@
 ///@description unhalt interpreter
-myInterpreter.halted = 0; 
+myInterpreter.halted = 0;

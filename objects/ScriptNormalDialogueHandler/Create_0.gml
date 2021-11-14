@@ -1,4 +1,4 @@
 // Inherit the parent event
 event_inherited();
 
-typewriter = new Typewritter(1);
+typewriter = new Typewritter(true);

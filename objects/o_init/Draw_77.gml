@@ -21,3 +21,20 @@ if(instance_exists(o_pause)) {
 shader_reset();
 
 matrix_set(matrix_world, matrix_build_identity());
+//draw object info
+//this somewhat cripples performance
+/*var infoString = "\n\n";
+with(all) {
+	if(object_index == o_hitbox) then continue;
+	infoString +=
+	"Object: " + object_get_name(object_index) + "\n";
+	for(var i = 0; i < 12; i++) {
+		if(alarm[i] != -1) {
+			infoString += "alarm[" + string(i) + "]=" + string(alarm[i]) + "\n";
+		}
+	}
+	infoString += "----------------\n";
+}
+draw_set_colour(c_white);
+draw_set_font(fntSmall);
+draw_text(0,0,infoString);*/

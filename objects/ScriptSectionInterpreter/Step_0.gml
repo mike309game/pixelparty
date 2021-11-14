@@ -22,7 +22,7 @@ function ValueExistenceFailsafe(value,valuename,operation) {
 		global.script_variables[? valuename] = valisstring ? "" : int64(0);
 	}
 }
-
+myHandler.Update();
 if(!halted) {
 	while(funcpos < ds_list_size(section)) {
 		if(!halted) {
@@ -83,11 +83,11 @@ if(!halted) {
 					break;
 				#endregion
 				case ScriptFunctionType.waitForFrames: //wait for x frames
-					var waitFrames = ReadArgument();
-					with(myHandler) {
+					/*with(myHandler) {
 						handlerWaitFrames = waitFrames;
 						event_user(0); //tell handler to process the wait command
-					}
+					}*/
+					myHandler.HandleWaitCommand(ReadArgument());
 					break;
 				case ScriptFunctionType.wait: //"wait for frames" but just for 1 frame
 					alarm[0] = 1;
@@ -125,19 +125,12 @@ if(!halted) {
 					global.script_variables[? valuename] = ((b&$0ff)<<16)|((g&$0ff)<<8)|(r&$0ff);
 					break;
 				case ScriptFunctionType.text:
-					/*var mytext = string(ReadArgument()); //i'll be kind and forgive you if you somehow put a number in there
-					for(var i = 1; i <= string_length(mytext); i++) {
-						ds_queue_enqueue(letterqueue,string_char_at(mytext,i));
-					}
-					event_perform(ev_alarm,1);
-					alarm[1] = global.script_variables[? "textdelay"];
-					halted = 1;*/
-					var text = ReadArgument();
-					with(myHandler) {
+					myHandler.HandleTextCall(ReadArgument());
+					/*with(myHandler) {
 						handlerText = text;
 						event_user(1);
 						//show_debug_message(handlerText);
-					}
+					}*/
 					break;
 				case ScriptFunctionType.returnToLastFunction:
 					funcpos = ds_stack_pop(funcstack);
@@ -145,14 +138,10 @@ if(!halted) {
 					section = global.script_sections[? sectionName];
 					break;
 				case ScriptFunctionType.startTextProcessing:
-					with(myHandler) {
-						event_user(2);
-					}
+					myHandler.HandleTextProcessingToggle(true);
 					break;
 				case ScriptFunctionType.endTextProcessing:
-					with(myHandler) {
-						event_user(3);
-					}
+					myHandler.HandleTextProcessingToggle(false);
 					break;
 				default:
 					break;

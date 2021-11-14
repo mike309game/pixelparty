@@ -1,5 +1,5 @@
 /// @description for text
-with(dialoguer) {
+/*with(dialoguer) {
 	if(!ds_queue_empty(other.letterqueue)) {
 		char = ds_queue_dequeue(other.letterqueue);
 		colour = global.tscvalues[? "textcolour"];
@@ -8,4 +8,4 @@ with(dialoguer) {
 	} else {
 		other.paused = 0;
 	}
-}
+}*/
