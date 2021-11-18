@@ -4,7 +4,7 @@ NEEDED zglobals1.txt;
 [wait for frames]#120;
 [start text processing];
 [text]"chungu test";
-[text]"\ereset[]\rainbw[]weeeeeeeeeeeeeeeeeeee \ereset[]\colour[#0, #1]No more.";
+[text]"\ereset[]\rainbw[]\rshake[#1]weeeeeeeeeeeeeeeeeeee \ereset[]\colour[#0, #1]No more.";
 [text]"\ereset[]test\colour[#4484541,                                  #1]blah \colour[#5515844, #1]blah \colour[#121345,#1]blah \colour[#78787,#1]blah";
 [text]"STOP";
 [text]"testblah blah blah blah";

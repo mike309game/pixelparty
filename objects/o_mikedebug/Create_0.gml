@@ -1,3 +1,4 @@
+//depth = 999999999;
 //see how many rooms there are
 var roomcount = 0;
 buffer = buffer_create(1, buffer_grow, 1);

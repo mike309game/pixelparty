@@ -9,7 +9,7 @@
   "swfPrecision": 2.525,
   "bbox_left": 16,
   "bbox_right": 31,
-  "bbox_top": 38,
+  "bbox_top": 32,
   "bbox_bottom": 47,
   "HTile": false,
   "VTile": false,
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"904a1a85-f054-4bf2-bbc9-43ca4888f270","path":"sprites/s_placehold/s_placehold.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"904a1a85-f054-4bf2-bbc9-43ca4888f270","path":"sprites/s_placehold/s_placehold.yy",},"LayerId":{"name":"6026d003-9441-49fb-8a72-e3405ca4b96b","path":"sprites/s_placehold/s_placehold.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"s_placehold","path":"sprites/s_placehold/s_placehold.yy",},"resourceVersion":"1.0","name":"904a1a85-f054-4bf2-bbc9-43ca4888f270","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"ab9a8ce5-e0e8-4818-9c8f-ca9ac4890157","path":"sprites/spr_manny_marker/spr_manny_marker.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"ab9a8ce5-e0e8-4818-9c8f-ca9ac4890157","path":"sprites/spr_manny_marker/spr_manny_marker.yy",},"LayerId":{"name":"c7cb3f3a-7b32-4613-ba44-22a21a2067f1","path":"sprites/spr_manny_marker/spr_manny_marker.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_manny_marker","path":"sprites/spr_manny_marker/spr_manny_marker.yy",},"resourceVersion":"1.0","name":"ab9a8ce5-e0e8-4818-9c8f-ca9ac4890157","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"s_placehold","path":"sprites/s_placehold/s_placehold.yy",},
+    "spriteId": {"name":"spr_manny_marker","path":"sprites/spr_manny_marker/spr_manny_marker.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"cee8d483-bc28-43cf-b0a3-7c6d9ee8e431","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"904a1a85-f054-4bf2-bbc9-43ca4888f270","path":"sprites/s_placehold/s_placehold.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"81f681ea-d73a-4351-8e3e-a3a3c4084982","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"ab9a8ce5-e0e8-4818-9c8f-ca9ac4890157","path":"sprites/spr_manny_marker/spr_manny_marker.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -58,22 +58,22 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"s_placehold","path":"sprites/s_placehold/s_placehold.yy",},
+    "parent": {"name":"spr_manny_marker","path":"sprites/spr_manny_marker/spr_manny_marker.yy",},
     "resourceVersion": "1.3",
-    "name": "s_placehold",
+    "name": "spr_manny_marker",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"6026d003-9441-49fb-8a72-e3405ca4b96b","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"c7cb3f3a-7b32-4613-ba44-22a21a2067f1","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
-    "name": "player",
-    "path": "folders/Sprites/player.yy",
+    "name": "new event tests",
+    "path": "folders/mike/new event tests.yy",
   },
   "resourceVersion": "1.0",
-  "name": "s_placehold",
+  "name": "spr_manny_marker",
   "tags": [],
   "resourceType": "GMSprite",
 }
