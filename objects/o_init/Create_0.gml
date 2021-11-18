@@ -125,3 +125,4 @@ if(global.debug.debug_enabled && os_type != os_operagx) {
 }
 
 fader_uni = shader_get_uniform(sh_fader, "fadeammt");
+animate = 0

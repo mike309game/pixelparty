@@ -1,5 +1,5 @@
 
-rot += 0.5
+rot += 1
 timer++
 
 if timer > 150

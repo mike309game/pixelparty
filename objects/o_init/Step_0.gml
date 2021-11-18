@@ -16,6 +16,8 @@ if !instance_exists(o_pause)
 			}
 	}
 
+animate += 0.2
+if animate >= 2 then animate = 0
 
 if !view_enabled
 	{
