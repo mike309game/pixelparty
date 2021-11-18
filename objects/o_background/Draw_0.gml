@@ -30,6 +30,13 @@ switch room_nme
 				bgY-=0.3
 				break;
 			}
+		case "l3":
+			{
+				draw_sprite_tiled(s_l3_bg,0,bgX+math,bgY+math)
+				bgX-=0.4
+				bgY-=0.1
+				break;
+			}
 		case "de":
 			{
 				draw_sprite_tiled(s_de_bg,0,bgX+math,bgY+math)

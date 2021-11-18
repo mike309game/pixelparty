@@ -112,3 +112,5 @@ depth = -room_height
 if(global.debug.debug_enabled) {
 	instance_create_depth(0,0,0,o_mikedebug);
 }
+
+animate = 0

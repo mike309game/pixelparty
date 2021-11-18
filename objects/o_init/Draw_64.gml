@@ -13,6 +13,7 @@ if instance_exists(o_player) || global.vars.ignoreplayer
 						room_goto(global.vars.roomgo)
 						global.vars.ignoreplayer = 0
 					}
+				
 			}
 
 	}
@@ -28,16 +29,33 @@ if room_get_name(global.vars.roomgo) =  room_get_name(room)
 				case 0:
 					{
 						draw_sprite_ext(s_fade_white,0,0,0,1,1,0,c_white,transalpha)
+						
+						if transalpha > 0.8
+							{
+								draw_sprite(s_pxpa_quickload_dark,round(animate),320,240-48)
+							}
+						
 						break;
 					}
 				case 1:
 					{
 						draw_sprite_ext(s_fade_black,0,0,0,1,1,0,c_white,transalpha)
+						
+						if transalpha > 0.8
+							{
+								draw_sprite(s_pxpa_quickload,round(animate),320,240-48)
+							}
+						
 						break;
 					}
 				default:
 					{
 						draw_sprite_ext(s_fade_white,0,0,0,1,1,0,c_white,transalpha)
+						
+						if transalpha > 0.8
+							{
+								draw_sprite(s_pxpa_quickload_dark,round(animate),320,240-48)
+							}
 						break;
 					}
 			}
