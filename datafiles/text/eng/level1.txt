@@ -161,5 +161,15 @@ NME Cat-in-a-box
 @ X3 :3 <3
 EXT
 
-
+jarl
+NME Jarl
+@ OH VAS HELLO MANNY!!
+@ IS SOOO GREAT TO SEE YOU HERE!
+@ HOW IS MONO
+NME Manny
+@ They're... fine.
+NME Jarl
+@ GREAT TO HEAR, GREAT TO HEAR!
+@ REMEMBER TO WRITE ME DARLING!
+EXT
 

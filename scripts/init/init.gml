@@ -23,7 +23,8 @@ global.player = {
 	money : 0,
 	dir : 0,
 	bootlvl : 0,
-	lastoffset : 1
+	lastoffset : 1,
+	no_cam : 0
 }
 
 global.catparts =
