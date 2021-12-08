@@ -5,7 +5,7 @@ NME Sign
 @ Maybe they can assist you in whatever #you're doing.
 NME Manny
 @ ...
-@ You look like a 12 year old built you.
+@ Why do you look like a 12 year old built you.
 NME Sign
 @ ...
 @ ...
@@ -48,6 +48,7 @@ NME Lexsie
 @ Have you got that wheat for me yet?
 NME Manny
 @ Yup, right here.
+PAL 2
 NME Lexsie
 @ Thanks hun. This'll help a lot.
 @ Now you can have your puzzle piece.

@@ -1,4 +1,4 @@
-if global.debug.debug_enabled then show_debug_overlay(1);
+if global.debug.debug_enabled && global.debug.debug_hud then show_debug_overlay(1);
 /*
 if !file_exists(working_directory + "pxpa_save.ini")
 	{

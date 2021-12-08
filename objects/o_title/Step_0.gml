@@ -21,6 +21,7 @@ if timer = 250
 	{
 		Music("mx_title",0)
 	}
+if timer = 300 then Sound(sx_pixelparty,0)
 //show_debug_message("mode: "+string(mode))
 //show_debug_message("tstimer: "+string(tstimer))
 #endregion

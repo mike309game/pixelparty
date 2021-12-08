@@ -102,3 +102,5 @@ if keyboard_check_pressed(ord("Z")) && tr = 1 && mode = 0
 	}
 	
 if tr = 3 then fade += 0.05
+
+if !instance_exists(o_player) then instance_destroy(id)
