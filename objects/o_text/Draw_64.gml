@@ -63,6 +63,16 @@ if tr = 1
 						po = "s_ricky_talk"
 						break;
 					}
+				case "hux":
+					{
+						po = "s_hux_talk"
+						break;
+					}
+				case "bean boy":
+					{
+						po = "s_bean_talk"
+						break;
+					}
 				default:
 					{
 						po = "s_creepy_talk"

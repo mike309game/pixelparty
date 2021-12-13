@@ -14,11 +14,11 @@ EXT
 
 person1_1
 NME Lexsie
-@ Hey hon, what can I do for ya?
+@ What's up hun? What can I do for ya?
 NME Manny
 @ Do you know where I can find "puzzle #pieces".
 NME Lexsie
-@ I do, but you're gonna have to work for #it.
+@ Sure do! But I need you to do somethin' #for me.
 NME Manny
 @ ...
 @ I'm not having sex with you.
@@ -27,20 +27,20 @@ PAL 1
 @ What? I didn't mean that you pervert.
 PAL 0
 NME Manny
-@ Woopsie
+@ Woopsie, my bad.
 @ Whatever, what do you want me to do.
 NME Lexsie
-@ I need some wheat for bread, my little #baby Hux needs his sandwich.
+@ I need some wheat to bake some bread for my #lil' Hux.
 NME Manny
-@ ...Ok, well I'm new here so where can I #get that.
+@ Alright, is there a store or something #nearby?
 NME Lexsie
-@ There's a shop in the eastern part of the #complex.
-@ Though, there's some big purple guy #guarding it.
-@ He won't move and he's saying the store #belongs to him now.
+@ There's a shop in the north-eastern part of #the complex.
+@ Though, there's some big purple bully #blocking it off..
+@ He won't move and has been verbally #abusing anyone who tries to get in.
 NME Manny
 @ Alright, I'll take care of it.
 NME Lexsie
-@ Thanks sweetheart~
+@ Thanks~
 EXT
 
 person1_2
@@ -50,8 +50,7 @@ NME Manny
 @ Yup, right here.
 PAL 2
 NME Lexsie
-@ Thanks hun. This'll help a lot.
-@ Now you can have your puzzle piece.
+@ Thanks, now you can have this.
 EVT pspawn 1 128 144
 EVT event l1_e1
 EXT
@@ -59,10 +58,10 @@ EXT
 person1_3
 NME Lexsie
 @ ...
-@ ...
+@ ...Need something?
 NME Manny
 @ ...
-@ ...
+@ ...nope
 EXT
 
 bully1
@@ -93,13 +92,13 @@ NME Bully
 @ NO YOU MRIO LOVER SONIC IS BETTER FUCK ROBOTS #I SPIN DASH ROIT
 PAL 2
 NME Manny
-@ How are you gonna say that when you built like #a chinese ao oni?
+@ Motherfucker you built like #a chinese ao oni?
 EVT sound thud
-@ Bitch probably dont even shower or brush your #teeth you look like a meth addict from mars
+@ I wouldn't be talking with those british #ass teeth.
 EVT sound thud
-@ You aint got no bitches or friends thats why #you ruin the days of other people
+@ You ain't got no bitches and that's why #you look like the kids in the special class
 EVT sound thud
-@ Genuinely get the fuck up out my face before #i beat you like a 70s husband beats their wife.
+@ Get the fuck out of my face before I give you #vietnam flashbacks.
 EVT sound thud
 PAL 0
 NME Bully
@@ -172,5 +171,30 @@ NME Manny
 NME Jarl
 @ GREAT TO HEAR, GREAT TO HEAR!
 @ REMEMBER TO WRITE ME DARLING!
+EXT
+
+bean
+NME Bean Boy
+@ Oh, hello..
+@ Don't mind me, I'm just playing Remarkable #Martin Siblings.
+@ ...
+@ They're legally distinct.
+EXT
+
+tvset
+NME ...
+@ There is a video game on the screen...
+@ It looks legally distinct..
+EXT
+
+hux
+NME Hux
+@  
+@  
+@  
+PAL 1
+@ *baby phenomenon*
+PAL 0
+@  
 EXT
 

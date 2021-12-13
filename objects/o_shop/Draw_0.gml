@@ -135,6 +135,12 @@ draw_sprite_part(s_shop_ui,0,80,0,32,32,32+((selection[1]+1)*107-107),160) // ha
 
 draw_sprite_ext(s_fade_black,0,0,0,1,1,0,c_white,fade)
 
+draw_set_font(f_shop)
+draw_sprite_part(s_psxbuttons,0,0,0,16,16,0,65)
+draw_sprite_part(s_psxbuttons,0,16,0,16,16,0,65+16)
+draw_text(16,65,"- Select")
+draw_text(16,65+16,"- Back")
+
 /* debug
 draw_set_color(c_white)
 draw_text(0,0,dexoffset)
