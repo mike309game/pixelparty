@@ -2,10 +2,10 @@ if !window_has_focus() then audio_master_gain(0) else if window_has_focus() then
 
 if keyboard_check_pressed(vk_escape) then game_end()
 
-if room = r_init && keyboard_check_pressed(vk_space)
+if room = r_init //&& keyboard_check_pressed(vk_space)
 	{
 		room_goto(global.vars.roomgo)
-		Sound(sx_shop_move,0)
+		//Sound(sx_shop_move,0)
 	}
 
 //base stop fucking using brackets like this

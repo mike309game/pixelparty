@@ -7,7 +7,7 @@ global.vars = { // random globals [ USE THIS FOR GLOBAL VARIABLES ]
 	playing : sx_nothing,
 	play : sx_nothing,
 	loopplay : 1,
-	roomgo : r_yisify,
+	roomgo : r_de_test,
 	roompt : 0,
 	roomtr : 0,
 	fakeload : r_yisify,
@@ -59,7 +59,7 @@ global.shop_item_name[? "good_time"] = "Good Time"
 
 global.gameevent = ds_map_create()
 global.gameevent[? "de_e1"] = 0
-global.gameevent[? "h1_e1"] = 0
+global.gameevent[? "h1_e1"] = 1
 global.gameevent[? "h2_e1"] = 0
 global.gameevent[? "shopfirst"] = 1
 global.gameevent[? "l1_e1"] = 0
@@ -73,6 +73,9 @@ global.gameevent[? "l3_e2"] = 0
 global.gameevent[? "l1_e0"] = 0
 global.gameevent[? "l2_e0"] = 0
 global.gameevent[? "l3_e0"] = 0
+
+// martin
+global.gameevent[? "mev_1"] = 0
 
 
 global.playerinv = array_create(6,"")

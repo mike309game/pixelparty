@@ -12,6 +12,7 @@ function drawMuns()
 						draw_set_color(c_white)
 						
 						draw_text(58,170,global.player.money)
+						draw_text(58,204,global.player.puzzle)
 						
 						draw_set_color(c_black)
 						draw_set_halign(fa_center)
@@ -42,8 +43,11 @@ if surface_exists(surf) // surface shit
 						if (timer > 11 && tr != 2)
 							{
 								draw_sprite_part(s_shop_ui,0,16,0,64,64,32,128) // gold counter
+								draw_sprite(s_puzzle_piece,0,44,210)
 						
 								drawMuns()
+								
+								
 							}
 						if (timer >= 0 && tr = 2)
 								{
