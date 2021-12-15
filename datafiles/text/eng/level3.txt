@@ -1,0 +1,4 @@
+gate1
+NME ...
+@ Hmm... How am I supposed to get past this..?
+EXT

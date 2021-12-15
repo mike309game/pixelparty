@@ -1,4 +1,5 @@
 {
+  "conversionMode": 0,
   "compression": 3,
   "volume": 1.0,
   "preload": false,
@@ -11,7 +12,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "mx_title.mp3",
-  "duration": 23.2228336,
+  "duration": 34.6383324,
   "parent": {
     "name": "music",
     "path": "folders/Sounds/music.yy",

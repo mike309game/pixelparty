@@ -28,7 +28,7 @@ global.camY = 0;
 global.guisurface = noone;
 global.pausedsurface = noone;
 
-global.vars = {
+global.vars = { // random globals [ USE THIS FOR GLOBAL VARIABLES ]
 	playing : sx_nothing,
 	play : sx_nothing,
 	loopplay : 1,
@@ -41,19 +41,24 @@ global.vars = {
 	puz_pid : -1,
 	puz_odd : 0
 }
-global.player = {
+global.player = { // player globals [ PUT PLAYER GLOBALS HERE ]
 	move : 1,
 	area : "bright",
 	puzzle : 0,
 	money : 0,
 	dir : 0,
 	bootlvl : 0,
-	lastoffset : 1
+	lastoffset : 4,
+	no_cam : 0
 }
 
-global.catparts =
+global.catparts = // level 1 part collection
 	{
 		part : [0,0,0]
+	}
+global.gates = // puzzle gates
+	{
+		gate : [0,0]
 	}
 global.shop_start_tables =
 	{
@@ -79,13 +84,23 @@ global.shop_item_name[? "good_time"] = "Good Time"
 
 global.gameevent = ds_map_create()
 global.gameevent[? "de_e1"] = 0
-global.gameevent[? "h1_e1"] = 0
+global.gameevent[? "h1_e1"] = 1
 global.gameevent[? "h2_e1"] = 0
 global.gameevent[? "shopfirst"] = 1
 global.gameevent[? "l1_e1"] = 0
 global.gameevent[? "l1_e2"] = 0
 global.gameevent[? "l1_e3"] = 0
 global.gameevent[? "l2_e1"] = 0
+global.gameevent[? "l3_e1"] = 0
+global.gameevent[? "l3_e2"] = 0
+
+// level signs
+global.gameevent[? "l1_e0"] = 0
+global.gameevent[? "l2_e0"] = 0
+global.gameevent[? "l3_e0"] = 0
+
+// martin
+global.gameevent[? "mev_1"] = 0
 
 
 global.playerinv = array_create(6,"")

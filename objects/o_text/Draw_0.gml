@@ -44,6 +44,11 @@ if tr = 1
 						po = "s_nothing"
 						break;
 					}
+				case "???":
+					{
+						po = "s_nothing"
+						break;
+					}
 				case "":
 					{
 						po = "s_nothing"
@@ -62,6 +67,26 @@ if tr = 1
 				case "ricky":
 					{
 						po = "s_ricky_talk"
+						break;
+					}
+				case "hux":
+					{
+						po = "s_hux_talk"
+						break;
+					}
+				case "bean boy":
+					{
+						po = "s_bean_talk"
+						break;
+					}
+				case "cat-in-a-box":
+					{
+						po = "s_cat_talk"
+						break;
+					}
+				case "jarl":
+					{
+						po = "s_jarl_talk"
 						break;
 					}
 				default:

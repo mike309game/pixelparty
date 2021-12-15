@@ -5,14 +5,16 @@ NME Honstay
 EVT honload
 EVT wait 150 auto
 @ Ah yes, hello Manny.
-@ You're probably wondering why I #summoned you here.
+@ You're probably wondering why I summoned #you here.
 NME Manny
 @ ...
 NME Honstay
-@ I have detected a disruption within our #space.
-@ If you could, could you please go figure #out what is happening?
-@ I would greatly appreicate it.
+@ I have.. detected.. something within our plane. #I am requesting you to go and find this -
+@ - disruption.
+@ You will need to obtain puzzle pieces to #power the elevator to the next Honestary.
 NME Manny
-@ ...
-@ Okay
+@ I will try my best.
+NME Honstay
+@ Thank you.
+EVT delbox 1
 EXT

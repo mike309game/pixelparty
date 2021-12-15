@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"4acebbe3-abec-4597-9ebc-aa52f0b3d79c","path":"sprites/s_lexsie_talk_alt_1/s_lexsie_talk_alt_1.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"4acebbe3-abec-4597-9ebc-aa52f0b3d79c","path":"sprites/s_lexsie_talk_alt_1/s_lexsie_talk_alt_1.yy",},"LayerId":{"name":"a1596cda-6fcf-45b9-bf05-6a54dc91af91","path":"sprites/s_lexsie_talk_alt_1/s_lexsie_talk_alt_1.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"s_lexsie_talk_alt_1","path":"sprites/s_lexsie_talk_alt_1/s_lexsie_talk_alt_1.yy",},"resourceVersion":"1.0","name":"4acebbe3-abec-4597-9ebc-aa52f0b3d79c","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"2fbfa0eb-e081-4889-97f3-268cdbbb3a06","path":"sprites/s_lexsie_talk_alt_1/s_lexsie_talk_alt_1.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"2fbfa0eb-e081-4889-97f3-268cdbbb3a06","path":"sprites/s_lexsie_talk_alt_1/s_lexsie_talk_alt_1.yy",},"LayerId":{"name":"096b9d2f-20aa-4a0d-ad3b-6348d1c03fd5","path":"sprites/s_lexsie_talk_alt_1/s_lexsie_talk_alt_1.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"s_lexsie_talk_alt_1","path":"sprites/s_lexsie_talk_alt_1/s_lexsie_talk_alt_1.yy",},"resourceVersion":"1.0","name":"2fbfa0eb-e081-4889-97f3-268cdbbb3a06","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"s_lexsie_talk_alt_1","path":"sprites/s_lexsie_talk_alt_1/s_lexsie_talk_alt_1.yy",},
@@ -41,8 +41,8 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"d394cf68-f1b1-4764-bbaa-63976e5fb618","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"4acebbe3-abec-4597-9ebc-aa52f0b3d79c","path":"sprites/s_lexsie_talk_alt_1/s_lexsie_talk_alt_1.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+            {"id":"a34f530b-6b8f-4682-b13a-0b5fdb0fd6b4","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"2fbfa0eb-e081-4889-97f3-268cdbbb3a06","path":"sprites/s_lexsie_talk_alt_1/s_lexsie_talk_alt_1.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -65,7 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"a1596cda-6fcf-45b9-bf05-6a54dc91af91","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"096b9d2f-20aa-4a0d-ad3b-6348d1c03fd5","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {

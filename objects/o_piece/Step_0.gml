@@ -33,5 +33,6 @@ if untimer > 170
 		global.vars.got_puzzle = 0
 		global.vars.puz_pid = -1
 		global.player.move = 1
+		global.player.money += 5
 		instance_destroy(id)
 	}

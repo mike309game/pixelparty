@@ -6,8 +6,7 @@ EXT
 fountain
 NME ...
 @ The fountain is not running, wonder why.
-@ ...
-@ It looks like it hasn't ever been turned #on.
+@ As a matter of fact, it looks like it hasn't #been on in years.
 EXT
 
 buxy1
@@ -29,20 +28,20 @@ glitch
 NME 
 @ 
 @ 
-@ &%!)%(!)))_""""""#"%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-@ .
-@ .
-@ .
-@ 
+@ &&&^$@&^&^(#)*%)*!#)*)*&$)^#*)(*&_&!@$&!_*#%)(*#&$(*&#&(!)*%(875*!#_#%783747835971309&#&(R(&!()&&((&)!@@@@@@@@@@@
+@  
+@  
+@  
+@  
 wait 500 auto
 TSPD 40
-@ ERROR: level1-room9 / unable to be loaded # check with tool may be corrupt.
-@ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@ $999x9 xxxx xx9 xxx999x x9x99x x9xx99x
+@ err level1-room9 load failure
+@ a
 @ 
 @ 
 @ 
 @ 
 @ 
-@ M
+@ 
+@ OK
 EXT
