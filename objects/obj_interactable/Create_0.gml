@@ -1,0 +1,2 @@
+myInterpreter = noone;
+hovering = false;

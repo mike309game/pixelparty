@@ -3,16 +3,23 @@ save_setting_load()
 window_set_size(global.setting.scale*320,global.setting.scale*240)
 alarm_set(0,1)
 
-mus_fade = 1
-titles[0] = ""
+mus_fade = 1;
+titles[0] = "";
+titlesCount = 0;
 
-var fil = file_text_open_read("text/gametitles.txt")
+/*var fil = file_text_open_read("text/gametitles.txt")
 for(var i = 1; i < 65; i++)
 	{	
 		titles[i] = file_text_read_string(fil)
 		file_text_readln(fil)
 	}
-file_text_close(fil)
+file_text_close(fil)*/
+
+var fp = file_text_open_read("text/gametitles.txt");
+while(!file_text_eof(fp)) {
+	titles[titlesCount++] = file_text_readln(fp);
+}
+file_text_close(fp);
 
 #region funny title
 
@@ -70,10 +77,10 @@ if(current_minute == 12 && current_hour == 11) { //there is no real significance
 	ds_list_add(anim_title_table,"　　　　　　　　　　");
 	ds_list_add(anim_title_table,"　　　　　　　　　　");
 	ds_list_add(anim_title_table,"　　　　　　　　　　");
-	ds_list_add(anim_title_table,"Ｐ　　　　　　　　Ｙ");
-	ds_list_add(anim_title_table,"ＰＩ　　　　　　ＴＹ");
-	ds_list_add(anim_title_table,"ＰＩＸ　　　　ＲＴＹ");
-	ds_list_add(anim_title_table,"ＰＩＸＥ　　ＡＲＴＹ");
+	ds_list_add(anim_title_table,"Ｌ　　　　　　　　Ｐ");
+	ds_list_add(anim_title_table,"ＥＬ　　　　　　ＰＡ");
+	ds_list_add(anim_title_table,"ＸＥＬ　　　　ＰＡＲ");
+	ds_list_add(anim_title_table,"ＩＸＥＬ　　ＰＡＲＴ");
 	ds_list_add(anim_title_table,"ＰＩＸＥＬＰＡＲＴＹ");
 	ds_list_add(anim_title_table,"ＰＩＸＥＬＰＡＲＴＹ");
 	ds_list_add(anim_title_table,"ＰＩＸＥＬＰＡＲＴＹ");
@@ -81,10 +88,10 @@ if(current_minute == 12 && current_hour == 11) { //there is no real significance
 	ds_list_add(anim_title_table,"ＰＩＸＥＬＰＡＲＴＹ");
 	ds_list_add(anim_title_table,"ＰＩＸＥＬＰＡＲＴＹ");
 	ds_list_add(anim_title_table,"ＰＩＸＥＬＰＡＲＴＹ");
-	ds_list_add(anim_title_table,"ＰＩＸＥ　　ＡＲＴＹ");
-	ds_list_add(anim_title_table,"ＰＩＸ　　　　ＲＴＹ");
-	ds_list_add(anim_title_table,"ＰＩ　　　　　　ＴＹ");
-	ds_list_add(anim_title_table,"Ｐ　　　　　　　　Ｙ");
+	ds_list_add(anim_title_table,"ＩＸＥＬ　　ＰＡＲＴ");
+	ds_list_add(anim_title_table,"ＸＥＬ　　　　ＰＡＲ");
+	ds_list_add(anim_title_table,"ＥＬ　　　　　　ＰＡ");
+	ds_list_add(anim_title_table,"Ｌ　　　　　　　　Ｐ");
 	ds_list_add(anim_title_table,"　　　　　　　　　　");
 	ds_list_add(anim_title_table,"　　　　　　　　　　");
 	ds_list_add(anim_title_table,"　　　　　　　　　　");
@@ -107,18 +114,17 @@ if dopick = irandom_range(1,8)
 */
 //better imo
 randomize();
-if(irandom_range(0,$ff) == 63) {
+if(irandom_range(0,255) == 63) {
 	titleloop = 1;
 } else {
-	var titleran = irandom_range(1,65)
-	window_set_caption(titles[titleran]);
+	window_set_caption(titles[irandom_range(0,titlesCount)]);
 }
 
 
 transalpha = 0
-depth = -999999999
+depth = -16000
 
-blendtester = noone;
+//blendtester = noone;
 if(global.debug.debug_enabled && os_type != os_operagx) {
 	//blendtester = instance_create_depth(0,0,-999999999,o_struggle);
 	instance_create_depth(0,0,0,o_mikedebug);

@@ -14,7 +14,7 @@ function HandlerBase(intID) constructor {
 	}
 	static Update = function() {
 		if(handlerWaitForInput) {
-			if(keycheck_pressed(eChar.z)) {
+			if(keycheck_pressed(vk_enter)) {
 				handlerWaitForInput = false;
 				handlerWaitFrames = 1; //immediately process then
 				//exit; why was this here in the first place?

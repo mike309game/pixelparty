@@ -23,7 +23,7 @@ function Typewritter(_skippable = 1) constructor {
 			canAdvance = 0;
 			return 1;
 		}
-		if(keycheck_pressed(eChar.x) && skippable) {
+		if(keycheck_pressed(vk_shift) && skippable) {
 			skipText = 1;
 			canAdvance = 1; //force advancing because advancing only happens when the timer is done
 		}

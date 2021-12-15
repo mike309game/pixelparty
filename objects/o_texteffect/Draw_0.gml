@@ -9,7 +9,9 @@ if shader_is_compiled(sh_wave) //this just won't be drawn at all in html5 then
 			{
 				case "h1":
 					{
+						//gpu_set_blendmode_ext(bm_one, bm_inv_src_alpha);
 						draw_sprite_ext(s_honestary_level1,0,160,120,fade,fade,0,c_white,fade)
+						//gpu_set_blendmode(bm_normal);
 						break
 					}
 			}

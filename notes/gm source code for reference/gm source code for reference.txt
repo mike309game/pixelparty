@@ -1,0 +1,33 @@
+double __cdecl YYGML_point_direction(float _x1, float _y1, float _x2, float _y2)
+{
+  float height; // xmm0_4
+  double result; // st7
+  float atanResult; // xmm1_4
+  float gmDir; // xmm1_4
+
+  height = _y2 - _y1;
+  if ( (float)(_x2 - _x1) == 0.0 )
+  {
+    if ( height <= 0.0 )
+    {
+      if ( height >= 0.0 )
+        result = 0.0;
+      else
+        result = 90.0;
+    }
+    else
+    {
+      result = 270.0;
+    }
+  }
+  else
+  {
+    atanResult = atan2(height, (float)(_x2 - _x1));
+    gmDir = (float)(atanResult * 180.0) / 3.1415927;
+    if ( gmDir > 0.0 )
+      result = (float)(360.0 - gmDir);
+    else
+      result = COERCE_FLOAT(LODWORD(gmDir) ^ _xmm); //zero fucking clue!
+  }
+  return result;
+}

@@ -1,0 +1,1 @@
+instance_create_depth(0,0,-16000,obj_xdraw);

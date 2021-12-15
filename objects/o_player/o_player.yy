@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_manny_marker",
-    "path": "sprites/spr_manny_marker/spr_manny_marker.yy",
+    "name": "s_placehold",
+    "path": "sprites/s_placehold/s_placehold.yy",
   },
   "solid": false,
   "visible": true,

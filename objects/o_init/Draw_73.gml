@@ -19,7 +19,7 @@ if instance_exists(o_player) || global.vars.ignoreplayer
 
 }
 
-if room_get_name(global.vars.roomgo) =  room_get_name(room)
+if global.vars.roomgo =  room
 {
 	transalpha = lerp(transalpha,0,.1)
 }
