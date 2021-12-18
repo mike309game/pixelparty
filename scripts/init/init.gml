@@ -38,7 +38,8 @@ global.gates = // puzzle gates
 global.shop_start_tables =
 	{
 		l1 : ["wheat","s_boots1","odd_key"],
-		l2 : ["nothing","nothing","nothing"]
+		l2 : ["nothing","nothing","nothing"],
+		l3 : ["nothing","nothing","nothing"]
 	}
 
 global.shop_item_price = ds_map_create()
