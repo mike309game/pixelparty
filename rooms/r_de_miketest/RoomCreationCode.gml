@@ -1,19 +1,22 @@
 Music("mx_honest1",1);
 
-var int = instance_create_depth(0,0,-999999999,ScriptSectionInterpreter);
+/*var int = instance_create_depth(0,0,-999999999,ScriptSectionInterpreter);
 with(int) {
 	section = global.script_sections[? "handler test"];
 	sectionName = "handler test";
 	/*myHandler = instance_create_depth(0,0,-99999,ScriptNormalDialogueHandler);
-	myHandler.myInterpreter = id;*/
+	myHandler.myInterpreter = id;*
 	myHandler = new HandlerCommon(id);
-}
+}*/
 
 //random femboy event
 var lyr = layer_get_id("Assets_1");
 if(irandom_range(0,34532) == 69) {
 	layer_set_visible(lyr,true);
 }
+
+show_message("NOTE TO SELF DON'T FORGET TO FUCKING FINISH POLISHING THE INTERPRETER AND GLOBALS VS POINTERS and additional cmds");
+show_message("add type discrepancy checker in interpreter lol");
 
 /*repeat(20) {
 	instance_create_depth(800/2, 600/2, 0, obj_perlintest);

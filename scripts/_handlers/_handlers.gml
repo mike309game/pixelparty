@@ -33,6 +33,7 @@ function HandlerBase(intID) constructor {
 	static HandleWaitCommand = function(_waitAmt) {
 		myInterpreter.halted = true; //halt interpreter
 		handlerWaitFrames = _waitAmt; //unhalt interpreter in x frames
+		handlerWaitForInput = false; //prevent skipping wait calls
 	}
 	static HandleTextCall = function(_text) {
 		//stub in base

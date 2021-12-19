@@ -28,7 +28,6 @@ ds_map_destroy(global.script_labels);
 //clear rest
 ds_map_destroy(global.script_compiled);
 ds_map_destroy(global.script_variables);
-ds_map_destroy(global.scriptTypeMap);
 ds_map_destroy(global.__scriptCommandMap);
 
 delete global.player

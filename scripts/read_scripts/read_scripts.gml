@@ -9,9 +9,18 @@ enum ScriptFunctionType {
 	setValue,
 	addValue,
 	subtractValue,
+	multiplyValue,
+	divideValue,
+	moduloValue,
+	powValue,
+	
+	notValue,
 	andValue,
 	orValue,
 	xorValue,
+	shiftValueRight,
+	shiftValueLeft,
+	
 	makeRgb,
 	waitForFrames,
 	wait,
@@ -62,29 +71,37 @@ global.script_labels = ds_map_create();
 global.script_compiled = ds_map_create();
 
 #region String -> Enum lookup tables
-global.scriptTypeMap = ds_map_create();
-global.scriptTypeMap[? "@"] = ScriptVariableType.string;
-global.scriptTypeMap[? "#"] = ScriptVariableType.number;
-global.scriptTypeMap[? "$"] = ScriptVariableType.global;
 
 global.__scriptCommandMap = ds_map_create();
-global.__scriptCommandMap[? "set value"] = ScriptFunctionType.setValue;
-global.__scriptCommandMap[? "add value"] = ScriptFunctionType.addValue;
-global.__scriptCommandMap[? "subtract value"] = ScriptFunctionType.subtractValue;
-global.__scriptCommandMap[? "and value"] = ScriptFunctionType.andValue;
-global.__scriptCommandMap[? "or value"] = ScriptFunctionType.orValue;
-global.__scriptCommandMap[? "xor value"] = ScriptFunctionType.xorValue;
-global.__scriptCommandMap[? "wait for frames"] = ScriptFunctionType.waitForFrames;
-global.__scriptCommandMap[? "wait"] = ScriptFunctionType.wait;
-global.__scriptCommandMap[? "restart processing"] = ScriptFunctionType.restartProcessing;
-global.__scriptCommandMap[? "jump to label"] = ScriptFunctionType.jumpToLabel;
-global.__scriptCommandMap[? "jump function"] = ScriptFunctionType.jumpToSection;
-global.__scriptCommandMap[? "show message"] = ScriptFunctionType.showMessage;
-global.__scriptCommandMap[? "end processing"] = ScriptFunctionType.endProcessing;
-global.__scriptCommandMap[? "store rgb in value"] = ScriptFunctionType.makeRgb;
+//Regular math
+global.__scriptCommandMap[? "set"] = ScriptFunctionType.setValue;
+global.__scriptCommandMap[? "add"] = ScriptFunctionType.addValue;
+global.__scriptCommandMap[? "subtract"] = ScriptFunctionType.subtractValue;
+global.__scriptCommandMap[? "multiply"] = ScriptFunctionType.multiplyValue;
+global.__scriptCommandMap[? "divide"] = ScriptFunctionType.divideValue;
+global.__scriptCommandMap[? "modulo"] = ScriptFunctionType.moduloValue;
+global.__scriptCommandMap[? "pow"] = ScriptFunctionType.powValue;
+
+//Bit math
+global.__scriptCommandMap[? "not"] = ScriptFunctionType.notValue;
+global.__scriptCommandMap[? "and"] = ScriptFunctionType.andValue;
+global.__scriptCommandMap[? "or"] = ScriptFunctionType.orValue;
+global.__scriptCommandMap[? "xor"] = ScriptFunctionType.xorValue;
+global.__scriptCommandMap[? "shiftR"] = ScriptFunctionType.shiftValueRight;
+global.__scriptCommandMap[? "shiftL"] = ScriptFunctionType.shiftValueLeft;
+
+
+global.__scriptCommandMap[? "waitFrames"] = ScriptFunctionType.waitForFrames;
+global.__scriptCommandMap[? "waitFrame"] = ScriptFunctionType.wait;
+global.__scriptCommandMap[? "restartProcessing"] = ScriptFunctionType.restartProcessing;
+global.__scriptCommandMap[? "jumpLabel"] = ScriptFunctionType.jumpToLabel;
+global.__scriptCommandMap[? "jumpSection"] = ScriptFunctionType.jumpToSection;
+global.__scriptCommandMap[? "MESSAGE"] = ScriptFunctionType.showMessage;
+global.__scriptCommandMap[? "end"] = ScriptFunctionType.endProcessing;
+global.__scriptCommandMap[? "makeRgb"] = ScriptFunctionType.makeRgb;
 global.__scriptCommandMap[? "text"] = ScriptFunctionType.text;
-global.__scriptCommandMap[? "start text processing"] = ScriptFunctionType.startTextProcessing;
-global.__scriptCommandMap[? "end text processing"] = ScriptFunctionType.endTextProcessing;
+global.__scriptCommandMap[? "textStart"] = ScriptFunctionType.startTextProcessing;
+global.__scriptCommandMap[? "textEnd"] = ScriptFunctionType.endTextProcessing;
 #endregion
 
 function ScriptSysMessage(arg) {
@@ -99,26 +116,25 @@ function ScriptSysWarning(arg) {
 
 ScriptSysMessage("Compiling scripts");
 
-function GetValue(valueName, expect) {
+function CheckForRef(sussy, expect) {
 	//gml_pragma("forceinline"); lol lol lol lol lol lol lol 
-	var value = global.script_variables[?valueName];
-	if(value == undefined) { //value requested doesn't exist?
+	//var value = global.script_variables[?valueName];
+	if(string_ord_at(sussy, 1) == eChar.ampersand) { //is reference?
+		//return CheckForRef(string_copy(sussy, 2, string_length(sussy)), expect); //lol why not
+		return global.script_variables[? string_copy(sussy, 2, string_length(sussy))];
+	}
+	/*if(sussy == undefined) { //value requested doesn't exist?
 		global.errorCode = eErrorCode.valueNotFound; //set error code
-		return expect == eValueExpect.string ? "" : 0; //return failsafe
-	}
-	if(is_string(value)) {
-		if(string_ord_at(value, 1) == eChar.ampersand) {
-			return GetValue(string_copy(value, 2, string_length(value)), expect); //lol why not
-		}
-	}
-	return value;
+		global.script_variables[?valueName] = eValueExpect.string ? "" : 0; //set default
+	}*/
+	return sussy;
 }
 
 function CompileScriptReadable(fname) {
 	//gml_pragma("forceinline"); //bad idea? VERY BAD IDEA LOL it'd infinitely recurse because of the needed check shit
 	ScriptSysMessage("Processing " + fname);
 	if(global.script_compiled[?fname] != undefined) {
-		ScriptSysMessage(fname + " has already been processed.");
+		ScriptSysMessage(fname + " has already been processed");
 		exit;
 	}
 	var char = 0; //this'll be both strings and ints
@@ -134,7 +150,7 @@ function CompileScriptReadable(fname) {
 			fpos = string_read_terminated(fstring, ++fpos, [",",";"], 0);
 			neededFname = global.stringReadReturn;
 			if(global.script_compiled[?neededFname] == undefined /*&& neededFname != "\n" && neededFname != " "*/) {
-				ScriptSysMessage(fname + " requires file " + neededFname + " which hasn't been processed yet, processing.");
+				ScriptSysMessage(fname + " requires file " + neededFname + " which hasn't been processed yet, processing");
 				CompileScriptReadable(neededFname);
 			}
 			char = string_ord_at(fstring, fpos);
@@ -160,7 +176,10 @@ function CompileScriptReadable(fname) {
 					global.script_variables[? valueName] = theValue;
 					break;
 				case eChar.dollar: //store another value
-					global.script_variables[? valueName] = GetValue(valueName, eValueExpect.number); //most likely would be a number
+					global.script_variables[? valueName] = CheckForRef(theValue, eValueExpect.number); //most likely would be a number
+					break;
+				case eChar.ampersand: //store reference
+					global.script_variables[? valueName] = "&" + theValue;
 					break;
 				default: //dumbass
 					show_error("Script " + fname + " has tried defining value " + valueName + " with invalid type " + chr(kind), 1);
@@ -211,7 +230,10 @@ function CompileScriptReadable(fname) {
 									commandargs[|++currentarg] = real(argumentvalue);
 									break;
 								case eChar.dollar:
-									commandargs[|++currentarg] = global.script_variables[?argumentvalue];
+									commandargs[|++currentarg] = CheckForRef(argumentvalue,eValueExpect.number);
+									break;
+								case eChar.ampersand:
+									commandargs[|++currentarg] = "&" + argumentvalue;
 									break;
 								default:
 									show_error("Script " + fname + " at section " + sectionname + " has command with argument using invalid type " + chr(kind),1);

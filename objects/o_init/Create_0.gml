@@ -117,7 +117,7 @@ randomize();
 if(irandom_range(0,255) == 63) {
 	titleloop = 1;
 } else {
-	window_set_caption(titles[irandom_range(0,titlesCount)]);
+	window_set_caption(titles[irandom_range(0,titlesCount-1)]);
 }
 
 

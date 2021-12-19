@@ -164,6 +164,7 @@
     {"id":{"name":"t_tvset","path":"tilesets/t_tvset/t_tvset.yy",},"order":0,},
     {"id":{"name":"s_beanboy","path":"sprites/s_beanboy/s_beanboy.yy",},"order":14,},
     {"id":{"name":"sx_shop_move","path":"sounds/sx_shop_move/sx_shop_move.yy",},"order":10,},
+    {"id":{"name":"obj_testnpc","path":"objects/obj_testnpc/obj_testnpc.yy",},"order":8,},
     {"id":{"name":"mx_level3","path":"sounds/mx_level3/mx_level3.yy",},"order":8,},
     {"id":{"name":"o_piece","path":"objects/o_piece/o_piece.yy",},"order":0,},
     {"id":{"name":"obj_terriblememoryleaker","path":"objects/obj_terriblememoryleaker/obj_terriblememoryleaker.yy",},"order":0,},
@@ -434,6 +435,8 @@
     {"CopyToMask":-1,"filePath":"datafiles/text/eng","resourceVersion":"1.0","name":"level3.txt","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/text/eng","resourceVersion":"1.0","name":"gametips.txt","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/text/eng","resourceVersion":"1.0","name":"martin.txt","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/newscripts","resourceVersion":"1.0","name":"default.txt","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/newscripts","resourceVersion":"1.0","name":"test.txt","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
     "IDEVersion": "2.3.7.606",
