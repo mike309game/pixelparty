@@ -1,5 +1,11 @@
 <test> comments can be placed anywhere like this but it'll take slightly longer to process because of how gms handles reading like this
 [textStart];
+[set]"refmore","spr_fullscreen";
+[string2asset]"refmore","refmore";
+[set]"fw",&refmore;
+[number2string]"fw","fw";
+[add]"fw"," golly gee this sure works";
+[text]&fw;
 [set]"testval","please tell me refs are working";
 [text]&testval;
 [text]"some text";
@@ -10,6 +16,32 @@
 [textStart];
 [text]"1 second should have passed";
 [text]"processing should end after this";
-[MESSAGE]"i lied dipshit";
+[textEnd];
+[end];
+
+<dlgtest>
+[setFacepic1]!s_sign_talk;
+[setFacepic2]!s_manny_talk;
+[toggleFacepic2];
+
+[textStart];
+[text]"Hello";
+[toggleFacepic1];
+[text]"You suck (sucker)";
+[text]"You sure are a: Bitch";
+[toggleFacepic2];
+[text]"*goes away (dab on them haters)*";
+[textEnd];
+
+[waitFrames]#60;
+
+[textStart];
+[toggleFacepic2];
+[text]"Hi back again";
+[toggleFacepic2];
+[text]"Kidding";
+[setFacepic1]!spr_fullscreen;
+[toggleFacepic1];
+[text]"bwbwbwwbwbw";
 [textEnd];
 [end];

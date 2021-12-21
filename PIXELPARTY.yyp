@@ -189,6 +189,7 @@
     {"id":{"name":"spr_tbref","path":"sprites/spr_tbref/spr_tbref.yy",},"order":9,},
     {"id":{"name":"s_arrow","path":"sprites/s_arrow/s_arrow.yy",},"order":4,},
     {"id":{"name":"sx_newgame","path":"sounds/sx_newgame/sx_newgame.yy",},"order":17,},
+    {"id":{"name":"_maths","path":"scripts/_maths/_maths.yy",},"order":8,},
     {"id":{"name":"mx_level3_alt","path":"sounds/mx_level3_alt/mx_level3_alt.yy",},"order":11,},
     {"id":{"name":"s_shop_ui","path":"sprites/s_shop_ui/s_shop_ui.yy",},"order":3,},
     {"id":{"name":"s_honestary_level2","path":"sprites/s_honestary_level2/s_honestary_level2.yy",},"order":2,},

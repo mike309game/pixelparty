@@ -5,6 +5,7 @@ show_message(ord("]"));
 game_end();*/
 
 enum eChar {
+	exclamation = 33,
 	quote = 34,
 	hash,
 	dollar,

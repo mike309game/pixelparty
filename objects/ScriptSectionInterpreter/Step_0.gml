@@ -37,16 +37,16 @@ if(!halted) {
 			currentarg = 1;
 			switch(section[|funcpos][|0]) {
 				#region Math
-				case ScriptFunctionType.setValue: //set a global value
+				case eScriptFunction.setValue: //set a global value
 					var valuename = ReadArgument(eValueExpect.string); //name of the global NOTE: could be a number if whoever coded this is a retard
 					global.script_variables[? valuename] = ReadArgument(eValueExpect.number); //more likely than not a number
 					break;
-				case ScriptFunctionType.addValue: //adds to a global value
+				case eScriptFunction.addValue: //adds to a global value
 					var valuename = ReadArgument(eValueExpect.string);
 					var value = ReadArgument(eValueExpect.number); //most likely number
 					global.script_variables[? valuename] += value;
 					break;
-				case ScriptFunctionType.subtractValue: //subtracts from a global value
+				case eScriptFunction.subtractValue: //subtracts from a global value
 					var valuename = ReadArgument(eValueExpect.string);
 					var value = ReadArgument(eValueExpect.number); //has to be number
 					//TODO: add type discrepancy checker i'm too lazy to test these changes
@@ -58,31 +58,31 @@ if(!halted) {
 					}*/
 					global.script_variables[? valuename] -= value;
 					break;
-				case ScriptFunctionType.multiplyValue: //multiply value
+				case eScriptFunction.multiplyValue: //multiply value
 					var valuename = ReadArgument(eValueExpect.string);
 					var value = ReadArgument(eValueExpect.number); //has to be number
 					global.script_variables[? valuename] *= value;
 					break;
-				case ScriptFunctionType.divideValue: //divide value
+				case eScriptFunction.divideValue: //divide value
 					var valuename = ReadArgument(eValueExpect.string);
 					var value = ReadArgument(eValueExpect.number); //has to be number
 					global.script_variables[? valuename] /= value;
 					break;
-				case ScriptFunctionType.moduloValue: //modulate value
+				case eScriptFunction.moduloValue: //modulate value
 					var valuename = ReadArgument(eValueExpect.string);
 					var value = ReadArgument(eValueExpect.number); //has to be number
 					global.script_variables[? valuename] %= value;
 					break;
-				case ScriptFunctionType.powValue: //raise value
+				case eScriptFunction.powValue: //raise value
 					var valuename = ReadArgument(eValueExpect.string);
 					var value = ReadArgument(eValueExpect.number); //has to be number
 					global.script_variables[? valuename] = power(global.script_variables[? valuename],value);
 					break;
-				case ScriptFunctionType.notValue: //flip bits
+				case eScriptFunction.notValue: //flip bits
 					var valuename = ReadArgument(eValueExpect.string);
 					global.script_variables[? valuename] = ~global.script_variables[? valuename];
 					break;
-				case ScriptFunctionType.andValue: //bitwise AND (&)
+				case eScriptFunction.andValue: //bitwise AND (&)
 					var valuename = ReadArgument(eValueExpect.string);
 					var value = ReadArgument(eValueExpect.number); //has to be number
 					/*if(is_string(value)) { //if you try ANDing a value by a string you deserve to have a crash
@@ -91,7 +91,7 @@ if(!halted) {
 					}*/
 					global.script_variables[? valuename] &= value;
 					break;
-				case ScriptFunctionType.orValue: //bitwise OR (|)
+				case eScriptFunction.orValue: //bitwise OR (|)
 					var valuename = ReadArgument(eValueExpect.string);
 					var value = ReadArgument(eValueExpect.number);
 					/*if(is_string(value)) { //if you try ORing a value by a string you deserve to have a crash
@@ -100,55 +100,55 @@ if(!halted) {
 					}*/
 					global.script_variables[? valuename] |= value;
 					break;
-				case ScriptFunctionType.xorValue: //bitwise XOR (^)
+				case eScriptFunction.xorValue: //bitwise XOR (^)
 					var valuename = ReadArgument(eValueExpect.string);
 					var value = ReadArgument(eValueExpect.number);
 					global.script_variables[? valuename] ^= value;
 					break;
-				case ScriptFunctionType.shiftValueRight: //>>
+				case eScriptFunction.shiftValueRight: //>>
 					var valuename = ReadArgument(eValueExpect.string);
 					var bits = ReadArgument(eValueExpect.number); //has to be number
 					global.script_variables[? valuename] = global.script_variables[? valuename] >> bits;
 					break;
-				case ScriptFunctionType.shiftValueLeft: //<<
+				case eScriptFunction.shiftValueLeft: //<<
 					var valuename = ReadArgument(eValueExpect.string);
 					var bits = ReadArgument(eValueExpect.number); //has to be number
 					global.script_variables[? valuename] = global.script_variables[? valuename] << bits;
 					break;
 				#endregion
-				case ScriptFunctionType.waitForFrames: //wait for x frames
+				case eScriptFunction.waitForFrames: //wait for x frames
 					/*with(myHandler) {
 						handlerWaitFrames = waitFrames;
 						event_user(0); //tell handler to process the wait command
 					}*/
 					myHandler.HandleWaitCommand(ReadArgument(eValueExpect.number));
 					break;
-				case ScriptFunctionType.restartProcessing:
+				case eScriptFunction.restartProcessing:
 					funcpos = -1;
 					break;
-				case ScriptFunctionType.jumpToLabel:
+				case eScriptFunction.jumpToLabel:
 					var labelname = ReadArgument(eValueExpect.string);
 					section = global.script_sections[? global.script_labels[?labelname][|0]];
 					funcpos = global.script_labels[?labelname][|1];
 					break;
-				case ScriptFunctionType.jumpToSection:
+				case eScriptFunction.jumpToSection:
 					var sectionname = ReadArgument(eValueExpect.string);
 					ds_stack_push(funcstack,sectionName,funcpos);
 					sectionName = sectionname;
 					section = global.script_sections[? sectionname];
 					funcpos = -1;
 					break;
-				case ScriptFunctionType.showMessage: //show a generic gamemaker message, for testing purposes.
+				case eScriptFunction.showMessage: //show a generic gamemaker message, for testing purposes.
 					show_message/*_async*/(ReadArgument(eValueExpect.string));
 					break;
-				case ScriptFunctionType.endProcessing:
+				case eScriptFunction.endProcessing:
 					ScriptSysMessage("Ended processing of" + sectionName);
 					with(myCaller) {
 						alarm[0] = 1; //reenable caller interaction in 1 frame
 					}
 					instance_destroy(id,1);
 					break;
-				case ScriptFunctionType.makeRgb:
+				case eScriptFunction.makeRgb:
 					//if you put a string fuck you you're getting a crash dumbass
 					var r = ReadArgument(eValueExpect.number);
 					var g = ReadArgument(eValueExpect.number);
@@ -157,7 +157,22 @@ if(!halted) {
 					var valuename = string_lower(ReadArgument(eValueExpect.string));
 					global.script_variables[? valuename] = ((b&$0ff)<<16)|((g&$0ff)<<8)|(r&$0ff);
 					break;
-				case ScriptFunctionType.text:
+				case eScriptFunction.string2num:
+					var valuename = ReadArgument(eValueExpect.string);
+					var valueout = ReadArgument(eValueExpect.string);
+					global.script_variables[? valueout] = real(global.script_variables[? valuename]);
+					break;
+				case eScriptFunction.num2string:
+					var valuename = ReadArgument(eValueExpect.string);
+					var valueout = ReadArgument(eValueExpect.string);
+					global.script_variables[? valueout] = string(global.script_variables[? valuename]);
+					break;
+				case eScriptFunction.string2asset:
+					var valuename = ReadArgument(eValueExpect.string);
+					var valueout = ReadArgument(eValueExpect.string);
+					global.script_variables[? valueout] = asset_get_index(global.script_variables[? valuename]);
+					break;
+				case eScriptFunction.text:
 					myHandler.HandleTextCall(ReadArgument(eValueExpect.string));
 					/*with(myHandler) {
 						handlerText = text;
@@ -165,16 +180,37 @@ if(!halted) {
 						//show_debug_message(handlerText);
 					}*/
 					break;
-				case ScriptFunctionType.returnToLastFunction:
+				case eScriptFunction.returnToLastFunction:
 					funcpos = ds_stack_pop(funcstack);
 					sectionName = ds_stack_pop(funcstack);
 					section = global.script_sections[? sectionName];
 					break;
-				case ScriptFunctionType.startTextProcessing:
+				case eScriptFunction.startTextProcessing:
 					myHandler.HandleTextProcessingToggle(true);
 					break;
-				case ScriptFunctionType.endTextProcessing:
+				case eScriptFunction.endTextProcessing:
 					myHandler.HandleTextProcessingToggle(false);
+					break;
+				case eScriptFunction.toggleNpcAnimate:
+					myHandler.handlerFlags ^= eHandlerFlags.npcAnimate;
+					break;
+				case eScriptFunction.setFacepic1:
+					myHandler.handlerFacepic1 = ReadArgument(eValueExpect.number);
+					break;
+				case eScriptFunction.setFacepic2:
+					myHandler.handlerFacepic2 = ReadArgument(eValueExpect.number);
+					break;
+				case eScriptFunction.setNamelabel1:
+					myHandler.handlerNamelabel1 = ReadArgument(eValueExpect.string);
+					break;
+				case eScriptFunction.setNamelabel2:
+					myHandler.handlerNamelabel2 = ReadArgument(eValueExpect.string);
+					break;
+				case eScriptFunction.toggleFacepic1:
+					myHandler.handlerFlags ^= eHandlerFlags.showFacepic1;
+					break;
+				case eScriptFunction.toggleFacepic2:
+					myHandler.handlerFlags ^= eHandlerFlags.showFacepic2;
 					break;
 				default:
 					break;

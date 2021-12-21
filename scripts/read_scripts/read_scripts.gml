@@ -5,7 +5,7 @@ enum ScriptVariableType {
 	number,
 	global
 }
-enum ScriptFunctionType {
+enum eScriptFunction {
 	setValue,
 	addValue,
 	subtractValue,
@@ -22,6 +22,10 @@ enum ScriptFunctionType {
 	shiftValueLeft,
 	
 	makeRgb,
+	number2string,
+	string2num,
+	num2string,
+	string2asset,
 	waitForFrames,
 	wait,
 	restartProcessing,
@@ -33,6 +37,13 @@ enum ScriptFunctionType {
 	returnToLastFunction,
 	startTextProcessing,
 	endTextProcessing,
+	toggleNpcAnimate,
+	setFacepic1,
+	setFacepic2,
+	setNamelabel1,
+	setNamelabel2,
+	toggleFacepic1,
+	toggleFacepic2
 }
 
 enum eValueExpect {
@@ -74,34 +85,44 @@ global.script_compiled = ds_map_create();
 
 global.__scriptCommandMap = ds_map_create();
 //Regular math
-global.__scriptCommandMap[? "set"] = ScriptFunctionType.setValue;
-global.__scriptCommandMap[? "add"] = ScriptFunctionType.addValue;
-global.__scriptCommandMap[? "subtract"] = ScriptFunctionType.subtractValue;
-global.__scriptCommandMap[? "multiply"] = ScriptFunctionType.multiplyValue;
-global.__scriptCommandMap[? "divide"] = ScriptFunctionType.divideValue;
-global.__scriptCommandMap[? "modulo"] = ScriptFunctionType.moduloValue;
-global.__scriptCommandMap[? "pow"] = ScriptFunctionType.powValue;
+global.__scriptCommandMap[? "set"] = eScriptFunction.setValue;
+global.__scriptCommandMap[? "add"] = eScriptFunction.addValue;
+global.__scriptCommandMap[? "subtract"] = eScriptFunction.subtractValue;
+global.__scriptCommandMap[? "multiply"] = eScriptFunction.multiplyValue;
+global.__scriptCommandMap[? "divide"] = eScriptFunction.divideValue;
+global.__scriptCommandMap[? "modulo"] = eScriptFunction.moduloValue;
+global.__scriptCommandMap[? "pow"] = eScriptFunction.powValue;
 
 //Bit math
-global.__scriptCommandMap[? "not"] = ScriptFunctionType.notValue;
-global.__scriptCommandMap[? "and"] = ScriptFunctionType.andValue;
-global.__scriptCommandMap[? "or"] = ScriptFunctionType.orValue;
-global.__scriptCommandMap[? "xor"] = ScriptFunctionType.xorValue;
-global.__scriptCommandMap[? "shiftR"] = ScriptFunctionType.shiftValueRight;
-global.__scriptCommandMap[? "shiftL"] = ScriptFunctionType.shiftValueLeft;
+global.__scriptCommandMap[? "not"] = eScriptFunction.notValue;
+global.__scriptCommandMap[? "and"] = eScriptFunction.andValue;
+global.__scriptCommandMap[? "or"] = eScriptFunction.orValue;
+global.__scriptCommandMap[? "xor"] = eScriptFunction.xorValue;
+global.__scriptCommandMap[? "shiftR"] = eScriptFunction.shiftValueRight;
+global.__scriptCommandMap[? "shiftL"] = eScriptFunction.shiftValueLeft;
 
 
-global.__scriptCommandMap[? "waitFrames"] = ScriptFunctionType.waitForFrames;
-global.__scriptCommandMap[? "waitFrame"] = ScriptFunctionType.wait;
-global.__scriptCommandMap[? "restartProcessing"] = ScriptFunctionType.restartProcessing;
-global.__scriptCommandMap[? "jumpLabel"] = ScriptFunctionType.jumpToLabel;
-global.__scriptCommandMap[? "jumpSection"] = ScriptFunctionType.jumpToSection;
-global.__scriptCommandMap[? "MESSAGE"] = ScriptFunctionType.showMessage;
-global.__scriptCommandMap[? "end"] = ScriptFunctionType.endProcessing;
-global.__scriptCommandMap[? "makeRgb"] = ScriptFunctionType.makeRgb;
-global.__scriptCommandMap[? "text"] = ScriptFunctionType.text;
-global.__scriptCommandMap[? "textStart"] = ScriptFunctionType.startTextProcessing;
-global.__scriptCommandMap[? "textEnd"] = ScriptFunctionType.endTextProcessing;
+global.__scriptCommandMap[? "waitFrames"] = eScriptFunction.waitForFrames;
+global.__scriptCommandMap[? "waitFrame"] = eScriptFunction.wait;
+global.__scriptCommandMap[? "restartProcessing"] = eScriptFunction.restartProcessing;
+global.__scriptCommandMap[? "jumpLabel"] = eScriptFunction.jumpToLabel;
+global.__scriptCommandMap[? "jumpSection"] = eScriptFunction.jumpToSection;
+global.__scriptCommandMap[? "MESSAGE"] = eScriptFunction.showMessage;
+global.__scriptCommandMap[? "end"] = eScriptFunction.endProcessing;
+global.__scriptCommandMap[? "makeRgb"] = eScriptFunction.makeRgb;
+global.__scriptCommandMap[? "string2number"] = eScriptFunction.string2num;
+global.__scriptCommandMap[? "number2string"] = eScriptFunction.num2string;
+global.__scriptCommandMap[? "string2asset"] = eScriptFunction.string2asset;
+global.__scriptCommandMap[? "text"] = eScriptFunction.text;
+global.__scriptCommandMap[? "textStart"] = eScriptFunction.startTextProcessing;
+global.__scriptCommandMap[? "textEnd"] = eScriptFunction.endTextProcessing;
+global.__scriptCommandMap[? "toggleNpcAnimate"] = eScriptFunction.toggleNpcAnimate;
+global.__scriptCommandMap[? "setFacepic1"] = eScriptFunction.setFacepic1;
+global.__scriptCommandMap[? "setFacepic2"] = eScriptFunction.setFacepic2;
+global.__scriptCommandMap[? "setNamelabel1"] = eScriptFunction.setNamelabel1;
+global.__scriptCommandMap[? "setNamelabel2"] = eScriptFunction.setNamelabel2;
+global.__scriptCommandMap[? "toggleFacepic1"] = eScriptFunction.toggleFacepic1;
+global.__scriptCommandMap[? "toggleFacepic2"] = eScriptFunction.toggleFacepic2;
 #endregion
 
 function ScriptSysMessage(arg) {
@@ -181,6 +202,9 @@ function CompileScriptReadable(fname) {
 				case eChar.ampersand: //store reference
 					global.script_variables[? valueName] = "&" + theValue;
 					break;
+				case eChar.exclamation: //store asset id
+					global.script_variables[? valueName] = asset_get_index(CheckForRef(theValue, eValueExpect.string));
+					break;
 				default: //dumbass
 					show_error("Script " + fname + " has tried defining value " + valueName + " with invalid type " + chr(kind), 1);
 					break;
@@ -234,6 +258,9 @@ function CompileScriptReadable(fname) {
 									break;
 								case eChar.ampersand:
 									commandargs[|++currentarg] = "&" + argumentvalue;
+									break;
+								case eChar.exclamation:
+									commandargs[|++currentarg] = asset_get_index(CheckForRef(argumentvalue,eValueExpect.number));
 									break;
 								default:
 									show_error("Script " + fname + " at section " + sectionname + " has command with argument using invalid type " + chr(kind),1);
