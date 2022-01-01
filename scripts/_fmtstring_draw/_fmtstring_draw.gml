@@ -34,12 +34,13 @@ enum eTextFlag {
 	horzShake = 1 << 1,
 	randomShake = 1 << 2,
 	rainbow = 1 << 3,
-	colourChanging = 1 << 4
+	colourChanging = 1 << 4,
+	newLine = 1 << 5
 }
 
 function Letter(
 	//common
-	_char, _flags, _txptrdiff, _colour = 0, _alpha = 1,
+	_char, _flags, _newlines, _txptrdiff, _colour = 0, _alpha = 1,
 	//random shake
 	_rshake_amp = 0,
 	//vertical shake
@@ -49,12 +50,13 @@ function Letter(
 ) constructor {
 	x = 0; //x offset (for shake)
 	y = 0; //y offset (for shake)
+	newlines = _newlines;
 	char = _char;
-	sep = global.JaxFont_widths[?char];
+	sep = global.JaxLarge_widths[?char];
 	if(sep == undefined) {
 		sep = 4;
 	}
-	offset = global.JaxFont_offsets[?char];
+	offset = global.JaxLarge_offsets[?char];
 	if(offset == undefined) {
 		offset = 0;
 	}
@@ -85,138 +87,35 @@ function Letter(
 	}
 }
 
-function AdvanceLetterList(letterList, string, stringPointerOriginal) {
-	gml_pragma("forceinline");
-	var stringPointer = stringPointerOriginal;
-	
-	var colour = 0;
-	var alpha = 1;
-	static flags = int64(0);
-	static rShakeAmp = 0;
-	static vShakeAmp = 0;
-	static vShakeFreq = 0;
-	static hShakeAmp = 0;
-	static hShakeFreq = 0;
-	
-	while(string_ord_at(string, ++stringPointer) == eChar.backslash) { //advance string pointer, check for command begin
-		stringPointer = string_read_terminated(string, ++stringPointer, ["["], 0);
-		var cmdName = global.stringReadReturn;
-		
-		//var isValue = string_ord_at(string, stringPointer) == eChar.dollar;
-		
-		var args = [];
-		var argIndex = 0;
-		
-		while(string_ord_at(string, ++stringPointer) != eChar.squareBracketR) {
-			while(string_ord_at(string, stringPointer) == $20){stringPointer++;} //allow for spaces in between args in the right side
-			var argType = string_ord_at(string, stringPointer);
-			stringPointer = string_read_terminated(string, ++stringPointer, [",", "]"], 0);
-			switch(argType) {
-				case eChar.hash:
-					args[argIndex++] = real(global.stringReadReturn);
-					break;
-				case eChar.dollar:
-					args[argIndex++] = global.script_variables[?global.stringReadReturn];
-					break;
-				case eChar.at:
-					args[argIndex++] = global.stringReadReturn;
-					break;
-				default:
-					show_error("FUCK", 1);
-					break;
-			}
-			if(string_ord_at(string, stringPointer) == eChar.squareBracketR) {
-				//stringPointer--; //hacky as fuck but i want to get this done with by 19:00
-				break;
-			}
-		}
-		
-		switch(cmdName) {
-			case "ereset":
-				flags = 0;
-				rShakeAmp = 0;
-				vShakeAmp = 0;
-				vShakeFreq = 0;
-				hShakeAmp = 0;
-				hShakeFreq = 0;
-				break;
-			case "colour":
-				flags |= eTextFlag.colourChanging;
-				colour = real(args[0]);
-				alpha = real(args[1]);
-				break;
-			case "rainbw":
-				flags ^= eTextFlag.rainbow;
-				break;
-			case "rshake":
-				flags ^= eTextFlag.randomShake;
-				rShakeAmp = real(args[0]);
-				break;
-			case "hshake":
-				flags ^= eTextFlag.horzShake;
-				break;
-			case "hshamp":
-				hShakeAmp = real(args[0]);
-				break;
-			case "hshfrq":
-				hShakeFreq = real(args[0]);
-				break;
-			default:
-				show_error("bummer", 1);
-				break;
-		}
-	}
-	ds_list_add(letterList, new Letter(
-		string_char_at(string, stringPointer),
-		flags, (stringPointer - stringPointerOriginal),
-		colour, alpha, rShakeAmp, vShakeAmp, vShakeFreq, hShakeAmp, hShakeFreq
-	));
-	flags &= ~(eTextFlag.colourChanging); //this isn't toggleable so it has to be reset
-	return stringPointer;
-}
-
-function RegressLetterList(letterList, stringPointerOriginal) {
-	gml_pragma("forceinline");
-	var item = ds_list_size(letterList)-1;
-	var ptrDecreased = stringPointerOriginal - letterList[|item].textPointerDifference;
-	delete letterList[|item];
-	ds_list_delete(letterList, item);
-	return ptrDecreased;
-}
-
-function ClearLetterList(letterList) {
-	gml_pragma("forceinline");
-	var listLen = ds_list_size(letterList);
-	for(var i = 0; i < listLen; i++) {
-		delete letterList[|i];
-	}
-	ds_list_clear(letterList);
-}
-
-function fmtstring_draw(xx, yy, letterList, start) {
+function fmtstring_draw(xx, yy, letterList, start, spacingAmt = 15, defaultClr = c_black) {
 	var sep = 0;
 	var spacing = 0;
 	var letterCurrent = noone;
-	var count = ds_list_size(letterList);
-	draw_set_colour(0);
+	var count = ds_list_size(letterList); //letter count
+	draw_set_colour(defaultClr); //default clr
 	for(var i = start; i < count; i++) {
-		letterCurrent = letterList[|i];
+		letterCurrent = letterList[|i]; //sets to struct ref i hopeeeeeeeeeee
 		
-		if(letterCurrent.flags & eTextFlag.colourChanging) {
+		letterCurrent.Update(i);
+		
+		if(letterCurrent.flags & eTextFlag.colourChanging) { //to not change batch
 			draw_set_colour(letterCurrent.colour);
 			draw_set_alpha(letterCurrent.alpha);
 		}
 		if(letterCurrent.flags & eTextFlag.rainbow) {
-			draw_set_colour(make_colour_hsv((global.time + i*10) & 0xff, 255, 255));
+			draw_set_colour(make_colour_hsv((global.time + i*10) & 0xff, 255, 255)); //TODO: do modulo instead because bitwise shit hhas to convert shit all the time
 		}
-		
-		letterCurrent.Update(i);
 		
 		var charSep = letterCurrent.sep;
 		
 		var charOffset = letterCurrent.offset;
+		var newlines = letterCurrent.newlines;
+		if(newlines) { //got line changing?
+			spacing += letterCurrent.newlines * spacingAmt; //spacing
+			sep = 0; //reset separation
+		}
 		
-		sep -= charOffset;
+		sep -= charOffset; //for chars that don't have 1st pixel at draw pos
 		draw_text((xx + sep) + letterCurrent.x, (yy + spacing) + letterCurrent.y, letterCurrent.char);
 		sep += charSep+charOffset+1;
 	}

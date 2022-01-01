@@ -12,7 +12,7 @@ global.debug = {
 global.setting = {
 	sound : 100,
 	music : 100,
-	scale : 3,
+	scale : 2,
 	vsync : 0,
 	full : 0,
 	lang : "eng"

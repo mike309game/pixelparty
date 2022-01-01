@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "s_martin_head",
-    "path": "sprites/s_martin_head/s_martin_head.yy",
+    "name": "s_melvin_head",
+    "path": "sprites/s_melvin_head/s_melvin_head.yy",
   },
   "solid": false,
   "visible": true,

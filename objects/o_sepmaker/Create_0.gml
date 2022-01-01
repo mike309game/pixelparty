@@ -8,7 +8,7 @@ var charactersLen = array_length(characters);
 
 var surf = surface_create(64,64);
 
-var char = "";
+var char;
 draw_set_font(f_main);
 for(var i = 0; i < charactersLen; i++) {
 	char = characters[i];
@@ -32,13 +32,13 @@ for(var i = 0; i < charactersLen; i++) {
 				if(!foundoffset) {
 					foundoffset = 1;
 					offset = xx;
-					show_debug_message("global.FONTNAME_offsets[?" + string(ord(char)) + "]=" + string(offset) + ";");
+					show_debug_message("global.FONTNAME_offsets[?\"" + string(/*ord*/(char)) + "\"]=" + string(offset) + ";");
 				}
 				gotpixels = 1;
 			}
 		}
 		if(!gotpixels && foundoffset) {
-			show_debug_message("global.FONTNAME_widths[?" + string(ord(char)) + "]=" + string(xx-offset) + ";");
+			show_debug_message("global.FONTNAME_widths[?\"" + string(/*ord*/(char)) + "\"]=" + string(xx-offset) + ";");
 			break;
 		}
 	}

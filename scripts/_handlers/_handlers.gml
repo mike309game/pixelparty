@@ -111,12 +111,14 @@ function HandlerCommon(intID) : HandlerBase(intID) constructor {
 			draw_sprite(handlerFacepic1,0,EaseInCubic(0,-320,facepic1XCounter/240),0);
 			draw_sprite_ext(handlerFacepic2,0,EaseInCubic(320,640,facepic2XCounter/240),0,-1,1,0,c_white,1);
 			
+			var tboxY = floor(EaseInCubic(0,80,uiYCounter/320));
+			
 			draw_set_font(f_main);
-			draw_sprite(s_textbox_bright, 0, 0, floor(EaseInCubic(0,80,uiYCounter/320))); //draw textbox sprite
+			draw_sprite(s_textbox_bright, 0, 0, tboxY); //draw textbox sprite
 			
 			//top leftmost pixel = 18, 198
 			
-			fmtstring_draw(18, 198, typewriter.letterList, 0);
+			fmtstring_draw(18, 196+tboxY, typewriter.letterList, 0);
 			
 			if(handlerWaitForInput) {
 				draw_sprite(s_psxbuttons_frames, 0, 288, 225);
@@ -125,7 +127,7 @@ function HandlerCommon(intID) : HandlerBase(intID) constructor {
 			draw_gui_exit;
 		//}
 	}
-	
+		
 	//dumb gamemaker basing
 	static CleanupBase = Cleanup;
 	static Cleanup = function() {

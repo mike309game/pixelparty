@@ -20,9 +20,9 @@ draw_surface_ext(application_surface, surfX, surfY, scaled, scaled, 0, c_white, 
 gpu_set_blendenable(1);
 draw_surface_ext(global.guisurface, surfX, surfY, scaled, scaled, 0, c_white, 1);
 if(instance_exists(o_pause)) {
-	gpu_set_blendenable(0);
+	//gpu_set_blendenable(0);
 	draw_surface_ext(global.pausedsurface, surfX, surfY, scaled, scaled, 0, c_white, 1);
-	gpu_set_blendenable(1);
+	//gpu_set_blendenable(1);
 }
 /*gpu_set_blendmode(bm_subtract);
 draw_sprite_ext(ovly,0,surfX,surfY,scaled,scaled,0,c_white,1);

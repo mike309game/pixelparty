@@ -1,5 +1,5 @@
-ds_map_destroy(global.JaxFont_offsets);
-ds_map_destroy(global.JaxFont_widths);
+ds_map_destroy(global.JaxLarge_offsets);
+ds_map_destroy(global.JaxLarge_widths);
 
 //cleanup script system
 var nextKey = 0;//ds_map_find_first(global.script_sections);

@@ -1,3 +1,64 @@
+void __cdecl F_FileTextReadString(RValue *Result, CInstance *selfinst, CInstance *otherinst, int argc, RValue *arg)
+{
+  int fp; // eax
+  int fpAgain; // ebx
+  signed int charCounter; // esi
+  signed int stringLimit; // edi
+  unsigned __int8 *result; // ebp
+  int weirdFpStuff; // eax
+  char charCurrent; // al
+  char charCurrentAgain; // bl
+  int fpPos; // eax
+  int i; // [esp+4h] [ebp-4h]
+  
+  /*
+  tldr; it just reads until a new line in both dos and unix
+  */
+
+  fp = YYGetInt32(arg, 0);
+  fpAgain = fp;
+  if ( (unsigned int)(fp - 1) <= 0x1E && filestatus[fp] == 1 )
+  {
+    charCounter = 0;
+    stringLimit = 1024; //initial max line size set to 1024 chars
+    result = MemoryManager::Alloc(0x400u, "Files\\Function\\Function_File.cpp", 1033, 0);
+    weirdFpStuff = 3 * fpAgain;
+    for ( i = 3 * fpAgain; ; weirdFpStuff = i )
+    {
+      charCurrent = LoadSave::fgetc((_YYFILE *)(&Stream)[weirdFpStuff]);
+      charCurrentAgain = charCurrent;
+      if ( charCurrent != -1 && charCurrent != 0x0D && charCurrent != 0x0A )
+      {
+        if ( charCounter >= stringLimit )
+        {
+          stringLimit += stringLimit / 2;
+          result = MemoryManager::ReAlloc(result, stringLimit, "Files\\Function\\Function_File.cpp", 1042);
+        }
+        result[charCounter++] = charCurrentAgain;
+      }
+      if ( LoadSave::yyfeof((_YYFILE *)(&Stream)[i]) || charCurrentAgain == 0x0A )
+        break;
+      if ( charCurrentAgain == 0x0D )
+        goto LABEL_17;
+    }
+    if ( charCurrentAgain == 0x0D || charCurrentAgain == 0x0A )
+    {
+LABEL_17:
+      fpPos = LoadSave::ftell((_YYFILE *)(&Stream)[i]);
+      LoadSave::fseek((_YYFILE *)(&Stream)[i], fpPos - 1, 0);
+    }
+    if ( charCounter >= stringLimit )
+      result = MemoryManager::ReAlloc(result, stringLimit + stringLimit / 2, "Files\\Function\\Function_File.cpp", 1057);
+    result[charCounter] = 0;
+    YYCreateString(Result, (const char *)result);
+    MemoryManager::Free(result);
+  }
+  else
+  {
+    Error_Show_Action("File is not opened for reading.", 0);
+  }
+}
+
 double __cdecl YYGML_point_direction(float _x1, float _y1, float _x2, float _y2)
 {
   float height; // xmm0_4

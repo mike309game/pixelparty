@@ -4,7 +4,21 @@
 show_message(ord("]"));
 game_end();*/
 
+/*var file = ["crlf.txt","lf.txt","test.txt"];
+var files = array_length(file);
+for(var ii = 0; ii < files; ii++) {
+	show_debug_message(file[ii]);
+	var fp = file_text_open_read(file[ii]);
+	var text = file_text_read_string(fp);
+	var len = string_length(text);
+	for(var i = 1;i <= len; i++) {
+		show_debug_message(string_char_at(text,i) + " " + string(string_ord_at(text,i)));
+	}
+	file_text_close(fp);
+}*/
+
 enum eChar {
+	newline = 10,
 	exclamation = 33,
 	quote = 34,
 	hash,

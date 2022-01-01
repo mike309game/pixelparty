@@ -1,4 +1,4 @@
-///Compiler for verbose scripts.
+///////////////////////////////////////////////////////////Bad Opcode Scripting\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 enum ScriptVariableType {
 	string,
@@ -13,6 +13,11 @@ enum eScriptFunction {
 	divideValue,
 	moduloValue,
 	powValue,
+	
+	branchTrue,
+	branchFalse,
+	branchEqual,
+	branchNotEqual,
 	
 	notValue,
 	andValue,
@@ -70,6 +75,16 @@ test = test2 = "EURHWEURHUWH";
 show_message(test);
 show_message(test2);*/
 
+function ScriptSysMessage(arg) {
+	gml_pragma("forceinline");
+	show_debug_message("[Script System] " + arg);
+}
+
+function ScriptSysWarning(arg) {
+	gml_pragma("forceinline");
+	ScriptSysMessage("[WARNING] " + arg);
+}
+
 #macro scriptslocation "newscripts"
 
 //error checking
@@ -80,6 +95,8 @@ global.script_sections = ds_map_create();
 global.script_variables = ds_map_create();
 global.script_labels = ds_map_create();
 global.script_compiled = ds_map_create();
+
+///Compiler for verbose scripts.
 
 #region String -> Enum lookup tables
 
@@ -92,6 +109,12 @@ global.__scriptCommandMap[? "multiply"] = eScriptFunction.multiplyValue;
 global.__scriptCommandMap[? "divide"] = eScriptFunction.divideValue;
 global.__scriptCommandMap[? "modulo"] = eScriptFunction.moduloValue;
 global.__scriptCommandMap[? "pow"] = eScriptFunction.powValue;
+
+//Branching
+global.__scriptCommandMap[? "if"] = eScriptFunction.branchTrue;
+global.__scriptCommandMap[? "ifn"] = eScriptFunction.branchFalse;
+global.__scriptCommandMap[? "ifeq"] = eScriptFunction.branchEqual;
+global.__scriptCommandMap[? "ifneq"] = eScriptFunction.branchNotEqual;
 
 //Bit math
 global.__scriptCommandMap[? "not"] = eScriptFunction.notValue;
@@ -125,16 +148,6 @@ global.__scriptCommandMap[? "toggleFacepic1"] = eScriptFunction.toggleFacepic1;
 global.__scriptCommandMap[? "toggleFacepic2"] = eScriptFunction.toggleFacepic2;
 #endregion
 
-function ScriptSysMessage(arg) {
-	gml_pragma("forceinline");
-	show_debug_message("[Script System] " + arg);
-}
-
-function ScriptSysWarning(arg) {
-	gml_pragma("forceinline");
-	ScriptSysMessage("[WARNING] " + arg);
-}
-
 ScriptSysMessage("Compiling scripts");
 
 function CheckForRef(sussy, expect) {
@@ -159,9 +172,7 @@ function CompileScriptReadable(fname) {
 		exit;
 	}
 	var char = 0; //this'll be both strings and ints
-	var fbuffer = buffer_load(working_directory + "/" + scriptslocation + "/" + fname);
-	var fstring = buffer_read(fbuffer,buffer_text);
-	buffer_delete(fbuffer); //free buffer
+	var fstring = ReadAssuredLf(working_directory + "/" + scriptslocation + "/" + fname);
 	var fpos = 0; //pointer in file TODO: does this respect utf8 )yes it seems to
 	var fLen = string_length(fstring);
 	if(/*string_lower*/(string_copy(fstring, 1, 6)) == "NEEDED") { //check if needed files exist then if they are compiled
@@ -293,4 +304,6 @@ while(fname != "") { //compile all scripts in script directory
 	CompileScriptReadable(fname);
 	fname = file_find_next();
 }
+ScriptSysMessage("All done");
 //show_message("i'm outta here");
+//SerializeScript();

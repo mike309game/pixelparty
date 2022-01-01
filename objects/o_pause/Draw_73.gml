@@ -1,3 +1,5 @@
+//I FUCKING ENTIRELY REPLACED MY PAUSE CODE WITH YOURs FUCKIONG OOPS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+surface_set_target(global.pausedsurface);
 surf = surface_create(320,240)
 surfapp = surface_create(320,240)
 draw_set_font(f_main)
@@ -270,3 +272,4 @@ surface_free(surfapp)
 
 draw_sprite_ext(s_fade_white,0,0,0,1,1,0,c_white,fade)
 
+surface_reset_target();

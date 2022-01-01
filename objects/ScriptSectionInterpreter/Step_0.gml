@@ -28,13 +28,19 @@ function ReadArgument(expect) { //read an argument.
 	}
 }*/
 
-
+var JumpLabel = function(labelName) {
+	section = global.script_sections[? global.script_labels[?labelName][|0]];
+	funcpos = global.script_labels[?labelName][|1];
+}
 
 myHandler.Update();
 if(!halted) {
 	while(funcpos < ds_list_size(section)) {
 		if(!halted) {
 			currentarg = 1;
+			var arguments = ds_list_size(section[|funcpos]) - 1; //arguments (-1 to exclude func type)
+			var branchDoFalse = false; //do false check instead
+			
 			switch(section[|funcpos][|0]) {
 				#region Math
 				case eScriptFunction.setValue: //set a global value
@@ -77,6 +83,32 @@ if(!halted) {
 					var valuename = ReadArgument(eValueExpect.string);
 					var value = ReadArgument(eValueExpect.number); //has to be number
 					global.script_variables[? valuename] = power(global.script_variables[? valuename],value);
+					break;
+				//naughty code optimizating from 3 am ahead
+				case eScriptFunction.branchFalse:
+					branchDoFalse = true;
+					//note lack of break
+				case eScriptFunction.branchTrue: //condition if values are true at all
+					//var value = ReadArgument(eValueExpect.number);
+					//var labelName = ReadArgument(eValueExpect.string);
+					var result = true;
+					for(var i = 1; i < arguments; i++) {
+						var arg = section[|funcpos][|i];
+						if(is_string(arg)) {
+							if(branchDoFalse ? CheckForRef(arg,eValueExpect.number) : !CheckForRef(arg,eValueExpect.number)) {
+								result = false;
+								break; //break out of loop
+							}
+						} else {
+							if(branchDoFalse ? arg : !arg) {
+								result = false;
+								break;
+							}
+						}
+					}
+					if(result) {
+						JumpLabel(section[|funcpos][|arguments]); //last argument is label name
+					}
 					break;
 				case eScriptFunction.notValue: //flip bits
 					var valuename = ReadArgument(eValueExpect.string);
@@ -127,9 +159,10 @@ if(!halted) {
 					funcpos = -1;
 					break;
 				case eScriptFunction.jumpToLabel:
-					var labelname = ReadArgument(eValueExpect.string);
+					/*var labelname = ReadArgument(eValueExpect.string);
 					section = global.script_sections[? global.script_labels[?labelname][|0]];
-					funcpos = global.script_labels[?labelname][|1];
+					funcpos = global.script_labels[?labelname][|1];*/
+					JumpLabel(ReadArgument(eValueExpect.string));
 					break;
 				case eScriptFunction.jumpToSection:
 					var sectionname = ReadArgument(eValueExpect.string);
@@ -142,7 +175,7 @@ if(!halted) {
 					show_message/*_async*/(ReadArgument(eValueExpect.string));
 					break;
 				case eScriptFunction.endProcessing:
-					ScriptSysMessage("Ended processing of" + sectionName);
+					ScriptSysMessage("Ended processing of " + sectionName);
 					with(myCaller) {
 						alarm[0] = 1; //reenable caller interaction in 1 frame
 					}

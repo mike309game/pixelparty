@@ -19,12 +19,54 @@
 [textEnd];
 [end];
 
+<testbranch>
+[textStart];
+[text]"branch testing please set bt in code";
+
+[ifn]&bt,"test_lblbranch";
+[text]"branch is false";
+[text]"more cmds";
+[jumpLabel]"test_lblbranch_aftertrue";
+
+[label]"test_lblbranch";
+[text]"branch is true";
+[text]"more cmds";
+
+[label]"test_lblbranch_aftertrue";
+[text]"after truth case";
+
+[textEnd];
+[end];
+
 <dlgtest>
 [setFacepic1]!s_sign_talk;
 [setFacepic2]!s_manny_talk;
+
+[set]"x",#20.6447;
+[number2string]"x","x";
+[textStart];
+[text]&x;
+[textEnd];
+
+[toggleFacepic1]; show
+[waitFrames]#60;
+[toggleFacepic1]; hide
+[toggleFacepic2]; show
+[waitFrames]#60;
+[toggleFacepic1];show
+[waitFrames]#60;
+[toggleFacepic1];
+[toggleFacepic2];
+[waitFrames]#60;
 [toggleFacepic2];
 
 [textStart];
+[text]"lorem ipsum dolor sit amet
+Lorem Ipsum Dolor Sit Amet
+LOREM IPSUM DOLOR SIT AMET";
+[text]"the quick brown fox jumps over the lazy dog
+The Quick Brown Fox Jumps Over The Lazy Dog
+THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG";
 [text]"Hello";
 [toggleFacepic1];
 [text]"You suck (sucker)";
