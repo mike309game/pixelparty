@@ -45,7 +45,7 @@ EXT
 
 person1_2
 NME Lexsie
-@ Have you got that wheat for me yet?
+@ Hey sweets, got that wheat yet?
 NME Manny
 @ Yup, right here.
 PAL 2
@@ -96,9 +96,9 @@ NME Manny
 EVT sound thud
 @ I wouldn't be talking with those british #ass teeth.
 EVT sound thud
-@ You ain't got no bitches and that's why #you look like the kids in the special class
+@ You ain't got no bitches and you look #like the kids in the special class
 EVT sound thud
-@ Get the fuck out of my face before I give you #vietnam flashbacks.
+@ get the fuck out of my face before I give you #hemorrhoids
 EVT sound thud
 PAL 0
 NME Bully
@@ -164,8 +164,8 @@ EXT
 jarl
 NME Jarl
 @ OH VAS HELLO VANNY!!
-@ IS SOOO GREAT TO SEE YOU HERE!
-@ HOW IS MAXY
+@ IS SOOO GHREAT TO SEE YOU HERE!
+@ HOW IS YOUR KITTY MAXROI
 NME Manny
 @ ... fine..
 NME Jarl

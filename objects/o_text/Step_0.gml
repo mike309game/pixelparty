@@ -42,7 +42,7 @@ function findText()
 										}
 									case "PAL":
 										{
-											p_alt = string_copy(parse[a],5,1)
+											p_alt = string_copy(parse[a],5,string_length(parse[a]))
 											break;
 										}
 									case "EVT":

@@ -12,36 +12,39 @@ EXT
 buxy1
 NME Buxy
 @ Hi im buxy im cool but not #awesome!
-@ this area is incomplete as you #probably can see
-@ please try to find the nearest exit if #you can
-EVT sound pause_quit
+@ this area is incomplete or is #using the wrong level format (.pxp)
+@ new developer? read the pixel party# manual to learn more about
+@ pixel partys level formats and# outdated formats
+EVT sound error
 EXT
 
 buxy2
 NME Buxy
 PAL 1
 EVT gamecrash
-@ PORN
+@  
 EXT
 
 glitch
-NME 
-@ 
-@ 
-@ &&&^$@&^&^(#)*%)*!#)*)*&$)^#*)(*&_&!@$&!_*#%)(*#&$(*&#&(!)*%(875*!#_#%783747835971309&#&(R(&!()&&((&)!@@@@@@@@@@@
-@  
-@  
-@  
-@  
-wait 500 auto
-TSPD 40
-@ err level1-room9 load failure
-@ a
+NME Manny
+@              
+@               
+@            ,,
+@  .. .,. /$02
+@                     '#]
+PAL 999
 @ 
 @ 
 @ 
 @ 
+@ canoe-ngine                       v2.39
+@ yis             if  y
+@ scripting error
+@ :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+@ #  Let's set the record strai#ght,
+@ 8
 @ 
-@ 
+EVT wait 400
+@ incorrect level format
 @ OK
 EXT

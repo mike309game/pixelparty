@@ -13,8 +13,8 @@ NME Honstay
 @ - disruption.
 @ You will need to obtain puzzle pieces to #power the elevator to the next Honestary.
 NME Manny
-@ I will try my best.
+@ Alright, I'll try my best..
 NME Honstay
-@ Thank you.
+@ Thank you Manny. Go now, we might #be short on time..
 EVT delbox 1
 EXT
