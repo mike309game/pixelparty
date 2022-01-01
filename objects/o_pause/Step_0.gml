@@ -97,6 +97,7 @@ if keyboard_check_pressed(ord("Z")) && tr = 1 && mode = 0
 						Sound(sx_pause_quit,0)
 						global.vars.fakeload = r_title
 						roomTrans(r_load,0,0)
+						save_save()
 					}
 			}
 	}

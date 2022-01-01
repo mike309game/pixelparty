@@ -20,6 +20,16 @@ function save_init()
 function save_save()
 	{
 		show_message("actual saving unavailable for now")
+		ini_open(working_directory + "pxpa_save.ini")
+			ini_write_real("player","puzzle",global.player.puzzle)
+			ini_write_real("player","money",global.player.money)
+			//ini_write_real("game","catpart",global.catparts.part)
+			//ini_write_real("game","gate",global.gates.gate)
+			//ini_write_real("game","shop_l1",global.shop_start_tables.l1)
+			//ini_write_real("game","shop_l2",global.shop_start_tables.l2)
+			//ini_write_real("game","shop_l3",global.shop_start_tables.l3)
+			ini_write_real("game","gameevent",global.gameevent)
+		ini_close()
 	}
 
 function save_load()

@@ -1,3 +1,8 @@
+draw_set_alpha(0.4)
+draw_set_color(c_black)
+draw_ellipse(round(x)+9,round(y)+43,round(x)+(48-10),round(y)+48+2,0)
+draw_set_alpha(1)
+
 if !global.vars.got_puzzle
 	{
 		no_draw = false
