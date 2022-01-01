@@ -272,4 +272,12 @@ global.JaxLarge_offsets[?"_"]=0;
 global.JaxLarge_widths[?"_"]=9;
 global.JaxLarge_offsets[?"©"]=3;
 global.JaxLarge_widths[?"©"]=9;
+global.JaxLarge_offsets[?"\\"]=2;
+global.JaxLarge_widths[?"\\"]=6;
+global.JaxLarge_offsets[?"["]=3;
+global.JaxLarge_widths[?"["]=4;
+global.JaxLarge_offsets[?"]"]=2;
+global.JaxLarge_widths[?"]"]=4;
+global.JaxLarge_offsets[?"~"]=1;
+global.JaxLarge_widths[?"~"]=7;
 #endregion

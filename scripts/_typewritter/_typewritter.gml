@@ -76,6 +76,9 @@ function Typewritter(_skippable = true) constructor {
 		
 		while(char == eChar.backslash) { //advance string pointer, check for command begin
 			stringPointer = string_read_terminated(text, ++stringPointer, ["["], 0);
+			if(global.errorCode == eErrorCode.terminatorNotFound) { //incomplete string
+				break;
+			}
 			var cmdName = global.stringReadReturn;
 			
 			//var isValue = string_ord_at(string, stringPointer) == eChar.dollar;
@@ -87,6 +90,9 @@ function Typewritter(_skippable = true) constructor {
 				while(string_ord_at(text, stringPointer) == $20){stringPointer++;} //allow for spaces in between args in the right side
 				var argType = string_ord_at(text, stringPointer);
 				stringPointer = string_read_terminated(text, ++stringPointer, [",", "]"], 0);
+				if(global.errorCode == eErrorCode.terminatorNotFound) { //incomplete string
+					break;
+				}
 				switch(argType) {
 					case eChar.hash:
 						args[argIndex++] = real(global.stringReadReturn);
@@ -172,5 +178,11 @@ function Typewritter(_skippable = true) constructor {
 			delete letterList[|i];
 		}
 		ds_list_clear(letterList);
+		advancer_flags = int64(0); //reset state of advancer just to be safe
+		advancer_rShakeAmp = 0;
+		advancer_vShakeAmp = 0;
+		advancer_vShakeFreq = 0;
+		advancer_hShakeAmp = 0;
+		advancer_hShakeFreq = 0;
 	}
 }

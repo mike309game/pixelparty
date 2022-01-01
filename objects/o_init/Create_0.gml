@@ -17,7 +17,7 @@ file_text_close(fil)*/
 
 var fp = file_text_open_read("text/gametitles.txt");
 while(!file_text_eof(fp)) {
-	titles[titlesCount++] = file_text_readln(fp);
+	titles[titlesCount++] = file_text_read_string(fp);file_text_readln(fp);
 }
 file_text_close(fp);
 

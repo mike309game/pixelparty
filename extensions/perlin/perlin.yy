@@ -59,6 +59,8 @@
         {"name":"perlin","path":"extensions/perlin/perlin.yy",},
         {"name":"perlin","path":"extensions/perlin/perlin.yy",},
         {"name":"perlin","path":"extensions/perlin/perlin.yy",},
+        {"name":"perlin","path":"extensions/perlin/perlin.yy",},
+        {"name":"perlin","path":"extensions/perlin/perlin.yy",},
       ],"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMExtensionFile",},
   ],
   "classname": "",
