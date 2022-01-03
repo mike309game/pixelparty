@@ -48,7 +48,12 @@ enum eScriptFunction {
 	setNamelabel1,
 	setNamelabel2,
 	toggleFacepic1,
-	toggleFacepic2
+	toggleFacepic2,
+	toggleNamelabel1,
+	toggleNamelabel2,
+	s1h2, //show name/face 1, hide name/face 2
+	s2h1, //vice versa
+	toggleAutoClear
 }
 
 enum eValueExpect {
@@ -126,7 +131,6 @@ global.__scriptCommandMap[? "shiftL"] = eScriptFunction.shiftValueLeft;
 
 
 global.__scriptCommandMap[? "waitFrames"] = eScriptFunction.waitForFrames;
-global.__scriptCommandMap[? "waitFrame"] = eScriptFunction.wait;
 global.__scriptCommandMap[? "restartProcessing"] = eScriptFunction.restartProcessing;
 global.__scriptCommandMap[? "jumpLabel"] = eScriptFunction.jumpToLabel;
 global.__scriptCommandMap[? "jumpSection"] = eScriptFunction.jumpToSection;
@@ -146,7 +150,16 @@ global.__scriptCommandMap[? "setNamelabel1"] = eScriptFunction.setNamelabel1;
 global.__scriptCommandMap[? "setNamelabel2"] = eScriptFunction.setNamelabel2;
 global.__scriptCommandMap[? "toggleFacepic1"] = eScriptFunction.toggleFacepic1;
 global.__scriptCommandMap[? "toggleFacepic2"] = eScriptFunction.toggleFacepic2;
+global.__scriptCommandMap[? "toggleNamelabel1"] = eScriptFunction.toggleNamelabel1;
+global.__scriptCommandMap[? "toggleNamelabel2"] = eScriptFunction.toggleNamelabel2;
+global.__scriptCommandMap[? "s1h2"] = eScriptFunction.s1h2;
+global.__scriptCommandMap[? "s2h1"] = eScriptFunction.s2h1;
+global.__scriptCommandMap[? "ac"] = eScriptFunction.toggleAutoClear;
 #endregion
+
+for(var i = ds_map_find_first(global.__scriptCommandMap); i != undefined; i = ds_map_find_next(global.__scriptCommandMap,i)) {
+	show_debug_message(i);
+}
 
 ScriptSysMessage("Compiling scripts");
 
@@ -251,7 +264,16 @@ function CompileScriptReadable(fname) {
 					while(string_ord_at(fstring,++fpos) != eChar.semicolon) {//loop to store arguments
 						var kind = string_ord_at(fstring,fpos++); //get what kind of value the argument is
 						if(kind == eChar.quote) { //special reading for strings
-							fpos = string_read_terminated(fstring, fpos, ["\""], 1);
+							/*
+							empty strings fuck up the terminator finder since we're ON the terminator we'd end at
+							i cannot be assed to make the terminator finder good at the moment, or am even sure that it is fixable
+							*/
+							if(string_ord_at(fstring,fpos) == eChar.quote) {
+								global.stringReadReturn = "";
+								fpos++;
+							} else {
+								fpos = string_read_terminated(fstring, fpos, ["\""], 1);
+							}
 						} else {
 							fpos = string_read_terminated(fstring, fpos, [",",";"], 0);
 						}
@@ -288,6 +310,7 @@ function CompileScriptReadable(fname) {
 					}
 					if(!islabelfunc) {
 						section[|currentcommand] = commandargs;
+						ScriptSysMessage(@"	Did command " + functionname + string(currentcommand)); //that space is a tab
 					}
 				}
 				char = string_ord_at(fstring, ++fpos); /***********************THIS IS THE MOST IMPORTANT LINE OF CODE IN HERE, NOTE THE ++FPOS***********************/
@@ -299,7 +322,7 @@ function CompileScriptReadable(fname) {
 	global.script_compiled[?fname] = 1; //the value doesn't matter, my code checks wether the key just exists
 }
 
-var fname = file_find_first(working_directory + "/" + scriptslocation + "/*.txt",fa_directory);
+var fname = file_find_first(working_directory + "/" + scriptslocation + "/*.bos",fa_directory);
 while(fname != "") { //compile all scripts in script directory
 	CompileScriptReadable(fname);
 	fname = file_find_next();

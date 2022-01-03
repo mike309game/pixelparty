@@ -32,7 +32,7 @@ global.vars = { // random globals [ USE THIS FOR GLOBAL VARIABLES ]
 	playing : sx_nothing,
 	play : sx_nothing,
 	loopplay : 1,
-	roomgo : rm_scrtest,
+	roomgo : r_de_miketest,
 	roompt : 0,
 	roomtr : 0,
 	fakeload : r_yisify,
@@ -280,4 +280,6 @@ global.JaxLarge_offsets[?"]"]=2;
 global.JaxLarge_widths[?"]"]=4;
 global.JaxLarge_offsets[?"~"]=1;
 global.JaxLarge_widths[?"~"]=7;
+global.JaxLarge_offsets[?"#"]=0;
+global.JaxLarge_widths[?"#"]=9;
 #endregion

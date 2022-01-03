@@ -3,7 +3,7 @@ display_set_gui_size(320,240);
 
 global.debug = {
 	debug_enabled : 1,
-	debug_hud : 0,
+	debug_hud : 1,
 	noclip : 0,
 	auto_puzzle : 0,
 	build_type : "ps" // "ps" for webseries build / "pc" for actual computer build / "web" for newgrounds

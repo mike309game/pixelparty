@@ -5,6 +5,7 @@ currentarg = 1;						//Current argument being processed. Is 1 because argument 0
 sectionName = "";					//Name of the section being processed.
 myHandler = noone;					//This interpreter's handler for special events like dialogue.
 myCaller = noone;					//Who created the interpreter
+canDie = false;						//interpreter can die?
 
 //these will likely be removed because my smooth brain thought these were a good idea
 funcstack = ds_stack_create();

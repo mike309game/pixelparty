@@ -7,10 +7,10 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 15,
-  "bbox_right": 120,
-  "bbox_top": 82,
-  "bbox_bottom": 226,
+  "bbox_left": 35,
+  "bbox_right": 148,
+  "bbox_top": 40,
+  "bbox_bottom": 189,
   "HTile": false,
   "VTile": false,
   "For3D": false,
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"2120d0a3-170c-4faf-82f2-be739600da8d","path":"sprites/s_manny_talk_alt_2/s_manny_talk_alt_2.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"2120d0a3-170c-4faf-82f2-be739600da8d","path":"sprites/s_manny_talk_alt_2/s_manny_talk_alt_2.yy",},"LayerId":{"name":"9d7373dd-9098-4023-8827-6b35f5a71a42","path":"sprites/s_manny_talk_alt_2/s_manny_talk_alt_2.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"s_manny_talk_alt_2","path":"sprites/s_manny_talk_alt_2/s_manny_talk_alt_2.yy",},"resourceVersion":"1.0","name":"2120d0a3-170c-4faf-82f2-be739600da8d","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"2fbfa0eb-e081-4889-97f3-268cdbbb3a06","path":"sprites/s_lexsie_talk_rude/s_lexsie_talk_rude.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"2fbfa0eb-e081-4889-97f3-268cdbbb3a06","path":"sprites/s_lexsie_talk_rude/s_lexsie_talk_rude.yy",},"LayerId":{"name":"096b9d2f-20aa-4a0d-ad3b-6348d1c03fd5","path":"sprites/s_lexsie_talk_rude/s_lexsie_talk_rude.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"s_lexsie_talk_rude","path":"sprites/s_lexsie_talk_rude/s_lexsie_talk_rude.yy",},"resourceVersion":"1.0","name":"2fbfa0eb-e081-4889-97f3-268cdbbb3a06","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"s_manny_talk_alt_2","path":"sprites/s_manny_talk_alt_2/s_manny_talk_alt_2.yy",},
+    "spriteId": {"name":"s_lexsie_talk_rude","path":"sprites/s_lexsie_talk_rude/s_lexsie_talk_rude.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"c9e5d045-c83e-480b-b789-fc891f9f8f50","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"2120d0a3-170c-4faf-82f2-be739600da8d","path":"sprites/s_manny_talk_alt_2/s_manny_talk_alt_2.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"a34f530b-6b8f-4682-b13a-0b5fdb0fd6b4","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"2fbfa0eb-e081-4889-97f3-268cdbbb3a06","path":"sprites/s_lexsie_talk_rude/s_lexsie_talk_rude.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -58,14 +58,14 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"s_manny_talk_alt_2","path":"sprites/s_manny_talk_alt_2/s_manny_talk_alt_2.yy",},
+    "parent": {"name":"s_lexsie_talk_rude","path":"sprites/s_lexsie_talk_rude/s_lexsie_talk_rude.yy",},
     "resourceVersion": "1.3",
-    "name": "s_manny_talk_alt_2",
+    "name": "s_lexsie_talk_rude",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"9d7373dd-9098-4023-8827-6b35f5a71a42","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"096b9d2f-20aa-4a0d-ad3b-6348d1c03fd5","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
@@ -73,7 +73,7 @@
     "path": "folders/Sprites/gui/talk.yy",
   },
   "resourceVersion": "1.0",
-  "name": "s_manny_talk_alt_2",
+  "name": "s_lexsie_talk_rude",
   "tags": [],
   "resourceType": "GMSprite",
 }

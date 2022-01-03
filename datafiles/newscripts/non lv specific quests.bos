@@ -1,0 +1,5 @@
+put quests that aren't level specific here pls for organisation
+
+$melvin state=#0;						state 0: didn't meet him yet
+								state 1: met him 1st time
+								state 2: and so on

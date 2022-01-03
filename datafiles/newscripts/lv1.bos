@@ -1,0 +1,168 @@
+
+
+$level1-lexsieQuest-talkedOnce=#0;
+$level1-lexsieQuest-gotBread=#0;
+$level1-lexsieQuest-done=#0;
+
+$level1-bulliedBully=#0;				you don't even know him yet
+
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+<level1-EntranceSignDialogue>
+				///SETUP\\\
+[setFacepic1]!s_sign_talk; 				set left facepic to sign man's talk sprite
+[setFacepic2]!s_manny_talk;				set right facepic to manny's talk sprite
+--
+[setNamelabel1]"Sign"; 					set name 1 to sign
+[setNamelabel2]"Manny";					set name 2 to manny
+
+[textStart];							allow the text processing
+
+[toggleFacepic1];						show sign man
+
+Sign:
+[text]"Hello,\d1[] \dr[]welcome to Yixxi.";
+[text]"There are currently 4 people living here\d1[],
+\dr[]see if you can find them.";							NOTE THE DELAY HERE IS DONE BEFORE THE COMMA DUE TO NEWLINE FUCKERY
+[text]"Maybe they can assist you in whatever
+you're doing.";
+
+[s2h1];									show manny hide sign man
+
+Manny:
+[text]"...";
+[text]"Why do you look like a 12 year old built you.";
+
+[s1h2];									show sign man hide manny
+
+Sign:
+[text]"\d1[]...";
+[text]"...";
+[text]"\dr[]...why";						sign man takes the L
+
+[textEnd];								let text processing die
+
+[end];									kill interpreter
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+<level1-LexsieDialogue>
+				///SETUP\\\
+[setFacepic1]!s_lexsie_talk;				set left facepic to lexsie normal
+[setFacepic2]!s_manny_talk;				set right facepic to manny normal
+--
+[setNamelabel1]"Lexsie";					set left namelabel to Lexsie
+[setNamelabel2]"Manny";					set right namelabel to Manny
+
+[textStart];							begin processing text
+
+Somehow interacted while still having the piece? screw off
+[if]&level1-lexsieQuest-done,"label-lv1-lexsieDone";
+
+Got the bread? go to where it handles that
+[if]&level1-lexsieQuest-gotBread,"label-lv1-lexsieGotBread";
+
+Talked to her already? Jump to that label, if not, proceed downwards
+[if]&level1-lexsieQuest-talkedOnce,"label-lv1-lexsieTalkedTo";
+	[s1h2];									show lexsie sprite and name
+	
+	[text]"Heya!\d1[] \dr[]What can I do for ya?";
+	
+	[s2h1];									hide lexsie, show manny
+	
+	[text]"Do you know where I can get 'puzzle pieces'.";
+	
+	[s1h2];									hide manny, show lexsie
+	
+	[text]"Sure do!\d1[] \dr[]But could you do me a favor?";
+	
+	[s2h1];									show manny, hide lexsie
+	
+	[text]"Where do I get 'puzzle pieces'.";
+	
+	[s1h2];									show lexsie, hide manny
+	[setFacepic1]!s_lexsie_talk_rude;			make her angry
+	
+	[ac];									disable auto clear for nice dialogue (this order matters)
+	[text]"\d1[]..\dr[]Rude.";
+	
+	[setFacepic1]!s_lexsie_talk;				make lexsie normal
+	
+	[ac];									enable auto clear again
+	[text]"
+Well.";										add another line before
+	
+	[text]"I need some wheat to bake some bread for
+Hux,\d1[] \dr[]and I'd appreciate it if you could get it
+for me.";
+	
+	[s2h1];									show manny, hide lexsie
+	
+	[text]"Alright, is there a store or something
+nearby?";
+	
+	[s1h2];									show lexsie, hide manny
+	
+	[text]"There's a shop in the north-eastern part of
+the complex.";
+	
+	[setFacepic1]!s_lexsie_talk_rude;			make her angry again
+	
+	[text]"Though,\d1[] \dr[]there's some big purple bully
+blocking it off..";
+	
+	[text]"He says the store is his and refuses to let
+anybody through.";
+	
+	[setFacepic1]!s_lexsie_talk;				make lexsie normal again
+	
+	[text]"I got a feeling you know the right words to
+deal with him,\d1[] \dr[]haha.";
+	
+	[setFacepic2]!s_manny_talk_rude;			
+	[s2h1];									show manny, hide lexsie
+	
+	[text]"OK.";
+	
+	[set]"level1-lexsieQuest-talkedOnce",#1;mark we talked to lexsie once
+	
+	[jumpLabel]"label-lv1-lexsieDone";		jump to end of conversation
+
+[label]"label-lv1-lexsieTalkedTo";		Jumps here if you already talked to her once
+	[s1h2];									show lexsie sprite and name
+	
+	[text]"...";
+	[text]"...Need anything?";
+	
+	[s2h1];									hide lexsie, show manny
+	
+	[text]"...";
+	[jumpLabel]"label-lv1-lexsieDone";		jump to end of conversation to not proceed
+
+[label]"label-lv1-lexsieGotBread";	jumps here when you talked once AND got bread
+	[s1h2];									show lexsie
+	
+	[text]"Hey,\d1[] \dr[]did you manage to get the bread?";
+	
+	[s2h1];									show manny
+	
+	[text]"Yea right here.";
+	
+	[s1h2];									show lexsie
+	
+	[ac];									don't auto clear for this line
+	[setFacepic1]!s_lexsie_talk_happy;			make lexsie happy
+	[text]"Thank you!";
+	
+	[ac];									enable auto clear again
+	[setFacepic1]!s_lexsie_talk;				make her normal
+	[text]"
+Here,\d1[] \dr[]you can have the piece now.";
+	
+	[text]"TODO SPAWN PIECE HERE";
+	
+	[set]"level1-lexsieQuest-done",#1;			mark that we're done
+	[jumpLabel]"label-lv1-lexsieDone";		we're done here
+
+[label]"label-lv1-lexsieDone";			label to mark where we're done here
+
+[textEnd];								end text stuff
+[end];									kill interpreter
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\

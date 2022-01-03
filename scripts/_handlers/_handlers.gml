@@ -2,13 +2,13 @@
 BASE HANDLER should not be used by itself and should only be inherited
 ***********************************************************/
 function HandlerBase(intID) constructor {
-	myInterpreter = intID;					//handler's interpreter
-	handlerWaitFrames = -1;					//halt frames as given by interpreter
-	handlerText = "";						//text given by interpreter
-	handlerProcessText = false;				//process text?
-	handlerWaitForInput = false;			//waiting for input?
-	handlerWaitFrames = -1;					//frames to wait before reactivating interpreter
-	handlerFlags = int64(0);				//handler special flags
+	myInterpreter = intID;						//handler's interpreter
+	handlerWaitFrames = -1;						//halt frames as given by interpreter
+	handlerText = "";							//text given by interpreter
+	handlerProcessText = false;					//process text?
+	handlerWaitForInput = false;				//waiting for input?
+	handlerWaitFrames = -1;						//frames to wait before reactivating interpreter
+	handlerFlags = eHandlerFlags.autoClearText;	//handler special flags
 	
 	//special cases
 	handlerFacepic1 = s_nothing;
@@ -17,10 +17,15 @@ function HandlerBase(intID) constructor {
 	handlerNamelabel2 = "";
 	
 	enum eHandlerFlags {
-		npcAnimate = 1 << 0,				//let npc know to do lil chatter animating
-		showTextbox = 1 << 1,				//bring up textobx?
-		showFacepic1 = 1 << 2,				//show facepic 1?
-		showFacepic2 = 1 << 3				//show facepic 2?
+		npcAnimate = 1 << 0,					//let npc know to do lil chatter animating
+		showTextbox = 1 << 1,					//bring up textobx?
+		showFacepic1 = 1 << 2,					//show facepic 1?
+		showFacepic2 = 1 << 3,					//show facepic 2?
+		showNamelabel1 = 1 << 4,				//show namelabel 1?
+		showNamelabel2 = 1 << 5,				//show namelabel 2?
+		autoClearText = 1 << 6,					//auto clear text?
+		processText = 1 << 7,					//process text?
+		waitForInput = 1 << 8					//wait for input?
 	}
 	
 	static Resume = function() {
@@ -54,18 +59,33 @@ function HandlerBase(intID) constructor {
 	}
 	static HandleTextProcessingToggle = function(_value) {
 		handlerProcessText = _value;
-		if(_value == false) then handlerFlags &= ~(eHandlerFlags.showFacepic1 | eHandlerFlags.showFacepic2);
+		if(_value == false) { //if disabling text processing also disable facepics n namelabels just to be safe
+			handlerFlags &= ~(
+			eHandlerFlags.showFacepic1 | eHandlerFlags.showFacepic2 |
+			eHandlerFlags.showNamelabel1 | eHandlerFlags.showNamelabel2);
+		}
+	}
+	static HandleKillCall = function() {
+		myInterpreter.canDie = true;
+	}
+	static HandleAutoclearToggle = function() {
+		
+	}
+	static HandleAutopauseToggle = function() {
+		
 	}
 }
 /**********************************************************
 COMMON HANDLER used by npcs and triggers
 ***********************************************************/
 function HandlerCommon(intID) : HandlerBase(intID) constructor {
-	typewriter = new Typewritter(true);
+	typewriter = new Typewriter(true);
 	
 	//textbox
 	facepic1XCounter = 240;
 	facepic2XCounter = 240;
+	
+	waitingForDeath = false;
 	
 	//facepic1Y = 0;
 	//facepic2Y = 0;
@@ -101,6 +121,9 @@ function HandlerCommon(intID) : HandlerBase(intID) constructor {
 		} else {
 			facepic2XCounter = min(facepic2XCounter+16,240);
 		}
+		if(waitingForDeath && uiYCounter == 320 && facepic1XCounter == 240 && facepic2XCounter == 240) { //if everything's away then we can die
+			myInterpreter.canDie = true;
+		}
 	}
 	
 	static DrawBase = Draw;
@@ -111,17 +134,25 @@ function HandlerCommon(intID) : HandlerBase(intID) constructor {
 			draw_sprite(handlerFacepic1,0,EaseInCubic(0,-320,facepic1XCounter/240),0);
 			draw_sprite_ext(handlerFacepic2,0,EaseInCubic(320,640,facepic2XCounter/240),0,-1,1,0,c_white,1);
 			
-			var tboxY = floor(EaseInCubic(0,80,uiYCounter/320));
-			
-			draw_set_font(f_main);
+			var tboxY = floor(EaseInCubic(0,80,uiYCounter/320))/* + (keycheck(vk_enter))*2 nevermind*/;
 			draw_sprite(s_textbox_bright, 0, 0, tboxY); //draw textbox sprite
 			
-			//top leftmost pixel = 18, 198
+			draw_set_colour(c_black);
+			if(handlerFlags & eHandlerFlags.showNamelabel1) {
+				draw_sprite(s_textbox_bright, 1, 0, tboxY); //draw namelabel 1
+				draw_text_correctly(23,177+tboxY,handlerNamelabel1);
+			}
+			if(handlerFlags & eHandlerFlags.showNamelabel2) {
+				draw_sprite(s_textbox_bright, 2, 0, tboxY); //draw namelabel 2
+				draw_text_correctly(204,177+tboxY,handlerNamelabel2);
+			}
+			draw_set_colour(c_white);
 			
-			fmtstring_draw(18, 196+tboxY, typewriter.letterList, 0);
+			draw_set_font(f_main);			
+			fmtstring_draw(18, 196+tboxY, typewriter.letterList, 0, true);
 			
 			if(handlerWaitForInput) {
-				draw_sprite(s_psxbuttons_frames, 0, 288, 225);
+				draw_sprite(s_psxbuttons_frames, 0, 288, 225 + tboxY);
 			}
 			
 			draw_gui_exit;
@@ -148,7 +179,7 @@ function HandlerCommon(intID) : HandlerBase(intID) constructor {
 	static ResumeBase = Resume;
 	static Resume = function() {
 		ResumeBase();
-		if(global.script_variables[? "text auto clear"]) {
+		if(handlerFlags & eHandlerFlags.autoClearText) {
 			with(typewriter) {
 				//characterCount = -1;
 				ClearLetterList(letterList);
@@ -158,5 +189,9 @@ function HandlerCommon(intID) : HandlerBase(intID) constructor {
 				textPointer = 0;
 			}
 		}
+	}
+	
+	static HandleKillCall = function() {
+		waitingForDeath = true;
 	}
 }

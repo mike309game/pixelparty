@@ -1,5 +1,19 @@
 dlgPointer = clamp(dlgPointer + (keyboard_check_pressed(vk_right) - keyboard_check_pressed(vk_left)),0,string_length(dlgString));
 
+if(keyboard_check_pressed(vk_tab)) {
+	dlgString = string_replace_all(get_string("enter dialogue text (\\n = newline)",string_replace_all(dlgString,"\n","\\n")),"\\n","\n");
+	dlgPointer = 0;
+	with(typewriter) {
+		//characterCount = -1;
+		ClearLetterList(letterList);
+		letterListLen = 0;
+		text = other.dlgString;
+		textLen = string_length(other.dlgString);
+		textPointer = 0;
+		canAdvance = 1
+	}
+}
+
 if(keyboard_lastkey != -1) {
 	var ordChar = string_ord_at(keyboard_lastchar,1);
 	if(keyboard_lastkey == vk_enter) {
@@ -11,7 +25,7 @@ if(keyboard_lastkey != -1) {
 	}
 	keyboard_lastkey = -1;
 	keyboard_lastchar = "";
-	with(typewritter) {
+	with(typewriter) {
 		//characterCount = -1;
 		ClearLetterList(letterList);
 		letterListLen = 0;
@@ -21,7 +35,8 @@ if(keyboard_lastkey != -1) {
 		canAdvance = 1
 	}
 }
+
 //eat shit
 try {
-	typewritter.Step();
+	typewriter.Step();
 } catch(myNadsBitch) {}

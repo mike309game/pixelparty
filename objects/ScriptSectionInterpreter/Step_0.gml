@@ -175,11 +175,9 @@ if(!halted) {
 					show_message/*_async*/(ReadArgument(eValueExpect.string));
 					break;
 				case eScriptFunction.endProcessing:
-					ScriptSysMessage("Ended processing of " + sectionName);
-					with(myCaller) {
-						alarm[0] = 1; //reenable caller interaction in 1 frame
-					}
-					instance_destroy(id,1);
+					/**/
+					myHandler.HandleKillCall();
+					halted = true;
 					break;
 				case eScriptFunction.makeRgb:
 					//if you put a string fuck you you're getting a crash dumbass
@@ -245,6 +243,25 @@ if(!halted) {
 				case eScriptFunction.toggleFacepic2:
 					myHandler.handlerFlags ^= eHandlerFlags.showFacepic2;
 					break;
+				case eScriptFunction.toggleNamelabel1:
+					myHandler.handlerFlags ^= eHandlerFlags.showNamelabel1;
+					break;
+				case eScriptFunction.toggleNamelabel2:
+					myHandler.handlerFlags ^= eHandlerFlags.showNamelabel2;
+					break;
+				case eScriptFunction.s1h2:
+					myHandler.handlerFlags = (myHandler.handlerFlags |
+					(eHandlerFlags.showFacepic1 | eHandlerFlags.showNamelabel1)) & ~
+					(eHandlerFlags.showFacepic2 | eHandlerFlags.showNamelabel2);
+					break;
+				case eScriptFunction.s2h1:
+					myHandler.handlerFlags = (myHandler.handlerFlags |
+					(eHandlerFlags.showFacepic2 | eHandlerFlags.showNamelabel2)) & ~
+					(eHandlerFlags.showFacepic1 | eHandlerFlags.showNamelabel1);
+					break;
+				case eScriptFunction.toggleAutoClear:	
+					myHandler.handlerFlags ^= eHandlerFlags.autoClearText;
+					break;
 				default:
 					break;
 			}
@@ -254,4 +271,11 @@ if(!halted) {
 			}
 		}
 	}
+}
+if(canDie) {
+	ScriptSysMessage("Ended processing of " + sectionName);
+	with(myCaller) {
+		alarm[0] = 1; //reenable caller interaction in 1 frame
+	}
+	instance_destroy(id,1);
 }

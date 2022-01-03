@@ -38,56 +38,7 @@ enum eTextFlag {
 	newLine = 1 << 5
 }
 
-function Letter(
-	//common
-	_char, _flags, _newlines, _txptrdiff, _colour = 0, _alpha = 1,
-	//random shake
-	_rshake_amp = 0,
-	//vertical shake
-	_vshake_amp = 0, _vshake_freq = 0,
-	//horizontal shake
-	_hshake_amp = 0, _hshake_freq = 0
-) constructor {
-	x = 0; //x offset (for shake)
-	y = 0; //y offset (for shake)
-	newlines = _newlines;
-	char = _char;
-	sep = global.JaxLarge_widths[?char];
-	if(sep == undefined) {
-		sep = 4;
-	}
-	offset = global.JaxLarge_offsets[?char];
-	if(offset == undefined) {
-		offset = 0;
-	}
-	textPointerDifference = _txptrdiff;
-	flags = _flags;
-	if(flags & eTextFlag.colourChanging) {
-		colour = _colour;
-		alpha = _alpha;
-	}
-	if(flags & eTextFlag.horzShake) {
-		hShakeAmp = _hshake_amp;
-		hShakeFreq = _hshake_freq;
-	}
-	if(flags & eTextFlag.vertShake) {
-		vShakeAmp = _vshake_amp;
-		vShakeFreq = _vshake_freq;
-	}
-	if(flags & eTextFlag.randomShake) {
-		rShakeAmp = _rshake_amp;
-	}
-	static Update = function(iterator) {
-		if(flags & eTextFlag.randomShake) {
-			x = irandom_range(-rShakeAmp, rShakeAmp);
-			y = irandom_range(-rShakeAmp, rShakeAmp);
-		} else if(flags & eTextFlag.horzShake) {
-			x = cos((current_time / 250 + iterator/2)) * 2;
-		}
-	}
-}
-
-function fmtstring_draw(xx, yy, letterList, start, spacingAmt = 15, defaultClr = c_black) {
+function fmtstring_draw(xx, yy, letterList, start, dropshadow = false, spacingAmt = 15, defaultClr = c_black) {
 	var sep = 0;
 	var spacing = 0;
 	var letterCurrent = noone;
@@ -110,13 +61,24 @@ function fmtstring_draw(xx, yy, letterList, start, spacingAmt = 15, defaultClr =
 		
 		var charOffset = letterCurrent.offset;
 		var newlines = letterCurrent.newlines;
+		
 		if(newlines) { //got line changing?
 			spacing += letterCurrent.newlines * spacingAmt; //spacing
 			sep = 0; //reset separation
 		}
 		
 		sep -= charOffset; //for chars that don't have 1st pixel at draw pos
-		draw_text((xx + sep) + letterCurrent.x, (yy + spacing) + letterCurrent.y, letterCurrent.char);
+		
+		var textX = (xx + sep) + letterCurrent.x;
+		var textY = (yy + spacing) + letterCurrent.y;
+		
+		draw_text(textX, textY, letterCurrent.char);
+		if(dropshadow) {
+			var alphaOld = draw_get_alpha();
+			draw_set_alpha(alphaOld/6);
+			draw_text(textX+2, textY+2, letterCurrent.char);
+			draw_set_alpha(alphaOld);
+		}
 		sep += charSep+charOffset+1;
 	}
 	draw_set_colour(c_white);

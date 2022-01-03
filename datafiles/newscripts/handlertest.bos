@@ -1,4 +1,4 @@
-NEEDED zglobals1.txt;
+NEEDED zglobals1.bos;
 <handler test>
 
 [waitFrames]#120;

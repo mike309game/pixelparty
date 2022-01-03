@@ -23,7 +23,7 @@
 [textStart];
 [text]"branch testing please set bt in code";
 
-[ifn]&bt,"test_lblbranch";
+[if]&bt,"test_lblbranch";
 [text]"branch is false";
 [text]"more cmds";
 [jumpLabel]"test_lblbranch_aftertrue";
