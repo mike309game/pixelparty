@@ -69,7 +69,7 @@ function Typewriter(_skippable = true, _initTextSpeed = global.script_variables[
 			canAdvance = false;
 			return 1;
 		}
-		if(keycheck_pressed(vk_shift) && skippable) {
+		if(GetInputPressed(eInput.skipText) && skippable) {
 			skipText = true;
 			canAdvance = true; //force advancing because advancing only happens when the timer is done
 		}

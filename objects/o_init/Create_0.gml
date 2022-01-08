@@ -3,6 +3,8 @@ save_setting_load()
 window_set_size(global.setting.scale*320,global.setting.scale*240)
 alarm_set(0,1)
 
+depth = -16000;
+
 mus_fade = 1;
 titles[0] = "";
 titlesCount = 0;
@@ -122,7 +124,6 @@ if(irandom_range(0,255) == 63) {
 
 
 transalpha = 0
-depth = -16000
 
 //blendtester = noone;
 if(global.debug.debug_enabled && os_type != os_operagx) {

@@ -60,6 +60,7 @@
   "androidactivityinject": "",
   "gradleinject": "",
   "androidcodeinjection": "",
+  "hasConvertedCodeInjection": true,
   "ioscodeinjection": "",
   "tvoscodeinjection": "",
   "iosSystemFrameworkEntries": [],

@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_npc_marker",
-    "path": "sprites/spr_npc_marker/spr_npc_marker.yy",
+    "name": "s_manny_down",
+    "path": "sprites/s_manny_down/s_manny_down.yy",
   },
   "solid": false,
   "visible": true,

@@ -87,3 +87,9 @@ THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG";
 [text]"bwbwbwwbwbw";
 [textEnd];
 [end];
+
+<test-triggerTest>
+[textStart];
+[text]"triggers do work";
+[textEnd];
+[end];

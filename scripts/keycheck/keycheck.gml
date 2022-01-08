@@ -44,9 +44,143 @@ enum eChar {
 	squareBracketL = 91, backslash, squareBracketR, pipe = 124
 }
 
+function GetInput(buttons, mathable = false) { //mathable is for calculating math with the output
+	gml_pragma("forceinline");
+	if(mathable) {
+		return real((global.input & buttons) == buttons);
+	} else {
+		return global.input & buttons;
+	}
+}
+function GetInputPressed(buttons, mathable = false) { //mathable is for calculating math with the output
+	gml_pragma("forceinline");
+	if(mathable) {
+		return real((global.inputPressed & buttons) == buttons);
+	} else {
+		return global.inputPressed & buttons;
+	}
+}
+function GetInputReleased(buttons, mathable = false) { //mathable is for calculating math with the output
+	gml_pragma("forceinline");
+	if(mathable) {
+		return real((global.inputReleased & buttons) == buttons);
+	} else {
+		return global.inputReleased & buttons;
+	}
+}
+
+function FreezeInput(buttons) {
+	gml_pragma("forceinline");
+	global.inputFrozen |= buttons;
+	//ProcessInput(); //re process
+}
+
+function UnfreezeInput(buttons) {
+	gml_pragma("forceinline");
+	global.inputFrozen &= ~buttons;
+	//ProcessInput(); //re process
+}
+
+function UnfreezeAllInput() {
+	gml_pragma("forceinline");
+	global.inputFrozen = int64(0);
+	//ProcessInput(); //re process
+}
+
+function AllowInput(buttons) {
+	gml_pragma("forceinline");
+	global.inputAllowed |= buttons;
+	//ProcessInput(); //re process
+}
+
+function ForbidInput(buttons) {
+	gml_pragma("forceinline");
+	global.inputAllowed &= ~buttons;
+	//ProcessInput(); //re process
+}
+
+function ForbidAllInputExcept(buttons) {
+	gml_pragma("forceinline");
+	global.inputAllowed &= buttons;
+	//ProcessInput(); //re process
+}
+
+function AllowAllInput() {
+	gml_pragma("forceinline");
+	global.inputAllowed = int64(-1);
+	//ProcessInput(); //re process
+}
+
+function ProcessInput() {
+	gml_pragma("forceinline");
+	global.input = (
+		(eInput.x *			(keyboard_check(eChar.z) || gamepad_button_check(0, gp_face1))) |
+		(eInput.o *			(keyboard_check(eChar.x) || gamepad_button_check(0, gp_face2))) |
+		(eInput.square *	gamepad_button_check(0, gp_face3)) | //not needed
+		(eInput.triangle *	gamepad_button_check(0, gp_face4)) | //not needed
+		
+		(eInput.up *		(keyboard_check(vk_up) || gamepad_button_check(0, gp_padu))) |
+		(eInput.down *		(keyboard_check(vk_down) || gamepad_button_check(0, gp_padd))) |
+		(eInput.left *		(keyboard_check(vk_left) || gamepad_button_check(0, gp_padl))) |
+		(eInput.right *		(keyboard_check(vk_right) || gamepad_button_check(0, gp_padr))) |
+		
+		(eInput.start *		(keyboard_check(vk_enter) || gamepad_button_check(0, gp_start))) |
+		(eInput.select *	(keyboard_check(vk_shift) || gamepad_button_check(0, gp_select))) |
+		
+		(eInput.l1 *		gamepad_button_check(0, gp_shoulderl)) |
+		(eInput.r1 *		gamepad_button_check(0, gp_shoulderr)) |
+		
+		(eInput.l2 *		gamepad_button_check(0, gp_shoulderlb)) |
+		(eInput.r2 *		gamepad_button_check(0, gp_shoulderrb)) |
+		global.inputFrozen
+	) & global.inputAllowed;
+	
+	global.inputPressed = (
+		(eInput.x *			(keyboard_check_pressed(eChar.z) || gamepad_button_check_pressed(0, gp_face1))) |
+		(eInput.o *			(keyboard_check_pressed(eChar.x) || gamepad_button_check_pressed(0, gp_face2))) |
+		(eInput.square *	gamepad_button_check_pressed(0, gp_face3)) | //not needed
+		(eInput.triangle *	gamepad_button_check_pressed(0, gp_face4)) | //not needed
+		
+		(eInput.up *		(keyboard_check_pressed(vk_up)		|| gamepad_button_check_pressed(0, gp_padu))) |
+		(eInput.down *		(keyboard_check_pressed(vk_down)	|| gamepad_button_check_pressed(0, gp_padd))) |
+		(eInput.left *		(keyboard_check_pressed(vk_left)	|| gamepad_button_check_pressed(0, gp_padl))) |
+		(eInput.right *		(keyboard_check_pressed(vk_right)	|| gamepad_button_check_pressed(0, gp_padr))) |
+		
+		(eInput.start *		(keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(0, gp_start))) |
+		(eInput.select *	(keyboard_check_pressed(vk_shift) || gamepad_button_check_pressed(0, gp_select))) |
+		
+		(eInput.l1 *		gamepad_button_check_pressed(0, gp_shoulderl)) |
+		(eInput.r1 *		gamepad_button_check_pressed(0, gp_shoulderr)) |
+		
+		(eInput.l2 *		gamepad_button_check_pressed(0, gp_shoulderlb)) |
+		(eInput.r2 *		gamepad_button_check_pressed(0, gp_shoulderrb))
+	) & global.inputAllowed;
+	
+	global.inputReleased = (
+		(eInput.x *			(keyboard_check_released(eChar.z) || gamepad_button_check_released(0, gp_face1))) |
+		(eInput.o *			(keyboard_check_released(eChar.x) || gamepad_button_check_released(0, gp_face2))) |
+		(eInput.square *	gamepad_button_check_released(0, gp_face3)) | //not needed
+		(eInput.triangle *	gamepad_button_check_released(0, gp_face4)) | //not needed
+		
+		(eInput.up *		(keyboard_check_released(vk_up)		|| gamepad_button_check_released(0, gp_padu))) |
+		(eInput.down *		(keyboard_check_released(vk_down)	|| gamepad_button_check_released(0, gp_padd))) |
+		(eInput.left *		(keyboard_check_released(vk_left)	|| gamepad_button_check_released(0, gp_padl))) |
+		(eInput.right *		(keyboard_check_released(vk_right)	|| gamepad_button_check_released(0, gp_padr))) |
+		
+		(eInput.start *		(keyboard_check_released(vk_enter) || gamepad_button_check_released(0, gp_start))) |
+		(eInput.select *	(keyboard_check_released(vk_shift) || gamepad_button_check_released(0, gp_select))) |
+		
+		(eInput.l1 *		gamepad_button_check_released(0, gp_shoulderl)) |
+		(eInput.r1 *		gamepad_button_check_released(0, gp_shoulderr)) |
+		
+		(eInput.l2 *		gamepad_button_check_released(0, gp_shoulderlb)) |
+		(eInput.r2 *		gamepad_button_check_released(0, gp_shoulderrb))
+	) & global.inputAllowed;
+}
+
 //undertale moments
 
-function keycheck(key){
+/*function keycheck(key){
 	gml_pragma("forceinline");
 	switch(key) {
 		//key presses
@@ -111,4 +245,4 @@ function keycheck_released(key){
 			return keyboard_check_released(vk_right);
 	}
 	return 0;
-}
+}*/

@@ -3,6 +3,8 @@
 //gpu_set_alphatestenable(1); //gamemaker's alpha testing is bipolar and if some object's depth is deemed Funny it'll fuck up everything half opaque
 layer_force_draw_depth(1,0);
 
+gml_pragma("UnityBuild", "true");
+
 enum eFlag {
 	playerCanMove = 1 << 0,
 	stopAll = 1 << 1, //stop what can be stopped
@@ -10,8 +12,37 @@ enum eFlag {
 	playerCanInteract = 1 << 3
 }
 
-global.flag = eFlag.playerCanMove | eFlag.playerCanInteract | eFlag.autoStopPlayer;
+global.flag = (
+	eFlag.playerCanMove |
+	eFlag.playerCanInteract |
+	eFlag.autoStopPlayer
+);
 
+global.input = int64(0);
+global.inputPressed = int64(0);
+global.inputReleased = int64(0);
+
+global.inputFrozen = int64(0);
+global.inputAllowed = int64(-1);
+
+global.inputMode = 1 * file_exists("RECORD.txt") + (2 * file_exists("PLAYBACK.txt"));
+global.inputBuffer = -1;
+global.inputBufferSize = 0;
+
+if(global.inputMode == 1) {
+	global.inputBuffer = buffer_create(1,buffer_grow,1);
+} else if(global.inputMode == 2) {
+	var file = get_open_filename_ext("recording|*.pxparec","",working_directory,"open recording");
+	if(file != "") {
+		var compressedBuffer = buffer_load(file);
+		global.inputBuffer = buffer_decompress(compressedBuffer);
+		buffer_seek(global.inputBuffer, buffer_seek_end, 0);
+		global.inputBufferSize = buffer_tell(global.inputBuffer);
+		buffer_seek(global.inputBuffer, buffer_seek_start, 0); //rewind
+		
+		buffer_delete(compressedBuffer);
+	}
+}
 
 // Check init_setting for proper vars
 
@@ -27,6 +58,9 @@ global.camY = 0;
 
 global.guisurface = noone;
 global.pausedsurface = noone;
+
+global.doFadeIn = false;
+global.fadeColour = c_white;
 
 global.vars = { // random globals [ USE THIS FOR GLOBAL VARIABLES ]
 	playing : sx_nothing,

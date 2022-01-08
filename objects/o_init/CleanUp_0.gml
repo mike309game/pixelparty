@@ -25,6 +25,18 @@ for(nextKey = ds_map_find_first(global.script_labels); nextKey != undefined; nex
 
 ds_map_destroy(global.script_labels);
 
+if(buffer_exists(global.inputBuffer)) {
+	if(global.inputMode == 1) {
+		var compressedBuffer = buffer_compress(global.inputBuffer,0,global.inputBufferSize);
+		buffer_save(compressedBuffer, working_directory +
+			"Pixel Party Recording " +
+			string(current_year) + "-" + string(current_month) + "-" + string(current_day) + " " +
+			string(current_hour) + "-" + string(current_minute) + "-" + string(current_second) + ".pxparec");
+		buffer_delete(compressedBuffer);
+	}
+	buffer_delete(global.inputBuffer);
+}
+
 //clear rest
 ds_map_destroy(global.script_compiled);
 ds_map_destroy(global.script_variables);

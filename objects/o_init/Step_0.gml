@@ -13,7 +13,7 @@ if room = r_init //&& keyboard_check_pressed(vk_space)
 // fuck you your mother is upon my penis and i am currently having sex with her vagina
 if !instance_exists(o_pause)
 	{
-		if keyboard_check_pressed(vk_enter) && global.player.move && instance_exists(o_player)
+		if keyboard_check_pressed(vk_enter) && global.player.move //&& instance_exists(o_player)
 			{
 				instance_create_depth(0,0,0,o_pause)
 				//show_message("create")
@@ -23,14 +23,14 @@ if !instance_exists(o_pause)
 animate += 0.2
 if animate >= 2 then animate = 0
 
-if !view_enabled
+/*if !view_enabled
 	{
-		view_camera[0] = camera_create_view(0, 0, 320, 240, 0, -1, 0, 0, 0, 0)
+		//view_camera[0] = camera_create_view(0, 0, 320, 240, 0, -1, 0, 0, 0, 0) //OH I WONDER WHAT WAS MAKING MEMORY ALL THE TIME
 		view_enabled = true
 		view_visible[0] = true
 		//camera_apply(0) //huh?
 		camera_apply(view_camera[0]);
-	}
+	}*/
 
 #region Music Junk
 

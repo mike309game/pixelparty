@@ -1,10 +1,10 @@
 {
   "option_windows_display_name": "Pixel Party",
-  "option_windows_executable_name": "pixelparty.exe",
+  "option_windows_executable_name": "PixelParty.exe",
   "option_windows_version": "1.0.0.0",
   "option_windows_company_info": "Yisi-fy",
   "option_windows_product_info": "Pixel Party",
-  "option_windows_copyright_info": "2001 - 2021",
+  "option_windows_copyright_info": "2022",
   "option_windows_description_info": "Pixel Party",
   "option_windows_display_cursor": true,
   "option_windows_icon": "icons/icon.ico",

@@ -1,3 +1,4 @@
+///Called
 if(canInteract) {
 	canInteract = false;
 	myInterpreter = instance_create_depth(0,0,-16000,ScriptSectionInterpreter);
@@ -7,4 +8,5 @@ if(canInteract) {
 		myHandler = new HandlerCommon(id);
 		myCaller = other.id;
 	}
+	SetGameFlag(eFlag.playerCanMove, allowPlayerMove);
 }
