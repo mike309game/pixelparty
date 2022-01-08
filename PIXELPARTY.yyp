@@ -176,7 +176,6 @@
     {"id":{"name":"mx_level3","path":"sounds/mx_level3/mx_level3.yy",},"order":8,},
     {"id":{"name":"o_piece","path":"objects/o_piece/o_piece.yy",},"order":0,},
     {"id":{"name":"obj_terriblememoryleaker","path":"objects/obj_terriblememoryleaker/obj_terriblememoryleaker.yy",},"order":0,},
-    {"id":{"name":"s_trigger","path":"sprites/s_trigger/s_trigger.yy",},"order":9,},
     {"id":{"name":"sx_title_move","path":"sounds/sx_title_move/sx_title_move.yy",},"order":15,},
     {"id":{"name":"r_ho_1","path":"rooms/r_ho_1/r_ho_1.yy",},"order":0,},
     {"id":{"name":"o_fake_load","path":"objects/o_fake_load/o_fake_load.yy",},"order":2,},
