@@ -9,7 +9,7 @@ if(GetGameFlag(eFlag.playerCanMove)) {
 }
 
 movementer.Move(inputX,inputY);
-movementer.Collide();
+movementer.Collide(GetGameFlag(eFlag.playerCanCollide));
 
 var xCenter = floor(bbox_left + ((bbox_right - bbox_left) / 2));
 var yCenter = floor(bbox_top + ((bbox_bottom - bbox_top) / 2));

@@ -18,6 +18,13 @@ enum eDir {
 	downRight = 7
 }
 
+/*
+ * \\\\\\\\\\\\\\\\\\\\\\\\\\\\NOTE:////////////////////////////
+ *
+ * THIS CODE IS ABSOLUTELY ATROCIOUS AND WILL BE REWRITTEN AT ONE POINT JUST GIVE ME A BIT
+ *
+ */
+
 function Movementer(_obj) constructor {
 	obj = _obj;
 	enum eMovementFlag {
@@ -100,7 +107,7 @@ function Movementer(_obj) constructor {
 		*/
 	}
 	
-	static Collide = function() {
+	static Collide = function(collide = true) {
 		gml_pragma("forceinline");
 		///collision ig
 				
@@ -112,6 +119,7 @@ function Movementer(_obj) constructor {
 		var failsafe = int64(0);
 		
 		//HORIZONTAL
+		if(collide) begin
 		if(spdx != 0) begin
 		while(
 		CollideCheck(
@@ -123,9 +131,10 @@ function Movementer(_obj) constructor {
 		    failsafe++;
 			if(failsafe&256) then break;
 		    spdx -= sign(spdx);
-		}
-		realx += spdx;end
+		} end end
+		realx += spdx;
 		//VERTICAL
+		if(collide) begin
 		if(spdy != 0) begin
 		while(
 		CollideCheck(
@@ -138,8 +147,8 @@ function Movementer(_obj) constructor {
 			failsafe++;
 			if(failsafe&256) then break;
 		    spdy -= sign(spdy);
-		}
-		realy += spdy;end
+		} end end
+		realy += spdy;
 		
 		/*if(global.time%60 == 0) {
 			show_debug_message(failsafe);

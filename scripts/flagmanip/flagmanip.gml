@@ -27,3 +27,13 @@ function SetGameFlag(flag, value) {
 		global.flag &= ~flag;
 	}
 }
+
+function FadeIn() {
+	gml_pragma("forceinline");
+	global.flag |= eFlag.doFadeIn;
+}
+
+function FadeOut() {
+	gml_pragma("forceinline");
+	global.flag &= ~(eFlag.doFadeIn);
+}

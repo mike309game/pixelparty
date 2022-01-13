@@ -5,6 +5,7 @@ myInterpreter = noone;
 player = noone;
 hovering = false; //player interact hitbox on ya
 mySolid = noone;
+targetMarker = -1;
 if(isSolid) {
 	mySolid = instance_create_depth(x,y,0,o_hitbox);
 	with(mySolid) {

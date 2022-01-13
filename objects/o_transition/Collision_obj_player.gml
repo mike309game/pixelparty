@@ -1,5 +1,7 @@
-if(!touched) {
+/*if(!touched && GetGameFlag(eFlag.playerCanTransition)) {
 	touched = true;
+	AssureGameFlag(eFlag.doFadeIn); //start fading
+	persistent = true; //to process player movement allowing
 	with(other) { //don't be diagonal
 		switch(dir) {
 			case eDir.up:
@@ -26,4 +28,6 @@ if(!touched) {
 				break;
 		}
 	}
-}
+}*/
+Transition(destination, image_index, dir);
+instance_destroy();

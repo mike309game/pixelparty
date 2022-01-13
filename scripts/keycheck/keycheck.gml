@@ -44,6 +44,33 @@ enum eChar {
 	squareBracketL = 91, backslash, squareBracketR, pipe = 124
 }
 
+enum eInput {
+	x = 1 << 0,
+	o = 1 << 1,
+	square = 1 << 2,
+	triangle = 1 << 3,
+	
+	right = 1 << 4,
+	up = 1 << 5,
+	left = 1 << 6,
+	down = 1 << 7,
+	
+	start = 1 << 8,
+	select = 1 << 9,
+	
+	l1 = 1 << 10,
+	r1 = 1 << 11,
+	
+	l2 = 1 << 12,
+	r2 = 1 << 13,
+	
+	//Subject to change
+	
+	interact = eInput.x,
+	proceedText = eInput.x,
+	skipText = eInput.o
+}
+
 function GetInput(buttons, mathable = false) { //mathable is for calculating math with the output
 	gml_pragma("forceinline");
 	if(mathable) {
@@ -101,7 +128,7 @@ function ForbidInput(buttons) {
 
 function ForbidAllInputExcept(buttons) {
 	gml_pragma("forceinline");
-	global.inputAllowed &= buttons;
+	global.inputAllowed = buttons;
 	//ProcessInput(); //re process
 }
 

@@ -9,13 +9,20 @@ enum eFlag {
 	playerCanMove = 1 << 0,
 	stopAll = 1 << 1, //stop what can be stopped
 	autoStopPlayer = 1 << 2, //auto stop player when interacting with shit
-	playerCanInteract = 1 << 3
+	playerCanInteract = 1 << 3, 
+	doFadeIn = 1 << 4, //if on, will start blanking out screen
+	fadeBlack = 1 << 5, //if fade will darken screen
+	playerCanTransition = 1 << 6, //touching transition triggers can start the transition?
+	playerCanCollide = 1 << 7, //solid blocks will stop player?
 }
 
 global.flag = (
 	eFlag.playerCanMove |
 	eFlag.playerCanInteract |
-	eFlag.autoStopPlayer
+	eFlag.autoStopPlayer |
+	eFlag.fadeBlack |
+	eFlag.playerCanTransition |
+	eFlag.playerCanCollide
 );
 
 global.input = int64(0);
@@ -32,7 +39,7 @@ global.inputBufferSize = 0;
 if(global.inputMode == 1) {
 	global.inputBuffer = buffer_create(1,buffer_grow,1);
 } else if(global.inputMode == 2) {
-	var file = get_open_filename_ext("recording|*.pxparec","",working_directory,"open recording");
+	var file = get_open_filename_ext("recording|*.pxparec*","",working_directory,"open recording");
 	if(file != "") {
 		var compressedBuffer = buffer_load(file);
 		global.inputBuffer = buffer_decompress(compressedBuffer);
@@ -58,9 +65,6 @@ global.camY = 0;
 
 global.guisurface = noone;
 global.pausedsurface = noone;
-
-global.doFadeIn = false;
-global.fadeColour = c_white;
 
 global.vars = { // random globals [ USE THIS FOR GLOBAL VARIABLES ]
 	playing : sx_nothing,
