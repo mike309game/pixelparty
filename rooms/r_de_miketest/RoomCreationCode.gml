@@ -1,4 +1,4 @@
-Music("mx_honest1",1);
+Music(mx_honest1);
 
 /*var int = instance_create_depth(0,0,-999999999,ScriptSectionInterpreter);
 with(int) {

@@ -1,1 +1,1 @@
-Music("mx_level1",1)
+Music(mx_level1)

@@ -1,1 +1,1 @@
-Music("mx_honest1",1);
+Music(mx_honest1);

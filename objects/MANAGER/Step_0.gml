@@ -4,28 +4,15 @@ if !window_has_focus() then audio_master_gain(0) else if window_has_focus() then
 
 //Fade handling n shit
 if(GetGameFlag(eFlag.doFadeIn)) {
-	fadeValue = min(fadeValue + 0.04, 1);
+	fadeValue = min(fadeValue + fadeSpeed, 1);
 } else {
-	fadeValue = max(fadeValue - 0.04, 0);
+	fadeValue = max(fadeValue - fadeSpeed, 0);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 if room = r_init //&& keyboard_check_pressed(vk_space)
 	{
 		room_goto(global.vars.roomgo)
-		//Sound(sx_shop_move,0)
+		//Sound(sx_shop_move)
 	}
 
 //base stop fucking using brackets like this
@@ -45,25 +32,27 @@ if animate >= 2 then animate = 0
 
 #region Music Junk
 
-	if global.vars.play != global.vars.playing
-		{
-			if global.vars.playing != sx_nothing then audio_sound_gain(global.vars.playing,0,100) else audio_sound_gain(global.vars.playing,0,0)
-			if audio_sound_get_gain(global.vars.playing) = 0
-				{
-					audio_stop_sound(global.vars.playing)
-					global.vars.playing = global.vars.play
-					audio_play_sound(global.vars.playing,0,global.vars.loopplay)
-					audio_sound_gain(global.vars.playing,0,0)
-					audio_sound_gain(global.vars.playing,global.setting.music/100,0)
-				}
-		}
+if(global.musicTarget != global.musicPlaying) { //if music has changed
+	if(global.musicPlaying == sx_nothing) { //if there was no music being played, no need to wait for fading
+		audio_sound_gain(global.musicPlaying,0,0);
+	} else {
+		audio_sound_gain(global.musicPlaying,0,100);
+	}
+	if(audio_sound_get_gain(global.musicPlaying) == 0) { //when the old song finishes fading out
+		audio_stop_sound(global.musicPlaying); //stop the old song
+		global.musicPlaying = global.musicTarget; //set the song to play
+		audio_play_sound(global.musicPlaying,0,global.musicLoops); //play the song
+		audio_sound_gain(global.musicPlaying,0,0); //set song volume to zero wait why is this needed???
+		audio_sound_gain(global.musicPlaying,global.setting.music/100,0); //set its volume
+	}
+}
 
 #endregion
 
 #region title scroll
 if(animatedTitle) {
-	animatedTitleCounter += .1;
-	var title = ds_list_find_value(anim_title_table,floor(titlecount));
+	animatedTitleCounter += 0.1;
+	var title = ds_list_find_value(anim_title_table,floor(titlesCount));
 	if(title == undefined) { //done showing animated title
 		animatedTitle = false;
 		window_set_caption(titles[irandom_range(0,titlesCount-1)]); //get a random normal title

@@ -17,7 +17,7 @@ surR = 0
 tr = 0
 
 mode = 0
-Sound(sx_pause_open,0)
+Sound(sx_pause_open)
 
 menu = ["Resume","Options","Solutions","Save & Quit"]
 selection = 0

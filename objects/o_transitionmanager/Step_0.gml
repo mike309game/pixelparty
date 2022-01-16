@@ -7,9 +7,8 @@ if(room == destination) {
 	if(MANAGER.fadeValue == 0) {
 		AllowAllInput();
 		UnfreezeAllInput();
-		AssureGameFlag(eFlag.playerCanCollide);
+		AssureGameFlag(eFlag.playerCanCollide | eFlag.playerCanTransition);
 		instance_destroy();
-		exit;
 	}
 } else {
 	if(MANAGER.fadeValue == 1 && room != r_interval) { //fade is done in room, goto interval screen

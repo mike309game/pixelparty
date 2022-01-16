@@ -1,1 +1,1 @@
-Music("mx_house",1)
+Music(mx_house)

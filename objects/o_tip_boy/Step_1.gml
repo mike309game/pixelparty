@@ -15,7 +15,7 @@ if speak
 		
 		if screamt = 800
 			{
-				Sound(sx_tip_scream,0)
+				Sound(sx_tip_scream)
 				image_index = 1
 				
 				

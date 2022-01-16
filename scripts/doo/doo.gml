@@ -1,4 +1,4 @@
-function Sound(sound,loop)
+function Sound(sound,volume = 1)
 	{
 		//what in the fuck
 		/*if !is_undefined(sound)
@@ -8,17 +8,17 @@ function Sound(sound,loop)
 			} else {
 				show_debug_message("oopsie poopsie sound is not real :)")
 			}*/
-		audio_play_sound(sound,0,loop);
-		audio_sound_gain(sound,global.setting.sound/100,0);
+		audio_play_sound(sound,0,false);
+		audio_sound_gain(sound,volume,0);
 	}
 
-function Music(play,loop)
-	{
-		
-		if !is_undefined(play) then global.vars.play = asset_get_index(play) else show_debug_message("MUSIC UNDEFINED OR DOESNT EXIST")
-		if !is_undefined(loop) then global.vars.loopplay = loop else show_debug_message("loop not defined")
-		
-	}
+function Music(song, loop = true) {
+	/*if !is_undefined(play) then global.vars.play = asset_get_index(play) else show_debug_message("MUSIC UNDEFINED OR DOESNT EXIST")
+	if !is_undefined(loop) then global.vars.loopplay = loop else show_debug_message("loop not defined")*/
+	
+	global.musicTarget = song;
+	global.musicLoops = loop;
+}
 	
 function roomTrans(roo,posid,fade)
 	{

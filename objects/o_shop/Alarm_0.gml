@@ -2,7 +2,7 @@
 
 fliptimer++
 
-if fliptimer = 5 then Sound(sx_coin_flip,0)
+if fliptimer = 5 then Sound(sx_coin_flip)
 audio_sound_pitch(sx_coin_flip,random_range(1,1.1))
 
 if dexoffset > 4 || dexoffset < -4 then movedir ^= 1 // change dir

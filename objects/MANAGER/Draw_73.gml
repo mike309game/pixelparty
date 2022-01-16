@@ -12,7 +12,7 @@ if instance_exists(o_player) || global.vars.ignoreplayer
 			if instance_exists(o_player) then o_player.spd = 0.3
 			if transalpha >= 0.99
 				{
-					room_goto(global.vars.roomgo)
+					//room_goto(global.vars.roomgo)
 					global.vars.ignoreplayer = 0
 				}
 		}

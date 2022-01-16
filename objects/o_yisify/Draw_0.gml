@@ -1,5 +1,5 @@
 draw_gui_set;
-if timer = 350 then Sound(sx_yisify,0)
+if timer = 350 then Sound(sx_yisify)
 draw_sprite_ext(s_lnx,0,160,120,1,1,0,c_white,lnxfade)
 if timer > 50 && timer < 150 then lnxfade += 0.01
 if timer > 200 && timer < 300 then lnxfade -= 0.01

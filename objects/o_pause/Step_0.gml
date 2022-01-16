@@ -2,7 +2,7 @@ function exitPause()
 	{
 		tr = 2
 		timer = 0
-		Sound(sx_pause_close,0)
+		Sound(sx_pause_close)
 	}
 
 bgX += 0.5
@@ -61,7 +61,7 @@ if tr = 1 then selection += key
 
 if key <> 0 && tr = 1
 	{
-		Sound(sx_pause_move,0)
+		Sound(sx_pause_move)
 		
 	}
 if tr = 1
@@ -75,26 +75,26 @@ if keyboard_check_pressed(ord("Z")) && tr = 1 && mode = 0
 			{
 				case 0:
 					{
-						Sound(sx_pause_move,0)
+						Sound(sx_pause_move)
 						exitPause()
 						break;
 					}
 				case 1:
 					{
 						selection = 0
-						Sound(sx_title_menu_select,0)
+						Sound(sx_title_menu_select)
 						mode = 1
 						break;
 					}
 				case 2:
 					{
-						Sound(sx_error,0)
+						Sound(sx_error)
 						break;
 					}
 				case 3:
 					{
 						tr = 3
-						Sound(sx_pause_quit,0)
+						Sound(sx_pause_quit)
 						global.vars.fakeload = r_title
 						roomTrans(r_load,0,0)
 						save_save()

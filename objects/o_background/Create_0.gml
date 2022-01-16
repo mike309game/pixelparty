@@ -1,4 +1,4 @@
-depth = 2*room_height
+depth = 16000;
 bgX = 0
 bgY = 0
 math = 0

@@ -6,10 +6,12 @@ if(room == r_interval) { //draw loading screen shit
 		quickLoadSprite = s_pxpa_quickload_dark;
 	}
 	if(loadingScreen) {
-		draw_sprite_tiled_ext(s_cloud_loop, 0, floor(global.time / 100), 0, 1, 1, $19090A,1);
+		draw_sprite_tiled_ext(s_cloud_loop, 0, floor(global.time / 60), 0, 1, 1, $19090A,1);
+		shader_set(shUnprecise);
 		for(var i = 0; i < 7; i++) {
-			draw_sprite_ext(s_loadingnew, i, 104 + (25 * i), 64,cos(global.time/20 + i) * 0.5 + 1, sin(global.time/25 + i) * 0.5 + 1, 0, c_white, 1);
+			draw_sprite_ext(s_loadingnew, i, 80 + (25 * i), 64,cos(global.time/20 + i) * 0.3 + 1, sin(global.time/25 + i) * 0.3 + 1, 0, c_white, 1);
 		}
+		shader_reset();		
 	} else {
 		draw_sprite(quickLoadSprite, global.time / 10, 320, 240);
 	}

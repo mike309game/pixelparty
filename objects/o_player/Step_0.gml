@@ -119,7 +119,7 @@ switch global.debug.noclip
 						{
 							idle_timer = 0
 							ani += (dash_spd)*0.1
-							if !audio_is_playing(sx_walk_cute) then Sound(sx_walk_cute,0)
+							if !audio_is_playing(sx_walk_cute) then Sound(sx_walk_cute)
 							audio_sound_gain(sx_walk_cute,global.setting.sound/100,30)
 						}
 					else

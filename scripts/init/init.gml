@@ -20,7 +20,7 @@ global.flag = (
 	eFlag.playerCanMove |
 	eFlag.playerCanInteract |
 	eFlag.autoStopPlayer |
-	eFlag.fadeBlack |
+	//eFlag.fadeBlack |
 	eFlag.playerCanTransition |
 	eFlag.playerCanCollide
 );
@@ -65,6 +65,15 @@ global.camY = 0;
 
 global.guisurface = noone;
 global.pausedsurface = noone;
+
+global.musicMasterVolume = 1;
+global.soundMasterVolume = 1;
+global.masterVolume = 1;
+
+global.musicTarget = sx_nothing;
+global.musicPlaying = sx_nothing;
+global.musicVolume = 1;
+global.musicLoops = true;
 
 global.vars = { // random globals [ USE THIS FOR GLOBAL VARIABLES ]
 	playing : sx_nothing,

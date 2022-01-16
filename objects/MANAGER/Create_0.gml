@@ -3,9 +3,12 @@ save_setting_load()
 window_set_size(global.setting.scale*320,global.setting.scale*240)
 alarm_set(0,1)
 
+alarm[11] = 1;
+
 depth = -16000;
 
-fadeValue = 0; //value of fade
+fadeValue = 0; //value of fader
+fadeSpeed = 0.04;
 
 mus_fade = 1;
 titles[0] = "";

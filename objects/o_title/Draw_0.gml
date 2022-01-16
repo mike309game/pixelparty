@@ -172,7 +172,7 @@ switch mode
 							{
 								if keyboard_check_pressed(ord("Z"))
 									{
-										Sound(sx_title_menu_select,0)
+										Sound(sx_title_menu_select)
 										switch selection
 											{
 												case 2:
@@ -215,7 +215,7 @@ switch mode
 							{
 								if keyboard_check_pressed(ord("Z"))
 									{
-										Sound(sx_title_menu_select,0)
+										Sound(sx_title_menu_select)
 										switch selection
 											{
 												case 5:
@@ -264,7 +264,7 @@ switch mode
 													}
 												case 4:
 													{
-														Sound(sx_error,0)
+														Sound(sx_error)
 														global.setting.full += hor
 														window_set_fullscreen(global.setting.full)
 														break;
@@ -289,7 +289,7 @@ switch mode
 				
 				var ver = keyboard_check_pressed(vk_down) - keyboard_check_pressed(vk_up)
 				
-				if ver <> 0 then Sound(sx_title_move,0)
+				if ver <> 0 then Sound(sx_title_move)
 				
 				selection += ver
 				
@@ -301,14 +301,14 @@ switch mode
 								case 0:
 									{
 										save_delete()
-										Sound(sx_error,0)
+										Sound(sx_error)
 										mode = 2
 										break;
 									}
 								case 1:
 									{
 										mode = 2
-										Sound(sx_title_menu_select,0)
+										Sound(sx_title_menu_select)
 										break;
 									}
 								
@@ -320,7 +320,7 @@ switch mode
 
 
 /* end sequence
-Sound(sx_title_select,0)
+Sound(sx_title_select)
 							alarm_set(0,100)
 							selected[1] = 0
 							selected[2] = 0

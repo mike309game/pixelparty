@@ -26,8 +26,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "player",
-    "path": "folders/Objects/player.yy",
+    "name": "LEVEL BUILDING",
+    "path": "folders/Rooms/LEVEL BUILDING.yy",
   },
   "resourceVersion": "1.0",
   "name": "o_hitbox",

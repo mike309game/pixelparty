@@ -33,8 +33,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "new event tests",
-    "path": "folders/mike/new event tests.yy",
+    "name": "LEVEL BUILDING",
+    "path": "folders/Rooms/LEVEL BUILDING.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_player",

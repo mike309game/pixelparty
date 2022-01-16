@@ -19,3 +19,6 @@ global.setting.sound = clamp(global.setting.sound, 0, 100);
 global.setting.scale = clamp(global.setting.scale, 1, 3);
 global.setting.vsync &= 1; //make true if value is odd
 global.setting.full &= 1; //same as above
+
+//audio_group_set_gain(agrp_music, global.setting.music / 100, 0);
+//audio_group_set_gain(agrp_sounds, global.setting.sound / 100, 0);

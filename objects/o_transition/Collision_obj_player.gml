@@ -29,5 +29,7 @@
 		}
 	}
 }*/
-Transition(destination, image_index, dir);
-instance_destroy();
+if(GetGameFlag(eFlag.playerCanTransition)) {
+	Transition(destination, image_index, dir, loadingScreen);
+	instance_destroy();
+}

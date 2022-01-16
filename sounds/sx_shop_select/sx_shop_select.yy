@@ -1,5 +1,6 @@
 {
-  "compression": 0,
+  "conversionMode": 0,
+  "compression": 2,
   "volume": 0.15,
   "preload": false,
   "bitRate": 128,
@@ -7,8 +8,8 @@
   "type": 1,
   "bitDepth": 1,
   "audioGroupId": {
-    "name": "audiogroup_default",
-    "path": "audiogroups/audiogroup_default",
+    "name": "agrp_sounds",
+    "path": "audiogroups/agrp_sounds",
   },
   "soundFile": "sx_shop_select.mp3",
   "duration": 1.7502,

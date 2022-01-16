@@ -19,7 +19,7 @@ switch menuMode
 											
 										}
 									var key = keyboard_check_pressed(vk_down) - keyboard_check_pressed(vk_up)
-									if key <> 0 then Sound(sx_shop_move,0)
+									if key <> 0 then Sound(sx_shop_move)
 									selection[0] += key
 								}
 						
@@ -39,7 +39,7 @@ switch menuMode
 										{
 											if keyboard_check_pressed(ord("Z"))
 												{
-													Sound(sx_shop_select,0)
+													Sound(sx_shop_select)
 													var ran = irandom_range(1,3)
 													textbox("ran"+string(ran),"dex_shop_talk")
 												}
@@ -77,7 +77,7 @@ switch menuMode
 		case 1: // item select
 			{
 				var key = keyboard_check_pressed(vk_right) - keyboard_check_pressed(vk_left)
-				if key <> 0 then Sound(sx_shop_move,0)
+				if key <> 0 then Sound(sx_shop_move)
 				selection[1] += key
 				
 				// exit
@@ -110,7 +110,7 @@ switch menuMode
 		case 2:
 			{
 				var key = keyboard_check_pressed(vk_right) - keyboard_check_pressed(vk_left)
-				if key <> 0 then Sound(sx_shop_move,0)
+				if key <> 0 then Sound(sx_shop_move)
 				selection[2] += key
 				
 				if keyboard_check_pressed(ord("Z"))
@@ -131,7 +131,7 @@ switch menuMode
 												case 1:
 													{
 														menuMode = 0
-														Sound(sx_shop_purchase,0)
+														Sound(sx_shop_purchase)
 														break;
 													}
 											}
