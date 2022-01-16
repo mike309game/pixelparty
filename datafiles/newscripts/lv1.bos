@@ -17,7 +17,7 @@ $level1-bulliedBully=#0;				you don't even know him yet
 
 [textStart];							allow the text processing
 
-[toggleFacepic1];						show sign man
+[s1h2];									show sign man
 
 Sign:
 [text]"Hello,\d1[] \dr[]welcome to Yixxi.";
@@ -42,6 +42,18 @@ Sign:
 [textEnd];								let text processing die
 
 [end];									kill interpreter
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+<level1-huxDialogue>
+[setFacepic1]!s_hux_talk;					set hux's facepic
+[setNamelabel1]"Hux";					then his namelabel
+
+[s1h2];									show his name
+
+[textStart];
+[text]"";								funi
+[textEnd];
+
+[end];
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 <level1-LexsieDialogue>
 				///SETUP\\\

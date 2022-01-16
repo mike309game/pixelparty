@@ -1,5 +1,3 @@
-depth = -y-16;
-
 var inputX = 0;
 var inputY = 0;
 
@@ -57,6 +55,7 @@ with(interacted) {
 }
 
 sprite_index = sprites[dir];
-image_speed = movementer.moving * 0.2;
-image_index *= movementer.moving;
+image_speed = movementer.moving * 0.2 * (x != xprevious || y != yprevious);
+image_index *= movementer.moving * (x != xprevious || y != yprevious);
 CamCenterHitbox();
+SetDepth();
