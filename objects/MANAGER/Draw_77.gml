@@ -17,8 +17,6 @@ if(instance_exists(o_pause)) {
 	draw_surface_ext(global.pausedsurface, surfX, surfY, scaled, scaled, 0, c_white, 1);
 } else {
 	draw_surface_ext(application_surface, surfX, surfY, scaled, scaled, 0, c_white, 1);
-	gpu_set_blendenable(1);
-	draw_surface_ext(global.guisurface, surfX, surfY, scaled, scaled, 0, c_white, 1);
 }
 gpu_set_blendenable(1);
 

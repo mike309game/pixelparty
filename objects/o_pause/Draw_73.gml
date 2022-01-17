@@ -1,3 +1,4 @@
+show_debug_message("pause draw end");
 //I FUCKING ENTIRELY REPLACED MY PAUSE CODE WITH YOURs FUCKIONG OOPS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 surface_set_target(global.pausedsurface);
 surf = surface_create(320,240)

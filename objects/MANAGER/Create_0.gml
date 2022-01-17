@@ -5,7 +5,7 @@ alarm_set(0,1)
 
 alarm[11] = 1;
 
-depth = -16000;
+depth = -15999;
 
 fadeValue = 0; //value of fader
 fadeSpeed = 0.04;

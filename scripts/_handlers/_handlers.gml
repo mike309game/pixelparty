@@ -130,7 +130,7 @@ function HandlerCommon(intID) : HandlerBase(intID) constructor {
 	static Draw = function() {
 		DrawBase();
 		//if(handlerProcessText) {
-			draw_gui_set;
+			
 			draw_sprite(handlerFacepic1,0,EaseInCubic(0,-320,facepic1XCounter/240),0);
 			draw_sprite_ext(handlerFacepic2,0,EaseInCubic(320,640,facepic2XCounter/240),0,-1,1,0,c_white,1);
 			
@@ -154,8 +154,6 @@ function HandlerCommon(intID) : HandlerBase(intID) constructor {
 			if(handlerWaitForInput) {
 				draw_sprite(s_psxbuttons_frames, 0, 288, 225 + tboxY);
 			}
-			
-			draw_gui_exit;
 		//}
 	}
 		

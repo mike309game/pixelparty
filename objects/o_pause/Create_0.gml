@@ -4,7 +4,7 @@ bgX = 0
 bgY = 0
 pauseX = 320
 timer = 0
-depth = -9999
+depth = -16000
 //bgtimer = 0
 
 global.player.move = 0
