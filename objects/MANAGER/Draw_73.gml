@@ -1,9 +1,8 @@
-show_debug_message("manager draw end");
 global.drawingGui = true;
 matrix_set(matrix_world, matrix_build(global.camX, global.camY, 0, 0, 0, 0, 1, 1, 1));
-while(!ds_stack_empty(global.guiInstancesStack)) {
+while(!ds_queue_empty(global.guiInstancesQueue)) {
 	//event_perform_object(ds_stack_pop(global.guiInstancesStack), ev_draw, ev_draw_end);
-	with(ds_stack_pop(global.guiInstancesStack)) { //i don't know why, but event_perform_object doesn't work
+	with(ds_queue_dequeue(global.guiInstancesQueue)) { //i don't know why, but event_perform_object doesn't work
 		event_perform(ev_draw, ev_draw_end);
 	}
 }

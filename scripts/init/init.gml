@@ -63,7 +63,6 @@ global.time = 0;
 global.camX = 0;
 global.camY = 0;
 
-//global.guisurface = noone;
 global.pausedsurface = noone;
 
 global.musicMasterVolume = 1;

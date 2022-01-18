@@ -20,8 +20,8 @@ defaultMatrix = matrix_build_identity();
 #macro draw_gui_exit surface_reset_target();
 //#macro draw_gui_exit matrix_set(matrix_world,defaultMatrix);
 
-global.guiInstancesStack = ds_stack_create();
+global.guiInstancesQueue = ds_queue_create();
 global.drawingGui = false;
 
-#macro ifGui if not global.drawingGui and view_current == 0 then ds_stack_push(global.guiInstancesStack, id) else {
+#macro ifGui if not global.drawingGui and view_current == 0 then ds_queue_enqueue(global.guiInstancesQueue, id) else {
 #macro endGui exit;}
