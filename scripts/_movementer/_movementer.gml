@@ -50,7 +50,7 @@ function Movementer(_obj) constructor {
 	accelStop = COLLPRECISION-14; //acceleration when letting off keys
 	speedX = 0; //the current horizontal speed
 	speedY = 0; //the current vertical speed
-	speedMax = 1; //max speed
+	speedMax = COLLPRECISION*1; //max speed
 	
 	static CollideCheck = function(x,y,_obj) {
 		return collision_rectangle(x,y,(obj.bbox_right - obj.bbox_left) + x,(obj.bbox_bottom - obj.bbox_top) + y,_obj,true,false); //this is terrible i am aware
