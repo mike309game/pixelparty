@@ -1,8 +1,7 @@
+//room_speed = 1;
 movementer = new Movementer(id); //movementer
 
 dir = eDir.down;
-
-//TODO PLEASE INVERT THIS FOR MORE PERFORMANCE
 
 sprites = [
 	s_manny_right,

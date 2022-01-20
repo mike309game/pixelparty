@@ -48,3 +48,39 @@ function EaseInOutCubic(start, _end, position) {
 	else
 	  return EaseOutCubic((start+_end) / 2,_end,(position-.5)*2);
 }
+
+function EaseInExpo(start, _end, position) {
+	gml_pragma("forceinline");
+	return (_end - start) * (position == 0 ? 0 : power(2, 10 * position - 10)) + start;
+}
+
+//hacky lerps for bouncin because i'm no math professor to know how to properly do this shit
+
+function nEaseOutBounce(x) {
+	gml_pragma("forceinline");
+	var n1 = 7.5625;
+	var d1 = 2.75;
+	
+	if (x < 1 / d1) {
+	    return n1 * x * x;
+	} else if (x < 2 / d1) {
+		x -= 1.5 / d1;
+	    return n1 * x * x + 0.75;
+	} else if (x < 2.5 / d1) {
+		x -= 2.25 / d1
+	    return n1 * x * x + 0.9375;
+	} else {
+		x -= 2.625 / d1;
+	    return n1 * x * x + 0.984375;
+	}
+}
+
+function EaseOutBounce(start, _end, position) {
+	gml_pragma("forceinline");
+	return lerp(start, _end, nEaseOutBounce(position));
+}
+
+function EaseInBounce(start, _end, position) {
+	gml_pragma("forceinline");
+	return lerp(start, _end, 1 - nEaseOutBounce(1 - position));
+}

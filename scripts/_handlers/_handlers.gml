@@ -131,10 +131,10 @@ function HandlerCommon(intID) : HandlerBase(intID) constructor {
 		DrawBase();
 		//if(handlerProcessText) {
 			
-			draw_sprite(handlerFacepic1,0,EaseInCubic(0,-320,facepic1XCounter/240),0);
-			draw_sprite_ext(handlerFacepic2,0,EaseInCubic(320,640,facepic2XCounter/240),0,-1,1,0,c_white,1);
+			draw_sprite(handlerFacepic1,0,EaseInExpo(0,-320,facepic1XCounter/240),0);
+			draw_sprite_ext(handlerFacepic2,0,EaseInExpo(320,640,facepic2XCounter/240),0,-1,1,0,c_white,1);
 			
-			var tboxY = floor(EaseInCubic(0,80,uiYCounter/320))/* + (keycheck(vk_enter))*2 nevermind*/;
+			var tboxY = floor(EaseInExpo(0,80,uiYCounter/320))/* + (keycheck(vk_enter))*2 nevermind*/;
 			draw_sprite(s_textbox_bright, 0, 0, tboxY); //draw textbox sprite
 			
 			draw_set_colour(c_black);

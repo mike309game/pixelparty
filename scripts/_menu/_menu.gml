@@ -62,7 +62,7 @@ function DrawMenuSimple(menu, x, y) {
 			var item = ds_queue_dequeue(optionStack);
 			var btWidth = string_width(item.label);
 			var btIndex = 0;
-			if(item.index == optionCurrent) {
+			if(item.index == optionCurrent && canMove) {
 				draw_sprite(s_lilhand, 0, (x - 14) + cos(global.time / 5) * 3, spacing + 5);
 				if(GetInput(eInput.interact)) {
 					btIndex = 1;

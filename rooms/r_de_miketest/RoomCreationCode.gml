@@ -28,7 +28,6 @@ for(var i = 21; i > 0; i--) {
 	}
 }*/
 
-
 /*var _fx_tint = fx_create("_filter_tintfilter");
 show_message(_fx_tint);
 fx_set_parameter(_fx_tint, "g_TintCol", [1, 0, 0, 1]);

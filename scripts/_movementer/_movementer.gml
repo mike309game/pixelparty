@@ -36,11 +36,8 @@ function Movementer(_obj) constructor {
 	}
 	#macro COLLPRECISION (16)
 	#macro COLLPRECISIONSHIFTABLE (4)
-	realx = obj.x * COLLPRECISION;
-	realy = obj.y * COLLPRECISION;
-	
-	oldrealx = realx; //collision calculation i guess
-	oldrealy = realy;
+	realX = obj.x << COLLPRECISIONSHIFTABLE;
+	realY = obj.y << COLLPRECISIONSHIFTABLE;
 	
 	moving = 0; //character is moving?
 	
@@ -49,48 +46,43 @@ function Movementer(_obj) constructor {
 	
 	//if no smoothing is needed just make the accel values equal
 	//these default values move 1 pixel each step and have no smoothing
-	accel_start = COLLPRECISION; //acceleration when holding keys
-	accel_stop = COLLPRECISION-14; //acceleration when letting off keys
-	spdx = 0; //the current horizontal speed
-	spdy = 0; //the current vertical speed
-	spdmax = COLLPRECISION*1; //max speed
+	accelStart = COLLPRECISION; //acceleration when holding keys
+	accelStop = COLLPRECISION-14; //acceleration when letting off keys
+	speedX = 0; //the current horizontal speed
+	speedY = 0; //the current vertical speed
+	speedMax = 1; //max speed
 	
 	static CollideCheck = function(x,y,_obj) {
-		gml_pragma("forceinline");
 		return collision_rectangle(x,y,(obj.bbox_right - obj.bbox_left) + x,(obj.bbox_bottom - obj.bbox_top) + y,_obj,true,false); //this is terrible i am aware
 	}
 	
 	static Move = function(inputX, inputY) {
-		gml_pragma("forceinline");
 		moving = inputX != 0 || inputY != 0;
 		
 		//TODO: gotta rewrite all this shit when i put in collision lol
 		if(moving) {
-		    spdx = clamp(spdx + inputX * accel_start, -spdmax, spdmax);
-		    spdy = clamp(spdy + inputY * accel_start, -spdmax, spdmax);
+		    speedX = clamp(speedX + inputX * accelStart, -speedMax, speedMax);
+		    speedY = clamp(speedY + inputY * accelStart, -speedMax, speedMax);
 			obj.dir = point_direction(0,0,inputX,inputY) / 45; //45 because each possible direction is a multiple of 45
 		}
 		
 		//for stopping
-		var realaccelstop = accel_stop;
-		if(moving)
-		    realaccelstop = accel_start;
+		var accelX = inputX ? accelStart : accelStop;
+		
+		var accelY = inputY ? accelStart : accelStop;
 		
 		//stop horizontally
-		if(sign(spdx) == -1 && inputX == 0) {
-		    spdx = min(spdx + realaccelstop, 0);
-		} else if(sign(spdx) == 1 && inputX == 0) {
-		    spdx = max(spdx - realaccelstop, 0);
+		if(sign(speedX) == -1 && inputX == 0) {
+		    speedX = min(speedX + accelX, 0);
+		} else if(sign(speedX) == 1 && inputX == 0) {
+		    speedX = max(speedX - accelX, 0);
 		}
 		//stop vertically
-		if(sign(spdy) == -1 && inputY == 0) {
-		    spdy = min(spdy + realaccelstop, 0);
-		} else if(sign(spdy) == 1 && inputY == 0) {
-		    spdy = max(spdy - realaccelstop, 0);
+		if(sign(speedY) == -1 && inputY == 0) {
+		    speedY = min(speedY + accelY, 0);
+		} else if(sign(speedY) == 1 && inputY == 0) {
+		    speedY = max(speedY - accelY, 0);
 		}
-		
-		oldrealx = realx; //collision calculation i guess
-		oldrealy = realy;
 		
 		/*
 		if(sign(horspd) == -1 && hor == 0) {
@@ -108,7 +100,26 @@ function Movementer(_obj) constructor {
 	}
 	
 	static Collide = function(collide = true) {
-		gml_pragma("forceinline");
+		repeat(abs(speedX)) {
+			realX += sign(speedX);
+			if(CollideCheck(realX >> COLLPRECISIONSHIFTABLE, realY >> COLLPRECISIONSHIFTABLE, o_hitbox) && collide) {
+				realX -= sign(speedX);
+				speedX = 0;
+				break;
+			}
+		}
+		repeat(abs(speedY)) {
+			realY += sign(speedY);
+			if(CollideCheck(realX >> COLLPRECISIONSHIFTABLE, realY >> COLLPRECISIONSHIFTABLE, o_hitbox) && collide) {
+				realY -= sign(speedY);
+				speedY = 0;
+				break;
+			}
+		}
+		
+		obj.x = realX >> COLLPRECISIONSHIFTABLE;
+		obj.y = realY >> COLLPRECISIONSHIFTABLE;
+		
 		///collision ig
 				
 		//notes: ~~ will floor the value because gamemaker would floor it if it were a double
@@ -116,45 +127,45 @@ function Movementer(_obj) constructor {
 		
 		//shifts are faster, that's why collision precision has to be a pow of two
 		
-		var failsafe = int64(0);
+		/*var failsafe = int64(0);
 		
 		//HORIZONTAL
 		if(collide) begin
-		if(spdx != 0) begin
+		if(speedX != 0) begin
 		while(
 		CollideCheck(
-		    (realx + spdx) >> COLLPRECISIONSHIFTABLE,
-		    realy >> COLLPRECISIONSHIFTABLE,
+		    (realX + speedX) >> COLLPRECISIONSHIFTABLE,
+		    realY >> COLLPRECISIONSHIFTABLE,
 		    o_hitbox)
 		)
 		{
 		    failsafe++;
 			if(failsafe&256) then break;
-		    spdx -= sign(spdx);
+		    speedX -= sign(speedX);
 		} end end
-		realx += spdx;
+		realX += speedX;
 		//VERTICAL
 		if(collide) begin
-		if(spdy != 0) begin
+		if(speedY != 0) begin
 		while(
 		CollideCheck(
-		    realx >> COLLPRECISIONSHIFTABLE,
-		    (realy + spdy) >> COLLPRECISIONSHIFTABLE,
+		    realX >> COLLPRECISIONSHIFTABLE,
+		    (realY + speedY) >> COLLPRECISIONSHIFTABLE,
 		    o_hitbox)
 		)
 		{
 		    //show_debug_message("BAPBAPY");
 			failsafe++;
 			if(failsafe&256) then break;
-		    spdy -= sign(spdy);
+		    speedY -= sign(speedY);
 		} end end
-		realy += spdy;
+		realY += speedY;
 		
 		/*if(global.time%60 == 0) {
 			show_debug_message(failsafe);
-		}*/
+		}
 		
-		obj.x = realx >> COLLPRECISIONSHIFTABLE;
-		obj.y = realy >> COLLPRECISIONSHIFTABLE;
+		obj.x = realX >> COLLPRECISIONSHIFTABLE;
+		obj.y = realY >> COLLPRECISIONSHIFTABLE;*/
 	}
 }

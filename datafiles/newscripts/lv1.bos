@@ -43,6 +43,16 @@ Sign:
 
 [end];									kill interpreter
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+<level1-plantIdentityCrisis>
+[textStart];
+[ac];
+[text]"Cacti.";
+[ac];
+[text]" Or is it wheat?";
+[text]"What the hell is this?!?!?!?!!??!?!?!";
+[textEnd];
+[end];
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 <level1-huxDialogue>
 [setFacepic1]!s_hux_talk;					set hux's facepic
 [setNamelabel1]"Hux";					then his namelabel
