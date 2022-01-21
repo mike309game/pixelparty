@@ -53,6 +53,12 @@ Sign:
 [textEnd];
 [end];
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+<level1-closedGate>
+[textStart];
+[text]"It's not opening.";
+[textEnd];
+[end];
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 <level1-huxDialogue>
 [setFacepic1]!s_hux_talk;					set hux's facepic
 [setNamelabel1]"Hux";					then his namelabel

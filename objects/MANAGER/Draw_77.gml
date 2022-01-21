@@ -28,7 +28,7 @@ shader_reset();
 matrix_set(matrix_world, matrix_build_identity());
 //draw object info
 //this somewhat cripples performance
-var infoString = "\n\n";
+/*var infoString = "\n\n";
 with(all) {
 	if(object_index == o_hitbox) then continue;
 	infoString +=
@@ -42,4 +42,4 @@ with(all) {
 }
 draw_set_colour(c_white);
 draw_set_font(fntSmall);
-draw_text(0,0,infoString);
+draw_text(0,0,infoString);*/

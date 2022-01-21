@@ -11,7 +11,7 @@ if(GetGameFlag(eFlag.doFadeIn)) {
 
 if room = r_init //&& keyboard_check_pressed(vk_space)
 	{
-		room_goto(global.vars.roomgo)
+		room_goto(r_l1_r1);
 		//Sound(sx_shop_move)
 	}
 

@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "s_l1_house",
-    "path": "sprites/s_l1_house/s_l1_house.yy",
+    "name": "s_prop_level1_house",
+    "path": "sprites/s_prop_level1_house/s_prop_level1_house.yy",
   },
   "tileWidth": 16,
   "tileHeight": 16,

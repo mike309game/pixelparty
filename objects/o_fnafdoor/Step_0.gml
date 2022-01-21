@@ -3,15 +3,20 @@ if(!instance_exists(obj_player)) {
 }
 
 
-if(point_distance(x,y,obj_player.x,obj_player.y) < 90 || broken) {
-	image_index = lerp(image_index, 36, 0.15);
+if(point_distance(x+24,y+24,obj_player.x,obj_player.y) < 90 || broken) {
+	//image_index = lerp(image_index, 36, 0.15);
+	openAmt++;
 	breakCounter++;
 } else if(!broken) {
-	image_index = lerp(image_index, 0, 0.15);
+	//image_index = lerp(image_index, 0, 0.15);
+	openAmt--;
 	breakCounter++;
 }
+openAmt = clamp(openAmt, 0, 35);
 
-if(floor(image_index) == 0 || ceil(image_index) == 36) {
+image_index = EaseInOutCubic(0,35,openAmt / 35);
+
+if(floor(image_index) == 0 || ceil(image_index) == 35) {
 	breakCounter = 0;
 }
 if(breakCounter == 130 && !broken) {
