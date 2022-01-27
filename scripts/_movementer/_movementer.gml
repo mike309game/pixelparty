@@ -83,20 +83,6 @@ function Movementer(_obj) constructor {
 		} else if(sign(speedY) == 1 && inputY == 0) {
 		    speedY = max(speedY - accelY, 0);
 		}
-		
-		/*
-		if(sign(horspd) == -1 && hor == 0) {
-		horspd = min(horspd + mul,0);
-		} else if(sign(horspd) == 1 && hor == 0){
-		horspd = max(horspd - mul,0);
-		}
-		
-		if(sign(verspd) == -1 && ver == 0) {
-		verspd = min(verspd + mul,0);
-		} else if(sign(verspd) == 1 && ver == 0){
-		verspd = max(verspd - mul,0);
-		}
-		*/
 	}
 	
 	static Collide = function(collide = true) {
@@ -119,53 +105,11 @@ function Movementer(_obj) constructor {
 		
 		obj.x = realX >> COLLPRECISIONSHIFTABLE;
 		obj.y = realY >> COLLPRECISIONSHIFTABLE;
-		
-		///collision ig
-				
-		//notes: ~~ will floor the value because gamemaker would floor it if it were a double
-		//^^^this is not faster LMFAO
-		
-		//shifts are faster, that's why collision precision has to be a pow of two
-		
-		/*var failsafe = int64(0);
-		
-		//HORIZONTAL
-		if(collide) begin
-		if(speedX != 0) begin
-		while(
-		CollideCheck(
-		    (realX + speedX) >> COLLPRECISIONSHIFTABLE,
-		    realY >> COLLPRECISIONSHIFTABLE,
-		    o_hitbox)
-		)
-		{
-		    failsafe++;
-			if(failsafe&256) then break;
-		    speedX -= sign(speedX);
-		} end end
-		realX += speedX;
-		//VERTICAL
-		if(collide) begin
-		if(speedY != 0) begin
-		while(
-		CollideCheck(
-		    realX >> COLLPRECISIONSHIFTABLE,
-		    (realY + speedY) >> COLLPRECISIONSHIFTABLE,
-		    o_hitbox)
-		)
-		{
-		    //show_debug_message("BAPBAPY");
-			failsafe++;
-			if(failsafe&256) then break;
-		    speedY -= sign(speedY);
-		} end end
-		realY += speedY;
-		
-		/*if(global.time%60 == 0) {
-			show_debug_message(failsafe);
-		}
-		
+	}
+	static StopMoving = function() {
+		speedX = 0;
+		speedY = 0;
 		obj.x = realX >> COLLPRECISIONSHIFTABLE;
-		obj.y = realY >> COLLPRECISIONSHIFTABLE;*/
+		obj.y = realY >> COLLPRECISIONSHIFTABLE;
 	}
 }

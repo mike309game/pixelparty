@@ -1,4 +1,4 @@
-function Sound(sound,volume = 1)
+function Sound(sound, pitch = 1, volume = 1, loops = false)
 	{
 		//what in the fuck
 		/*if !is_undefined(sound)
@@ -8,8 +8,10 @@ function Sound(sound,volume = 1)
 			} else {
 				show_debug_message("oopsie poopsie sound is not real :)")
 			}*/
-		audio_play_sound(sound,0,false);
-		audio_sound_gain(sound,volume,0);
+		var theSound = audio_play_sound_on(global.soundEmitter, sound, loops, 0);
+		audio_sound_gain(theSound,volume,0);
+		audio_sound_pitch(theSound, pitch);
+		return theSound;
 	}
 
 function Music(song, loop = true) {

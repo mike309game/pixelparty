@@ -262,6 +262,32 @@ if(!halted) {
 				case eScriptFunction.toggleAutoClear:	
 					myHandler.handlerFlags ^= eHandlerFlags.autoClearText;
 					break;
+				case eScriptFunction.instanceCreate:
+					var summonX = 0;
+					var summonY = 0;
+					var marker = ReadArgument(eValueExpect.number);
+					
+					//failsafe summon @ player if no matching marker found
+					with(obj_player) {
+						summonX = x;
+						summonY = y;
+					}
+					//set pos to marker
+					with(o_marker) {
+						if(image_index == marker) { //marker matches
+							summonX = x;
+							summonY = y;
+						}
+					}
+					with(instance_create_depth(summonX, summonY, 0, ReadArgument(eValueExpect.number))) {
+						interpreter = other.id;
+						handler = other.myHandler;
+						caller = other.myCaller;
+					}
+					break;
+				case eScriptFunction.halt:
+					halted = true;
+					break;
 				default:
 					break;
 			}

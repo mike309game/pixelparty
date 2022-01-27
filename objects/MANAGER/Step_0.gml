@@ -11,7 +11,7 @@ if(GetGameFlag(eFlag.doFadeIn)) {
 
 if room = r_init //&& keyboard_check_pressed(vk_space)
 	{
-		room_goto(r_l1_r1);
+		room_goto(r_de_miketest);
 		//Sound(sx_shop_move)
 	}
 
@@ -34,16 +34,16 @@ if animate >= 2 then animate = 0
 
 if(global.musicTarget != global.musicPlaying) { //if music has changed
 	if(global.musicPlaying == sx_nothing) { //if there was no music being played, no need to wait for fading
-		audio_sound_gain(global.musicPlaying,0,0);
+		audio_sound_gain(global.music,0,0);
 	} else {
-		audio_sound_gain(global.musicPlaying,0,100);
+		audio_sound_gain(global.music,0,100);
 	}
-	if(audio_sound_get_gain(global.musicPlaying) == 0) { //when the old song finishes fading out
-		audio_stop_sound(global.musicPlaying); //stop the old song
+	if(audio_sound_get_gain(global.music) == 0) { //when the old song finishes fading out
+		audio_stop_sound(global.music); //stop the old song
 		global.musicPlaying = global.musicTarget; //set the song to play
-		audio_play_sound(global.musicPlaying,0,global.musicLoops); //play the song
-		audio_sound_gain(global.musicPlaying,0,0); //set song volume to zero wait why is this needed???
-		audio_sound_gain(global.musicPlaying,global.setting.music/100,0); //set its volume
+		global.music = audio_play_sound_on(global.musicEmitter, global.musicPlaying, global.musicLoops, 0); //play the song
+		//audio_sound_gain(global.music,0,0); //set song volume to zero wait why is this needed???
+		audio_sound_gain(global.music,1,0); //set its volume
 	}
 }
 

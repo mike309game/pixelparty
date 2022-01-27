@@ -1,6 +1,3 @@
-ds_map_destroy(global.JaxLarge_offsets);
-ds_map_destroy(global.JaxLarge_widths);
-
 //cleanup script system
 var nextKey = 0;//ds_map_find_first(global.script_sections);
 var dslLen = 0;//ds_list_size(global.script_sections[?nextKey]);
@@ -41,6 +38,9 @@ if(buffer_exists(global.inputBuffer)) {
 ds_map_destroy(global.script_compiled);
 ds_map_destroy(global.script_variables);
 ds_map_destroy(global.__scriptCommandMap);
+
+audio_emitter_free(global.soundEmitter);
+audio_emitter_free(global.musicEmitter);
 
 delete global.player
 delete global.vars

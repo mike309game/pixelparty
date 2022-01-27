@@ -93,3 +93,13 @@ THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG";
 [text]"triggers do work";
 [textEnd];
 [end];
+
+<test-icreate>
+[instanceCreate]#15,!o_piecescriptspawn;
+[halt];									wait until created instance does something to me
+
+ONLY PROCEEDS WHEN INSTANCE LETS ME
+[textStart];
+[text]"instance has unhalted me";
+[textEnd];
+[end];

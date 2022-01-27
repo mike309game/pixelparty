@@ -140,15 +140,15 @@ function HandlerCommon(intID) : HandlerBase(intID) constructor {
 			draw_set_colour(c_black);
 			if(handlerFlags & eHandlerFlags.showNamelabel1) {
 				draw_sprite(s_textbox_bright, 1, 0, tboxY); //draw namelabel 1
-				draw_text_correctly(23,177+tboxY,handlerNamelabel1);
+				draw_text(23,177+tboxY,handlerNamelabel1);
 			}
 			if(handlerFlags & eHandlerFlags.showNamelabel2) {
 				draw_sprite(s_textbox_bright, 2, 0, tboxY); //draw namelabel 2
-				draw_text_correctly(204,177+tboxY,handlerNamelabel2);
+				draw_text(204,177+tboxY,handlerNamelabel2);
 			}
 			draw_set_colour(c_white);
 			
-			draw_set_font(f_main);			
+			draw_set_font(f_jaxfont);
 			fmtstring_draw(18, 196+tboxY, typewriter.letterList, 0, true);
 			
 			if(handlerWaitForInput) {

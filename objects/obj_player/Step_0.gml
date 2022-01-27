@@ -54,8 +54,14 @@ with(interacted) {
 	}
 }
 
-sprite_index = sprites[dir];
-image_speed = movementer.moving * 0.2 * (x != xprevious || y != yprevious);
-image_index *= movementer.moving * (x != xprevious || y != yprevious);
-CamCenterHitbox();
+if(GetGameFlag(eFlag.playerCanSetSprite)) {
+	sprite_index = sprites[dir];
+	image_speed = movementer.moving * 0.2 * (x != xprevious || y != yprevious);
+	image_index *= movementer.moving * (x != xprevious || y != yprevious);
+}
+
+if(GetGameFlag(eFlag.cameraFocusOnPlayer)) { //if can center on me
+	CamCenterHitbox();
+}
+
 SetDepth();

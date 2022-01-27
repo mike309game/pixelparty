@@ -12,8 +12,8 @@ function Letter(
 	y = 0; //y offset (for shake)
 	newlines = _newlines;
 	char = _char;
-	sep = global.JaxLarge_widths[?char] ?? 4;
-	offset = global.JaxLarge_offsets[?char] ?? 0;
+	sep = string_width(char);
+	//offset = global.JaxLarge_offsets[?char] ?? 0;
 	textPointerDifference = _txptrdiff;
 	flags = _flags;
 	if(flags & eTextFlag.colourChanging) {
@@ -81,7 +81,7 @@ function Typewriter(_skippable = true, _initTextSpeed = global.script_variables[
 			if(textDelay != 0) {
 				advanceCountdown = textDelay;
 				canAdvance = false;
-				audio_play_sound(sx_text_sound,0,0);
+				Sound(sx_text_sound);
 				break;
 			}
 		}

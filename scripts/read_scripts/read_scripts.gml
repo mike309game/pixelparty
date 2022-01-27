@@ -53,7 +53,9 @@ enum eScriptFunction {
 	toggleNamelabel2,
 	s1h2, //show name/face 1, hide name/face 2
 	s2h1, //vice versa
-	toggleAutoClear
+	toggleAutoClear,
+	instanceCreate,
+	halt
 }
 
 enum eValueExpect {
@@ -155,6 +157,8 @@ global.__scriptCommandMap[? "toggleNamelabel2"] = eScriptFunction.toggleNamelabe
 global.__scriptCommandMap[? "s1h2"] = eScriptFunction.s1h2;
 global.__scriptCommandMap[? "s2h1"] = eScriptFunction.s2h1;
 global.__scriptCommandMap[? "ac"] = eScriptFunction.toggleAutoClear;
+global.__scriptCommandMap[? "instanceCreate"] = eScriptFunction.instanceCreate;
+global.__scriptCommandMap[? "halt"] = eScriptFunction.halt;
 #endregion
 
 for(var i = ds_map_find_first(global.__scriptCommandMap); i != undefined; i = ds_map_find_next(global.__scriptCommandMap,i)) {

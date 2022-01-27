@@ -3,7 +3,7 @@
     "name": "s_huxfunnypivot",
     "path": "sprites/s_huxfunnypivot/s_huxfunnypivot.yy",
   },
-  "solid": false,
+  "solid": true,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,

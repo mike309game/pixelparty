@@ -58,16 +58,12 @@ function fmtstring_draw(xx, yy, letterList, start, dropshadow = false, spacingAm
 		}
 		
 		var charSep = letterCurrent.sep;
-		
-		var charOffset = letterCurrent.offset;
 		var newlines = letterCurrent.newlines;
 		
 		if(newlines) { //got line changing?
 			spacing += letterCurrent.newlines * spacingAmt; //spacing
 			sep = 0; //reset separation
 		}
-		
-		sep -= charOffset; //for chars that don't have 1st pixel at draw pos
 		
 		var textX = (xx + sep) + letterCurrent.x;
 		var textY = (yy + spacing) + letterCurrent.y;
@@ -79,7 +75,7 @@ function fmtstring_draw(xx, yy, letterList, start, dropshadow = false, spacingAm
 			draw_text(textX+2, textY+2, letterCurrent.char);
 			draw_set_alpha(alphaOld);
 		}
-		sep += charSep+charOffset+1;
+		sep += charSep;
 	}
 	draw_set_colour(c_white);
 }

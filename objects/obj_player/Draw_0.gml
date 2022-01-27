@@ -1,4 +1,10 @@
 draw_self();
+/*draw_set_font(f_jaxfont);
+draw_text(x,y,"The Quiiiiick");
+draw_sprite(s_lilhand,0,x+string_width("The Quiiiiick"),y);
+draw_text(x,y+16,"testyiiiikkkkkiiiwwxxx");*/
+
+//HonestaryDraw(keyboard_string,x,y,make_colour_hsv(global.time & 255, 255, 255));
 
 //draw_point(x,);
 

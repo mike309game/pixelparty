@@ -57,7 +57,7 @@ function Menu() constructor {
 function DrawMenuSimple(menu, x, y) {
 	with(menu) {
 		var spacing = 0;
-		draw_set_font(f_main);
+		draw_set_font(f_jaxfont);
 		while(!ds_queue_empty(optionStack)) {
 			var item = ds_queue_dequeue(optionStack);
 			var btWidth = string_width(item.label);
@@ -71,9 +71,9 @@ function DrawMenuSimple(menu, x, y) {
 			draw_sprite_stretched(s_pause_button, btIndex, x, y + spacing, btWidth + 4, 20);
 			draw_set_colour(c_black);
 			draw_set_alpha(0.2);
-			draw_text_correctly(x + 3, y + spacing + 3, item.label);
+			draw_text(x + 3, y + spacing + 3, item.label);
 			draw_set_alpha(1);
-			draw_text_correctly(x + 2, y + spacing + 2, item.label);
+			draw_text(x + 2, y + spacing + 2, item.label);
 			draw_set_colour(c_white);
 			spacing += 21;
 		}

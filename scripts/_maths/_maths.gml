@@ -84,3 +84,18 @@ function EaseInBounce(start, _end, position) {
 	gml_pragma("forceinline");
 	return lerp(start, _end, 1 - nEaseOutBounce(1 - position));
 }
+
+function nEaseOutElastic(x) {
+	var c4 = (2 * pi) / 3;
+	
+	return x == 0
+	  ? 0
+	  : (x == 1
+	  ? 1
+	  : power(2, -10 * x) * sin((x * 10 - 0.75) * c4) + 1);
+}
+
+function EaseOutElastic(start, _end, position) {
+	gml_pragma("forceinline");
+	return lerp(start, _end, nEaseOutElastic(position));
+}

@@ -1,0 +1,8 @@
+global shit
+
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+<global-glassWall>
+[textStart];
+[text]"It is impossible to get through.";
+[textEnd];
+[end];

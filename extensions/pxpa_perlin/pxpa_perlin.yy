@@ -24,6 +24,7 @@
           ],"resourceVersion":"1.0","name":"perlin","tags":[],"resourceType":"GMExtensionFunction",},
       ],"constants":[],"ProxyFiles":[],"copyToTargets":-1,"order":[
         {"name":"pxpa_perlin","path":"extensions/pxpa_perlin/pxpa_perlin.yy",},
+        {"name":"perlin","path":"extensions/pxpa_perlin/pxpa_perlin.yy",},
       ],"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMExtensionFile",},
   ],
   "classname": "",

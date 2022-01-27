@@ -14,6 +14,8 @@ enum eFlag {
 	fadeBlack = 1 << 5, //if fade will darken screen
 	playerCanTransition = 1 << 6, //touching transition triggers can start the transition?
 	playerCanCollide = 1 << 7, //solid blocks will stop player?
+	cameraFocusOnPlayer = 1 << 8, //camera centers on player?
+	playerCanSetSprite = 1 << 9, //player can set its sprite automatically?
 }
 
 global.flag = (
@@ -22,7 +24,9 @@ global.flag = (
 	eFlag.autoStopPlayer |
 	//eFlag.fadeBlack |
 	eFlag.playerCanTransition |
-	eFlag.playerCanCollide
+	eFlag.playerCanCollide |
+	eFlag.cameraFocusOnPlayer |
+	eFlag.playerCanSetSprite
 );
 
 global.input = int64(0);
@@ -65,13 +69,16 @@ global.camY = 0;
 
 global.pausedsurface = noone;
 
-global.musicMasterVolume = 1;
+global.musicMasterVolume = 0.1;
 global.soundMasterVolume = 1;
 global.masterVolume = 1;
 
+global.musicEmitter = audio_emitter_create();
+global.soundEmitter = audio_emitter_create();
+
+global.music = noone; //for usage with manipulating volume and pitch n shit
 global.musicTarget = sx_nothing;
 global.musicPlaying = sx_nothing;
-global.musicVolume = 1;
 global.musicLoops = true;
 
 global.vars = { // random globals [ USE THIS FOR GLOBAL VARIABLES ]
@@ -151,181 +158,10 @@ global.gameevent[? "mev_1"] = 0
 
 
 global.playerinv = array_create(6,"")
+#region font bullshit
+globalvar f_boldfelony;
+f_boldfelony = font_add_sprite_ext(_f_boldfelony, "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-+", true, 1);
+globalvar f_jaxfont;
+f_jaxfont = font_add_sprite_ext(_f_jaxfont, "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!\"$%&'(),-./:;<=>?_© ", true, 1);
 
-#region JaxFont maps
-global.JaxLarge_offsets = ds_map_create();
-global.JaxLarge_widths = ds_map_create();
-
-global.JaxLarge_offsets[?"a"]=0;
-global.JaxLarge_widths[?"a"]=6;
-global.JaxLarge_offsets[?"b"]=0;
-global.JaxLarge_widths[?"b"]=6;
-global.JaxLarge_offsets[?"c"]=0;
-global.JaxLarge_widths[?"c"]=6;
-global.JaxLarge_offsets[?"d"]=0;
-global.JaxLarge_widths[?"d"]=6;
-global.JaxLarge_offsets[?"e"]=0;
-global.JaxLarge_widths[?"e"]=6;
-global.JaxLarge_offsets[?"f"]=0;
-global.JaxLarge_widths[?"f"]=6;
-global.JaxLarge_offsets[?"g"]=0;
-global.JaxLarge_widths[?"g"]=6;
-global.JaxLarge_offsets[?"h"]=0;
-global.JaxLarge_widths[?"h"]=6;
-global.JaxLarge_offsets[?"i"]=3;
-global.JaxLarge_widths[?"i"]=1;
-global.JaxLarge_offsets[?"j"]=0;
-global.JaxLarge_widths[?"j"]=2;
-global.JaxLarge_offsets[?"k"]=0;
-global.JaxLarge_widths[?"k"]=6;
-global.JaxLarge_offsets[?"l"]=3;
-global.JaxLarge_widths[?"l"]=1;
-global.JaxLarge_offsets[?"m"]=0;
-global.JaxLarge_widths[?"m"]=6;
-global.JaxLarge_offsets[?"n"]=0;
-global.JaxLarge_widths[?"n"]=6;
-global.JaxLarge_offsets[?"o"]=0;
-global.JaxLarge_widths[?"o"]=6;
-global.JaxLarge_offsets[?"p"]=0;
-global.JaxLarge_widths[?"p"]=6;
-global.JaxLarge_offsets[?"q"]=0;
-global.JaxLarge_widths[?"q"]=6;
-global.JaxLarge_offsets[?"r"]=0;
-global.JaxLarge_widths[?"r"]=6;
-global.JaxLarge_offsets[?"s"]=0;
-global.JaxLarge_widths[?"s"]=6;
-global.JaxLarge_offsets[?"t"]=0;
-global.JaxLarge_widths[?"t"]=5;
-global.JaxLarge_offsets[?"u"]=0;
-global.JaxLarge_widths[?"u"]=6;
-global.JaxLarge_offsets[?"v"]=0;
-global.JaxLarge_widths[?"v"]=6;
-global.JaxLarge_offsets[?"w"]=0;
-global.JaxLarge_widths[?"w"]=6;
-global.JaxLarge_offsets[?"x"]=0;
-global.JaxLarge_widths[?"x"]=6;
-global.JaxLarge_offsets[?"y"]=0;
-global.JaxLarge_widths[?"y"]=6;
-global.JaxLarge_offsets[?"z"]=0;
-global.JaxLarge_widths[?"z"]=6;
-global.JaxLarge_offsets[?"A"]=0;
-global.JaxLarge_widths[?"A"]=6;
-global.JaxLarge_offsets[?"B"]=0;
-global.JaxLarge_widths[?"B"]=6;
-global.JaxLarge_offsets[?"C"]=0;
-global.JaxLarge_widths[?"C"]=6;
-global.JaxLarge_offsets[?"D"]=0;
-global.JaxLarge_widths[?"D"]=6;
-global.JaxLarge_offsets[?"E"]=0;
-global.JaxLarge_widths[?"E"]=6;
-global.JaxLarge_offsets[?"F"]=0;
-global.JaxLarge_widths[?"F"]=6;
-global.JaxLarge_offsets[?"G"]=0;
-global.JaxLarge_widths[?"G"]=6;
-global.JaxLarge_offsets[?"H"]=0;
-global.JaxLarge_widths[?"H"]=6;
-global.JaxLarge_offsets[?"I"]=0;
-global.JaxLarge_widths[?"I"]=6;
-global.JaxLarge_offsets[?"J"]=0;
-global.JaxLarge_widths[?"J"]=6;
-global.JaxLarge_offsets[?"K"]=0;
-global.JaxLarge_widths[?"K"]=6;
-global.JaxLarge_offsets[?"L"]=0;
-global.JaxLarge_widths[?"L"]=6;
-global.JaxLarge_offsets[?"M"]=0;
-global.JaxLarge_widths[?"M"]=6;
-global.JaxLarge_offsets[?"N"]=0;
-global.JaxLarge_widths[?"N"]=6;
-global.JaxLarge_offsets[?"O"]=0;
-global.JaxLarge_widths[?"O"]=6;
-global.JaxLarge_offsets[?"P"]=0;
-global.JaxLarge_widths[?"P"]=6;
-global.JaxLarge_offsets[?"Q"]=0;
-global.JaxLarge_widths[?"Q"]=6;
-global.JaxLarge_offsets[?"R"]=0;
-global.JaxLarge_widths[?"R"]=6;
-global.JaxLarge_offsets[?"S"]=0;
-global.JaxLarge_widths[?"S"]=6;
-global.JaxLarge_offsets[?"T"]=0;
-global.JaxLarge_widths[?"T"]=6;
-global.JaxLarge_offsets[?"U"]=0;
-global.JaxLarge_widths[?"U"]=6;
-global.JaxLarge_offsets[?"V"]=0;
-global.JaxLarge_widths[?"V"]=6;
-global.JaxLarge_offsets[?"W"]=0;
-global.JaxLarge_widths[?"W"]=6;
-global.JaxLarge_offsets[?"X"]=0;
-global.JaxLarge_widths[?"X"]=6;
-global.JaxLarge_offsets[?"Y"]=0;
-global.JaxLarge_widths[?"Y"]=6;
-global.JaxLarge_offsets[?"Z"]=0;
-global.JaxLarge_widths[?"Z"]=6;
-global.JaxLarge_offsets[?"0"]=0;
-global.JaxLarge_widths[?"0"]=6;
-global.JaxLarge_offsets[?"1"]=0;
-global.JaxLarge_widths[?"1"]=4;
-global.JaxLarge_offsets[?"2"]=0;
-global.JaxLarge_widths[?"2"]=6;
-global.JaxLarge_offsets[?"3"]=0;
-global.JaxLarge_widths[?"3"]=6;
-global.JaxLarge_offsets[?"4"]=0;
-global.JaxLarge_widths[?"4"]=6;
-global.JaxLarge_offsets[?"5"]=0;
-global.JaxLarge_widths[?"5"]=6;
-global.JaxLarge_offsets[?"6"]=0;
-global.JaxLarge_widths[?"6"]=6;
-global.JaxLarge_offsets[?"7"]=0;
-global.JaxLarge_widths[?"7"]=6;
-global.JaxLarge_offsets[?"8"]=0;
-global.JaxLarge_widths[?"8"]=6;
-global.JaxLarge_offsets[?"9"]=0;
-global.JaxLarge_widths[?"9"]=6;
-global.JaxLarge_offsets[?"!"]=1;
-global.JaxLarge_widths[?"!"]=3;
-global.JaxLarge_offsets[?"\""]=1;
-global.JaxLarge_widths[?"\""]=1;
-global.JaxLarge_offsets[?"$"]=0;
-global.JaxLarge_widths[?"$"]=6;
-global.JaxLarge_offsets[?"%"]=0;
-global.JaxLarge_widths[?"%"]=7;
-global.JaxLarge_offsets[?"'"]=1;
-global.JaxLarge_widths[?"'"]=1;
-global.JaxLarge_offsets[?"("]=0;
-global.JaxLarge_widths[?"("]=3;
-global.JaxLarge_offsets[?")"]=0;
-global.JaxLarge_widths[?")"]=3;
-global.JaxLarge_offsets[?","]=1;
-global.JaxLarge_widths[?","]=2;
-global.JaxLarge_offsets[?"-"]=1;
-global.JaxLarge_widths[?"-"]=4;
-global.JaxLarge_offsets[?"."]=1;
-global.JaxLarge_widths[?"."]=2;
-global.JaxLarge_offsets[?"/"]=1;
-global.JaxLarge_widths[?"/"]=4;
-global.JaxLarge_offsets[?":"]=1;
-global.JaxLarge_widths[?":"]=1;
-global.JaxLarge_offsets[?";"]=1;
-global.JaxLarge_widths[?";"]=2;
-global.JaxLarge_offsets[?"<"]=0;
-global.JaxLarge_widths[?"<"]=8;
-global.JaxLarge_offsets[?"="]=0;
-global.JaxLarge_widths[?"="]=8;
-global.JaxLarge_offsets[?">"]=0;
-global.JaxLarge_widths[?">"]=8;
-global.JaxLarge_offsets[?"?"]=0;
-global.JaxLarge_widths[?"?"]=6;
-global.JaxLarge_offsets[?"_"]=0;
-global.JaxLarge_widths[?"_"]=9;
-global.JaxLarge_offsets[?"©"]=3;
-global.JaxLarge_widths[?"©"]=9;
-global.JaxLarge_offsets[?"\\"]=2;
-global.JaxLarge_widths[?"\\"]=6;
-global.JaxLarge_offsets[?"["]=3;
-global.JaxLarge_widths[?"["]=4;
-global.JaxLarge_offsets[?"]"]=2;
-global.JaxLarge_widths[?"]"]=4;
-global.JaxLarge_offsets[?"~"]=1;
-global.JaxLarge_widths[?"~"]=7;
-global.JaxLarge_offsets[?"#"]=0;
-global.JaxLarge_widths[?"#"]=9;
 #endregion

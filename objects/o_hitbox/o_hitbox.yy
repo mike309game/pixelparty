@@ -3,7 +3,7 @@
     "name": "s_hitbox",
     "path": "sprites/s_hitbox/s_hitbox.yy",
   },
-  "solid": false,
+  "solid": true,
   "visible": false,
   "spriteMaskId": null,
   "persistent": false,
