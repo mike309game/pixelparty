@@ -66,8 +66,8 @@ function SerializeScript(){
 	}
 	
 	
-	var compressed = buffer_compress(buffer,0,buffer_tell(buffer));
-	buffer_save(compressed,file);
-	buffer_delete(compressed);
+	//var compressed = buffer_compress(buffer,0,buffer_tell(buffer));
+	buffer_save(buffer,file);
+	//buffer_delete(compressed);
 	buffer_delete(buffer);
 }

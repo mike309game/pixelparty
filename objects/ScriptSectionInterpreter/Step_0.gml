@@ -288,6 +288,12 @@ if(!halted) {
 				case eScriptFunction.halt:
 					halted = true;
 					break;
+				case eScriptFunction.callerUserEvent:
+					var number = ReadArgument(eValueExpect.number);
+					with(myCaller) {
+						event_user(number);
+					}
+					break;
 				default:
 					break;
 			}

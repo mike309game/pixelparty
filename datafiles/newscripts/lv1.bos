@@ -1,8 +1,28 @@
 
+Bean boy flavour text values
+
+$level1-beanboy-interactedTv=#0;
+$level1-beanboy-talkedTo=#0;
+
+Jarl flavour text values
+
+$level1-jarl-talkedTo=#0;
+
+Lexsie's quest values
 
 $level1-lexsieQuest-talkedOnce=#0;
 $level1-lexsieQuest-gotBread=#0;
 $level1-lexsieQuest-done=#0;
+
+Cat quest values
+
+$level1-catQuest-talkedOnce=#0;
+$level1-catQuest-gotPiece=#0;
+
+$level1-catQuest-part1=#0;
+$level1-catQuest-part2=#0;
+$level1-catQuest-part3=#0;
+
 
 $level1-bulliedBully=#0;				you don't even know him yet
 
@@ -193,4 +213,138 @@ Here,\d1[] \dr[]you can have the piece now.";
 
 [textEnd];								end text stuff
 [end];									kill interpreter
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+<level1-BeanBoy>
+[textStart];
+[setNamelabel1]"Bean Boy";				left namelabel
+[setFacepic1]!s_bean_talk;				left facepic
+
+[s1h2];									show him
+
+[if]&level1-beanboy-talkedTo,"label-lv1-beanboyInteracted";	if talked to him once, do the second text, if not then proceed downwards
+
+[text]"Yo.";
+[text]"Don't mind me,\d1[] \dr[]I'm just playing Remarkable Martin
+Siblings.";
+[text]"They're legally distinct.";
+
+[set]"level1-beanboy-talkedTo",#1;			mark we talked to him once
+
+[jumpLabel]"label-lv1-beanboyDone";		go to end of dialogue
+
+[label]"label-lv1-beanboyInteracted";
+	[ac];									don't auto clear with this message
+	[text]"Don't forget!";
+	[ac];									do it with this one
+	[text]" They're legally distinct!";
+
+[label]"label-lv1-beanboyDone";
+
+[textEnd];
+
+[end];
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+<level1-BeanBoyTV>
+[textStart];
+
+[if]&level1-beanboy-interactedTv,"label-lv1-beanboyTvInteracted";	if interacted already, do second text
+
+[text]"There's a game on the screen.";
+[text]"It looks legally distinct.";
+
+[set]"level1-beanboy-interactedTv",#1;		mark we talked to the tv
+
+[jumpLabel]"label-lv1-beanboyTvDone";	go to end of dialogue
+
+[label]"label-lv1-beanboyTvInteracted";
+
+	[text]"It really is\d1[],
+\dr[]Legally Distinct.";
+
+[label]"label-lv1-beanboyTvDone";
+
+[textEnd];
+[end];
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+<level1-Jarl>
+[setNamelabel1]"Jarl";
+[setFacepic1]!s_jarl_talk;
+[setNamelabel2]"Manny";
+[setFacepic2]!s_manny_talk;
+
+[textStart];
+
+[s1h2];
+
+[if]&level1-jarl-talkedTo,"label-lv1-jarlLastLine";
+
+[ac];
+[text]"OH VAS HELLO VANNY!!";
+
+[ac];
+[text]"
+IS SOOO GHREAT TO SEE YOU HERE!";
+
+[text]"HOW IS YOUR KITTY MAXROI??";
+
+[s2h1];
+
+[text]"Fine";
+
+[s1h2];
+
+[text]"GREAT TO HEAR,\d1[] \dr[]GREAT TO HEAR!";
+
+[label]"label-lv1-jarlLastLine";
+
+[set]"level1-jarl-talkedTo",#1;
+
+[text]"REMEMBER TO WRITE ME,\d1[] \dr[]DARLING!";
+
+[textEnd];
+
+[end];
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+<level1-Cat>
+[setNamelabel1]"Cat in box";
+[setNamelabel2]"Manny";
+[setFacepic1]!s_cat_talk;
+[setFacepic2]!s_manny_talk;
+
+[textStart];
+
+[if]&level1-catQuest-talkedOnce,"label-lv1-catTalkedOnce";
+
+[s1h2];
+
+[text]"get the thing";
+[set]"level1-catQuest-talkedOnce",#1;
+[jumpLabel]"label-lv1-catDone";
+
+[label]"label-lv1-catTalkedOnce";
+	[if]&level1-catQuest-part1,&level1-catQuest-part2,&level1-catQuest-part3,"label-lv1-catGotStuff";
+	
+	[text]"GET THE THING";
+	
+	[jumpLabel]"label-lv1-catDone";
+	
+	[label]"label-lv1-catGotStuff";
+		[if]&level1-catQuest-gotPiece,"label-lv1-catGotPiece";
+		[text]"this is so awesome";
+		[callerUserEvent]#5;
+		[set]"level1-catQuest-gotPiece",#1;
+		[jumpLabel]"label-lv1-catDone";
+		
+		[label]"label-lv1-catGotPiece";
+			[text]"what else do you want from me";
+
+[label]"label-lv1-catDone";
+
+[textEnd];
+[end];
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\

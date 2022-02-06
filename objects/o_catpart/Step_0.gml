@@ -1,9 +1,3 @@
-image_index = part
+//draw_sprite(sprite_index,part,x,y+sin(global.time/10)*(7+ranseed))
 
-if place_meeting(x,y,o_player)
-	{
-		global.catparts.part[part] = 1
-		Sound(sx_pause_move)
-		instance_destroy(id)
-	}
-	
+y = ystart + sin(global.time/50)*(7+ranseed);

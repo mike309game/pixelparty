@@ -36,7 +36,7 @@ function Menu() constructor {
 		if(canMove) {
 			var optionCurrentNew = nmod(optionCurrent + (GetInputPressed(eInput.down, true) - GetInputPressed(eInput.up, true)), argument_count);
 			if(optionCurrentNew != optionCurrent) {
-				Sound(sx_newmove);
+				Sound(sx_pause_move);
 				optionCurrent = optionCurrentNew;
 			}
 			if(GetInputPressed(eInput.interact)) {
@@ -44,6 +44,7 @@ function Menu() constructor {
 			}
 			if(GetInputReleased(eInput.interact)) {
 				returnVal = optionCurrent;
+				Sound(sx_title_menu_select);
 			}
 		}
 		for(var i = 0; i < argument_count; i++) {

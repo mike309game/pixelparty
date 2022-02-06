@@ -55,7 +55,8 @@ enum eScriptFunction {
 	s2h1, //vice versa
 	toggleAutoClear,
 	instanceCreate,
-	halt
+	halt,
+	callerUserEvent,
 }
 
 enum eValueExpect {
@@ -159,6 +160,7 @@ global.__scriptCommandMap[? "s2h1"] = eScriptFunction.s2h1;
 global.__scriptCommandMap[? "ac"] = eScriptFunction.toggleAutoClear;
 global.__scriptCommandMap[? "instanceCreate"] = eScriptFunction.instanceCreate;
 global.__scriptCommandMap[? "halt"] = eScriptFunction.halt;
+global.__scriptCommandMap[? "callerUserEvent"] = eScriptFunction.callerUserEvent;
 #endregion
 
 for(var i = ds_map_find_first(global.__scriptCommandMap); i != undefined; i = ds_map_find_next(global.__scriptCommandMap,i)) {

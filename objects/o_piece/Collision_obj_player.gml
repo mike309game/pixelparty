@@ -1,4 +1,4 @@
-if(!gotMe) {
+if(!gotMe && GetGameFlag(eFlag.playerCanMove)) {
 	gotMe = true;
 	other.movementer.StopMoving();
 	x = other.x + 8;
