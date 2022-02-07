@@ -14,3 +14,12 @@ if(global.inputMode < 2) {
 } else {
 	global.inputMode = 0;
 }
+
+//this is here so if the game pauses the player immediately freezes
+if(!instance_exists(o_pause)) {
+	if(GetInput(eInput.start) && GetGameFlag(eFlag.playerCanMove | eFlag.playerCanTransition)) {
+		NegateGameFlag(eFlag.playerCanMove | eFlag.playerCanTransition);
+		instance_create_depth(0,0,-16000,o_pause)
+		//show_message("create")
+	}
+}

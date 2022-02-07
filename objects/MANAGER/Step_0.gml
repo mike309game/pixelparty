@@ -18,14 +18,7 @@ if room = r_init //&& keyboard_check_pressed(vk_space)
 //base stop fucking using brackets like this
 
 // fuck you your mother is upon my penis and i am currently having sex with her vagina
-if !instance_exists(o_pause)
-	{
-		if keyboard_check_pressed(vk_enter) && global.player.move //&& instance_exists(o_player)
-			{
-				instance_create_depth(0,0,-16000,o_pause)
-				//show_message("create")
-			}
-	}
+
 
 animate += 0.2
 if animate >= 2 then animate = 0

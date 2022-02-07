@@ -5,7 +5,7 @@ function GetGameFlag(flag, mathable = false) {
 	if(mathable) {
 		return real((global.flag & flag) == flag);
 	} else {
-		return global.flag & flag;
+		return (global.flag & flag) == flag;
 	}
 }
 

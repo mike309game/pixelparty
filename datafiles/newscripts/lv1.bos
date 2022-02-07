@@ -313,9 +313,9 @@ IS SOOO GHREAT TO SEE YOU HERE!";
 
 [textStart];
 
-[if]&level1-catQuest-talkedOnce,"label-lv1-catTalkedOnce";
-
 [s1h2];
+
+[if]&level1-catQuest-talkedOnce,"label-lv1-catTalkedOnce";
 
 [text]"get the thing";
 [set]"level1-catQuest-talkedOnce",#1;
@@ -331,6 +331,7 @@ IS SOOO GHREAT TO SEE YOU HERE!";
 	[label]"label-lv1-catGotStuff";
 		[if]&level1-catQuest-gotPiece,"label-lv1-catGotPiece";
 		[text]"this is so awesome";
+		[textEnd];
 		[callerUserEvent]#5;
 		[set]"level1-catQuest-gotPiece",#1;
 		[jumpLabel]"label-lv1-catDone";
