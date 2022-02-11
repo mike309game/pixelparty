@@ -2,7 +2,7 @@
 event_inherited();
 
 if(honestaryDoor) {
-	
-} else {
-	Transition(destination, image_index);
+	Sound(sx_level_enter);
+	MANAGER.fadeSpeed = 0.006;
 }
+Transition(destination, image_index, 0, honestaryDoor);

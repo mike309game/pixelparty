@@ -163,9 +163,9 @@ global.__scriptCommandMap[? "halt"] = eScriptFunction.halt;
 global.__scriptCommandMap[? "callerUserEvent"] = eScriptFunction.callerUserEvent;
 #endregion
 
-for(var i = ds_map_find_first(global.__scriptCommandMap); i != undefined; i = ds_map_find_next(global.__scriptCommandMap,i)) {
+/*for(var i = ds_map_find_first(global.__scriptCommandMap); i != undefined; i = ds_map_find_next(global.__scriptCommandMap,i)) {
 	show_debug_message(i);
-}
+}*/
 
 ScriptSysMessage("Compiling scripts");
 
@@ -316,7 +316,7 @@ function CompileScriptReadable(fname) {
 					}
 					if(!islabelfunc) {
 						section[|currentcommand] = commandargs;
-						ScriptSysMessage(@"	Did command " + functionname + string(currentcommand)); //that space is a tab
+						//ScriptSysMessage(@"	Did command " + functionname + string(currentcommand)); //that space is a tab
 					}
 				}
 				char = string_ord_at(fstring, ++fpos); /***********************THIS IS THE MOST IMPORTANT LINE OF CODE IN HERE, NOTE THE ++FPOS***********************/

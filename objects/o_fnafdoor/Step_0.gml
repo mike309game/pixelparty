@@ -3,11 +3,11 @@ if(!instance_exists(obj_player)) {
 }
 
 
-if(point_distance(x+24,y+24,obj_player.x,obj_player.y) < 90 || broken) {
+if((point_distance(x+24,y+24,obj_player.x,obj_player.y) < 90 || broken) && enabled) {
 	//image_index = lerp(image_index, 36, 0.15);
 	openAmt++;
 	breakCounter++;
-} else if(!broken) {
+} else if(!broken || !enabled) {
 	//image_index = lerp(image_index, 0, 0.15);
 	openAmt--;
 	breakCounter++;

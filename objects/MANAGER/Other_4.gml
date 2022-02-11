@@ -10,3 +10,6 @@ sign_do = true
 if ds_map_find_value(global.gameevent,string_copy(room_get_name(room),3,2)+"_e0") then sign_do = 0
 
 gc_collect(); //collect tresh
+//failsafe
+global.camX = 0;
+global.camY = 0;

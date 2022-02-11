@@ -8,8 +8,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "o_propbase",
-    "path": "objects/o_propbase/o_propbase.yy",
+    "name": "obj_npc",
+    "path": "objects/obj_npc/obj_npc.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -25,7 +25,9 @@
   "physicsShapePoints": [],
   "eventList": [],
   "properties": [],
-  "overriddenProperties": [],
+  "overriddenProperties": [
+    {"propertyId":{"name":"section","path":"objects/obj_npc/obj_npc.yy",},"objectId":{"name":"obj_npc","path":"objects/obj_npc/obj_npc.yy",},"value":"level1-Fountain","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+  ],
   "parent": {
     "name": "level 1",
     "path": "folders/Rooms/LEVEL BUILDING/PROPS/level 1.yy",

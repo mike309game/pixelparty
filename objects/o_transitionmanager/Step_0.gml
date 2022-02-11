@@ -15,6 +15,7 @@ if(room == destination) {
 		room_goto(r_interval);
 		NegateGameFlag(eFlag.doFadeIn); //fade out
 		if(loadingScreen) {
+			Music(sx_nothing);
 			alarm[0] = irandom_range(60*5,60*6); //either 5 or 6 seconds of "loading"
 		} else {
 			MANAGER.fadeValue = 0; //do it immediately only if no loading screen

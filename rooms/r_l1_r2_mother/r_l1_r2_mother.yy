@@ -28,6 +28,7 @@
         {"properties":[
             {"propertyId":{"name":"dir","path":"objects/o_marker/o_marker.yy",},"objectId":{"name":"o_marker","path":"objects/o_marker/o_marker.yy",},"value":"eInput.up","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
           ],"isDnd":false,"objectId":{"name":"o_marker","path":"objects/o_marker/o_marker.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":168.0,"y":296.0,"resourceVersion":"1.0","name":"inst_7F3BA9DA","tags":[],"resourceType":"GMRInstance",},
+        {"properties":[],"isDnd":false,"objectId":{"name":"o_marker","path":"objects/o_marker/o_marker.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":15,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":176.0,"y":144.0,"resourceVersion":"1.0","name":"inst_758EA74B","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":100,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":8,"gridY":8,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],"resourceVersion":"1.0","name":"Markers","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[
         {"properties":[
@@ -131,6 +132,7 @@
     {"name":"inst_44083E18","path":"rooms/r_l1_r2_mother/r_l1_r2_mother.yy",},
     {"name":"inst_349A1B9A","path":"rooms/r_l1_r2_mother/r_l1_r2_mother.yy",},
     {"name":"inst_6115232A","path":"rooms/r_l1_r2_mother/r_l1_r2_mother.yy",},
+    {"name":"inst_758EA74B","path":"rooms/r_l1_r2_mother/r_l1_r2_mother.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

@@ -6,5 +6,6 @@ if(!gotMe && GetGameFlag(eFlag.playerCanMove)) {
 	Sound(sx_puzzle_collect, random_range(0.9,1.1));
 	NegateGameFlag(eFlag.playerCanSetSprite | eFlag.playerCanMove); //don't let player move and change its sprite
 	other.sprite_index = s_manny_get_piece;
+	global.script_variables[? "pieces"] += 1;
 	event_perform(ev_alarm,0);
 }

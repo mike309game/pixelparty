@@ -1,1 +1,1 @@
-if !global.player.no_cam then camera_set_view_pos(view_camera[0],clamp(round(x)-160+24,0,room_width-320),clamp(round(y)-120+32,0,room_height-240));
+if !global.player.no_cam then SetCamPos(clamp(round(x)-160+24,0,room_width-320),clamp(round(y)-120+32,0,room_height-240));

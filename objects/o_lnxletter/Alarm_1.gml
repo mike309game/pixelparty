@@ -1,0 +1,2 @@
+waitingForFade = true;
+FadeIn();
