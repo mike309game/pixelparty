@@ -3,6 +3,7 @@
   "glyphOperations": 0,
   "interpreter": 0,
   "pointRounding": 0,
+  "applyKerning": 0,
   "fontName": "MS UI Gothic",
   "styleName": "Regular",
   "size": 8.0,
