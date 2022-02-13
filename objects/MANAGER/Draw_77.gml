@@ -1,12 +1,5 @@
-var windowWidth, windowHeight;
-if(os_browser == browser_not_a_browser) {
-	windowWidth = window_get_width();
-	windowHeight = window_get_height();
-} else {
-	windowWidth = browser_width;
-	windowHeight = browser_height;
-}
-
+var windowWidth = window_get_width();
+var windowHeight = window_get_height();
 var windowCenterX = windowWidth >> 1;
 var windowCenterY = windowHeight >> 1;
 
