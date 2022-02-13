@@ -6,6 +6,14 @@ if(GetGameFlag(eFlag.playerCanMove)) {
 	inputY = GetInput(eInput.down,true) - GetInput(eInput.up,true);
 }
 
+if(GetInput(eInput.o)) {
+	movementer.speedMax = 28;
+	movementer.accelStop = 3;
+} else {
+	movementer.speedMax = 16;
+	movementer.accelStop = 16-14;
+}
+
 movementer.Move(inputX,inputY);
 movementer.Collide(GetGameFlag(eFlag.playerCanCollide));
 

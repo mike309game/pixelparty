@@ -328,6 +328,23 @@ function CompileScriptReadable(fname) {
 	global.script_compiled[?fname] = 1; //the value doesn't matter, my code checks wether the key just exists
 }
 
+if(os_browser != browser_not_a_browser) { //html5 doesn't support file find first so i gotta make a file table
+	var table = [
+		"default.bos",
+		"global.bos",
+		"handlertest.bos",
+		"honestary.bos",
+		"lv1.bos",
+		"non lv specific quests.bos",
+		"test.bos",
+		"zglobals1.bos"
+	];
+	var len = array_length(table);
+	for(var i = 0; i < len; i++) {
+		CompileScriptReadable(table[i]);
+	}
+}
+
 var fname = file_find_first(working_directory + "/" + scriptslocation + "/*.bos",fa_directory);
 while(fname != "") { //compile all scripts in script directory
 	CompileScriptReadable(fname);
