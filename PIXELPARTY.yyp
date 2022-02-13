@@ -243,6 +243,7 @@
     {"id":{"name":"sx_error","path":"sounds/sx_error/sx_error.yy",},"order":14,},
     {"id":{"name":"s_hux_talk","path":"sprites/s_hux_talk/s_hux_talk.yy",},"order":19,},
     {"id":{"name":"o_mikedebug","path":"objects/o_mikedebug/o_mikedebug.yy",},"order":3,},
+    {"id":{"name":"o_shoprewrite","path":"objects/o_shoprewrite/o_shoprewrite.yy",},"order":9,},
     {"id":{"name":"f_shop","path":"fonts/f_shop/f_shop.yy",},"order":1,},
     {"id":{"name":"s_shop_dex_coin","path":"sprites/s_shop_dex_coin/s_shop_dex_coin.yy",},"order":8,},
     {"id":{"name":"s_hux","path":"sprites/s_hux/s_hux.yy",},"order":4,},
@@ -265,7 +266,6 @@
   ],
   "isDnDProject": false,
   "isEcma": false,
-  "tutorialPath": "",
   "configs": {
     "name": "Default",
     "children": [],
@@ -367,9 +367,10 @@
     {"CopyToMask":-1,"filePath":"datafiles/text/eng","resourceVersion":"1.0","name":"level3.txt","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/text/eng","resourceVersion":"1.0","name":"gametips.txt","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/text/eng","resourceVersion":"1.0","name":"martin.txt","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/text/eng","resourceVersion":"1.0","name":"buxytest.txt","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
-    "IDEVersion": "2.3.7.606",
+    "IDEVersion": "2022.1.1.610",
   },
   "resourceVersion": "1.4",
   "name": "PIXELPARTY",
