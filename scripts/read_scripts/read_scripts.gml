@@ -95,6 +95,10 @@ function ScriptSysWarning(arg) {
 
 #macro scriptslocation "newscripts"
 
+#macro release:SCRIPTSCOMPILED (true)
+#macro Default:SCRIPTSCOMPILED (false)
+#macro SCRIPTCOMPILEDNAME (working_directory + "/script02")
+
 //error checking
 global.errorCode = eErrorCode.success;
 
@@ -108,6 +112,7 @@ global.script_compiled = ds_map_create();
 
 #region String -> Enum lookup tables
 
+if(!SCRIPTSCOMPILED) begin
 global.__scriptCommandMap = ds_map_create();
 //Regular math
 global.__scriptCommandMap[? "set"] = eScriptFunction.setValue;
@@ -168,6 +173,7 @@ global.__scriptCommandMap[? "callerUserEvent"] = eScriptFunction.callerUserEvent
 }*/
 
 ScriptSysMessage("Compiling scripts");
+end
 
 function CheckForRef(sussy, expect) {
 	//gml_pragma("forceinline"); lol lol lol lol lol lol lol 
@@ -184,6 +190,7 @@ function CheckForRef(sussy, expect) {
 }
 
 function CompileScriptReadable(fname) {
+	if(!SCRIPTSCOMPILED) then begin
 	//gml_pragma("forceinline"); //bad idea? VERY BAD IDEA LOL it'd infinitely recurse because of the needed check shit
 	ScriptSysMessage("Processing " + fname);
 	if(global.script_compiled[?fname] != undefined) {
@@ -326,6 +333,68 @@ function CompileScriptReadable(fname) {
 	}
 	ScriptSysMessage("Finished processing " + fname);
 	global.script_compiled[?fname] = 1; //the value doesn't matter, my code checks wether the key just exists
+	end else ScriptSysMessage("Sneaky");
+}
+
+if(SCRIPTSCOMPILED) {
+	var compressedBuffer = buffer_load(SCRIPTCOMPILEDNAME);
+	var buffer = buffer_decompress(compressedBuffer);
+	buffer_delete(compressedBuffer);
+	
+	//skip version
+	buffer_read(buffer, buffer_u8)
+	
+	//skip build date
+	
+	buffer_read(buffer,buffer_string);
+	
+	//read sections
+	
+	repeat(buffer_read(buffer, buffer_u16)) { //read section count then read them
+		var sectionName = buffer_read(buffer, buffer_string); //read section name
+		
+		var section = ds_list_create();
+		repeat(buffer_read(buffer, buffer_u32)) { //read commands
+			var command = ds_list_create();
+			
+			repeat(buffer_read(buffer, buffer_u8)) { //read command args
+				if(buffer_read(buffer, buffer_bool)) { //is string?
+					ds_list_add(command, buffer_read(buffer, buffer_string)); //read arg
+				} else {
+					ds_list_add(command, buffer_read(buffer, buffer_f64)); //read arg
+				}
+			}
+			ds_list_add(section, command);
+		}
+		global.script_sections[? sectionName] = section;
+	}
+	
+	//read labels
+	
+	repeat(buffer_read(buffer, buffer_u16)) { //read label count then read them out
+		var labelInfo = ds_list_create();
+		
+		var labelName = buffer_read(buffer, buffer_string); //read label name
+		ds_list_add(labelInfo, buffer_read(buffer, buffer_string)); //read section label points to
+		ds_list_add(labelInfo, buffer_read(buffer, buffer_u32)); //read command index label points to
+		
+		global.script_labels[? labelName] = labelInfo;
+	}
+	
+	//read default values
+	
+	repeat(buffer_read(buffer, buffer_u16)) { //read value count then read them out
+		var valueName = buffer_read(buffer, buffer_string); //read value name
+		var value;
+		if(buffer_read(buffer, buffer_bool)) { //read if value is string
+			value = buffer_read(buffer, buffer_string); //read value as string
+		} else {
+			value = buffer_read(buffer, buffer_f64); //read value as double
+		}
+		global.script_variables[? valueName] = value;
+	}
+	
+	buffer_delete(buffer);
 }
 
 if(os_browser != browser_not_a_browser) { //html5 doesn't support file find first so i gotta make a file table
@@ -343,12 +412,12 @@ if(os_browser != browser_not_a_browser) { //html5 doesn't support file find firs
 	for(var i = 0; i < len; i++) {
 		CompileScriptReadable(table[i]);
 	}
-}
-
-var fname = file_find_first(working_directory + "/" + scriptslocation + "/*.bos",fa_directory);
-while(fname != "") { //compile all scripts in script directory
-	CompileScriptReadable(fname);
-	fname = file_find_next();
+} else {
+	var fname = file_find_first(working_directory + "/" + scriptslocation + "/*.bos",fa_directory);
+	while(fname != "") { //compile all scripts in script directory
+		CompileScriptReadable(fname);
+		fname = file_find_next();
+	}
 }
 ScriptSysMessage("All done");
 //show_message("i'm outta here");

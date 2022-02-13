@@ -1,9 +1,9 @@
+audio_group_load(agrp_sounds);
+
 save_setting_load()
 
 window_set_size(global.setting.scale*320,global.setting.scale*240)
 alarm_set(0,1)
-
-alarm[11] = 1;
 
 depth = -15999;
 
@@ -125,5 +125,7 @@ animate = 0
 level_sign_y = 240
 level_sign_timer = 0
 sign_do = true
+
+audiogroupsLoaded = false;
 
 //if ds_map_find_value(global.gameevent,string_copy(room_get_name(room),3,2)+"_e0") then sign_do = 0 //why is this in the create event

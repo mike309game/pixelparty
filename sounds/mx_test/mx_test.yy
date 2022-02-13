@@ -1,6 +1,6 @@
 {
   "conversionMode": 0,
-  "compression": 1,
+  "compression": 3,
   "volume": 1.0,
   "preload": false,
   "bitRate": 96,
@@ -8,8 +8,8 @@
   "type": 1,
   "bitDepth": 1,
   "audioGroupId": {
-    "name": "agrp_discardme",
-    "path": "audiogroups/agrp_discardme",
+    "name": "audiogroup_default",
+    "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "mx_test.ogg",
   "duration": 40.4210625,

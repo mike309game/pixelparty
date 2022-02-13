@@ -1,3 +1,10 @@
+if(!audiogroupsLoaded) {
+	if(audio_group_is_loaded(agrp_sounds)) {
+		audiogroupsLoaded = true;
+		room_goto(r_l1_r1);
+	}
+}
+
 if !window_has_focus() then audio_master_gain(0) else if window_has_focus() then audio_master_gain(1)
 
 // if keyboard_check_pressed(vk_escape) then game_end() //FUCK YOU GO FUCVK YOURSELF YOU FUCKING BITCH
@@ -8,12 +15,6 @@ if(GetGameFlag(eFlag.doFadeIn)) {
 } else {
 	fadeValue = max(fadeValue - fadeSpeed, 0);
 }
-
-if room = r_init //&& keyboard_check_pressed(vk_space)
-	{
-		room_goto(r_l1_r1);
-		//Sound(sx_shop_move)
-	}
 
 //base stop fucking using brackets like this
 

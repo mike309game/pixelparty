@@ -1,6 +1,6 @@
 {
   "conversionMode": 0,
-  "compression": 1,
+  "compression": 3,
   "volume": 1.0,
   "preload": false,
   "bitRate": 96,
@@ -8,8 +8,8 @@
   "type": 1,
   "bitDepth": 1,
   "audioGroupId": {
-    "name": "agrp_music",
-    "path": "audiogroups/agrp_music",
+    "name": "audiogroup_default",
+    "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "mx_level3.mp3",
   "duration": 97.75021,

@@ -26,6 +26,12 @@ function SerializeScript(){
 	var i;
 	var j;
 	
+	//Version
+	buffer_write(buffer, buffer_u8, 1);
+	
+	//Compile date
+	buffer_write(buffer,buffer_string,CurrentUnixTimestamp());
+	
 	//Sections
 	buffer_write(buffer,buffer_u16,ds_map_size(global.script_sections)); //write num of sections
 	for(nextKey = ds_map_find_first(global.script_sections); nextKey != undefined; nextKey = ds_map_find_next(global.script_sections, nextKey)) {
@@ -66,8 +72,8 @@ function SerializeScript(){
 	}
 	
 	
-	//var compressed = buffer_compress(buffer,0,buffer_tell(buffer));
-	buffer_save(buffer,file);
-	//buffer_delete(compressed);
+	var compressed = buffer_compress(buffer,0,buffer_tell(buffer));
+	buffer_save(compressed,file);
+	buffer_delete(compressed);
 	buffer_delete(buffer);
 }
