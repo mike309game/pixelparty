@@ -43,9 +43,33 @@ switch(menuMode) {
 			new MenuItem("Nevermind"),
 		);
 		switch(menuReturn) {
+			case 0:
+				SaveGame();
+				menu.canMove = false;
+				waitingForFade = true;
+				FadeIn();
+				Music(sx_nothing);
+				Sound(sx_pause_quit);
+				break;
+			case 1:
+				menu.canMove = false;
+				waitingForFade = true;
+				FadeIn();
+				Music(sx_nothing);
+				Sound(sx_pause_quit,0.8);
+				break;
 			case 2:
 				menuMode = 0;
 				break;
 		}
 		break;
+}
+
+if(waitingForFade && MANAGER.fadeValue == 1) {
+	blackout = true;
+	FadeOut();
+}
+if(blackout && MANAGER.fadeValue == 0) {
+	room_goto(r_title);
+	instance_destroy();
 }

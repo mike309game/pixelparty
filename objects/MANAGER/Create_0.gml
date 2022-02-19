@@ -1,6 +1,6 @@
 audio_group_load(agrp_sounds);
 
-save_setting_load()
+//save_setting_load()
 
 window_set_size(global.setting.scale*320,global.setting.scale*240)
 alarm_set(0,1)

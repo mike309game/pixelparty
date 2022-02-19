@@ -1,6 +1,42 @@
 // Saving Functions
 
-function save_init()
+function SaveVolumeSettings() {
+	ini_write_real("Volume", "Master", global.masterVolume);
+	ini_write_real("Volume", "Music", global.musicMasterVolume);
+	ini_write_real("Volume", "Sound", global.soundMasterVolume);
+}
+
+function SaveGame() {
+	ini_write_string("SaveData", "Room", room_get_name(room)); //name cuz gms2 shuffles room ids sometimes
+	ini_write_real("SaveData", "Flag", global.flag);
+	ini_write_string("SaveData", "Values", ds_map_write(global.script_variables));
+	ini_close();
+	ini_open(working_directory + "/savedata");
+}
+
+function LoadGame() {
+	global.flag = ini_read_real("SaveData", "Flag", eFlag.saveCorrupted);
+	ds_map_clear(global.script_variables);
+	ds_map_read(global.script_variables, ini_read_string("SaveData", "Values", "93010000010000000100000007000000494E56414C494400000000000000000000F03F")); //ds map with string key "INVALID" set to 1
+	room_goto(asset_get_index(ini_read_string("SaveData", "Room", "r_title")));
+}
+
+/*var test = ds_map_create();
+test[? "INVALID"] = 1;
+show_message(ds_map_write(test));*/
+
+/*
+---------------------------
+Pixel Party
+---------------------------
+93010000010000000100000007000000494E56414C494400000000000000000000F03F
+---------------------------
+OK   
+---------------------------
+
+*/
+
+/*function save_init()
 	{
 		if !file_exists(working_directory + "pxpa_save.ini")
 			{
@@ -67,4 +103,4 @@ function save_setting_load()
 			} else {
 				show_debug_message("no settings file")
 			}
-	}
+	}*/

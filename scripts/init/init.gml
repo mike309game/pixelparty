@@ -5,6 +5,8 @@ layer_force_draw_depth(1,0);
 
 gml_pragma("UnityBuild", "true");
 
+ini_open(working_directory + "/savedata"); //for settings
+
 enum eFlag {
 	playerCanMove = 1 << 0,
 	stopAll = 1 << 1, //stop what can be stopped
@@ -16,6 +18,8 @@ enum eFlag {
 	playerCanCollide = 1 << 7, //solid blocks will stop player?
 	cameraFocusOnPlayer = 1 << 8, //camera centers on player?
 	playerCanSetSprite = 1 << 9, //player can set its sprite automatically?
+	
+	saveCorrupted = 1 << 63 //this will only be on when the game fails to load a save file somehow
 }
 
 global.flag = (
@@ -69,9 +73,9 @@ global.camY = 0;
 
 global.pausedsurface = noone;
 
-global.musicMasterVolume = 0.1;
-global.soundMasterVolume = 1;
-global.masterVolume = 1;
+global.musicMasterVolume = ini_read_real("Volume", "Music", 0.5);
+global.soundMasterVolume = ini_read_real("Volume", "Sound", 1);
+global.masterVolume = ini_read_real("Volume", "Master", 0.5);
 
 global.musicEmitter = audio_emitter_create();
 global.soundEmitter = audio_emitter_create();

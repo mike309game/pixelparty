@@ -118,5 +118,8 @@ function PushSimpleOptions(menu) {
 	global.masterVolume = masterVolumeItem.sliderValue / 100;
 	global.musicMasterVolume = musicVolumeItem.sliderValue / 100;
 	global.soundMasterVolume = soundVolumeItem.sliderValue / 100;
+	if(returnVal == 3) {
+		SaveVolumeSettings();
+	}
 	return returnVal;
 }
