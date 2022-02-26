@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_housing_logo","path":"sprites/s_housing_logo/s_housing_logo.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_housing_logo",
     "tags": [],
     "resourceType": "GMSequence",

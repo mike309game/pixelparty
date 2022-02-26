@@ -119,7 +119,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_marker","path":"sprites/s_marker/s_marker.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_marker",
     "tags": [],
     "resourceType": "GMSequence",

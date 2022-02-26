@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_prop_level1_swingset","path":"sprites/s_prop_level1_swingset/s_prop_level1_swingset.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_prop_level1_swingset",
     "tags": [],
     "resourceType": "GMSequence",

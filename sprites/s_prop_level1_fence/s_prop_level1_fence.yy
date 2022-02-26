@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_prop_level1_fence","path":"sprites/s_prop_level1_fence/s_prop_level1_fence.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_prop_level1_fence",
     "tags": [],
     "resourceType": "GMSequence",

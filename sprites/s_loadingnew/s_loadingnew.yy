@@ -83,7 +83,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_loadingnew","path":"sprites/s_loadingnew/s_loadingnew.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_loadingnew",
     "tags": [],
     "resourceType": "GMSequence",

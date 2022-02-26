@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_controller_keys","path":"sprites/s_controller_keys/s_controller_keys.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_controller_keys",
     "tags": [],
     "resourceType": "GMSequence",

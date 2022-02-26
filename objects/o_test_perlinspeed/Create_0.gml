@@ -1,0 +1,13 @@
+depth = -1;
+perlinX = 0;
+perlinY = 0;
+perlinZ = 0;
+perlinDiv = 10;
+perlinMax = 0;
+image_speed=  0;
+//sprite_xoffset = sprite_width / 2;
+//sprite_yoffset = sprite_height / 2;
+funny = surface_create(320,240);
+surface_set_target(funny);
+draw_clear_alpha(0,0);
+surface_reset_target();

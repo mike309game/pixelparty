@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_prop_level1_house_enterable_mask","path":"sprites/s_prop_level1_house_enterable_mask/s_prop_level1_house_enterable_mask.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_prop_level1_house_enterable_mask",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_buxy_talk_alt_1","path":"sprites/s_buxy_talk_alt_1/s_buxy_talk_alt_1.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_buxy_talk_alt_1",
     "tags": [],
     "resourceType": "GMSequence",

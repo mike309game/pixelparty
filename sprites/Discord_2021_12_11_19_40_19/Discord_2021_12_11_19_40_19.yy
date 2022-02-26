@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"Discord_2021_12_11_19_40_19","path":"sprites/Discord_2021_12_11_19_40_19/Discord_2021_12_11_19_40_19.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "Discord_2021_12_11_19_40_19",
     "tags": [],
     "resourceType": "GMSequence",

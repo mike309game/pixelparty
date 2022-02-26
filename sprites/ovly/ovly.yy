@@ -67,7 +67,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"ovly","path":"sprites/ovly/ovly.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "ovly",
     "tags": [],
     "resourceType": "GMSequence",

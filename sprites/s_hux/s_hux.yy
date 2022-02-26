@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_hux","path":"sprites/s_hux/s_hux.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_hux",
     "tags": [],
     "resourceType": "GMSequence",

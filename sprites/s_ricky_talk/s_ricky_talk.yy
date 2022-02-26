@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_ricky_talk","path":"sprites/s_ricky_talk/s_ricky_talk.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_ricky_talk",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_9slice","path":"sprites/spr_9slice/spr_9slice.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_9slice",
     "tags": [],
     "resourceType": "GMSequence",

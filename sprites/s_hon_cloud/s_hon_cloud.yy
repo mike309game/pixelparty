@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_hon_cloud","path":"sprites/s_hon_cloud/s_hon_cloud.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_hon_cloud",
     "tags": [],
     "resourceType": "GMSequence",

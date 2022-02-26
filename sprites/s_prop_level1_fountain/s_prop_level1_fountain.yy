@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_prop_level1_fountain","path":"sprites/s_prop_level1_fountain/s_prop_level1_fountain.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_prop_level1_fountain",
     "tags": [],
     "resourceType": "GMSequence",

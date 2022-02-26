@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_honestary_level1","path":"sprites/s_honestary_level1/s_honestary_level1.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_honestary_level1",
     "tags": [],
     "resourceType": "GMSequence",

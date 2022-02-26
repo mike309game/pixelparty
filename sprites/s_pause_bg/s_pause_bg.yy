@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_pause_bg","path":"sprites/s_pause_bg/s_pause_bg.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_pause_bg",
     "tags": [],
     "resourceType": "GMSequence",

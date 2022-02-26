@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_npc_honstay","path":"sprites/s_npc_honstay/s_npc_honstay.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_npc_honstay",
     "tags": [],
     "resourceType": "GMSequence",

@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_bully_mumble","path":"sprites/s_bully_mumble/s_bully_mumble.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_bully_mumble",
     "tags": [],
     "resourceType": "GMSequence",

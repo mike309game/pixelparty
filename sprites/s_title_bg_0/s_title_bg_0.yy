@@ -13,7 +13,7 @@
   "bbox_bottom": 31,
   "HTile": false,
   "VTile": false,
-  "For3D": false,
+  "For3D": true,
   "width": 32,
   "height": 32,
   "textureGroupId": {
@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_title_bg_0","path":"sprites/s_title_bg_0/s_title_bg_0.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_title_bg_0",
     "tags": [],
     "resourceType": "GMSequence",

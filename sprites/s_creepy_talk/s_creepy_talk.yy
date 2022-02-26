@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_creepy_talk","path":"sprites/s_creepy_talk/s_creepy_talk.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_creepy_talk",
     "tags": [],
     "resourceType": "GMSequence",

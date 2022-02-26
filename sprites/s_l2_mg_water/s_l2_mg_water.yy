@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_l2_mg_water","path":"sprites/s_l2_mg_water/s_l2_mg_water.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_l2_mg_water",
     "tags": [],
     "resourceType": "GMSequence",

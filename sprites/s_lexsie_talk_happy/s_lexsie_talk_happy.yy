@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_lexsie_talk_happy","path":"sprites/s_lexsie_talk_happy/s_lexsie_talk_happy.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_lexsie_talk_happy",
     "tags": [],
     "resourceType": "GMSequence",

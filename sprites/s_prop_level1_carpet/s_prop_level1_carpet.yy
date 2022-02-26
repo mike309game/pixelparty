@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_prop_level1_carpet","path":"sprites/s_prop_level1_carpet/s_prop_level1_carpet.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_prop_level1_carpet",
     "tags": [],
     "resourceType": "GMSequence",

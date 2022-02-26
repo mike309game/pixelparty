@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_puzzle_piece","path":"sprites/s_puzzle_piece/s_puzzle_piece.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_puzzle_piece",
     "tags": [],
     "resourceType": "GMSequence",

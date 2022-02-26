@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_viewregiontest","path":"sprites/s_viewregiontest/s_viewregiontest.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_viewregiontest",
     "tags": [],
     "resourceType": "GMSequence",

@@ -123,7 +123,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_l1_elevator","path":"sprites/s_l1_elevator/s_l1_elevator.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_l1_elevator",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_buxy_talk","path":"sprites/s_buxy_talk/s_buxy_talk.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_buxy_talk",
     "tags": [],
     "resourceType": "GMSequence",

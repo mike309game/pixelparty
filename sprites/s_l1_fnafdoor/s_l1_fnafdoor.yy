@@ -199,7 +199,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_l1_fnafdoor","path":"sprites/s_l1_fnafdoor/s_l1_fnafdoor.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_l1_fnafdoor",
     "tags": [],
     "resourceType": "GMSequence",

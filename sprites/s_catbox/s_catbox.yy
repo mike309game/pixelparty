@@ -71,7 +71,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_catbox","path":"sprites/s_catbox/s_catbox.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_catbox",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_global_tiles","path":"sprites/s_global_tiles/s_global_tiles.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_global_tiles",
     "tags": [],
     "resourceType": "GMSequence",

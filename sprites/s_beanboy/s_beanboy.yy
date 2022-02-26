@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_beanboy","path":"sprites/s_beanboy/s_beanboy.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_beanboy",
     "tags": [],
     "resourceType": "GMSequence",

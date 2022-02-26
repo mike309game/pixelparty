@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_fade_white","path":"sprites/s_fade_white/s_fade_white.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_fade_white",
     "tags": [],
     "resourceType": "GMSequence",

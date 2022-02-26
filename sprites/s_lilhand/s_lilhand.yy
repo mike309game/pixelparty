@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_lilhand","path":"sprites/s_lilhand/s_lilhand.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_lilhand",
     "tags": [],
     "resourceType": "GMSequence",

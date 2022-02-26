@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_shop_dex_ear","path":"sprites/s_shop_dex_ear/s_shop_dex_ear.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_shop_dex_ear",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_shop_item_odd_key","path":"sprites/s_shop_item_odd_key/s_shop_item_odd_key.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_shop_item_odd_key",
     "tags": [],
     "resourceType": "GMSequence",

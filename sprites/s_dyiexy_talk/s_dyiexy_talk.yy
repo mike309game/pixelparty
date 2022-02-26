@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_dyiexy_talk","path":"sprites/s_dyiexy_talk/s_dyiexy_talk.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_dyiexy_talk",
     "tags": [],
     "resourceType": "GMSequence",

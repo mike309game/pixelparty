@@ -83,7 +83,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_yisifytext","path":"sprites/s_yisifytext/s_yisifytext.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_yisifytext",
     "tags": [],
     "resourceType": "GMSequence",

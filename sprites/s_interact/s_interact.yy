@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_interact","path":"sprites/s_interact/s_interact.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_interact",
     "tags": [],
     "resourceType": "GMSequence",

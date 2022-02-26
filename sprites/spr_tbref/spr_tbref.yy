@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_tbref","path":"sprites/spr_tbref/spr_tbref.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_tbref",
     "tags": [],
     "resourceType": "GMSequence",

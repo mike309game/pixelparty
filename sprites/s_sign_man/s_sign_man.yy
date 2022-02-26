@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_sign_man","path":"sprites/s_sign_man/s_sign_man.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_sign_man",
     "tags": [],
     "resourceType": "GMSequence",

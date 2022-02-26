@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_placehold","path":"sprites/s_placehold/s_placehold.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_placehold",
     "tags": [],
     "resourceType": "GMSequence",

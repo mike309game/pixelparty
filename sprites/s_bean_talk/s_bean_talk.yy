@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_bean_talk","path":"sprites/s_bean_talk/s_bean_talk.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_bean_talk",
     "tags": [],
     "resourceType": "GMSequence",

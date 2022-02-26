@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_manny_get_piece","path":"sprites/s_manny_get_piece/s_manny_get_piece.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_manny_get_piece",
     "tags": [],
     "resourceType": "GMSequence",

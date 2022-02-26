@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_looklookfuckinglookretard","path":"sprites/spr_looklookfuckinglookretard/spr_looklookfuckinglookretard.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_looklookfuckinglookretard",
     "tags": [],
     "resourceType": "GMSequence",

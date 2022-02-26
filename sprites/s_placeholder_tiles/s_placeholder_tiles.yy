@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_placeholder_tiles","path":"sprites/s_placeholder_tiles/s_placeholder_tiles.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_placeholder_tiles",
     "tags": [],
     "resourceType": "GMSequence",

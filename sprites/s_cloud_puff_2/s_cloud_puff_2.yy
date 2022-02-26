@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_cloud_puff_2","path":"sprites/s_cloud_puff_2/s_cloud_puff_2.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_cloud_puff_2",
     "tags": [],
     "resourceType": "GMSequence",

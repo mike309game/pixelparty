@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_bully_talk_waa","path":"sprites/s_bully_talk_waa/s_bully_talk_waa.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_bully_talk_waa",
     "tags": [],
     "resourceType": "GMSequence",

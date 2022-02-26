@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_shop_dex_coin","path":"sprites/s_shop_dex_coin/s_shop_dex_coin.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_shop_dex_coin",
     "tags": [],
     "resourceType": "GMSequence",

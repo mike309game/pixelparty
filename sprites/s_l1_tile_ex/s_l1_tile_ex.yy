@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_l1_tile_ex","path":"sprites/s_l1_tile_ex/s_l1_tile_ex.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_l1_tile_ex",
     "tags": [],
     "resourceType": "GMSequence",

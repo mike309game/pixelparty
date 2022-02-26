@@ -119,7 +119,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_transition_marker","path":"sprites/s_transition_marker/s_transition_marker.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_transition_marker",
     "tags": [],
     "resourceType": "GMSequence",

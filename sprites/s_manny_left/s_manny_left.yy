@@ -71,7 +71,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_manny_left","path":"sprites/s_manny_left/s_manny_left.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_manny_left",
     "tags": [],
     "resourceType": "GMSequence",

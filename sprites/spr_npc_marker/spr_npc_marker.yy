@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_npc_marker","path":"sprites/spr_npc_marker/spr_npc_marker.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_npc_marker",
     "tags": [],
     "resourceType": "GMSequence",

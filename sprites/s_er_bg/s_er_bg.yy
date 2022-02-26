@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_er_bg","path":"sprites/s_er_bg/s_er_bg.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_er_bg",
     "tags": [],
     "resourceType": "GMSequence",

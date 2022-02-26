@@ -89,6 +89,7 @@
     {"id":{"name":"r_l2_r2","path":"rooms/r_l2_r2/r_l2_r2.yy",},"order":1,},
     {"id":{"name":"s_pxpa_new_logo_placeholder","path":"sprites/s_pxpa_new_logo_placeholder/s_pxpa_new_logo_placeholder.yy",},"order":24,},
     {"id":{"name":"Sprite116","path":"sprites/Sprite116/Sprite116.yy",},"order":1,},
+    {"id":{"name":"_DrawSpriteNoCulling","path":"scripts/_DrawSpriteNoCulling/_DrawSpriteNoCulling.yy",},"order":15,},
     {"id":{"name":"o_starspwner","path":"objects/o_starspwner/o_starspwner.yy",},"order":22,},
     {"id":{"name":"s_placeholder_tiles","path":"sprites/s_placeholder_tiles/s_placeholder_tiles.yy",},"order":3,},
     {"id":{"name":"_handlers","path":"scripts/_handlers/_handlers.yy",},"order":7,},
@@ -400,6 +401,10 @@
     {"id":{"name":"s_shop_dex","path":"sprites/s_shop_dex/s_shop_dex.yy",},"order":1,},
     {"id":{"name":"s_l3_gate","path":"sprites/s_l3_gate/s_l3_gate.yy",},"order":1,},
     {"id":{"name":"r_de_test","path":"rooms/r_de_test/r_de_test.yy",},"order":0,},
+    {"id":{"name":"Note3","path":"notes/Note3/Note3.yy",},"order":10,},
+    {"id":{"name":"o_test_perlinspeed","path":"objects/o_test_perlinspeed/o_test_perlinspeed.yy",},"order":10,},
+    {"id":{"name":"o_titlenew","path":"objects/o_titlenew/o_titlenew.yy",},"order":10,},
+    {"id":{"name":"s_titleletter","path":"sprites/s_titleletter/s_titleletter.yy",},"order":0,},
   ],
   "Options": [
     {"name":"Linux","path":"options/linux/options_linux.yy",},
@@ -517,6 +522,7 @@
     {"folderPath":"folders/Objects/game/Convenient Glass Wall.yy","order":12,"resourceVersion":"1.0","name":"Convenient Glass Wall","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects/Intro stuff.yy","order":7,"resourceVersion":"1.0","name":"Intro stuff","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Paths/Yisify test.yy","order":1,"resourceVersion":"1.0","name":"Yisify test","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Objects/Title screen.yy","order":7,"resourceVersion":"1.0","name":"Title screen","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
@@ -555,9 +561,9 @@
     {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"script02","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
-    "IDEVersion": "2022.1.1.610",
+    "IDEVersion": "2022.2.0.614",
   },
-  "resourceVersion": "1.4",
+  "resourceVersion": "1.5",
   "name": "PIXELPARTY",
   "tags": [],
   "resourceType": "GMProject",

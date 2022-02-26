@@ -95,7 +95,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_pxpa_new_logo_placeholder","path":"sprites/s_pxpa_new_logo_placeholder/s_pxpa_new_logo_placeholder.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_pxpa_new_logo_placeholder",
     "tags": [],
     "resourceType": "GMSequence",

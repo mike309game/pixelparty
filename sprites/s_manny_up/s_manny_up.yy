@@ -71,7 +71,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_manny_up","path":"sprites/s_manny_up/s_manny_up.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_manny_up",
     "tags": [],
     "resourceType": "GMSequence",

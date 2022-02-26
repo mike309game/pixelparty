@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_l3_gate","path":"sprites/s_l3_gate/s_l3_gate.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_l3_gate",
     "tags": [],
     "resourceType": "GMSequence",

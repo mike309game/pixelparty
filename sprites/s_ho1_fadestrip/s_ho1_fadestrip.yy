@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_ho1_fadestrip","path":"sprites/s_ho1_fadestrip/s_ho1_fadestrip.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_ho1_fadestrip",
     "tags": [],
     "resourceType": "GMSequence",

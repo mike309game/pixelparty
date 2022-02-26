@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_shop_bg","path":"sprites/s_shop_bg/s_shop_bg.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_shop_bg",
     "tags": [],
     "resourceType": "GMSequence",

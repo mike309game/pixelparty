@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_cooldown_timer","path":"sprites/s_cooldown_timer/s_cooldown_timer.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_cooldown_timer",
     "tags": [],
     "resourceType": "GMSequence",

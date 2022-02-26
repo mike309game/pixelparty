@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_ho_bg","path":"sprites/s_ho_bg/s_ho_bg.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_ho_bg",
     "tags": [],
     "resourceType": "GMSequence",

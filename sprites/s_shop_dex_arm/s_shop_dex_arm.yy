@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_shop_dex_arm","path":"sprites/s_shop_dex_arm/s_shop_dex_arm.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_shop_dex_arm",
     "tags": [],
     "resourceType": "GMSequence",

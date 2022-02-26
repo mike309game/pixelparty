@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_pxpa_autosave","path":"sprites/s_pxpa_autosave/s_pxpa_autosave.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_pxpa_autosave",
     "tags": [],
     "resourceType": "GMSequence",

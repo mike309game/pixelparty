@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_prop_level1_cacti","path":"sprites/s_prop_level1_cacti/s_prop_level1_cacti.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_prop_level1_cacti",
     "tags": [],
     "resourceType": "GMSequence",

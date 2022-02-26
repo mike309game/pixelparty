@@ -71,7 +71,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_yisifybg","path":"sprites/s_yisifybg/s_yisifybg.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_yisifybg",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_introgfx","path":"sprites/s_introgfx/s_introgfx.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_introgfx",
     "tags": [],
     "resourceType": "GMSequence",

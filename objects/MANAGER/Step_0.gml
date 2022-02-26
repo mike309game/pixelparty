@@ -1,7 +1,7 @@
 if(!audiogroupsLoaded) {
 	if(audio_group_is_loaded(agrp_sounds)) {
 		audiogroupsLoaded = true;
-		room_goto(r_l1_r1);
+		room_goto(r_title);
 	}
 }
 

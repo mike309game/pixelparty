@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_prop_level1_table","path":"sprites/s_prop_level1_table/s_prop_level1_table.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_prop_level1_table",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_fade_black","path":"sprites/s_fade_black/s_fade_black.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_fade_black",
     "tags": [],
     "resourceType": "GMSequence",

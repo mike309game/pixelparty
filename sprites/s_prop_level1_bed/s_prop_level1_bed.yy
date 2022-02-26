@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_prop_level1_bed","path":"sprites/s_prop_level1_bed/s_prop_level1_bed.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_prop_level1_bed",
     "tags": [],
     "resourceType": "GMSequence",

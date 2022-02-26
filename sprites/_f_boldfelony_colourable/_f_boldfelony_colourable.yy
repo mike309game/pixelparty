@@ -207,7 +207,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"_f_boldfelony_colourable","path":"sprites/_f_boldfelony_colourable/_f_boldfelony_colourable.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "_f_boldfelony_colourable",
     "tags": [],
     "resourceType": "GMSequence",

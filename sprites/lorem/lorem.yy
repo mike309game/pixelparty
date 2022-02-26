@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"lorem","path":"sprites/lorem/lorem.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "lorem",
     "tags": [],
     "resourceType": "GMSequence",

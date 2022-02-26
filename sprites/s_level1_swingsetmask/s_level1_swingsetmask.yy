@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_level1_swingsetmask","path":"sprites/s_level1_swingsetmask/s_level1_swingsetmask.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_level1_swingsetmask",
     "tags": [],
     "resourceType": "GMSequence",

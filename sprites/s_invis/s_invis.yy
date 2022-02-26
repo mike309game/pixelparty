@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_invis","path":"sprites/s_invis/s_invis.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_invis",
     "tags": [],
     "resourceType": "GMSequence",

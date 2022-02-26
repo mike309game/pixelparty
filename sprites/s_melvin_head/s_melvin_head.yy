@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_melvin_head","path":"sprites/s_melvin_head/s_melvin_head.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_melvin_head",
     "tags": [],
     "resourceType": "GMSequence",

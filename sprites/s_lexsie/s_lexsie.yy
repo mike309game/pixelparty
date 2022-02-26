@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_lexsie","path":"sprites/s_lexsie/s_lexsie.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_lexsie",
     "tags": [],
     "resourceType": "GMSequence",

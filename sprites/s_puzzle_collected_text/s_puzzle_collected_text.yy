@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_puzzle_collected_text","path":"sprites/s_puzzle_collected_text/s_puzzle_collected_text.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_puzzle_collected_text",
     "tags": [],
     "resourceType": "GMSequence",

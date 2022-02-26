@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_honload","path":"sprites/s_honload/s_honload.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_honload",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_shittystar","path":"sprites/s_shittystar/s_shittystar.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_shittystar",
     "tags": [],
     "resourceType": "GMSequence",

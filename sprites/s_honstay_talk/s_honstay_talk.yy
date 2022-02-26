@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_honstay_talk","path":"sprites/s_honstay_talk/s_honstay_talk.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_honstay_talk",
     "tags": [],
     "resourceType": "GMSequence",

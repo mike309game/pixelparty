@@ -207,7 +207,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"_f_boldfelony","path":"sprites/_f_boldfelony/_f_boldfelony.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "_f_boldfelony",
     "tags": [],
     "resourceType": "GMSequence",

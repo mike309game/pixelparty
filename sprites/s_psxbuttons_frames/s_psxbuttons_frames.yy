@@ -111,7 +111,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_psxbuttons_frames","path":"sprites/s_psxbuttons_frames/s_psxbuttons_frames.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_psxbuttons_frames",
     "tags": [],
     "resourceType": "GMSequence",

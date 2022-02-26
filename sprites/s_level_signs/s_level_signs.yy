@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_level_signs","path":"sprites/s_level_signs/s_level_signs.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_level_signs",
     "tags": [],
     "resourceType": "GMSequence",

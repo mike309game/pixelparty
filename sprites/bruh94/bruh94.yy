@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"bruh94","path":"sprites/bruh94/bruh94.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "bruh",
     "tags": [],
     "resourceType": "GMSequence",

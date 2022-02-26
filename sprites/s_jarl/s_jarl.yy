@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_jarl","path":"sprites/s_jarl/s_jarl.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_jarl",
     "tags": [],
     "resourceType": "GMSequence",

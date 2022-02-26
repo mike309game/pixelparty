@@ -387,7 +387,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"_f_jaxfont","path":"sprites/_f_jaxfont/_f_jaxfont.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "_f_jaxfont",
     "tags": [],
     "resourceType": "GMSequence",
