@@ -2,11 +2,17 @@
 
 //draw_sprite_tiled_ext(s_title_bg_0, 0, global.time / 6, global.time / 4, 1, 1, c_white, backgroundAlpha);
 
+//set 3d projection pos
+if(debugPlacer) {
+	camera_set_view_mat(cam3d, matrix_build_lookat(0,-120/2,-70,0,0,0,0,0,1));
+} else {
+	camera_set_view_mat(cam3d, matrix_build_lookat(0,0,0,0,1,0,0,0,1));
+}
 
 //use the 3d projection
 camera_apply(cam3d);
 gpu_set_cullmode(cull_noculling);
-gpu_set_ztestenable(true);
+//gpu_set_ztestenable(true);
 
 //draw the scrolling floors
 
@@ -37,7 +43,7 @@ gpu_set_fog(false, c_white, 1, 1);
 //shader_set(shUnprecise);
 
 //push floating ui matrix
-matrix_stack_push(matrix_build(0,0,0,0,0,0,1,1,1));
+matrix_stack_push(matrix_build(uiX,uiY,uiZ,uiXRot,uiYRot,uiZRot,1,1,1));
 
 //push the pixel party letter matrix
 matrix_stack_push(matrix_build(160,120,0,0,0,mouse_x,pxpaScale,pxpaScale,1));
@@ -65,9 +71,9 @@ matrix_stack_pop();
 
 //set back to default top
 
-matrix_set(matrix_world, matrix_stack_top());
+//matrix_set(matrix_world, matrix_stack_top());
 
-//shader_reset();
+shader_reset();
 
 camera_apply(camNormal);
 gpu_set_ztestenable(false);

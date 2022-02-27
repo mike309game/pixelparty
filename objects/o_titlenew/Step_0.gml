@@ -12,3 +12,35 @@ if(canProgress) {
 		}
 	}
 }
+
+debugPlacer ^= keyboard_check_pressed(vk_delete);
+if(debugPlacer) {
+	debugChangingWhat += keyboard_check_pressed(eChar.w) - keyboard_check_pressed(eChar.q);
+	switch(debugChangingWhat) {
+		case 0:
+			debugChangingVariable = "uiX";
+			debugChangingRate = 8;
+			break;
+		case 1:
+			debugChangingVariable = "uiY";
+			debugChangingRate = 8;
+			break;
+		case 2:
+			debugChangingVariable = "uiZ";
+			debugChangingRate = 8;
+			break;
+		case 3:
+			debugChangingVariable = "uiXRot";
+			debugChangingRate = 5;
+			break;
+		case 4:
+			debugChangingVariable = "uiYRot";
+			debugChangingRate = 5;
+			break;
+		case 5:
+			debugChangingVariable = "uiZRot";
+			debugChangingRate = 5;
+			break;
+	}
+	variable_instance_set(id, debugChangingVariable, variable_instance_get(id, debugChangingVariable) + (keyboard_check_pressed(vk_add) - keyboard_check_pressed(vk_subtract)) * debugChangingRate)
+}

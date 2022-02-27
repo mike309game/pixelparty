@@ -1,3 +1,15 @@
+debugPlacer = false;
+debugChangingWhat = 0;
+debugChangingVariable = "uiX";
+debugChangingRate = 8;
+
+uiX = 160;
+uiY = 120;
+uiZ = -120;
+uiXRot = 270;
+uiYRot = 0;
+uiZRot = 180;
+
 canProgress = false;
 alarm[0] = 120;
 
@@ -16,7 +28,6 @@ pxpaLetterResizerCurrent = 0;
 camNormal = view_camera[0];
 cam3d = camera_create();
 camera_set_proj_mat(cam3d, matrix_build_projection_perspective_fov(90,4/3,1,16000));
-camera_set_view_mat(cam3d, matrix_build_lookat(0,-120/2,-70,0,0,0,0,0,1));
 
 Draw3dFloors = function(z) {
 	var addition2 = global.time / 600;

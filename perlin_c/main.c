@@ -1,3 +1,9 @@
+#include <math.h>
+#if _WIN32
+#define gmexport __declspec(dllexport)
+#else
+#define gmexport __attribute__((visibility("default")))
+#endif
 //why is this done twice?? whatever
 static const int p[512] = { //i assume it being signed is not a mistake
 	131,13,201,95,96,53,194,233,7,225,140,36,103,30,69,142,8,99,37,240,21,10,23,
@@ -36,7 +42,7 @@ static inline double grad(int hash, double x, double y, double z) {
       return ((h&1) == 0 ? u : -u) + ((h&2) == 0 ? v : -v);
    }
  
-__declspec(dllexport) double noise(double x, double y, double z) {
+gmexport double noise(double x, double y, double z) {
       int X = (int)floor(x) & 255,                  
           Y = (int)floor(y) & 255,                  
           Z = (int)floor(z) & 255;

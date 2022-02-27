@@ -22,7 +22,9 @@
             2,
             2,
           ],"resourceVersion":"1.0","name":"perlin","tags":[],"resourceType":"GMExtensionFunction",},
-      ],"constants":[],"ProxyFiles":[],"copyToTargets":-1,"order":[
+      ],"constants":[],"ProxyFiles":[
+        {"TargetMask":7,"resourceVersion":"1.0","name":"libpxpa_perlin.so","tags":[],"resourceType":"GMProxyFile",},
+      ],"copyToTargets":-1,"order":[
         {"name":"pxpa_perlin","path":"extensions/pxpa_perlin/pxpa_perlin.yy",},
         {"name":"perlin","path":"extensions/pxpa_perlin/pxpa_perlin.yy",},
       ],"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMExtensionFile",},
@@ -55,7 +57,7 @@
   "tvosThirdPartyFrameworkEntries": [],
   "IncludedResources": [],
   "androidPermissions": [],
-  "copyToTargets": 64,
+  "copyToTargets": 192,
   "iosCocoaPods": "",
   "tvosCocoaPods": "",
   "iosCocoaPodDependencies": "",
