@@ -24,9 +24,9 @@
   "creationCodeFile": "",
   "inheritCode": false,
   "instanceCreationOrder": [
-    {"name":"inst_4AEE7EB0","path":"rooms/r_intro/r_intro.yy",},
-    {"name":"inst_1F2C8089","path":"rooms/r_intro/r_intro.yy",},
-    {"name":"inst_171C7CC2","path":"rooms/r_intro/r_intro.yy",},
+    {"name":"inst_4AEE7EB0","path":"rooms/r_titlecards/r_titlecards.yy",},
+    {"name":"inst_1F2C8089","path":"rooms/r_titlecards/r_titlecards.yy",},
+    {"name":"inst_171C7CC2","path":"rooms/r_titlecards/r_titlecards.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,
@@ -54,7 +54,7 @@
     "path": "folders/Objects/Intro stuff.yy",
   },
   "resourceVersion": "1.0",
-  "name": "r_intro",
+  "name": "r_titlecards",
   "tags": [],
   "resourceType": "GMRoom",
 }

@@ -259,7 +259,7 @@
     {"id":{"name":"s_pxpa_autosave","path":"sprites/s_pxpa_autosave/s_pxpa_autosave.yy",},"order":23,},
     {"id":{"name":"s_prop_level1_slide","path":"sprites/s_prop_level1_slide/s_prop_level1_slide.yy",},"order":7,},
     {"id":{"name":"o_prop_level1_tree","path":"objects/o_prop_level1_tree/o_prop_level1_tree.yy",},"order":1,},
-    {"id":{"name":"r_intro","path":"rooms/r_intro/r_intro.yy",},"order":4,},
+    {"id":{"name":"r_titlecards","path":"rooms/r_titlecards/r_titlecards.yy",},"order":4,},
     {"id":{"name":"s_l2_minigame","path":"sprites/s_l2_minigame/s_l2_minigame.yy",},"order":0,},
     {"id":{"name":"s_textbox_bright","path":"sprites/s_textbox_bright/s_textbox_bright.yy",},"order":7,},
     {"id":{"name":"s_nothing","path":"sprites/s_nothing/s_nothing.yy",},"order":0,},
@@ -455,7 +455,7 @@
     {"roomId":{"name":"rm_scrtest","path":"rooms/rm_scrtest/rm_scrtest.yy",},},
     {"roomId":{"name":"rm_dirrecttest","path":"rooms/rm_dirrecttest/rm_dirrecttest.yy",},},
     {"roomId":{"name":"r_interval","path":"rooms/r_interval/r_interval.yy",},},
-    {"roomId":{"name":"r_intro","path":"rooms/r_intro/r_intro.yy",},},
+    {"roomId":{"name":"r_titlecards","path":"rooms/r_titlecards/r_titlecards.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":0,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},
