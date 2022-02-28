@@ -12,9 +12,9 @@ EXT
 buxy1
 NME Buxy
 @ Hi im buxy im cool but not #awesome!
-@ this area is incomplete or is #using the wrong level format (.pxp)
-@ new developer? read the pixel party# manual to learn more about
-@ pixel partys level formats and# outdated formats
+@ this area is incomplete or is #filled with corrupted data
+@ new programmer? read the pixel party# dev manual to learn more about
+@ pixel partys level formats and# what not to do!
 EVT sound error
 EXT
 

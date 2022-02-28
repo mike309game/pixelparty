@@ -1,0 +1,69 @@
+dia
+NME Buxy
+@ ...
+@ ...
+NME Manny
+@ ...
+@ ... Hi
+NME Buxy
+@ ... why
+NME Manny
+@ ... w-why what?
+NME Buxy
+@ I warned you, Manny. I told you what would happen.
+@ But you didn't listen to me.
+NME Manny
+@ Don't you want life to be better for you?
+@ This is a good thing, Buxy. I don't understand why you hate me doing this.
+NME Buxy
+@ I told you.. You can only progress so far before I stop you.
+NME Manny
+@ and what happens if I don't listen to you?
+NME Buxy
+@ You aren't the first person to ask me that.
+@ Many came before you, and failed.
+@ I think you underestimate me
+NME Manny
+@ Buxy, I've had so many conversations with people and they all agree that this is a good thing!
+@ You are the ONLY person that disagrees
+@ and you not telling me why is the reason I'm doing it
+NME Buxy
+@ ... Fine
+@ I'll tell you. You'll be the first person I tell.
+@ So, of course, you are going to the PIXELCORE.
+@ The PIXELCORE holds unimagineable power that would make any mortals brain shatter in mere seconds,
+@ What's in there is not just power. It's a being.
+@ If it got out, who would stop it?
+@ I'm the only person ABLE to stop people from going in there and releasing it.
+@ I've seen it get out, I don't want anyone to experience that.
+NME Manny
+@ If it got out, how did it get back in?
+NME Buxy
+@ I. DONT. KNOW.
+@ AND I. DONT. CARE.
+@ AS LONG AS IT STAYS IN THERE, I COULD CARE LESS.
+@ I KNOW I CAN'T STOP YOU
+@ BUT THE ONLY THING I CAN DO IS PLEAD YOU STOP
+NME Manny
+@ What do you mean? You can't stop me specficially?
+NME Buxy
+@ I CAN'T
+@ It won't let me.
+@ It's TRAPPED but it still has an influence on me.
+@ If I let you go through this door, I'll make your life a living hell.
+NME Manny
+@ ... Buxy...
+@ I didn't want it to have to be like this.
+NME Buxy
+@ IT DOESN'T
+@ JUST. STOP.
+NME Manny
+@ ... Buxy.
+NME Buxy
+@ ...
+NME Manny
+@ Step aside, please.
+NME Buxy
+@ ...
+@ You'll pay.
+EXT
