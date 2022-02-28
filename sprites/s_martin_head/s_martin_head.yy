@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_martin_head","path":"sprites/s_martin_head/s_martin_head.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_martin_head",
     "tags": [],
     "resourceType": "GMSequence",

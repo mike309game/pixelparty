@@ -1,4 +1,5 @@
 {
+  "conversionMode": 0,
   "compression": 3,
   "volume": 1.0,
   "preload": false,
@@ -11,7 +12,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "mx_shop.mp3",
-  "duration": 50.129,
+  "duration": 53.2636681,
   "parent": {
     "name": "music",
     "path": "folders/Sounds/music.yy",

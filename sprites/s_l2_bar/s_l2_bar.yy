@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_l2_bar","path":"sprites/s_l2_bar/s_l2_bar.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_l2_bar",
     "tags": [],
     "resourceType": "GMSequence",

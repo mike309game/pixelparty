@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_meow_oc","path":"sprites/s_meow_oc/s_meow_oc.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_meow_oc",
     "tags": [],
     "resourceType": "GMSequence",

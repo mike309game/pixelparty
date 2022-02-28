@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_tip_guy","path":"sprites/s_tip_guy/s_tip_guy.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_tip_guy",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_manny_talk_alt_2","path":"sprites/s_manny_talk_alt_2/s_manny_talk_alt_2.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_manny_talk_alt_2",
     "tags": [],
     "resourceType": "GMSequence",

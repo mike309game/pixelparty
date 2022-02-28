@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_honestary_one","path":"sprites/s_honestary_one/s_honestary_one.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_honestary_one",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_cat_talk","path":"sprites/s_cat_talk/s_cat_talk.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_cat_talk",
     "tags": [],
     "resourceType": "GMSequence",

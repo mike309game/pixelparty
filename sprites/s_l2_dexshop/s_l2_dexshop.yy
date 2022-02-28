@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_l2_dexshop","path":"sprites/s_l2_dexshop/s_l2_dexshop.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_l2_dexshop",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_buxy","path":"sprites/s_buxy/s_buxy.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_buxy",
     "tags": [],
     "resourceType": "GMSequence",

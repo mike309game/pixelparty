@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_l2_minigame","path":"sprites/s_l2_minigame/s_l2_minigame.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_l2_minigame",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_tvset","path":"sprites/s_tvset/s_tvset.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_tvset",
     "tags": [],
     "resourceType": "GMSequence",

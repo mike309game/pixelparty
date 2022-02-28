@@ -1,4 +1,5 @@
 {
+  "conversionMode": 0,
   "compression": 3,
   "volume": 1.0,
   "preload": false,
@@ -11,7 +12,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "mx_level2.mp3",
-  "duration": 48.0653343,
+  "duration": 60.0555,
   "parent": {
     "name": "music",
     "path": "folders/Sounds/music.yy",

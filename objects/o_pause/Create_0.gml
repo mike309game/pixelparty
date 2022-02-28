@@ -19,7 +19,7 @@ tr = 0
 mode = 0
 Sound(sx_pause_open,0)
 
-menu = ["Resume","Options","Solutions","Save & Quit"]
+menu = ["Resume","Options","SCHEDULER","Save & Quit"]
 selection = 0
 
 fade = 0

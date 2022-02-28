@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_hux_talk","path":"sprites/s_hux_talk/s_hux_talk.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_hux_talk",
     "tags": [],
     "resourceType": "GMSequence",

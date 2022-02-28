@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_pxpa_quickload","path":"sprites/s_pxpa_quickload/s_pxpa_quickload.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s_pxpa_quickload",
     "tags": [],
     "resourceType": "GMSequence",
