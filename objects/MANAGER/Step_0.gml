@@ -1,7 +1,13 @@
 if(!audiogroupsLoaded) {
 	if(audio_group_is_loaded(agrp_sounds)) {
 		audiogroupsLoaded = true;
-		room_goto(r_title);
+		room_goto(START_ROOM);
+		switch(START_ROOM) {
+			case r_de_miketest:
+			case r_l1_r1:
+				AssureGameFlag(eFlag.playerCanMove | eFlag.playerCanTransition);
+				break;
+		}
 	}
 }
 

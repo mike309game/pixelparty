@@ -4,3 +4,4 @@ function SetDepth(){
 	gml_pragma("forceinline");
 	depth = -(y + (sprite_height - sprite_yoffset) - 1);
 }
+//show_message(typeof(environment_get_variable("a")));

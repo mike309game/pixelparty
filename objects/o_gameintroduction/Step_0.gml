@@ -1,15 +1,3 @@
-function nextText()
-	{
-		if !display_text
-			{
-				text_spark_scale = 7
-				display_text = true
-				text_alpha = 1
-				dialogue_counter++
-				text_counter = 0
-			} else { exit; }
-	}
-
 second_background_pos++
 
 if display_text = true
@@ -48,7 +36,7 @@ switch total_animation_timer
 			}
 		case 80:
 			{
-				Music("mx_intro",1)
+				Music(mx_intro)
 				break;
 			}
 		case 85:

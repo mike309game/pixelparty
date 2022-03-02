@@ -97,8 +97,8 @@
     "resourceType": "GMNineSliceData",
   },
   "parent": {
-    "name": "gui",
-    "path": "folders/Sprites/gui.yy",
+    "name": "Title screen",
+    "path": "folders/Objects/Title screen.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_title_start",

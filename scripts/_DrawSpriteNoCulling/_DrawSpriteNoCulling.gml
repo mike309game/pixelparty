@@ -1,3 +1,4 @@
+//this can be improved (don't create an info struct every call, have a vertex buffer)
 
 function DrawSpriteNoCullingExt(sprite, index, x, y, sizex, sizey, angle, colour, alpha){
 	gml_pragma("forceinline");
@@ -6,14 +7,14 @@ function DrawSpriteNoCullingExt(sprite, index, x, y, sizex, sizey, angle, colour
 	var height = info.frames[index].crop_height;// * sizey;
 	
 	//push pos & scale
-	matrix_stack_push(matrix_build(x,y,0,0,0,angle,sizex,sizey,1));
+	mtxpush(matrix_build(x,y,0,0,0,angle,sizex,sizey,1));
 	//push pivot offset
-	matrix_stack_push(matrix_build(-info.xoffset,-info.yoffset,0,0,0,0,1,1,1));
+	mtxpush(matrix_build(-info.xoffset,-info.yoffset,0,0,0,0,1,1,1));
 	//push offset
-	matrix_stack_push(matrix_build(info.frames[index].x_offset,info.frames[index].y_offset,0,0,0,0,1,1,1));
+	mtxpush(matrix_build(info.frames[index].x_offset,info.frames[index].y_offset,0,0,0,0,1,1,1));
 	
 	//set matrix
-	matrix_set(matrix_world, matrix_stack_top());
+	mtxset();
 	
 	draw_primitive_begin_texture(pr_trianglefan, sprite_get_texture(sprite, index));
 	draw_vertex_texture_colour(0,0,0,0,colour,alpha);
@@ -23,10 +24,8 @@ function DrawSpriteNoCullingExt(sprite, index, x, y, sizex, sizey, angle, colour
 	draw_primitive_end();
 	
 	//reset matrix
-	matrix_stack_pop();
-	matrix_stack_pop();
-	matrix_stack_pop();
-	matrix_set(matrix_world, matrix_stack_top());
+	mtxpop(3);
+	mtxset();
 	
 	//dispose
 	delete info;

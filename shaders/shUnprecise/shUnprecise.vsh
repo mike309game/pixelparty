@@ -15,7 +15,7 @@ void main()
     gl_Position = gm_Matrices[MATRIX_WORLD_VIEW_PROJECTION] * object_space_pos;
 	
 	{
-		gl_Position = vec4(gl_Position.x,gl_Position.y + (((gl_Position.x*gl_Position.x)+(gl_Position.z*gl_Position.z)) * -0.002),gl_Position.z,gl_Position.w);
+		//gl_Position = vec4(gl_Position.x,gl_Position.y + (((gl_Position.x*gl_Position.x)+(gl_Position.z*gl_Position.z)) * -0.002),gl_Position.z,gl_Position.w);
 	}
 	
 	float factor = 64.0;

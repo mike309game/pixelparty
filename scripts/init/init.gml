@@ -7,6 +7,8 @@ gml_pragma("UnityBuild", "true");
 
 ini_open(working_directory + "/savedata"); //for settings
 
+#macro START_ROOM r_title
+
 enum eFlag {
 	playerCanMove = 1 << 0,
 	stopAll = 1 << 1, //stop what can be stopped
@@ -23,7 +25,7 @@ enum eFlag {
 }
 
 global.flag = (
-	eFlag.playerCanMove |
+	//eFlag.playerCanMove |
 	eFlag.playerCanInteract |
 	eFlag.autoStopPlayer |
 	//eFlag.fadeBlack |

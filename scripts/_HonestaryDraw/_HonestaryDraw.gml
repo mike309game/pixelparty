@@ -18,7 +18,7 @@ function HonestaryDraw(text, x, y, colour){
 		for(var XX = 0; XX <= i; XX++) {
 			for(var YY = 0; YY <= i; YY++) {
 				draw_text(x,y-YY,text); //up
-				//don't do unecessary drawing
+				//do a small bit less unecessary drawing
 				if(i == 0) then break;
 				draw_text(x,y+YY,text); //down
 				draw_text(x-XX,y,text); //left

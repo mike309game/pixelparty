@@ -45,18 +45,12 @@ switch(menuMode) {
 		switch(menuReturn) {
 			case 0:
 				SaveGame();
-				menu.canMove = false;
-				waitingForFade = true;
-				FadeIn();
-				Music(sx_nothing);
-				Sound(sx_pause_quit);
-				break;
 			case 1:
 				menu.canMove = false;
 				waitingForFade = true;
 				FadeIn();
 				Music(sx_nothing);
-				Sound(sx_pause_quit,0.8);
+				Sound(sx_pause_quit,menuReturn == 1 ? 0.8 : 1);
 				break;
 			case 2:
 				menuMode = 0;
