@@ -1,19 +1,4 @@
 
-//backgroundAlpha += 0.009;
-if(state > 0) { //if 1 or above, it means we wanna show the logo
-	pxpaScale = EaseOutElastic(0, 1.0, pxpaScaleProgress / 120);
-	pxpaScaleProgress = min(pxpaScaleProgress + 1, 120);
-}
-if(state > 3) { //if 4 or above, smooth in prompts
-	choicersProgress = min(choicersProgress + 1, 100);
-	pxpaZ = EaseInOutCubic(-20, 0, choicersProgress / 100);
-	pxpaY = EaseInOutCubic(120, 50, choicersProgress / 100);
-	startY = EaseInCubic(200, 2000, choicersProgress / 100); //very far away
-	backgroundColour = merge_colour(0xFFB255, 0xa755ff, min(choicersProgress,60) / 60);
-	bluePlanesZ = EaseInCubic(80, 1000, choicersProgress / 100);
-	redPlanesZ = EaseOutCubic(1000, 80, choicersProgress / 100);
-	choicersY = EaseOutCubic(1500, 127, choicersProgress / 100);
-}
 for(var i = 0; i < 10; i++) {
 	if(pxpaLetterResizeCooldown[i]--) {
 		pxpaLetterSize[i] = min(pxpaLetterSize[i] + 0.03, 1.2);
@@ -23,6 +8,12 @@ for(var i = 0; i < 10; i++) {
 }
 
 switch(state) {
+	case 0:
+		break;
+	case 1:
+		pxpaScale = EaseOutElastic(0, 1.4, pxpaScaleProgress / 120);
+		pxpaScaleProgress = min(pxpaScaleProgress + 1, 120);
+		break;
 	case 2:
 		if(GetInput(eInput.start)) {
 			Sound(sx_title_select);
@@ -33,6 +24,49 @@ switch(state) {
 	case 3:
 		if(global.time % 10 == 0) { //every 20 frames, blink the start prompt
 			startAlpha ^= 1;
+		}
+		break;
+	case 4:
+		choicersProgress = min(choicersProgress + 1, 100);
+		pxpaScale = EaseInOutCubic(1.4, 1, choicersProgress / 100);
+		pxpaY = EaseInOutCubic(120, 40, choicersProgress / 100);
+		startY = EaseInCubic(200, 2000, choicersProgress / 100); //very far away
+		backgroundColour = merge_colour(0xFFB255, 0xa755ff, min(choicersProgress,60) / 60);
+		bluePlanesZ = EaseInCubic(80, 1000, choicersProgress / 100);
+		redPlanesZ = EaseOutCubic(1000, 80, choicersProgress / 100);
+		choicerY[0] = EaseInOutBack(300, 145, min(choicersProgress+20,100) / 100);
+		choicerY[1] = EaseInOutBack(300, 145, min(choicersProgress+10,100) / 100);
+		choicerY[2] = EaseInOutBack(300, 145, choicersProgress / 100);
+		if(choicersProgress == 100) { //anim is done
+			state++; //go to chooseable state
+		}
+		break;
+	case 5:
+		choicerChoice = nmod(choicerChoice + GetInputPressed(eInput.right,true) - GetInputPressed(eInput.left,true), 3);
+		if(GetInput(eInput.x)) {
+			state++; //choicer zooming in state
+		}
+		break;
+	case 6:
+		if(choicerSelectedProgress[choicerChoice] == 45) {
+			//choicerX[choicerChoice] = 0;
+			//choicerZ[choicerChoice] = 0;
+			//choicerSelectedProgress[choicerChoice] = 0;
+			state = 7 + choicerChoice;
+			break;
+		}
+		choicerSelectedProgress[choicerChoice] = min(choicerSelectedProgress[choicerChoice] + 1, 45);
+		choicerX[choicerChoice] = lengthdir_x(choicerSelectedProgress[choicerChoice]*3.5, choicerDir[choicerChoice]);
+		choicerZ[choicerChoice] = lengthdir_y(choicerSelectedProgress[choicerChoice]*-3.5, choicerDir[choicerChoice]);
+		break;
+	case 7:
+	case 8:
+		state = 5;
+	case 9:
+		var menuReturn = PushSimpleOptions(optionsMenu);
+		if(menuReturn == 3) {
+			ResetChoicerZoomAnim();
+			state = 5;
 		}
 		break;
 }

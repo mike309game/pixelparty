@@ -99,3 +99,25 @@ function EaseOutElastic(start, _end, position) {
 	gml_pragma("forceinline");
 	return lerp(start, _end, nEaseOutElastic(position));
 }
+
+function EaseInOutBack(start, _end, position) {
+	gml_pragma("forceinline");
+	#macro __easeback_c1 (1.70158)
+	#macro __easeback_c2 (__easeback_c1 * 1.525)
+	
+	return lerp(start, _end, position < 0.5
+		? (power(2 * position, 2) * ((__easeback_c2 + 1) * 2 * position - __easeback_c2)) / 2
+		: (power(2 * position - 2, 2) * ((__easeback_c2 + 1) * (position * 2 - 2) + __easeback_c2) + 2) / 2);
+}
+
+function EaseInBack(start, _end, position) {
+	gml_pragma("forceinline");
+	#macro __easeback_c3 (__easeback_c1 + 1)
+	
+	return lerp(start, _end, __easeback_c3 * position * position * position - __easeback_c1 * position * position);
+}
+
+function EaseOutBack(start, _end, position) {
+	gml_pragma("forceinline");
+	return lerp(start, _end, 1 + __easeback_c3 * power(position - 1, 3) + __easeback_c1 * power(position - 1, 2));
+}

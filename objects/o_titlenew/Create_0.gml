@@ -24,7 +24,13 @@ alarm[0] = 120;
 1: show pxpa logo
 2: show start prompt
 3: blinking start prompt
-4: on choicers screen, hide press start below
+4: smooth in choice select layout
+5: choice selection
+6: zooming into selected choice
+
+7: new game state
+8: load game state
+9: options state
 
 */
 state = 0;
@@ -35,7 +41,25 @@ redPlanesZ = 1000;
 //backgroundAlpha = 0;
 //increaseChoicersProgress = false;
 choicersProgress = 0; //0 - 100 progress for showing choicers and positioning pxpa logo ontop of ui
-choicersY = 1500;
+//choicer1Y = 1500;
+//choicer2Y = 1500;
+//choicer3Y = 1500;
+
+choicerChoice = 0;
+
+//used always
+choicerY = array_create(3, 1500);
+//for when choice is selected
+choicerX = array_create(3, 0);
+choicerZ = array_create(3, 0);
+//for zooming into the camera
+choicerSelectedProgress = array_create(3, 0); //0 - 45?
+choicerDir = array_create(3);
+choicerDir[0] = point_direction(59, 145, 160, 240);
+choicerDir[1] = point_direction(160, 145, 160, 240);
+choicerDir[2] = point_direction(260, 145, 160, 240);
+
+optionsMenu = new Menu();
 
 pxpaScale = 0;
 pxpaScaleProgress = 0; //0 - 60
@@ -73,28 +97,34 @@ Draw3dFloors = function(z, tex) {
 	mtxset();
 }
 
-DrawPxpaLogo = function(x,y,z,colour,angle) {
+DrawPxpaLogo = function(x,y,colour,angle) {
 	//push the pixel party letter matrix
-	mtxpush(matrix_build(x,y,z,0,0,angle,pxpaScale,pxpaScale,1));
+	mtxpush(matrix_build(x,y,0,0,0,angle,pxpaScale,pxpaScale,1));
 	
 	//set matrix to top (pxpa letter mtx)
 	mtxset();
 	
-	DrawSpriteNoCullingExt(s_titleletter, 0, 125-160, 109-120, pxpaLetterSize[0], pxpaLetterSize[0], 0, colour, 1); //p
-	DrawSpriteNoCullingExt(s_titleletter, 1, 143-160, 109-120, pxpaLetterSize[1], pxpaLetterSize[1], 0, colour, 1); //i
-	DrawSpriteNoCullingExt(s_titleletter, 2, 160-160, 109-120, pxpaLetterSize[2], pxpaLetterSize[2], 0, colour, 1); //x
-	DrawSpriteNoCullingExt(s_titleletter, 3, 176-160, 109-120, pxpaLetterSize[3], pxpaLetterSize[3], 0, colour, 1); //e
-	DrawSpriteNoCullingExt(s_titleletter, 4, 194-160, 109-120, pxpaLetterSize[4], pxpaLetterSize[4], 0, colour, 1); //l
+	draw_sprite_ext(s_titleletter, 0, 125-160, 109-120, pxpaLetterSize[0], pxpaLetterSize[0], 0, colour, 1); //p
+	draw_sprite_ext(s_titleletter, 1, 143-160, 109-120, pxpaLetterSize[1], pxpaLetterSize[1], 0, colour, 1); //i
+	draw_sprite_ext(s_titleletter, 2, 160-160, 109-120, pxpaLetterSize[2], pxpaLetterSize[2], 0, colour, 1); //x
+	draw_sprite_ext(s_titleletter, 3, 176-160, 109-120, pxpaLetterSize[3], pxpaLetterSize[3], 0, colour, 1); //e
+	draw_sprite_ext(s_titleletter, 4, 194-160, 109-120, pxpaLetterSize[4], pxpaLetterSize[4], 0, colour, 1); //l
 	
-	DrawSpriteNoCullingExt(s_titleletter, 5, 102-160, 152-120, pxpaLetterSize[5], pxpaLetterSize[5], 0, colour, 1); //p
-	DrawSpriteNoCullingExt(s_titleletter, 6, 131-160, 152-120, pxpaLetterSize[6], pxpaLetterSize[6], 0, colour, 1); //a
-	DrawSpriteNoCullingExt(s_titleletter, 7, 160-160, 152-120, pxpaLetterSize[7], pxpaLetterSize[7], 0, colour, 1); //r
-	DrawSpriteNoCullingExt(s_titleletter, 8, 189-160, 152-120, pxpaLetterSize[8], pxpaLetterSize[8], 0, colour, 1); //t
-	DrawSpriteNoCullingExt(s_titleletter, 9, 218-160, 152-120, pxpaLetterSize[9], pxpaLetterSize[9], 0, colour, 1); //y
+	draw_sprite_ext(s_titleletter, 5, 102-160, 152-120, pxpaLetterSize[5], pxpaLetterSize[5], 0, colour, 1); //p
+	draw_sprite_ext(s_titleletter, 6, 131-160, 152-120, pxpaLetterSize[6], pxpaLetterSize[6], 0, colour, 1); //a
+	draw_sprite_ext(s_titleletter, 7, 160-160, 152-120, pxpaLetterSize[7], pxpaLetterSize[7], 0, colour, 1); //r
+	draw_sprite_ext(s_titleletter, 8, 189-160, 152-120, pxpaLetterSize[8], pxpaLetterSize[8], 0, colour, 1); //t
+	draw_sprite_ext(s_titleletter, 9, 218-160, 152-120, pxpaLetterSize[9], pxpaLetterSize[9], 0, colour, 1); //y
 	
 	//pop pxpa letter matrix
 	mtxpop();
 	
 	//restore matrix
 	mtxset();
+}
+
+ResetChoicerZoomAnim = function() {
+	choicerX[choicerChoice] = 0;
+	choicerZ[choicerChoice] = 0;
+	choicerSelectedProgress[choicerChoice] = 0;
 }
