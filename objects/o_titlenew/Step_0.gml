@@ -13,6 +13,7 @@ switch(state) {
 	case 1:
 		pxpaScale = EaseOutElastic(0, 1.4, pxpaScaleProgress / 120);
 		pxpaScaleProgress = min(pxpaScaleProgress + 1, 120);
+		copyrightAlpha += 0.1;
 		break;
 	case 2:
 		if(GetInput(eInput.start)) {
@@ -48,7 +49,7 @@ switch(state) {
 		}
 		break;
 	case 6:
-		if(choicerSelectedProgress[choicerChoice] == 45) {
+		/*if(choicerSelectedProgress[choicerChoice] == 45) {
 			//choicerX[choicerChoice] = 0;
 			//choicerZ[choicerChoice] = 0;
 			//choicerSelectedProgress[choicerChoice] = 0;
@@ -57,11 +58,36 @@ switch(state) {
 		}
 		choicerSelectedProgress[choicerChoice] = min(choicerSelectedProgress[choicerChoice] + 1, 45);
 		choicerX[choicerChoice] = lengthdir_x(choicerSelectedProgress[choicerChoice]*3.5, choicerDir[choicerChoice]);
-		choicerZ[choicerChoice] = lengthdir_y(choicerSelectedProgress[choicerChoice]*-3.5, choicerDir[choicerChoice]);
+		choicerZ[choicerChoice] = lengthdir_y(choicerSelectedProgress[choicerChoice]*-3.5, choicerDir[choicerChoice]);*/
+		//12 * 5 = 60 for the z
+		if(choicerSelectedProgress[choicerChoice] == 45) {
+			//choicerX[choicerChoice] = 0;
+			//choicerZ[choicerChoice] = 0;
+			//choicerSelectedProgress[choicerChoice] = 0;
+			state = 7 + choicerChoice;
+			break;
+		}
+		var targetX;
+		var progressNormalised = choicerSelectedProgress[choicerChoice]++ / 45;
+		switch(choicerChoice) {
+			case 0:
+				targetX = 59;
+				break;
+			case 1:
+				targetX = (59 + ((160-59) * 1));
+				break;
+			case 2:
+				targetX = (59 + ((160-59) * 2));
+				break;
+		}
+		choicerX[choicerChoice] = lerp(targetX, 160, progressNormalised);
+		choicerZ[choicerChoice] = lerp(0, -120, progressNormalised);
 		break;
 	case 7:
 	case 8:
 		state = 5;
+		ResetChoicerZoomAnim();
+		break;
 	case 9:
 		var menuReturn = PushSimpleOptions(optionsMenu);
 		if(menuReturn == 3) {

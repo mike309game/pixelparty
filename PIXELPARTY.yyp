@@ -422,6 +422,7 @@
     {"name":"macOS","path":"options/mac/options_mac.yy",},
     {"name":"Main","path":"options/main/options_main.yy",},
     {"name":"Windows","path":"options/windows/options_windows.yy",},
+    {"name":"Switch","path":"options/switch/options_switch.yy",},
     {"name":"HTML5","path":"options/html5/options_html5.yy",},
     {"name":"operagx","path":"options/operagx/options_operagx.yy",},
   ],
@@ -573,6 +574,7 @@
     {"ConfigValues":{"release":{"CopyToMask":"0",},},"CopyToMask":3035461389054378222,"filePath":"datafiles/newscripts","resourceVersion":"1.0","name":"global.bos","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"script02","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/text/eng","resourceVersion":"1.0","name":"buxytest.txt","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/newscripts","resourceVersion":"1.0","name":"dex.bos","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
     "IDEVersion": "2022.2.0.614",

@@ -21,9 +21,10 @@ coinSurf = surface_create(320,240)
 
 depth = -999
 
-if global.setting.music > 0
+/*if global.setting.music > 0
 	{
 		Music(mx_shop)
 		//audio_play_sound(mx_shop,0,1)
 		audio_sound_gain(mx_shop,.10,0)
-	}
+	}*/
+Music(mx_shop)

@@ -15,7 +15,7 @@ uiYRot = 0;
 uiZRot = 180;
 
 //canProgress = false;
-acceptInput = true;
+//acceptInput = true;
 alarm[0] = 120;
 
 /*
@@ -41,23 +41,25 @@ redPlanesZ = 1000;
 //backgroundAlpha = 0;
 //increaseChoicersProgress = false;
 choicersProgress = 0; //0 - 100 progress for showing choicers and positioning pxpa logo ontop of ui
-//choicer1Y = 1500;
-//choicer2Y = 1500;
-//choicer3Y = 1500;
 
 choicerChoice = 0;
 
-//used always
-choicerY = array_create(3, 1500);
-//for when choice is selected
+
 choicerX = array_create(3, 0);
+choicerY = array_create(3, 1500);
 choicerZ = array_create(3, 0);
+
+choicerX[0] = 59;
+choicerX[1] = (59 + ((160-59) * 1));
+choicerX[2] = (59 + ((160-59) * 2));
+
 //for zooming into the camera
 choicerSelectedProgress = array_create(3, 0); //0 - 45?
-choicerDir = array_create(3);
+//choicerSelectedProgress = 0; //0 - 45?
+/*choicerDir = array_create(3);
 choicerDir[0] = point_direction(59, 145, 160, 240);
 choicerDir[1] = point_direction(160, 145, 160, 240);
-choicerDir[2] = point_direction(260, 145, 160, 240);
+choicerDir[2] = point_direction(260, 145, 160, 240);*/
 
 optionsMenu = new Menu();
 
@@ -71,6 +73,8 @@ pxpaZ = -20;
 pxpaLetterSize = array_create(10,1);
 pxpaLetterResizeCooldown = array_create(10,1);
 pxpaLetterResizerCurrent = 0;
+
+copyrightAlpha = 0;
 
 startAlpha = 1;
 startScale = 1;
@@ -124,7 +128,7 @@ DrawPxpaLogo = function(x,y,colour,angle) {
 }
 
 ResetChoicerZoomAnim = function() {
-	choicerX[choicerChoice] = 0;
+	choicerX[choicerChoice] = (59 + ((160-59) * choicerChoice));
 	choicerZ[choicerChoice] = 0;
 	choicerSelectedProgress[choicerChoice] = 0;
 }

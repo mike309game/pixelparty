@@ -125,9 +125,18 @@ mtxset();
 
 if(state < 7) {
 	for(var i = 0; i < 3; i++) {
-		DrawSpriteNoCullingExt(s_title_files, i, (59 + ((160-59) * i)) + choicerX[i], choicerY[i] + choicerSelectedProgress[i] / -1.2, 1, 1, 0, merge_colour(c_white,c_black,choicerSelectedProgress[i] / 45), mouse_x / 240, choicerZ[i]);
-		//DrawSpriteNoCullingExt(s_title_files, 1, 160, choicer2Y, 1, 1, 0, c_white, 1);
-		//DrawSpriteNoCullingExt(s_title_files, 2, 260, choicer3Y, 1, 1, 0, c_white, 1);
+		DrawSpriteNoCullingExt(
+			s_title_files, //sprite
+			i, //index
+			choicerX[i], //x
+			choicerY[i] + choicerSelectedProgress[i] / -1.2, //y
+			1, //scalex
+			1, //scaley
+			0, //angle
+			merge_colour(c_white,c_black,choicerSelectedProgress[i] / 45), //colour
+			1 - max(0, choicerSelectedProgress[choicerChoice] - (45-25)) / 20, //alpha
+			choicerZ[i] //z
+		);
 	}
 }
 
@@ -140,5 +149,12 @@ mtxset();
 //shader_reset();
 
 camera_apply(camNormal);
+
+draw_set_alpha(copyrightAlpha);
+draw_set_font(f_shop);
+draw_text_colour(1,221,"Copyright 2006-" + string(current_year) + " YISI-FY", 0, 0, 0, 0, copyrightAlpha);
+draw_text(0,220,"Copyright 2006-" + string(current_year) + " YISI-FY");
+draw_set_alpha(1);
+
 gpu_set_ztestenable(false);
 gpu_set_alphatestenable(false);
