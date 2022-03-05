@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Convenient Glass Wall",
-    "path": "folders/Objects/game/Convenient Glass Wall.yy",
+    "name": "world",
+    "path": "folders/Sprites/world.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_glass_wall",

@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "items",
-    "path": "folders/Objects/Shop/items.yy",
+    "name": "shop items",
+    "path": "folders/Sprites/shop/shop items.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_shop_item_odd_key",

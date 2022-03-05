@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "game",
-    "path": "folders/Objects/game.yy",
+    "name": "gui",
+    "path": "folders/Sprites/gui.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_shittystar",

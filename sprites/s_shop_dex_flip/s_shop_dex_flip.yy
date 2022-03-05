@@ -73,8 +73,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Shop",
-    "path": "folders/Objects/Shop.yy",
+    "name": "shop",
+    "path": "folders/Sprites/shop.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_shop_dex_flip",
