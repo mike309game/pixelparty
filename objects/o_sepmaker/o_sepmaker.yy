@@ -23,8 +23,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "mike",
-    "path": "folders/mike.yy",
+    "name": "Junk",
+    "path": "folders/Junk.yy",
   },
   "resourceVersion": "1.0",
   "name": "o_sepmaker",

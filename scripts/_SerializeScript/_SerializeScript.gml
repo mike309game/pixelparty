@@ -30,7 +30,7 @@ function SerializeScript(){
 	buffer_write(buffer, buffer_u8, 1);
 	
 	//Compile date
-	buffer_write(buffer,buffer_string,CurrentUnixTimestamp());
+	buffer_write(buffer,buffer_string,CurrentTimestamp());
 	
 	//Sections
 	buffer_write(buffer,buffer_u16,ds_map_size(global.script_sections)); //write num of sections

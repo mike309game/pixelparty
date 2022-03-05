@@ -1,7 +1,7 @@
 {
   "parent": {
-    "name": "mike",
-    "path": "folders/mike.yy",
+    "name": "Mike",
+    "path": "folders/Mike.yy",
   },
   "resourceVersion": "1.1",
   "name": "gm source code for reference",

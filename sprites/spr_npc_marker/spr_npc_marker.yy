@@ -93,8 +93,8 @@
     "resourceType": "GMNineSliceData",
   },
   "parent": {
-    "name": "new event tests",
-    "path": "folders/mike/new event tests.yy",
+    "name": "New event system",
+    "path": "folders/Mike/New event system.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_npc_marker",

@@ -1,4 +1,4 @@
-draw_set_font(f_main);
+draw_set_font(f_jaxfont);
 //draw_text_transformed(0,0,dlgString,0.5,0.5,0);
 
 draw_sprite(s_textbox_bright,0,0,0);

@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.15)
-project(pxpa_unixtime C)
+project(pxpa_timestamp C)
 
 #include_directories(imgui/ imgui/backends/)
 #target_link_libraries(pxpa_imgui d3d11.lib)
 
-add_library(pxpa_unixtime SHARED main.c)
+add_library(pxpa_timestamp SHARED main.c)
 
 #set_property(TARGET pxpa_imgui PROPERTY
   #MSVC_RUNTIME_LIBRARY "MultiThreaded")

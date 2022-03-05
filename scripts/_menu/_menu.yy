@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "menu",
-    "path": "folders/mike/menu.yy",
+    "name": "Menu",
+    "path": "folders/Scripts/Menu.yy",
   },
   "resourceVersion": "1.0",
   "name": "_menu",

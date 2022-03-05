@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "procrastination",
-    "path": "folders/mike/procrastination.yy",
+    "name": "Junk",
+    "path": "folders/Junk.yy",
   },
   "resourceVersion": "1.0",
   "name": "lorem",

@@ -27,8 +27,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "group1",
-    "path": "folders/mike/procrastination/group1.yy",
+    "name": "Junk",
+    "path": "folders/Junk.yy",
   },
   "resourceVersion": "1.0",
   "name": "Object55",

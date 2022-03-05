@@ -1,8 +1,5 @@
 {
-  "spriteId": {
-    "name": "s_huxfunnypivot",
-    "path": "sprites/s_huxfunnypivot/s_huxfunnypivot.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
@@ -32,8 +29,8 @@
   ],
   "overriddenProperties": [],
   "parent": {
-    "name": "script system",
-    "path": "folders/mike/script system.yy",
+    "name": "Script system",
+    "path": "folders/Scripts/Script system.yy",
   },
   "resourceVersion": "1.0",
   "name": "o_testscriptevent",

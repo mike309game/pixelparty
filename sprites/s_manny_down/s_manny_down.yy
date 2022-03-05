@@ -82,7 +82,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Manny normal sprites",
-    "path": "folders/mike/new event tests/Manny normal sprites.yy",
+    "path": "folders/Sprites/player/Manny normal sprites.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_manny_down",

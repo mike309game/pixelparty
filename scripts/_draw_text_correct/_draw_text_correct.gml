@@ -13,11 +13,11 @@ function draw_text_correctly(x,y,text,_drawSelectBeam = false, _beamPointer = 0)
 			sep = 0;
 			continue;
 		}
-		var charWidth = global.JaxLarge_widths[? char] ?? 4;
-		var charOffset = global.JaxLarge_offsets[? char] ?? 0;
-		sep -= charOffset;
+		var charWidth = string_width(char);//global.JaxLarge_widths[? char] ?? 4;
+		//var charOffset = //global.JaxLarge_offsets[? char] ?? 0;
+		//sep -= charOffset;
 		draw_text(sep + x,spacing + y,char);
-		sep += charWidth + charOffset + 1;
+		sep += charWidth;
 		if(i == _beamPointer && _drawSelectBeam) { //from dialogue maker typer
 			draw_set_alpha(abs(sin(global.time / 8) * 0.5));
 			draw_rectangle(sep-1,spacing,sep+1,spacing+15,false);
