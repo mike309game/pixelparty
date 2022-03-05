@@ -325,20 +325,30 @@ IS SOOO GHREAT TO SEE YOU HERE!";
 
 [if]&level1-catQuest-talkedOnce,"label-lv1-catTalkedOnce";
 
-[text]"get the thing";
+[text]"ooOOOHHHHH~!!";
+[text]"HyELLO ROBOMAN!!!!!";
+[text]"DO U WANT PUZLE PIECE??????????";
+[text]"CAN U FIND ME A WAY 2 MOVE???";
+[text]"I NEED WAGON!!! I THINCK I SAW A WAGIN BUCKET 
+IN NORTHWEST OF DA COMPLIX!!!";
+[text]"FANK U ROBYO MAN!!!!!";
+
 [set]"level1-catQuest-talkedOnce",#1;
 [jumpLabel]"label-lv1-catDone";
 
 [label]"label-lv1-catTalkedOnce";
 	[if]&level1-catQuest-part1,&level1-catQuest-part2,&level1-catQuest-part3,"label-lv1-catGotStuff";
 	
-	[text]"GET THE THING";
+	[text]"oooOHhh, I c u found sum parts.,.,.";
+	[text]"b-b-b-bb-ut i don think das enuf.,.,";
+	[text]"im sure u can find da other!!!!s!!!";
 	
 	[jumpLabel]"label-lv1-catDone";
 	
 	[label]"label-lv1-catGotStuff";
 		[if]&level1-catQuest-gotPiece,"label-lv1-catGotPiece";
-		[text]"this is so awesome";
+		[text]"FANK U !!!!!";
+		[text]"HERE YOR PIECE!!!!!!!!";
 		[textEnd];
 		[callerUserEvent]#5;
 		[set]"level1-catQuest-gotPiece",#1;
@@ -364,7 +374,7 @@ IS SOOO GHREAT TO SEE YOU HERE!";
 
 [if]&level1-lexsieQuest-talkedOnce,"label-lv1-bullyCanBully";
 
-[text]"bully dialogue didn't talk to lexsie";
+[text]"(standing sounds)";
 
 [jumpLabel]"label-lv1-bullyDone";
 
@@ -378,10 +388,30 @@ IS SOOO GHREAT TO SEE YOU HERE!";
 	[text]"AND CANDY BAR";
 	[s2h1];
 	[text]"...\d1[] \dr[]Please";
-	[s1h2]
+	[s1h2];
 	[text]"NO YOU LOOK LIKE POOPY NOOB
 PLAY NOOB GAME LIK E MARIO";
-
+	[s2h1];
+	[text]"Who said Mario isn't cool too?";
+	[s1h2];
+	[text]"MARIO IS GAY BABY GAME AND SONIC IS AWESOME
+HE KILLS RETARTED RObOT LIKE YOU";
+	[setFacepic2]!s_manny_talk_rude;
+	[s2h1];
+	[text]"Woah buddy,\d1[] \dr[]no need to be an asshole.";
+	[s1h2];
+	[text]"NO YOU MARO LOVER SONIC IS BETTER FUCK ROBOTS
+I SPIN DASH ROIT";
+	[s2h1];
+	[text]"Motherfucker you built like a chinese Ao Oni";		thud sound
+	[text]"I wouldn't be talking with those fucked up teeth.";
+	[text]"You get no bitches and you look like a full sped";
+	[text]"gtfo out of my face before i open your urethra";
+	[s1h2];
+	[text]"................";
+	[setFacepic1]!s_bully_talk_waa;
+	[text]"........";
+	[text]"wwwwWWWWWWWAAAAAAAAAAAAAAAA";
 	
 	[set]"level1-bulliedBully",#1;
 	[callerUserEvent]#5;					bully shifts over to the left
@@ -389,7 +419,7 @@ PLAY NOOB GAME LIK E MARIO";
 	
 	[label]"label-lv1-bullyBullied";
 		[setFacepic1]!s_bully_talk_waa;
-		[text]"FWEFEWEWFWEFWFWEFWEFWEF";
+		[text]"*sobbing profusely*";
 
 [label]"label-lv1-bullyDone";
 
@@ -399,7 +429,8 @@ PLAY NOOB GAME LIK E MARIO";
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 <level1-Fountain>
 [textStart];
-[text]"This fountain has been off for what seems like years..";
+[text]"This fountain has been off for what seems like 
+years..";
 [text]"Might as well never been put here.";
 [textEnd];
 [end];
