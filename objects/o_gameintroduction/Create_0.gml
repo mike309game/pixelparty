@@ -52,3 +52,8 @@ nextText = function() { //do it like THIS because if not the function will be in
 }
 
 // set music
+
+vaporSurface = noone;
+vaporBuffer = buffer_create(320*240*4, buffer_fixed, 1);
+whiteMannyAlpha = 0;
+evaporate = false;

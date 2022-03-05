@@ -13,7 +13,7 @@ choiceX[2] = EaseOutBack(-100, 8 + 6, choiceEaseProgress / 60);
 
 var interpreterExists = instance_exists(interpreter); //don't check it unecessary amounts of times
 
-darkAlpha = clamp(darkAlpha + (interpreterExists ? 0.06 : -0.06), 0, 0.5);
+darkAlpha = clamp(darkAlpha + (interpreterExists ? 0.04 : -0.04), 0, 0.5);
 
 switch(state) {
 	case 0:

@@ -13,3 +13,5 @@ sprites = [
 	s_manny_down,
 	s_manny_right,
 ]
+
+noclip = false;

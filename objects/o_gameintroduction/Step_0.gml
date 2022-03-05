@@ -16,7 +16,9 @@ if floor(text_counter) >= string_length(dialogue[dialogue_counter])+5
 
 if keyboard_check_pressed(vk_space)
 	{
-		total_animation_timer = 80 
+		manny_scale = 2;
+		manny_y = 120;
+		total_animation_timer = 210 
 		dialogue_counter = 2;
 	}
 
@@ -78,9 +80,32 @@ switch total_animation_timer
 			}
 
 	}
-if total_animation_timer >= 230
-	{
-		global.vars.ignoreplayer = 1
-		global.vars.fakeload = r_ho_1
-		roomTrans(r_load,0,1)
+
+if(evaporate) { //NOTE will crash if the game stays here for too long or if we're extremely unlucky
+	var count = 0;
+	while(count < 30) {
+		var offset = irandom_range(0, 320*240) * 4;
+		if(buffer_peek(vaporBuffer, offset, buffer_u32) == 0) { //not in manny region
+			continue;
+		}
+		count++;
+		buffer_poke(vaporBuffer, offset, buffer_u32, 0);
+		instance_create_depth((offset/4) % 320, floor((offset/4) / 320), -10, o_introdust);
 	}
+}
+
+if(whiteMannyAlpha > 1 && !evaporate) {
+	evaporate = true;
+	buffer_get_surface(vaporBuffer, vaporSurface, 0);
+	MANAGER.fadeSpeed = 0.008;
+	Transition(r_ho_1, 10, 0, true);
+}
+
+if false /*total_animation_timer >= 230*/
+	{
+		/*global.vars.ignoreplayer = 1
+		global.vars.fakeload = r_ho_1
+		roomTrans(r_load,0,1)*/
+		
+	}
+

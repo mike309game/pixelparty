@@ -56,7 +56,7 @@ function Movementer(_obj) constructor {
 		return collision_rectangle(x,y,(obj.bbox_right - obj.bbox_left) + x,(obj.bbox_bottom - obj.bbox_top) + y,_obj,true,false); //this is terrible i am aware
 	}
 	
-	static Move = function(inputX, inputY) {
+	static Move = function(inputX, inputY, noclip = false) {
 		moving = inputX != 0 || inputY != 0;
 		
 		//TODO: gotta rewrite all this shit when i put in collision lol
@@ -64,6 +64,12 @@ function Movementer(_obj) constructor {
 		    speedX = clamp(speedX + inputX * accelStart, -speedMax, speedMax);
 		    speedY = clamp(speedY + inputY * accelStart, -speedMax, speedMax);
 			obj.dir = point_direction(0,0,inputX,inputY) / 45; //45 because each possible direction is a multiple of 45
+		}
+		
+		if(noclip) {
+			speedX = inputX << 7;
+			speedY = inputY << 7;
+			exit;
 		}
 		
 		//for stopping

@@ -14,8 +14,11 @@ if(GetInput(eInput.o)) {
 	movementer.accelStop = 16-14;
 }
 
-movementer.Move(inputX,inputY);
-movementer.Collide(GetGameFlag(eFlag.playerCanCollide));
+//noclip check
+noclip ^= keyboard_check_pressed(eChar.v);
+
+movementer.Move(inputX,inputY, noclip);
+movementer.Collide(GetGameFlag(eFlag.playerCanCollide) && !noclip);
 
 var xCenter = floor(bbox_left + ((bbox_right - bbox_left) / 2));
 var yCenter = floor(bbox_top + ((bbox_bottom - bbox_top) / 2));
