@@ -371,10 +371,18 @@ IS SOOO GHREAT TO SEE YOU HERE!";
 [label]"label-lv1-bullyCanBully";
 	[if]&level1-bulliedBully,"label-lv1-bullyBullied";
 	[s2h1];
-	[text]"fart";
+	[text]"Yo, move";
 	[s1h2];
-	[setFacepic1]!s_bully_talk_waa;
-	[text]"how DARE you :(";
+	setFacepic1]!s_bully_talk_waa;
+	[text]"NO THIS IS MINE STORE NOWI WANT CHIPPY";
+	[text]"AND CANDY BAR";
+	[s2h1];
+	[text]"...\d1[] \dr[]Please";
+	[s1h2]
+	[text]"NO YOU LOOK LIKE POOPY NOOB
+PLAY NOOB GAME LIK E MARIO";
+
+	
 	[set]"level1-bulliedBully",#1;
 	[callerUserEvent]#5;					bully shifts over to the left
 	[jumpLabel]"label-lv1-bullyDone";
@@ -391,7 +399,8 @@ IS SOOO GHREAT TO SEE YOU HERE!";
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 <level1-Fountain>
 [textStart];
-[text]"fountain interact dialogue";
+[text]"This fountain has been off for what seems like years..";
+[text]"Might as well never been put here.";
 [textEnd];
 [end];
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
