@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Title screen",
-    "path": "folders/Objects/Title screen.yy",
+    "name": "gui",
+    "path": "folders/Sprites/gui.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_hand_big",
