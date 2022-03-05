@@ -25,7 +25,7 @@ enum eFlag {
 }
 
 global.flag = (
-	//eFlag.playerCanMove |
+	eFlag.playerCanMove |
 	eFlag.playerCanInteract |
 	eFlag.autoStopPlayer |
 	//eFlag.fadeBlack |

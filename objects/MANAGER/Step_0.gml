@@ -3,9 +3,11 @@ if(!audiogroupsLoaded) {
 		audiogroupsLoaded = true;
 		room_goto(START_ROOM);
 		switch(START_ROOM) {
-			case r_de_miketest:
-			case r_l1_r1:
-				AssureGameFlag(eFlag.playerCanMove | eFlag.playerCanTransition);
+			case r_intro:
+			case r_titlecards:
+			case r_title:
+			case r_l1_shop:
+				NegateGameFlag(eFlag.playerCanMove | eFlag.playerCanTransition);
 				break;
 		}
 	}
