@@ -81,7 +81,11 @@ function Typewriter(_skippable = true, _initTextSpeed = global.script_variables[
 			if(textDelay != 0) {
 				advanceCountdown = textDelay;
 				canAdvance = false;
-				Sound(sx_text_sound);
+				if !audio_is_playing(sx_text_sound)
+					{
+						Sound(sx_text_sound);
+						audio_sound_pitch(sx_text_sound,random_range(0.9,1.1))
+					}
 				break;
 			}
 		}
