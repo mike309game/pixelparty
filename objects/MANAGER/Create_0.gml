@@ -1,3 +1,4 @@
+//exception_unhandled_handler(function(ex){show_message("oh no");return 1;});
 audio_group_load(agrp_sounds);
 
 //save_setting_load()

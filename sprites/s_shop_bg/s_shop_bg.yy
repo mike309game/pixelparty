@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "shop",
-    "path": "folders/Sprites/shop.yy",
+    "name": "Shop",
+    "path": "folders/Objects/Shop.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_shop_bg",

@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "items",
-    "path": "folders/Sprites/shop/items.yy",
+    "path": "folders/Objects/Shop/items.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_shop_item_s_boots1",

@@ -1,3 +1,6 @@
+$WHEATTEST=#0;
+
+
 <test> comments can be placed anywhere like this but it'll take slightly longer to process because of how gms handles reading like this
 [textStart];
 [set]"refmore","spr_fullscreen";

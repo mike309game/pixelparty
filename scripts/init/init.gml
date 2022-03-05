@@ -7,7 +7,7 @@ gml_pragma("UnityBuild", "true");
 
 ini_open(working_directory + "/savedata"); //for settings
 
-#macro START_ROOM r_title
+#macro START_ROOM r_l1_r5
 
 enum eFlag {
 	playerCanMove = 1 << 0,

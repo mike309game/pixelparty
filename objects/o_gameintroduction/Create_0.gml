@@ -1,13 +1,21 @@
 dialogue = [
-	"Manny...",
+	/*"Manny...",
 	"Wake up...",
 	"Wake up Manny...",
 	"Ah yes.. \nHello Manny",
 	"I need to request a quite.. big.. favor from you.",
 	"I will now place this 'favor' into your scheduler.",
 	"You can find a description of your mission there.",
-	"now go."
-]
+	"now go."*/
+	"...",
+	"Manny...",
+	"...",
+	"Ah, yes.\nHello again.",
+	"I need to request a big favor from you\nthis time.",
+	"As always, it can be found in the SCHEDULER.",
+	"You can find the description of your mission there.",
+	"Now off you go."
+];
 dialogue_counter = 0
 text_counter = 0
 count_rate = 0.1

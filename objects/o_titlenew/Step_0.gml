@@ -60,15 +60,9 @@ switch(state) {
 		choicerX[choicerChoice] = lengthdir_x(choicerSelectedProgress[choicerChoice]*3.5, choicerDir[choicerChoice]);
 		choicerZ[choicerChoice] = lengthdir_y(choicerSelectedProgress[choicerChoice]*-3.5, choicerDir[choicerChoice]);*/
 		//12 * 5 = 60 for the z
-		if(choicerSelectedProgress[choicerChoice] == 45) {
-			//choicerX[choicerChoice] = 0;
-			//choicerZ[choicerChoice] = 0;
-			//choicerSelectedProgress[choicerChoice] = 0;
-			state = 7 + choicerChoice;
-			break;
-		}
+		
 		var targetX;
-		var progressNormalised = choicerSelectedProgress[choicerChoice]++ / 45;
+		var actualProgress = EaseInBack(0,1,choicerSelectedProgress[choicerChoice] / 45);
 		switch(choicerChoice) {
 			case 0:
 				targetX = 59;
@@ -80,8 +74,15 @@ switch(state) {
 				targetX = (59 + ((160-59) * 2));
 				break;
 		}
-		choicerX[choicerChoice] = lerp(targetX, 160, progressNormalised);
-		choicerZ[choicerChoice] = lerp(0, -120, progressNormalised);
+		choicerX[choicerChoice] = lerp(targetX, 160, actualProgress*2);
+		choicerZ[choicerChoice] = lerp(0, -240, actualProgress);
+		if(choicerSelectedProgress[choicerChoice]++ == 45) {
+			//choicerX[choicerChoice] = 0;
+			//choicerZ[choicerChoice] = 0;
+			//choicerSelectedProgress[choicerChoice] = 0;
+			state = 7 + choicerChoice;
+			break;
+		}
 		break;
 	case 7:
 	case 8:
@@ -93,7 +94,9 @@ switch(state) {
 		if(menuReturn == 3) {
 			ResetChoicerZoomAnim();
 			state = 5;
+			submenuAlpha = 0;
 		}
+		submenuAlpha += 0.1;
 		break;
 }
 

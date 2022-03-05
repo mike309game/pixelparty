@@ -1,5 +1,5 @@
-function HonestaryDraw(text, x, y, colour){
-	draw_set_font(f_boldfelony);
+function HonestaryDraw(text, x, y, colour, font = f_boldfelony){
+	draw_set_font(font);
 	
 	for(var i = 3; i >= 0; i--) {
 		switch(i) {

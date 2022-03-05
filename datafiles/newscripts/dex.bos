@@ -29,3 +29,10 @@
 [textStart];
 [text]"DEX LEVEL 1 QUIT SHOP DIALOGUE";
 [textEnd];
+[end];
+
+<dex-Level1-ChitChat>
+[textStart];
+[text]"DEX LEVEL 1 TALK TEXT";
+[textEnd];
+[end];

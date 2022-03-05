@@ -8,3 +8,5 @@ if(debugPlacer) {
 					"\nuiYRot: " + string(uiYRot) +
 					"\nuiZRot: " + string(uiZRot));
 }
+//HonestaryDraw("blah blah blah Text ooh text", 0, 0, c_purple, f_bigtest);
+//draw_text(0,0,string(EaseInBack(0,1,choicerSelectedProgress[choicerChoice] / 45)));

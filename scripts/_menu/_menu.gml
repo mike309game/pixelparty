@@ -67,6 +67,7 @@ function Menu() constructor {
 }
 
 function DrawMenuSimple(menu, x, y) {
+	var oldAlpha = draw_get_alpha();
 	with(menu) {
 		var spacing = 0;
 		draw_set_font(f_jaxfont);
@@ -87,15 +88,15 @@ function DrawMenuSimple(menu, x, y) {
 				draw_sprite(s_menuslider,1,xx,yy);
 				if(sliderChanging && item.index == optionCurrent) {
 					gpu_set_fog(true, c_white, 0, 1);
-					draw_sprite_ext(s_menuslider,1,xx,yy,1,1,0,c_white,abs(sin(global.time/20)) * 0.5);
+					draw_sprite_ext(s_menuslider,1,xx,yy,1,1,0,c_white,(abs(sin(global.time/20)) * 0.5) * oldAlpha);
 					gpu_set_fog(false, c_white, 0, 1);
 				}
 			}
 			draw_sprite_stretched(s_pause_button, btIndex, x, y + spacing, btWidth + 4, 20);
 			draw_set_colour(c_black);
-			draw_set_alpha(0.2);
+			draw_set_alpha(0.2 * oldAlpha);
 			draw_text(x + 3, y + spacing + 3, item.label);
-			draw_set_alpha(1);
+			draw_set_alpha(1 * oldAlpha);
 			draw_text(x + 2, y + spacing + 2, item.label);
 			draw_set_colour(c_white);
 			spacing += 21;

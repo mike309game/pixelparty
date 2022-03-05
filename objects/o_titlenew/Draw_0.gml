@@ -88,9 +88,14 @@ if(state == 5) { //choosing state
 	draw_text(160,88,choiceName);
 	TextAlignReset();
 }
+
+draw_set_alpha(submenuAlpha);
+
 if(state == 9) { //options state
 	DrawMenuSimple(optionsMenu, 55,120);
 }
+
+draw_set_alpha(1);
 
 //push pxpa logo floatiness
 mtxpush(matrix_build(sin(global.time / 100) * 4, sin(global.time / 110) * 4, 0, 0, 0, 0, 1, 1, 1));

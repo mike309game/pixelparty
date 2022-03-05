@@ -61,6 +61,8 @@ choicerDir[0] = point_direction(59, 145, 160, 240);
 choicerDir[1] = point_direction(160, 145, 160, 240);
 choicerDir[2] = point_direction(260, 145, 160, 240);*/
 
+submenuAlpha = 0;
+
 optionsMenu = new Menu();
 
 pxpaScale = 0;
