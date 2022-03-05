@@ -87,19 +87,29 @@ global.musicTarget = sx_nothing;
 global.musicPlaying = sx_nothing;
 global.musicLoops = true;
 
+// Story shit
+global.script_variables[? "level1-IntroSign"] = 0
+global.script_variables[? "level2-IntroSign"] = 0
+global.script_variables[? "level3-IntroSign"] = 0
+global.script_variables[? "honestary1-IntroSign"] = 0
+
+
 global.vars = { // random globals [ USE THIS FOR GLOBAL VARIABLES ]
 	playing : sx_nothing,
-	play : sx_nothing,
-	loopplay : 1,
+//	play : sx_nothing,
+//	loopplay : 1,
 	roomgo : r_de_miketest,
 	roompt : 0,
 	roomtr : 0,
 	fakeload : r_yisify,
 	ignoreplayer : false,
 	got_puzzle : 0,
-	puz_pid : -1,
-	puz_odd : 0
+//	puz_pid : -1,
+//	puz_odd : 0
 }
+	
+#region old
+/*
 global.player = { // player globals [ PUT PLAYER GLOBALS HERE ]
 	move : 1,
 	area : "bright",
@@ -119,6 +129,9 @@ global.gates = // puzzle gates
 	{
 		gate : [0,0]
 	}
+
+#region outdated
+/*
 global.shop_start_tables =
 	{
 		l1 : ["wheat","s_boots1","odd_key"],
@@ -161,6 +174,8 @@ global.gameevent[? "l3_e0"] = 0
 
 // melvin
 global.gameevent[? "mev_1"] = 0
+*/
+#endregion
 
 
 global.playerinv = array_create(6,"")

@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "level 1",
-    "path": "folders/Rooms/LEVEL BUILDING/PROPS/prop sprites/level 1.yy",
+    "path": "folders/Objects/LEVEL BUILDING/PROPS/prop sprites/level 1.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_prop_level1_slide",

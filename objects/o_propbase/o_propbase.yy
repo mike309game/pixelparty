@@ -29,7 +29,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "PROPS",
-    "path": "folders/Rooms/LEVEL BUILDING/PROPS.yy",
+    "path": "folders/Objects/LEVEL BUILDING/PROPS.yy",
   },
   "resourceVersion": "1.0",
   "name": "o_propbase",

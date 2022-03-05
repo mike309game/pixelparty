@@ -14,8 +14,8 @@
   "soundFile": "sx_newpress.wav",
   "duration": 0.044649,
   "parent": {
-    "name": "Menu",
-    "path": "folders/Scripts/Menu.yy",
+    "name": "sound",
+    "path": "folders/Sounds/sound.yy",
   },
   "resourceVersion": "1.0",
   "name": "sx_newpress",

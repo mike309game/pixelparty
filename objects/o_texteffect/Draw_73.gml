@@ -23,7 +23,7 @@ ifGui
 		{
 			fade = lerp(fade,1.8,.02)
 		}
-	if cuttimer = 300 then global.player.move = 1 else if cuttimer < 300 then  global.player.move = 0
+	if cuttimer = 300 then AssureGameFlag(eFlag.playerCanMove) else if cuttimer < 300 then  NegateGameFlag(eFlag.playerCanMove)
 	if cuttimer > 300
 		{
 			fade = lerp(fade,0,.02)

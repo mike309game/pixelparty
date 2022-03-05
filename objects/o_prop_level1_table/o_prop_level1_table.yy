@@ -30,7 +30,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "level 1",
-    "path": "folders/Rooms/LEVEL BUILDING/PROPS/level 1.yy",
+    "path": "folders/Objects/LEVEL BUILDING/PROPS/level 1.yy",
   },
   "resourceVersion": "1.0",
   "name": "o_prop_level1_table",

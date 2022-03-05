@@ -97,8 +97,8 @@
     "resourceType": "GMNineSliceData",
   },
   "parent": {
-    "name": "Menu",
-    "path": "folders/Scripts/Menu.yy",
+    "name": "gui",
+    "path": "folders/Sprites/gui.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_menuslider",

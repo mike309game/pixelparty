@@ -14,8 +14,8 @@
   "soundFile": "sx_newmove.wav",
   "duration": 0.029683,
   "parent": {
-    "name": "Menu",
-    "path": "folders/Scripts/Menu.yy",
+    "name": "sound",
+    "path": "folders/Sounds/sound.yy",
   },
   "resourceVersion": "1.0",
   "name": "sx_newmove",
