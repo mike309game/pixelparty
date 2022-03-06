@@ -1,3 +1,7 @@
+if(DEBUGMODE && GetGameFlag(eFlag.showPerfMeter)) {
+	show_debug_overlay(GetGameFlag(eFlag.showPerfMeter));
+}
+
 if(!audiogroupsLoaded) {
 	if(audio_group_is_loaded(agrp_sounds)) {
 		audiogroupsLoaded = true;
@@ -13,9 +17,7 @@ if(!audiogroupsLoaded) {
 	}
 }
 
-if !window_has_focus() then audio_master_gain(0) else if window_has_focus() then audio_master_gain(1)
-
-// if keyboard_check_pressed(vk_escape) then game_end() //FUCK YOU GO FUCVK YOURSELF YOU FUCKING BITCH
+audio_master_gain(window_has_focus()); //if unfocused mute audio
 
 //Fade handling n shit
 if(GetGameFlag(eFlag.doFadeIn)) {
@@ -23,11 +25,6 @@ if(GetGameFlag(eFlag.doFadeIn)) {
 } else {
 	fadeValue = max(fadeValue - fadeSpeed, 0);
 }
-
-//base stop fucking using brackets like this
-
-// fuck you your mother is upon my penis and i am currently having sex with her vagina
-
 
 animate += 0.2
 if animate >= 2 then animate = 0

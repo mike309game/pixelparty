@@ -22,19 +22,19 @@ switch string_copy(room_get_name(room),3,2)
 		case "l1":
 			{
 				draw_sprite_part(s_level_signs,0,0,0,80,32,120,round(level_sign_y))
-				global.gameevent[? "l1_e0"] = 1
+				//global.gameevent[? "l1_e0"] = 1
 				break;
 			}
 		case "l2":
 			{
 				draw_sprite_part(s_level_signs,0,0,32,80,32,120,round(level_sign_y))
-				global.gameevent[? "l2_e0"] = 1
+				//global.gameevent[? "l2_e0"] = 1
 				break;
 			}
 		case "l3":
 			{
 				draw_sprite_part(s_level_signs,0,0,64,80,32,120,round(level_sign_y))
-				global.gameevent[? "l3_e0"] = 1
+				//global.gameevent[? "l3_e0"] = 1
 				break;
 			}
 	}

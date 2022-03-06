@@ -3,25 +3,24 @@ audio_group_load(agrp_sounds);
 
 //save_setting_load()
 
-window_set_size(global.setting.scale*320,global.setting.scale*240)
-alarm_set(0,1)
+window_set_size(global.gameScale*320,global.gameScale*240);
+alarm_set(0,1);
 
 depth = -15999;
 
 fadeValue = 0; //value of fader
 fadeSpeed = 0.04;
 
-mus_fade = 1;
 titles[0] = "";
 titlesCount = 0;
+
+#region funny title
 
 var fp = file_text_open_read("text/gametitles.txt");
 while(!file_text_eof(fp)) {
 	titles[titlesCount++] = file_text_read_string(fp);file_text_readln(fp);
 }
 file_text_close(fp);
-
-#region funny title
 
 // this is mikes code dont blame me - jay
 //penis -mike
@@ -104,19 +103,14 @@ if(current_minute == 12 && current_hour == 11) { //there is no real significance
 animatedTitle = false;
 animatedTitleCounter = 0;
 
-randomize();
+randomise();
 if(irandom_range(0,255) == 63) {
 	animatedTitle = true;
 } else {
 	window_set_caption(titles[irandom_range(0,titlesCount-1)]);
 }
 
-
-transalpha = 0
-
-//blendtester = noone;
-if(global.debug.debug_enabled) {
-	//blendtester = instance_create_depth(0,0,-999999999,o_struggle);
+if(DEBUGMODE) { //if debug mode make my debug object
 	instance_create_depth(0,0,0,o_mikedebug);
 }
 

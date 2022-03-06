@@ -15,9 +15,9 @@ priorityMatrix = ;*/
 globalvar defaultMatrix;
 defaultMatrix = matrix_build_identity();
 
-#macro draw_gui_set surface_set_target(global.guisurface);
+//#macro draw_gui_set surface_set_target(global.guisurface);
 //#macro draw_gui_set matrix_set(matrix_world,matrix_build(camera_get_view_x(view_camera[0]),camera_get_view_y(view_camera[0]),-16000,0,0,0,1,1,1));
-#macro draw_gui_exit surface_reset_target();
+//#macro draw_gui_exit surface_reset_target();
 //#macro draw_gui_exit matrix_set(matrix_world,defaultMatrix);
 
 global.guiInstancesQueue = ds_queue_create();

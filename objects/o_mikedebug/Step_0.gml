@@ -18,8 +18,6 @@ if(choosingRoom) {
 	bgFade = min(bgFade + 0.08, 0.4);
 	if(mouse_check_button_pressed(mb_left)) {
 		var theRoom = asset_get_index(roomList[|roomChosen]);
-		global.vars.roomgo = theRoom;
-		global.vars.roompt = 0;
 		choosingRoom = false;
 		bgFade = 0;
 		room_goto(theRoom);

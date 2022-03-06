@@ -1,1 +1,0 @@
-//draw_text(32,160,screamt)

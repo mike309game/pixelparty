@@ -36,17 +36,17 @@ if(buffer_exists(global.inputBuffer)) {
 //clear rest
 ds_map_destroy(global.script_compiled);
 ds_map_destroy(global.script_variables);
-if(!SCRIPTSCOMPILED) begin
-ds_map_destroy(global.__scriptCommandMap);
-end
+if(!SCRIPTSCOMPILED) {
+	ds_map_destroy(global.__scriptCommandMap);
+}
 
 audio_emitter_free(global.soundEmitter);
 audio_emitter_free(global.musicEmitter);
 
-delete global.player
-delete global.vars
-delete global.shop_start_tables
-delete global.catparts
-delete global.gates
+
+
+
+
+
 
 ini_close();

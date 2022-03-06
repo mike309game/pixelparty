@@ -9,6 +9,12 @@ ini_open(working_directory + "/savedata"); //for settings
 
 #macro START_ROOM r_titlecards
 
+//if in release mode, make it always false, this will make all debug checks be removed from code because gamemaker removes absolutely unreachable code
+//if not in release mode, make it go check the actual flag
+
+#macro DEBUGMODE (global.flag & eFlag.debugEnabled)
+#macro release:DEBUGMODE (false)
+
 enum eFlag {
 	playerCanMove = 1 << 0,
 	stopAll = 1 << 1, //stop what can be stopped
@@ -21,6 +27,8 @@ enum eFlag {
 	cameraFocusOnPlayer = 1 << 8, //camera centers on player?
 	playerCanSetSprite = 1 << 9, //player can set its sprite automatically?
 	
+	debugEnabled = 1 << 61, //wether debug features are enabled
+	showPerfMeter = 1 << 62, //show p3d school performance meter
 	saveCorrupted = 1 << 63 //this will only be on when the game fails to load a save file somehow
 }
 
@@ -32,7 +40,9 @@ global.flag = (
 	eFlag.playerCanTransition |
 	eFlag.playerCanCollide |
 	eFlag.cameraFocusOnPlayer |
-	eFlag.playerCanSetSprite
+	eFlag.playerCanSetSprite |
+	eFlag.debugEnabled |
+	eFlag.showPerfMeter
 );
 
 global.input = int64(0);
@@ -75,6 +85,7 @@ global.camY = 0;
 
 global.pausedsurface = noone;
 
+global.gameScale = ini_read_real("Etc", "WindowScale", 3);
 global.musicMasterVolume = ini_read_real("Volume", "Music", 0.5);
 global.soundMasterVolume = ini_read_real("Volume", "Sound", 1);
 global.masterVolume = ini_read_real("Volume", "Master", 0.5);
@@ -86,27 +97,6 @@ global.music = noone; //for usage with manipulating volume and pitch n shit
 global.musicTarget = sx_nothing;
 global.musicPlaying = sx_nothing;
 global.musicLoops = true;
-
-// Story shit
-global.script_variables[? "level1-IntroSign"] = 0
-global.script_variables[? "level2-IntroSign"] = 0
-global.script_variables[? "level3-IntroSign"] = 0
-global.script_variables[? "honestary1-IntroSign"] = 0
-
-
-global.vars = { // random globals [ USE THIS FOR GLOBAL VARIABLES ]
-	playing : sx_nothing,
-//	play : sx_nothing,
-//	loopplay : 1,
-	roomgo : r_de_miketest,
-	roompt : 0,
-	roomtr : 0,
-	fakeload : r_yisify,
-	ignoreplayer : false,
-	got_puzzle : 0,
-//	puz_pid : -1,
-//	puz_odd : 0
-}
 	
 #region old
 /*
@@ -177,8 +167,6 @@ global.gameevent[? "mev_1"] = 0
 */
 #endregion
 
-
-global.playerinv = array_create(6,"")
 #region font bullshit
 globalvar f_boldfelony;
 f_boldfelony = font_add_sprite_ext(_f_boldfelony, "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-+", true, 1);
