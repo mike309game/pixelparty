@@ -1,1 +1,1 @@
-bub = sin(get_timer()/800000)*5
+//bub = sin(get_timer()/800000)*5
