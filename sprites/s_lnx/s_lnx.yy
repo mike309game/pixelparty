@@ -85,8 +85,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Intro stuff",
-    "path": "folders/Objects/Intro stuff.yy",
+    "name": "splash",
+    "path": "folders/Sprites/gui/splash.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_lnx",

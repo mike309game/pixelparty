@@ -50,8 +50,8 @@
     "PhysicsWorldPixToMetres": 0.1,
   },
   "parent": {
-    "name": "Intro stuff",
-    "path": "folders/Objects/Intro stuff.yy",
+    "name": "non-game",
+    "path": "folders/Rooms/non-game.yy",
   },
   "resourceVersion": "1.0",
   "name": "r_titlecards",

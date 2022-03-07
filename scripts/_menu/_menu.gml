@@ -37,6 +37,7 @@ function Menu() constructor {
 				var item = argument[optionCurrent];
 				item.sliderValue = clamp(item.sliderValue + (GetInput(eInput.right, true) - GetInput(eInput.left, true)) * item.sliderMultiplier, item.sliderMin, item.sliderMax);
 				if(GetInputReleased(eInput.interact)) {
+					Sound(sx_newpress);
 					sliderChanging = false;
 				}
 			} else {
@@ -52,6 +53,7 @@ function Menu() constructor {
 					if(argument[optionCurrent].isSlider) {
 						sliderChanging = true;
 					} else {
+						
 						returnVal = optionCurrent;
 					}
 					Sound(sx_title_menu_select);
