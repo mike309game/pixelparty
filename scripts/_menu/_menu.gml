@@ -42,6 +42,7 @@ function Menu() constructor {
 					item.sliderMin, item.sliderMax
 				); //change slider value
 				if(GetInputReleased(eInput.interact)) { //if we release the interact button
+					Sound(sx_newpress);
 					sliderChanging = false; //stop changing the slider
 				}
 			} else { //if we're not changing a slider

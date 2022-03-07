@@ -11,8 +11,8 @@
     "name": "agrp_sounds",
     "path": "audiogroups/agrp_sounds",
   },
-  "soundFile": "sx_newpress.wav",
-  "duration": 0.044649,
+  "soundFile": "sx_newpress.mp3",
+  "duration": 1.7502,
   "parent": {
     "name": "sound",
     "path": "folders/Sounds/sound.yy",

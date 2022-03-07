@@ -12,7 +12,9 @@ if(room == r_interval) { //draw loading screen shit
 			draw_sprite_ext(s_loadingnew, i, 80 + (25 * i), 64,cos(global.time/20 + i) * 0.3 + 1, sin(global.time/25 + i) * 0.3 + 1, 0, c_white, 1);
 		}
 		shader_reset();		
+		draw_sprite_ext(s_controller,0,0,53,1,1,0,c_white,0.5)
 	} else {
 		draw_sprite(quickLoadSprite, global.time / 10, 320, 240);
+		
 	}
 }

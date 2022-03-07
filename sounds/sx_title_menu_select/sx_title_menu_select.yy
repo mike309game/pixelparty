@@ -12,7 +12,7 @@
     "path": "audiogroups/agrp_sounds",
   },
   "soundFile": "sx_title_menu_select.mp3",
-  "duration": 1.750167,
+  "duration": 1.7502,
   "parent": {
     "name": "sound",
     "path": "folders/Sounds/sound.yy",

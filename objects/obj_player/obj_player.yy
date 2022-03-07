@@ -33,8 +33,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "LEVEL BUILDING",
-    "path": "folders/Objects/LEVEL BUILDING.yy",
+    "name": "player",
+    "path": "folders/Objects/player.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_player",
