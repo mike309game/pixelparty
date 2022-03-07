@@ -130,7 +130,6 @@
     {"id":{"name":"o_npc_tvset","path":"objects/o_npc_tvset/o_npc_tvset.yy",},"order":15,},
     {"id":{"name":"sx_shop_broke","path":"sounds/sx_shop_broke/sx_shop_broke.yy",},"order":12,},
     {"id":{"name":"s_bully_talk","path":"sprites/s_bully_talk/s_bully_talk.yy",},"order":3,},
-    {"id":{"name":"t_l1_house","path":"tilesets/t_l1_house/t_l1_house.yy",},"order":4,},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"order":6,},
     {"id":{"name":"t_test_tiles","path":"tilesets/t_test_tiles/t_test_tiles.yy",},"order":6,},
     {"id":{"name":"s_psxbuttons","path":"sprites/s_psxbuttons/s_psxbuttons.yy",},"order":15,},
