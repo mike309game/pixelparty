@@ -1,5 +1,6 @@
 if(waitingForFade && MANAGER.fadeValue == 1) {
 	room_goto(destination);
+	SetGameFlag(eFlag.fadeBlack, fadeBlackInDest);
 	waitingForFade = false;
 }
 

@@ -14,7 +14,7 @@ if(room == destination) {
 		}
 	}
 	if(invalid) { //failsafe
-		AssureGameFlag(eFlag.playerCanCollide | eFlag.playerCanTransition);
+		AssureGameFlag(eFlag.playerCanCollide | eFlag.playerCanTransition | eFlag.playerCanMove);
 		AllowAllInput();
 		UnfreezeAllInput();
 		instance_destroy();

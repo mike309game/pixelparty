@@ -220,7 +220,7 @@ function CompileScriptReadable(fname) {
 		//begin everything
 		while(char == eChar.dollar) { //found definition of a global variable
 			fpos = string_read_terminated(fstring, ++fpos, ["="], 0);
-			var valueName = string_lower(global.stringReadReturn); //no case sensitvity to make things easier, or not idk
+			var valueName = global.stringReadReturn; //store the value name
 			//get what kind of value we're setting to the global value
 			var kind = string_ord_at(fstring,++fpos);
 			//get what we're setting the value name to

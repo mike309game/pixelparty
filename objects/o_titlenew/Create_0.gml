@@ -16,7 +16,7 @@ uiZRot = 180;
 
 //canProgress = false;
 //acceptInput = true;
-alarm[0] = 120;
+alarm[0] = 1;
 
 /*
 
@@ -62,6 +62,8 @@ choicerDir[1] = point_direction(160, 145, 160, 240);
 choicerDir[2] = point_direction(260, 145, 160, 240);*/
 
 submenuAlpha = 0;
+
+fileSelectMenu = new FileselectInterface(false);
 
 optionsMenu = new Menu();
 

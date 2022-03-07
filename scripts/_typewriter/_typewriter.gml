@@ -12,6 +12,7 @@ function Letter(
 	y = 0; //y offset (for shake)
 	newlines = _newlines;
 	char = _char;
+	draw_set_font(f_jaxfont);
 	sep = string_width(char);
 	//offset = global.JaxLarge_offsets[?char] ?? 0;
 	textPointerDifference = _txptrdiff;

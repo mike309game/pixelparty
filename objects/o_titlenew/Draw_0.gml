@@ -82,14 +82,15 @@ if(state == 5) { //choosing state
 			choiceName = "Options";
 			break;
 	}
-	draw_set_colour(c_black);
-	draw_text(160+1,88+1,choiceName);
-	draw_set_colour(c_white);
-	draw_text(160,88,choiceName);
+	DrawTextSimpleShadow(160, 88, choiceName);
 	TextAlignReset();
 }
 
 draw_set_alpha(submenuAlpha);
+
+if(state == 8) { //load game state
+	fileSelectMenu.Draw(submenuAlpha);
+}
 
 if(state == 9) { //options state
 	DrawMenuSimple(optionsMenu, 55,120);
@@ -157,8 +158,7 @@ camera_apply(camNormal);
 
 draw_set_alpha(copyrightAlpha);
 draw_set_font(f_shop);
-draw_text_colour(1,221,"Copyright 2006-" + string(current_year) + " YISI-FY", 0, 0, 0, 0, copyrightAlpha);
-draw_text(0,220,"Copyright 2006-" + string(current_year) + " YISI-FY");
+DrawTextSimpleShadow(0, 220, "Copyright 2006-" + string(current_year) + " YISI-FY", copyrightAlpha);
 draw_set_alpha(1);
 
 gpu_set_ztestenable(false);

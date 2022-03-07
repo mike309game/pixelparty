@@ -8,26 +8,26 @@ for(var i = 0; i < 10; i++) {
 }
 
 switch(state) {
-	case 0:
+	case 0: //state that does nothing
 		break;
-	case 1:
+	case 1: //show the pxpa logo
 		pxpaScale = EaseOutElastic(0, 1.4, pxpaScaleProgress / 120);
 		pxpaScaleProgress = min(pxpaScaleProgress + 1, 120);
 		copyrightAlpha += 0.1;
 		break;
-	case 2:
+	case 2: //press start prompt
 		if(GetInput(eInput.start)) {
 			Sound(sx_title_select);
 			state++; //go to start blinking state
 			alarm[3] = 60; //after 1 second go to choicers state
 		}
 		break;
-	case 3:
+	case 3: //blinking start prompt
 		if(global.time % 10 == 0) { //every 20 frames, blink the start prompt
 			startAlpha ^= 1;
 		}
 		break;
-	case 4:
+	case 4: //smoothing in the choices
 		choicersProgress = min(choicersProgress + 1, 100);
 		pxpaScale = EaseInOutCubic(1.4, 1, choicersProgress / 100);
 		pxpaY = EaseInOutCubic(120, 40, choicersProgress / 100);
@@ -42,13 +42,14 @@ switch(state) {
 			state++; //go to chooseable state
 		}
 		break;
-	case 5:
+	case 5: //choose choices
 		choicerChoice = nmod(choicerChoice + GetInputPressed(eInput.right,true) - GetInputPressed(eInput.left,true), 3);
 		if(GetInput(eInput.x)) {
 			state++; //choicer zooming in state
+			Sound(sx_title_select);
 		}
 		break;
-	case 6:
+	case 6: //zoom in choices towards camera
 		/*if(choicerSelectedProgress[choicerChoice] == 45) {
 			//choicerX[choicerChoice] = 0;
 			//choicerZ[choicerChoice] = 0;
@@ -80,16 +81,26 @@ switch(state) {
 			//choicerX[choicerChoice] = 0;
 			//choicerZ[choicerChoice] = 0;
 			//choicerSelectedProgress[choicerChoice] = 0;
-			state = 7 + choicerChoice;
+			state = 7 + choicerChoice; //go to selected choice's state
 			break;
 		}
 		break;
-	case 7:
-	case 8:
+	case 7: //new game state
 		state = 5;
 		ResetChoicerZoomAnim();
 		break;
-	case 9:
+	case 8: //load state
+		submenuAlpha += 0.1;
+		fileSelectMenu.Update();
+		if(!fileSelectMenu.selectedFile) { //if a file's been selected don't let player quit out of submenu
+			if(GetInput(eInput.o)) {
+				state = 5;
+				ResetChoicerZoomAnim();
+				submenuAlpha = 0;
+			}
+		}
+		break;
+	case 9: //options state
 		var menuReturn = PushSimpleOptions(optionsMenu);
 		if(menuReturn == 3) {
 			ResetChoicerZoomAnim();

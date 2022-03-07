@@ -1,0 +1,2 @@
+fileSelectMenu.Dispose();
+delete fileSelectMenu;

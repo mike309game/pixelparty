@@ -8,3 +8,8 @@ $text auto clear=#1;		automatically clear text?
 
 $pieces=#0;
 $gold=#0;
+
+$saveFile=#0;
+$partyMembers=#1;
+$time=#0;
+$name=@Hattan;

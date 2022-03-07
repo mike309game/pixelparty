@@ -15,6 +15,8 @@ ini_open(working_directory + "/savedata"); //for settings
 #macro DEBUGMODE (global.flag & eFlag.debugEnabled)
 #macro release:DEBUGMODE (false)
 
+#macro MAXSAVEFILES (4)
+
 enum eFlag {
 	playerCanMove = 1 << 0,
 	stopAll = 1 << 1, //stop what can be stopped
@@ -44,6 +46,24 @@ global.flag = (
 	eFlag.debugEnabled |
 	eFlag.showPerfMeter
 );
+
+if(DEBUGMODE) {
+	global.flagDefs = array_create(64, "unused");
+	global.flagDefs[0] = "playerCanMove";
+	global.flagDefs[1] = "stopAll";
+	global.flagDefs[2] = "autoStopPlayer";
+	global.flagDefs[3] = "playerCanInteract";
+	global.flagDefs[4] = "doFadeIn";
+	global.flagDefs[5] = "fadeBlack";
+	global.flagDefs[6] = "playerCanTransition";
+	global.flagDefs[7] = "playerCanCollide";
+	global.flagDefs[8] = "cameraFocusOnPlayer";
+	global.flagDefs[9] = "playerCanSetSprite";
+	
+	global.flagDefs[61] = "debugEnabled";
+	global.flagDefs[62] = "showPerfMeter";
+	global.flagDefs[63] = "saveCorrupted";
+}
 
 global.input = int64(0);
 global.inputPressed = int64(0);
@@ -84,6 +104,8 @@ global.camX = 0;
 global.camY = 0;
 
 global.pausedsurface = noone;
+
+global.saveFile = 0;
 
 global.gameScale = ini_read_real("Etc", "WindowScale", 3);
 global.musicMasterVolume = ini_read_real("Volume", "Music", 0.5);

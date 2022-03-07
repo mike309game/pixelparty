@@ -1,12 +1,12 @@
 surface_set_target(global.pausedsurface);
+	draw_sprite_tiled(s_pause_bg,0,global.time/4,global.time/3);
 	if(blackout) {
 		draw_rectangle_colour(0,0,320,240,0,0,0,0,0);
-	} else {
-		draw_sprite_tiled(s_pause_bg,0,global.time/4,global.time/3);
+	} else if(menuMode != 3) {
 		DrawMenuSimple(menu, 16, menuMode == 2 ? 150 + 24 : 150);
 		if(menuMode == 2) {
 			draw_set_colour(255 * abs(sin(global.time / 20 + 415874)));
-			draw_text(16, 150, "Really quit game?");
+			draw_text(16, 150, "Really quit game?" + string(global.flag));
 			draw_set_colour(c_white);
 		}
 		
@@ -36,6 +36,8 @@ surface_set_target(global.pausedsurface);
 		
 		matrix_set(matrix_world, defaultMatrix);
 		shader_reset();
+	} else { //should only ever get here if choosing where to save
+		fileSelectMenu.Draw(1);
 	}
 	
 surface_reset_target();

@@ -7,3 +7,4 @@ surfaceShow = 0;
 closing = false;
 waitingForFade = false;
 blackout = false;
+fileSelectMenu = new FileselectInterface(true);

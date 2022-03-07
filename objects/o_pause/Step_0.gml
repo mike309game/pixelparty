@@ -44,7 +44,9 @@ switch(menuMode) {
 		);
 		switch(menuReturn) {
 			case 0:
-				SaveGame();
+				//SaveGame();
+				menuMode = 3;
+				break;
 			case 1:
 				menu.canMove = false;
 				waitingForFade = true;
@@ -56,6 +58,9 @@ switch(menuMode) {
 				menuMode = 0;
 				break;
 		}
+		break;
+	case 3:
+		fileSelectMenu.Update();
 		break;
 }
 

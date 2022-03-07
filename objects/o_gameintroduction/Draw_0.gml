@@ -51,6 +51,7 @@ if(total_animation_timer >= 85 && !outro) {
 	manny_alpha += 0.01;
 }
 
-draw_sprite_ext(s_fade_black,0,0,0,1,1,0,c_white,fade_alpha);
+//draw_sprite_ext(s_fade_black,0,0,0,1,1,0,c_white,fade_alpha);
+//draw_clear_alpha(0, fade_alpha);
 //shader_reset();
 TextAlignReset();

@@ -7,19 +7,30 @@ function SaveVolumeSettings() {
 }
 
 function SaveGame() {
-	ini_write_string("SaveData", "Room", room_get_name(room)); //name cuz gms2 shuffles room ids sometimes
-	ini_write_real("SaveData", "Flag", global.flag);
-	ini_write_string("SaveData", "Values", ds_map_write(global.script_variables));
+	var section = "SaveData" + string(global.saveFile);
+	ini_write_real(section, "Exists", 1);
+	//ini_write_string(section, "Name", global.script_variables[? "name"]);
+	ini_write_real(section, "Characters", global.script_variables[? "partyMembers"]);
+	ini_write_real(section, "Time", global.time);
+	ini_write_string(section, "Room", room_get_name(room)); //name cuz gms2 shuffles room ids sometimes
+	ini_write_string(section, "Flag", string(global.flag));
+	ini_write_string(section, "Values", ds_map_write(global.script_variables));
 	ini_close();
 	ini_open(working_directory + "/savedata");
 }
 
 function LoadGame() {
-	global.flag = ini_read_real("SaveData", "Flag", eFlag.saveCorrupted);
+	var section = "SaveData" + string(global.saveFile);
+	global.flag = int64(ini_read_string(section, "Flag", "-9223372036854775808"));
+	global.time = ini_read_real(section, "Time", "0");
 	ds_map_clear(global.script_variables);
-	ds_map_read(global.script_variables, ini_read_string("SaveData", "Values", "93010000010000000100000007000000494E56414C494400000000000000000000F03F")); //ds map with string key "INVALID" set to 1
-	room_goto(asset_get_index(ini_read_string("SaveData", "Room", "r_title")));
+	ds_map_read(global.script_variables, ini_read_string(section, "Values", "93010000010000000100000007000000494E56414C494400000000000000000000F03F")); //ds map with string key "INVALID" set to 1
+	return (asset_get_index(ini_read_string(section, "Room", "r_title")));
 }
+
+/*function CheckExistence() {
+	return ini_read_real("SaveData" + string(global.saveFile), "Exists", 0);
+}*/
 
 /*var test = ds_map_create();
 test[? "INVALID"] = 1;
