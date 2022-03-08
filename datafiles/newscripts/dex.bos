@@ -1,4 +1,5 @@
-
+$dex-ExitRoom=!r_l1_r5;
+$dex-ExitMarker=#12;
 
 
 
@@ -20,19 +21,58 @@
 
 
 <dex-Level1>
+[setNamelabel1]"Dex";
+[setFacepic1]!s_dex_talk;
+[setNamelabel2]"Manny";
+[setFacepic2]!s_manny_talk;
+
 [textStart];
-[text]"DEX LEVEL 1 DIALOGUE";
+[s2h1];
+[text]"Yo.";
+[s1h2];
+[text]"Welcome to my shop, kid.";
+[s2h1];
+[text]"I'm...\d1[] \dr[]not a kid\d1[].
+\dr[]I'm 21 actually.";
+[s1h2];
+[text]"Ohoho!\d1[] \dr[] Pardon me\d1[] \dr[], I'm Dex.";
+[s2h1];
+[text]"Nice to meet you\d1[] \dr[], Dex.\d1[]
+\dr[] I'm Manny.";
+[s1h2];
+[text]"What can I help you with?";
+[s2h1];
+[text]"Do you have any wheat\d1[]\dr[]? Like, cooking wheat?";
+[s1h2];
+[text]"Sure I do!\d1[]...\dr[]What does a Bot such as yourself
+need wheat for?";
+[s2h1];
+[text]"A clown lady named Lexsie asked me to get some 
+for her.";
+[s1h2];
+
+[text]"Ah, yes. Lexsie.\d1[] \dr[]Nice lady!\d1[] \dr[]Tell ya what, 
+I was supposed to bring this to her earlier
+but I haven't got the chance!";
+
+[text]"I'll give this to you on the house for bringing it
+to her for me.";
+[setFacepic2]!s_manny_talk_alt_1;
+[s2h1];
+[text]"W-wow, thanks.";
+[s1h2];
+[text]"No problem.";
 [textEnd];
 [end];
 
 <dex-Level1-ByeBye>
 [textStart];
-[text]"DEX LEVEL 1 QUIT SHOP DIALOGUE";
+[text]"See-ya";
 [textEnd];
 [end];
 
 <dex-Level1-ChitChat>
 [textStart];
-[text]"DEX LEVEL 1 TALK TEXT";
+[text]"Dex doesn't seem interested in talking right now.";
 [textEnd];
 [end];

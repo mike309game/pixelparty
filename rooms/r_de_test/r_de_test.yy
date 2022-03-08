@@ -362,7 +362,7 @@
     {"spriteId":{"name":"s_cloud_loop","path":"sprites/s_cloud_loop/s_cloud_loop.yy",},"colour":4294967295,"x":0,"y":0,"htiled":true,"vtiled":true,"hspeed":0.2,"vspeed":0.3,"stretch":false,"animationFPS":0.0,"animationSpeedType":0,"userdefinedAnimFPS":true,"visible":true,"depth":16000,"userdefinedDepth":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":8,"gridY":8,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],"resourceVersion":"1.0","name":"Backgrounds_1","tags":[],"resourceType":"GMRBackgroundLayer",},
   ],
   "inheritLayers": false,
-  "creationCodeFile": "${project_dir}/rooms/r_de_miketest/RoomCreationCode.gml",
+  "creationCodeFile": "${project_dir}/rooms/r_de_test/RoomCreationCode.gml",
   "inheritCode": false,
   "instanceCreationOrder": [
     {"name":"inst_50546CE8_1","path":"rooms/r_de_test/r_de_test.yy",},

@@ -12,7 +12,7 @@
     "path": "audiogroups/agrp_sounds",
   },
   "soundFile": "sx_pause_close.mp3",
-  "duration": 2.925687,
+  "duration": 3.4743,
   "parent": {
     "name": "sound",
     "path": "folders/Sounds/sound.yy",

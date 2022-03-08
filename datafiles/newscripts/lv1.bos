@@ -215,7 +215,7 @@ Here,\d1[] \dr[]you can have the piece now.";
 
 [label]"label-lv1-lexsieGotPiece";
 	[s1h2];
-	[text]"I don't have anything else for you.";
+	[text]"...Need somethin'?";
 
 
 [label]"label-lv1-lexsieDone";			label to mark where we're done here
@@ -294,7 +294,7 @@ Siblings.";
 [text]"
 IS SOOO GHREAT TO SEE YOU HERE!";
 
-[text]"HOW IS YOUR KITTY MAXROI??";
+[text]"HOW IS YOUR KITTY CHANCE??";
 
 [s2h1];
 
@@ -315,7 +315,7 @@ IS SOOO GHREAT TO SEE YOU HERE!";
 [end];
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 <level1-Cat>
-[setNamelabel1]"Cat in box";
+[setNamelabel1]"Cat-in-a-box";
 [setNamelabel2]"Manny";
 [setFacepic1]!s_cat_talk;
 [setFacepic2]!s_manny_talk;
