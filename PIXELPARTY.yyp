@@ -163,6 +163,7 @@
     {"id":{"name":"s_bully_talk_waa","path":"sprites/s_bully_talk_waa/s_bully_talk_waa.yy",},"order":6,},
     {"id":{"name":"o_catpart","path":"objects/o_catpart/o_catpart.yy",},"order":1,},
     {"id":{"name":"s_loading_text","path":"sprites/s_loading_text/s_loading_text.yy",},"order":4,},
+    {"id":{"name":"r_hon1","path":"rooms/r_hon1/r_hon1.yy",},"order":1,},
     {"id":{"name":"s_l2_tile","path":"sprites/s_l2_tile/s_l2_tile.yy",},"order":0,},
     {"id":{"name":"s_honstay_talk","path":"sprites/s_honstay_talk/s_honstay_talk.yy",},"order":10,},
     {"id":{"name":"s_puzzle_piece","path":"sprites/s_puzzle_piece/s_puzzle_piece.yy",},"order":3,},
@@ -412,6 +413,7 @@
     {"roomId":{"name":"r_interval","path":"rooms/r_interval/r_interval.yy",},},
     {"roomId":{"name":"r_titlecards","path":"rooms/r_titlecards/r_titlecards.yy",},},
     {"roomId":{"name":"r_intro","path":"rooms/r_intro/r_intro.yy",},},
+    {"roomId":{"name":"r_hon1","path":"rooms/r_hon1/r_hon1.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":0,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},

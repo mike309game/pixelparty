@@ -22,3 +22,4 @@ gc_collect(); //collect tresh
 //failsafe
 global.camX = 0;
 global.camY = 0;
+
