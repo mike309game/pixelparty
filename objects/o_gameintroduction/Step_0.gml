@@ -98,13 +98,13 @@ if(whiteMannyAlpha > 1 && !evaporate) {
 	evaporate = true;
 	buffer_get_surface(vaporBuffer, vaporSurface, 0);
 	MANAGER.fadeSpeed = 0.008;
-	Transition(r_ho_1, 10, 0, true);
+	Transition(r_hon1, 10, 0, true);
 }
 
 if false /*total_animation_timer >= 230*/
 	{
 		/*global.vars.ignoreplayer = 1
-		global.vars.fakeload = r_ho_1
+		global.vars.fakeload = r_hon1
 		roomTrans(r_load,0,1)*/
 		
 	}

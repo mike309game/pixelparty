@@ -1,2 +1,0 @@
-find = "hoi"
-file = "debug"

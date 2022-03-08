@@ -4,11 +4,12 @@ if(DEBUGMODE && GetGameFlag(eFlag.showPerfMeter)) {
 
 if VIEW_ENABLE
 	{
-		var normCam = camera_create_view(0, 0, 320, 240, 0, -1, 0, 0, 0, 0)
+		var normCam = camera_create_view(global.camX, global.camY, 320, 240, 0, -1, 0, 0, 0, 0)
 		view_camera[0] = normCam
 		view_enabled = true
 		view_visible[0] = true
 		camera_apply(0)
+		
 	}
 
 if(!audiogroupsLoaded) {
