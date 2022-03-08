@@ -20,17 +20,7 @@ noclip ^= keyboard_check_pressed(eChar.v);
 movementer.Move(inputX,inputY, noclip);
 movementer.Collide(GetGameFlag(eFlag.playerCanCollide) && !noclip);
 
-if(inputX != 0 || inputY != 0)
-	{
-		audio_sound_gain(sx_walk_cute,1,0)
-		if !audio_is_playing(sx_walk_cute) Sound(sx_walk_cute,1,1,0)
-	} else {
-		audio_sound_gain(sx_walk_cute,0,20)
-		if !audio_sound_get_gain(sx_walk_cute)
-			{
-				audio_stop_sound(sx_walk_cute)
-			}
-	}
+audio_sound_gain(footstepSound, movementer.moving, 20)
 
 var xCenter = floor(bbox_left + ((bbox_right - bbox_left) / 2));
 var yCenter = floor(bbox_top + ((bbox_bottom - bbox_top) / 2));

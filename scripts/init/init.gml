@@ -8,8 +8,6 @@ gml_pragma("UnityBuild", "true");
 ini_open(working_directory + "/savedata"); //for settings
 
 #macro START_ROOM r_titlecards
-#macro VIEW_ENABLE 1
-#macro VIEW_FOLLOW 1
 
 //if in release mode, make it always false, this will make all debug checks be removed from code because gamemaker removes absolutely unreachable code
 //if not in release mode, make it go check the actual flag
@@ -66,6 +64,8 @@ if(DEBUGMODE) {
 	global.flagDefs[62] = "showPerfMeter";
 	global.flagDefs[63] = "saveCorrupted";
 }
+
+global.mainCamera = camera_create_view(0,0,320,240);
 
 global.input = int64(0);
 global.inputPressed = int64(0);

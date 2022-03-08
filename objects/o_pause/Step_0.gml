@@ -22,7 +22,7 @@ switch(menuMode) {
 				menu.canMove = false;
 				closing = true;
 				Sound(sx_pause_close)
-				audio_sound_gain(global.musicPlaying,musVol,170)
+				audio_sound_gain(global.music,1,170);
 				break;
 			case 1:
 				menuMode = 1;
@@ -55,7 +55,7 @@ switch(menuMode) {
 				FadeIn();
 				Music(sx_nothing);
 				Sound(sx_pause_quit,menuReturn == 1 ? 0.8 : 1);
-				audio_sound_gain(global.musicPlaying,musVol,170)
+				audio_sound_gain(global.music,1,170)
 				break;
 			case 2:
 				menuMode = 0;

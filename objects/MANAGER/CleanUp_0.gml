@@ -43,7 +43,7 @@ if(!SCRIPTSCOMPILED) {
 audio_emitter_free(global.soundEmitter);
 audio_emitter_free(global.musicEmitter);
 
-
+camera_destroy(global.mainCamera);
 
 
 
