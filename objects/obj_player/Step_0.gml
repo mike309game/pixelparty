@@ -6,12 +6,15 @@ if(GetGameFlag(eFlag.playerCanMove)) {
 	inputY = GetInput(eInput.down,true) - GetInput(eInput.up,true);
 }
 
-if(GetInput(eInput.o)) {
-	movementer.speedMax = 28;
+if(GetInputPressed(eInput.o) && movementer.speedMax == 16) {
+	movementer.speedMax = 35;
 	movementer.accelStop = 3;
+	walkAnimSpeed = 0.4;
+	instance_create_depth(x+8,y+8, depth, o_cloud_puff);
+	alarm[3] = 8;
 } else {
-	movementer.speedMax = 16;
-	movementer.accelStop = 16-14;
+	//movementer.speedMax = 16;
+	//movementer.accelStop = 16-14;
 }
 
 //noclip check
@@ -69,7 +72,7 @@ with(interacted) {
 	
 if(GetGameFlag(eFlag.playerCanSetSprite)) {
 	sprite_index = sprites[dir];
-	image_speed = movementer.moving * 0.2 * (x != xprevious || y != yprevious);
+	image_speed = movementer.moving * walkAnimSpeed * (x != xprevious || y != yprevious);
 	image_index *= movementer.moving * (x != xprevious || y != yprevious);
 }
 

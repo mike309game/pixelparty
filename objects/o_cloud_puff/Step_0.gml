@@ -1,5 +1,8 @@
-rot += rotdir
-fade -= 0.01
-scale -= 0.01
-
-scale = clamp(scale,0,1)
+if(image_xscale < 0) {
+	instance_destroy();
+	exit;
+}
+image_angle += rotDir;
+image_alpha -= 0.01;
+image_xscale -= 0.01;
+image_yscale = image_xscale;
