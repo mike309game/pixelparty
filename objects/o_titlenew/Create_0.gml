@@ -84,7 +84,6 @@ startAlpha = 1;
 startScale = 1;
 startY = 200;
 
-camNormal = view_camera[0];
 cam3d = camera_create();
 camera_set_proj_mat(cam3d, matrix_build_projection_perspective_fov(90,4/3,1,16000));
 

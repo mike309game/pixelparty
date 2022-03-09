@@ -36,5 +36,5 @@ function CamSetY(y) {
 /// @desc					Apply the values of global.camX and global.camY to the camera
 function CamApply() {
 	gml_pragma("forceinline");
-	camera_set_view_pos(view_camera[0],floor(global.camX),floor(global.camY));
+	camera_set_view_pos(global.mainCamera,floor(global.camX),floor(global.camY));
 }

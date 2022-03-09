@@ -15,3 +15,5 @@ sprites = [
 ]
 
 noclip = false;
+
+footstepSound = Sound(sx_walk_cute, 1, 0, true);

@@ -42,10 +42,12 @@ draw_set_font(fntSmall);
 draw_text(0,0,infoString);*/
 
 //draw flag info
-var infoString = "\n\n";
+/*TextAlignRight();
+var infoString = "";
 for(var i = 0; i < 64; i++) {
 	infoString += "\n" + global.flagDefs[i] + ": " + string(global.flag & (1 << i) == 1 << i);
 }
 draw_set_colour(c_white);
 draw_set_font(fntSmall);
-draw_text(0,0,infoString);
+draw_text(windowWidth,0,infoString);
+TextAlignReset();*/

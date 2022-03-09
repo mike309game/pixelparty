@@ -57,7 +57,7 @@ draw_primitive_end();
 gpu_set_fog(false, c_white, 1, 1);
 
 //restore camera for ui
-camera_apply(camNormal);
+camera_apply(global.mainCamera);
 
 //shader_set(shUnprecise);
 
@@ -154,7 +154,7 @@ mtxset();
 
 //shader_reset();
 
-camera_apply(camNormal);
+camera_apply(global.mainCamera);
 
 draw_set_alpha(copyrightAlpha);
 draw_set_font(f_shop);
