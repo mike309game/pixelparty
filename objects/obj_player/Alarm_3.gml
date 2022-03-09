@@ -2,6 +2,7 @@
 movementer.speedMax -= 1;
 if(movementer.speedMax == 16) {
 	movementer.accelStop = 16-14;
+	walkAnimSpeed = 0.2; //avoid bug where if speed was still decreasing but manny was standing the animation speed would still b fast
 } else {
 	alarm[3] = 4;
 	if(movementer.moving && (movementer.speedMax & 1)) { //if we're moving and speed is an odd number
@@ -15,4 +16,4 @@ if(movementer.speedMax == 16) {
 		}
 	}
 }
-audio_sound_pitch(footstepSound, min(movementer.speedMax / 16, 1.2));
+audio_sound_pitch(footstepSound, min(movementer.speedMax / 16, 1.12));

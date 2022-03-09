@@ -26,6 +26,8 @@ $level1-catQuest-part1=#0;
 $level1-catQuest-part2=#0;
 $level1-catQuest-part3=#0;
 
+$level1-melvinGone=#0;
+
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 <level1-EntranceSignDialogue>
 				///SETUP\\\
@@ -40,9 +42,9 @@ $level1-catQuest-part3=#0;
 [s1h2];									show sign man
 
 Sign:
-[text]"Hello,\d1[] \dr[]welcome to Yixxi.";
-[text]"There are currently 4 people living here\d1[],
-\dr[]see if you can find them.";							NOTE THE DELAY HERE IS DONE BEFORE THE COMMA DUE TO NEWLINE FUCKERY
+[text]"Hello,[d1] [dr]welcome to Yixxi.";
+[text]"There are currently 4 people living here[d1],
+[dr]see if you can find them.";							NOTE THE DELAY HERE IS DONE BEFORE THE COMMA DUE TO NEWLINE FUCKERY
 [text]"Maybe they can assist you in whatever
 you're doing.";
 
@@ -55,9 +57,9 @@ Manny:
 [s1h2];									show sign man hide manny
 
 Sign:
-[text]"\d1[]...";
+[text]"[d1]...";
 [text]"...";
-[text]"\dr[]...why";						sign man takes the L
+[text]"[dr]...why";						sign man takes the L
 
 [textEnd];								let text processing die
 
@@ -112,7 +114,7 @@ Talked to her already? Jump to that label, if not, proceed downwards
 
 [s1h2];									show lexsie sprite and name
 
-[text]"Heya!\d1[] \dr[]What can I do for ya?";
+[text]"Heya![d1] [dr]What can I do for ya?";
 
 [s2h1];									hide lexsie, show manny
 
@@ -120,7 +122,7 @@ Talked to her already? Jump to that label, if not, proceed downwards
 
 [s1h2];									hide manny, show lexsie
 
-[text]"Sure do!\d1[] \dr[]But could you do me a favor?";
+[text]"Sure do![d1] [dr]But could you do me a favor?";
 
 [s2h1];									show manny, hide lexsie
 
@@ -130,7 +132,7 @@ Talked to her already? Jump to that label, if not, proceed downwards
 [setFacepic1]!s_lexsie_talk_rude;			make her angry
 
 [ac];									disable auto clear for nice dialogue (this order matters)
-[text]"\d1[]..\dr[]Rude.";
+[text]"[d1]..[dr]Rude.";
 
 [setFacepic1]!s_lexsie_talk;				make lexsie normal
 
@@ -139,7 +141,7 @@ Talked to her already? Jump to that label, if not, proceed downwards
 Well.";										add another line before
 
 [text]"I need some wheat to bake some bread for
-Hux,\d1[] \dr[]and I'd appreciate it if you could get it
+Hux,[d1] [dr]and I'd appreciate it if you could get it
 for me.";
 
 [s2h1];									show manny, hide lexsie
@@ -154,7 +156,7 @@ the complex.";
 
 [setFacepic1]!s_lexsie_talk_rude;			make her angry again
 
-[text]"Though,\d1[] \dr[]there's some big purple bully
+[text]"Though,[d1] [dr]there's some big purple bully
 blocking it off..";
 
 [text]"He says the store is his and refuses to let
@@ -163,7 +165,7 @@ anybody through.";
 [setFacepic1]!s_lexsie_talk;				make lexsie normal again
 
 [text]"I got a feeling you know the right words to
-deal with him,\d1[] \dr[]haha.";
+deal with him,[d1] [dr]haha.";
 
 [setFacepic2]!s_manny_talk_rude;			
 [s2h1];									show manny, hide lexsie
@@ -188,7 +190,7 @@ deal with him,\d1[] \dr[]haha.";
 [label]"label-lv1-lexsieGotBread";	jumps here when you talked once AND got bread
 	[s1h2];									show lexsie
 	
-	[text]"Hey,\d1[] \dr[]did you manage to get the bread?";
+	[text]"Hey,[d1] [dr]did you manage to get the bread?";
 	
 	[s2h1];									show manny
 	
@@ -203,7 +205,7 @@ deal with him,\d1[] \dr[]haha.";
 	[ac];									enable auto clear again
 	[setFacepic1]!s_lexsie_talk;				make her normal
 	[text]"
-Here,\d1[] \dr[]you can have the piece now.";
+Here,[d1] [dr]you can have the piece now.";
 	
 	[textEnd];
 	
@@ -233,7 +235,7 @@ Here,\d1[] \dr[]you can have the piece now.";
 [if]&level1-beanboy-talkedTo,"label-lv1-beanboyInteracted";	if talked to him once, do the second text, if not then proceed downwards
 
 [text]"Yo.";
-[text]"Don't mind me,\d1[] \dr[]I'm just playing Remarkable Martin
+[text]"Don't mind me,[d1] [dr]I'm just playing Remarkable Martin
 Siblings.";
 [text]"They're legally distinct.";
 
@@ -267,8 +269,8 @@ Siblings.";
 
 [label]"label-lv1-beanboyTvInteracted";
 
-	[text]"It really is\d1[],
-\dr[]Legally Distinct.";
+	[text]"It really is[d1],
+[dr]Legally Distinct.";
 
 [label]"label-lv1-beanboyTvDone";
 
@@ -302,13 +304,13 @@ IS SOOO GHREAT TO SEE YOU HERE!";
 
 [s1h2];
 
-[text]"GREAT TO HEAR,\d1[] \dr[]GREAT TO HEAR!";
+[text]"GREAT TO HEAR,[d1] [dr]GREAT TO HEAR!";
 
 [label]"label-lv1-jarlLastLine";
 
 [set]"level1-jarl-talkedTo",#1;
 
-[text]"REMEMBER TO WRITE ME,\d1[] \dr[]DARLING!";
+[text]"REMEMBER TO WRITE ME,[d1] [dr]DARLING!";
 
 [textEnd];
 
@@ -382,13 +384,13 @@ IN NORTHWEST OF DA COMPLIX!!!";
 [label]"label-lv1-bullyCanBully";
 	[if]&level1-bulliedBully,"label-lv1-bullyBullied";
 	[s2h1];
-	[text]"Yo, move";
+	[text]"Yo,[d1] [dr]move";
 	[s1h2];
 	setFacepic1]!s_bully_talk_waa;
 	[text]"NO THIS IS MINE STORE NOWI WANT CHIPPY";
 	[text]"AND CANDY BAR";
 	[s2h1];
-	[text]"...\d1[] \dr[]Please";
+	[text]"...[d1] [dr]Please";
 	[s1h2];
 	[text]"NO YOU LOOK LIKE POOPY NOOB
 PLAY NOOB GAME LIK E MARIO";
@@ -399,7 +401,7 @@ PLAY NOOB GAME LIK E MARIO";
 HE KILLS RETARTED RObOT LIKE YOU";
 	[setFacepic2]!s_manny_talk_rude;
 	[s2h1];
-	[text]"Woah buddy,\d1[] \dr[]no need to be an asshole.";
+	[text]"Woah buddy,[d1] [dr]no need to be an asshole.";
 	[s1h2];
 	[text]"NO YOU MARO LOVER SONIC IS BETTER FUCK ROBOTS
 I SPIN DASH ROIT";
@@ -436,6 +438,12 @@ years..";
 [textEnd];
 [end];
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+<level1-Melvin>
+[textStart];
+[text]"MELVIN LEVEL 1 DIALOGUE";
+[textEnd];
+[callerUserEvent]#1; fade melvin out & check flag
+[end];
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\

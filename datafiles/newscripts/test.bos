@@ -106,3 +106,10 @@ ONLY PROCEEDS WHEN INSTANCE LETS ME
 [text]"instance has unhalted me";
 [textEnd];
 [end];
+
+<test-MidtextCmdBetter>
+[textStart];
+[text]"text[d1] slow text[dr] reset speed";
+[text]"multiple args[message:@arg one,@arg two,@arg three]";
+[textEnd];
+[end];

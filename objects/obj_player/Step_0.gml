@@ -6,15 +6,12 @@ if(GetGameFlag(eFlag.playerCanMove)) {
 	inputY = GetInput(eInput.down,true) - GetInput(eInput.up,true);
 }
 
-if(GetInputPressed(eInput.o) && movementer.speedMax == 16) {
+if(GetInputPressed(eInput.o) && movementer.speedMax == 16 && movementer.moving) {
 	movementer.speedMax = 35;
 	movementer.accelStop = 3;
 	walkAnimSpeed = 0.4;
 	instance_create_depth(x+8,y+8, depth, o_cloud_puff);
-	alarm[3] = 8;
-} else {
-	//movementer.speedMax = 16;
-	//movementer.accelStop = 16-14;
+	alarm[3] = 4;
 }
 
 //noclip check
@@ -23,7 +20,7 @@ noclip ^= keyboard_check_pressed(eChar.v);
 movementer.Move(inputX,inputY, noclip);
 movementer.Collide(GetGameFlag(eFlag.playerCanCollide) && !noclip);
 
-audio_sound_gain(footstepSound, movementer.moving, 20)
+audio_sound_gain(footstepSound, movementer.moving, 70);
 
 var xCenter = floor(bbox_left + ((bbox_right - bbox_left) / 2));
 var yCenter = floor(bbox_top + ((bbox_bottom - bbox_top) / 2));

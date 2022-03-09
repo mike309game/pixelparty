@@ -2,6 +2,18 @@
 BASE HANDLER should not be used by itself and should only be inherited
 ***********************************************************/
 function HandlerBase(intID) constructor {
+	enum eHandlerFlags {
+		npcAnimate = 1 << 0,					//let npc know to do lil chatter animating
+		showTextbox = 1 << 1,					//bring up textobx?
+		showFacepic1 = 1 << 2,					//show facepic 1?
+		showFacepic2 = 1 << 3,					//show facepic 2?
+		showNamelabel1 = 1 << 4,				//show namelabel 1?
+		showNamelabel2 = 1 << 5,				//show namelabel 2?
+		autoClearText = 1 << 6,					//auto clear text?
+		processText = 1 << 7,					//process text?
+		waitForInput = 1 << 8					//wait for input?
+	}
+	
 	myInterpreter = intID;						//handler's interpreter
 	handlerWaitFrames = -1;						//halt frames as given by interpreter
 	handlerText = "";							//text given by interpreter
@@ -15,18 +27,6 @@ function HandlerBase(intID) constructor {
 	handlerFacepic2 = s_nothing;
 	handlerNamelabel1 = "";
 	handlerNamelabel2 = "";
-	
-	enum eHandlerFlags {
-		npcAnimate = 1 << 0,					//let npc know to do lil chatter animating
-		showTextbox = 1 << 1,					//bring up textobx?
-		showFacepic1 = 1 << 2,					//show facepic 1?
-		showFacepic2 = 1 << 3,					//show facepic 2?
-		showNamelabel1 = 1 << 4,				//show namelabel 1?
-		showNamelabel2 = 1 << 5,				//show namelabel 2?
-		autoClearText = 1 << 6,					//auto clear text?
-		processText = 1 << 7,					//process text?
-		waitForInput = 1 << 8					//wait for input?
-	}
 	
 	static Resume = function() {
 		myInterpreter.halted = false;

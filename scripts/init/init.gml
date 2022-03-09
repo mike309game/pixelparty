@@ -43,8 +43,8 @@ global.flag = (
 	eFlag.playerCanCollide |
 	eFlag.cameraFocusOnPlayer |
 	eFlag.playerCanSetSprite |
-	eFlag.debugEnabled //|
-	//eFlag.showPerfMeter
+	eFlag.debugEnabled |
+	eFlag.showPerfMeter
 );
 
 if(DEBUGMODE) {

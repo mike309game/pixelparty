@@ -1,0 +1,29 @@
+<test-TextCommandTutorial>
+[MESSAGE]"Look at tutorial.bos";
+
+[textStart];
+
+Proper delay example for dot dot dots:
+
+[text]"Wow[d1]...";
+
+This will write the first dot at normal speed and the other two will be slow.
+We don't want the first dot to take too long to appear, the wait after it being typed out will indicate the dot dot dots incoming.
+
+--
+
+Proper delay example for commas & other symbols: (the dr at the start is to reset the last text's delay speed)
+
+[text]"[dr]I am getting tired of all this,[d1] [dr]aren't you as well?";
+
+This will draw the comma and make the space's delay slow, and then the letter after the space will show at normal speed.
+NOTE spaces ARE letters.
+
+[textEnd];
+[end];
+
+<fuck>
+[textStart];
+[text]"fawfawf[rainbw]WAEEAH[dr][ereset]gewhr";
+[textEnd];
+[end];

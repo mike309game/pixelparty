@@ -1,1 +1,1 @@
-draw_text(0,0,string(movementer.speedMax) + "\n" + string(alarm[3]));
+//draw_text(0,0,string(movementer.speedMax) + "\n" + string(alarm[3]));

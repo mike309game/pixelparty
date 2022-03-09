@@ -29,6 +29,8 @@ ADD 3+ ITEM SCROLLING
 
 */
 
+NegateGameFlag(eFlag.playerCanMove); //disable pause menu
+
 interpreter = QuickInterpreter(startSectionName);
 
 darkAlpha = 0.5;

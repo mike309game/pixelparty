@@ -27,39 +27,45 @@ $dex-ExitMarker=#12;
 [setFacepic2]!s_manny_talk;
 
 [textStart];
-[s2h1];
+[s2h1];														show manny
 [text]"Yo.";
-[s1h2];
-[text]"Welcome to my shop, kid.";
-[s2h1];
-[text]"I'm...\d1[] \dr[]not a kid\d1[].
-\dr[]I'm 21 actually.";
-[s1h2];
-[text]"Ohoho!\d1[] \dr[] Pardon me\d1[] \dr[], I'm Dex.";
-[s2h1];
-[text]"Nice to meet you\d1[] \dr[], Dex.\d1[]
-\dr[] I'm Manny.";
-[s1h2];
+[s1h2];														show dex
+[text]"Welcome to my shop,[d1] [dr]kid.";
+[s2h1];														show manny
+[ac];														disable auto clear for this line
+[text]"I'm[d1]...[dr] not a kid.";
+[ac];														enable it again
+[text]"
+I'm 21 actually.";
+[s1h2];														show dex
+[text]"Ohoho![d1] [dr]Pardon me[d1],[dr] I'm Dex.";
+[s2h1];														show manny
+[ac];														disable auto clear
+[text]"Nice to meet you,[d1] [dr]Dex.";
+[ac];														enable auto clear
+[text]"
+I'm Manny.";
+[s1h2];														show dex
 [text]"What can I help you with?";
-[s2h1];
-[text]"Do you have any wheat\d1[]\dr[]? Like, cooking wheat?";
+[s2h1];														show manny
+[text]"Do you have any wheat?[d1] [dr]Like,[d1] [dr]cooking wheat?";
 [s1h2];
-[text]"Sure I do!\d1[]...\dr[]What does a Bot such as yourself
+[text]"Sure I do[d1]!...[dr] What does a Bot such as yourself
 need wheat for?";
-[s2h1];
+[s2h1];														show manny
 [text]"A clown lady named Lexsie asked me to get some 
 for her.";
-[s1h2];
+[s1h2];														show dex
 
-[text]"Ah, yes. Lexsie.\d1[] \dr[]Nice lady!\d1[] \dr[]Tell ya what, 
-I was supposed to bring this to her earlier
+[text]"Ah, yes. Lexsie.[d1] [dr]Nice lady![d1] [dr]Tell ya what,[d1] 
+[dr]I was supposed to bring this to her earlier
 but I haven't got the chance!";
 
 [text]"I'll give this to you on the house for bringing it
 to her for me.";
 [setFacepic2]!s_manny_talk_alt_1;
 [s2h1];
-[text]"W-wow, thanks.";
+[text]"W[d1]-[dr]wow, thanks.";
 [s1h2];
 [text]"No problem.";
 [textEnd];

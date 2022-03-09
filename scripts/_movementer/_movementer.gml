@@ -92,6 +92,8 @@ function Movementer(_obj) constructor {
 	}
 	
 	static Collide = function(collide = true) {
+		var oldRealX = realX;
+		var oldRealY = realY;
 		repeat(abs(speedX)) {
 			realX += sign(speedX);
 			if(CollideCheck(realX >> COLLPRECISIONSHIFTABLE, realY >> COLLPRECISIONSHIFTABLE, o_hitbox) && collide) {
@@ -111,6 +113,7 @@ function Movementer(_obj) constructor {
 		
 		obj.x = realX >> COLLPRECISIONSHIFTABLE;
 		obj.y = realY >> COLLPRECISIONSHIFTABLE;
+		moving = realX != oldRealX || realY != oldRealY;
 	}
 	static StopMoving = function() {
 		speedX = 0;

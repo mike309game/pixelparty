@@ -2,9 +2,7 @@ GLOBAL DEFINITION 1
 
 text stuff
 
-$text delay=#2;			delay in frames between characters
-$text auto pause=#1;		automatically wait for input when dialogue is done?
-$text auto clear=#1;		automatically clear text?
+$textDelay=#2;			delay in frames between characters
 
 $pieces=#0;
 $gold=#0;

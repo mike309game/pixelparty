@@ -74,8 +74,9 @@ function FileselectInterface(saving) constructor {
 	static Draw = function(alpha) {
 		for(var i = 0; i < MAXSAVEFILES; i++) {
 			var xx = lerp(48, 320-48, i / (MAXSAVEFILES-1));
-			for(var j = saveInfo[|i * 4 + 2]; j >= 0; j--) {
-				draw_sprite(s_savefilecharacter, j, (xx - 28) + 12 * j, lerp(240-40, 128, saveInfo[|i * 4 + 1] / 20));
+			for(var j = saveInfo[|i * 4 + 2]; j >= 1; j--) {
+				draw_sprite(s_savefilecharacter, j-1, (xx - 28) + 12 * (j-1), lerp(240-40, 128, saveInfo[|i * 4 + 1] / 20));
+				//draw_text(0,0,mouse_x);
 			}
 			draw_sprite(s_savefilebase, 0, xx, 240 - 40);
 			if(fileIndex == i) {

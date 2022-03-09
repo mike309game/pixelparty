@@ -46,7 +46,7 @@ function Letter(
 /// @desc Creates typewriter struct
 /// @arg [skippable]
 
-function Typewriter(_skippable = true, _initTextSpeed = global.script_variables[? "text delay"]) constructor {
+function Typewriter(_skippable = true, _initTextSpeed = global.script_variables[? "textDelay"]) constructor {
 	text = "";
 	textLen = 0;
 	textPointer = 0;
@@ -130,8 +130,8 @@ function Typewriter(_skippable = true, _initTextSpeed = global.script_variables[
 			char = string_ord_at(text, ++stringPointer);
 		}
 		
-		while(char == eChar.backslash) { //advance string pointer, check for command begin
-			stringPointer = string_read_terminated(text, ++stringPointer, ["["], 0);
+		while(char == eChar.squareBracketL) { //advance string pointer, check for command begin
+			stringPointer = string_read_terminated(text, ++stringPointer, ["]", ":"], 0);
 			if(global.errorCode == eErrorCode.terminatorNotFound) { //incomplete string
 				break;
 			}
@@ -142,30 +142,32 @@ function Typewriter(_skippable = true, _initTextSpeed = global.script_variables[
 			var args = [];
 			var argIndex = 0;
 			
-			while(string_ord_at(text, ++stringPointer) != eChar.squareBracketR) {
-				while(string_ord_at(text, stringPointer) == $20){stringPointer++;} //allow for spaces in between args in the right side
-				var argType = string_ord_at(text, stringPointer);
-				stringPointer = string_read_terminated(text, ++stringPointer, [",", "]"], 0);
-				if(global.errorCode == eErrorCode.terminatorNotFound) { //incomplete string
-					break;
-				}
-				switch(argType) {
-					case eChar.hash:
-						args[argIndex++] = real(global.stringReadReturn);
+			if(string_ord_at(text, stringPointer) == eChar.colon) { //if there even are arguments
+				while(string_ord_at(text, ++stringPointer) != eChar.squareBracketR) {
+					while(string_ord_at(text, stringPointer) == $20){stringPointer++;} //allow for spaces in between args in the right side
+					var argType = string_ord_at(text, stringPointer);
+					stringPointer = string_read_terminated(text, ++stringPointer, [",", "]"], 0);
+					if(global.errorCode == eErrorCode.terminatorNotFound) { //incomplete string
 						break;
-					case eChar.ampersand:
-						args[argIndex++] = global.script_variables[?global.stringReadReturn];
+					}
+					switch(argType) {
+						case eChar.hash:
+							args[argIndex++] = real(global.stringReadReturn);
+							break;
+						case eChar.ampersand:
+							args[argIndex++] = global.script_variables[?global.stringReadReturn];
+							break;
+						case eChar.at:
+							args[argIndex++] = global.stringReadReturn;
+							break;
+						default:
+							show_error("Invalid midtext command argument type " + chr(argType), 1);
+							break;
+					}
+					if(string_ord_at(text, stringPointer) == eChar.squareBracketR) {
+						//stringPointer--; //hacky as fuck but i want to get this done with by 19:00
 						break;
-					case eChar.at:
-						args[argIndex++] = global.stringReadReturn;
-						break;
-					default:
-						show_error("Invalid midtext command argument type " + chr(argType), 1);
-						break;
-				}
-				if(string_ord_at(text, stringPointer) == eChar.squareBracketR) {
-					//stringPointer--; //hacky as fuck but i want to get this done with by 19:00
-					break;
+					}
 				}
 			}
 			
@@ -208,6 +210,11 @@ function Typewriter(_skippable = true, _initTextSpeed = global.script_variables[
 					break;
 				case "d": //delay custom
 					textSpeed = real(args[0]);
+					break;
+				case "message":
+					for(var i = 0; i < array_length(args); i++) {
+						show_message(args[i]);
+					}
 					break;
 				default:
 					show_error("Unknown midtext command " + cmdName, 1);

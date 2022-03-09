@@ -34,6 +34,7 @@ enum eChar {
 	seven,
 	eight,
 	nine,
+	colon = 58,
 	semicolon = 59,
 	lt, //<
 	equal,
