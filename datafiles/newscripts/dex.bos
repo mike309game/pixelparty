@@ -1,12 +1,6 @@
 $dex-ExitRoom=!r_l1_r5;
 $dex-ExitMarker=#12;
-
-
-
-
-
-
-
+$dex-TalkedOnce=#0;
 
 
 <dex-NotEnoughMoney>
@@ -17,15 +11,15 @@ $dex-ExitMarker=#12;
 
 
 
-
-
-
 <dex-Level1>
 [setNamelabel1]"Dex";
 [setFacepic1]!s_dex_talk;
 [setNamelabel2]"Manny";
 [setFacepic2]!s_manny_talk;
 
+if]&level1-lexsieQuest-done,"label-lv1-lexsieGotPiece";
+
+[if]&dex-TalkedOnce,"label-dex-TalkedOnce";
 [textStart];
 [s2h1];														show manny
 [text]"Yo.";
@@ -68,6 +62,8 @@ to her for me.";
 [text]"W[d1]-[dr]wow, thanks.";
 [s1h2];
 [text]"No problem.";
+[set]"dex-TalkedOnce",#1;
+[label]"label-dex-TalkedOnce";
 [textEnd];
 [end];
 
