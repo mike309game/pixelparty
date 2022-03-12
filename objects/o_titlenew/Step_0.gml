@@ -46,7 +46,7 @@ switch(state) {
 		choicerChoice = nmod(choicerChoice + GetInputPressed(eInput.right,true) - GetInputPressed(eInput.left,true), 3);
 		if(GetInput(eInput.x)) {
 			state++; //choicer zooming in state
-			Sound(sx_title_select);
+			Sound(sx_newgame);
 		}
 		break;
 	case 6: //zoom in choices towards camera

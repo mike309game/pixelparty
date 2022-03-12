@@ -12,7 +12,7 @@
     "path": "audiogroups/agrp_sounds",
   },
   "soundFile": "sx_newgame.mp3",
-  "duration": 2.6123,
+  "duration": 3.1347,
   "parent": {
     "name": "sound",
     "path": "folders/Sounds/sound.yy",
