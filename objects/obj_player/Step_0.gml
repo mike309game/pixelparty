@@ -77,4 +77,6 @@ if(GetGameFlag(eFlag.cameraFocusOnPlayer)) { //if can center on me
 	CamCenterHitbox();
 }
 
-SetDepth();
+if(GetGameFlag(eFlag.playerCanSetDepth)) {
+	SetDepth();
+}

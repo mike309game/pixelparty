@@ -287,6 +287,7 @@ if(!halted) {
 					break;
 				case eScriptFunction.halt:
 					halted = true;
+					myHandler.handlerWaitForInput = false; //don't let player skip halts, because after closing a textbox this still is true
 					break;
 				case eScriptFunction.callerUserEvent:
 					var number = ReadArgument(eValueExpect.number);

@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "s_honestary_level1",
+    "path": "sprites/s_honestary_level1/s_honestary_level1.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
@@ -25,8 +28,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "gui",
-    "path": "folders/Objects/gui.yy",
+    "name": "Game intro",
+    "path": "folders/Objects/Game intro.yy",
   },
   "resourceVersion": "1.0",
   "name": "o_texteffect",

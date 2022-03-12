@@ -1,13 +1,27 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 
+function GetHitboxCenterX(_id = id) {
+	gml_pragma("forceinline");
+	with(_id) {
+		return bbox_left+((bbox_right - bbox_left)/2);
+	}
+}
+
+function GetHitboxCenterY(_id = id) {
+	gml_pragma("forceinline");
+	with(_id) {
+		return bbox_top+((bbox_bottom - bbox_top)/2);
+	}
+}
+
 /// @func					CamCenterHitbox()
 /// @desc					Center camera on instance's hitbox's center
 function CamCenterHitbox(){
 	gml_pragma("forceinline");
 	SetCamPos(
-		clamp(floor(bbox_left+((bbox_right - bbox_left)/2)-160),0,room_width-320),
-		clamp(floor(bbox_top+((bbox_bottom - bbox_top)/2)-120),0,room_height-240)
+		clamp(floor(GetHitboxCenterX()-160),0,room_width-320),
+		clamp(floor(GetHitboxCenterY()-120),0,room_height-240)
 	);
 }
 

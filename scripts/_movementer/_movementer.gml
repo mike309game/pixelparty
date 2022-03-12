@@ -52,6 +52,13 @@ function Movementer(_obj) constructor {
 	speedY = 0; //the current vertical speed
 	speedMax = COLLPRECISION*1; //max speed
 	
+	static SetPos = function(_x, _y) {
+		obj.x = _x;
+		obj.y = _y;
+		realX = obj.x << COLLPRECISIONSHIFTABLE;
+		realY = obj.y << COLLPRECISIONSHIFTABLE;
+	}
+	
 	static CollideCheck = function(x,y,_obj) {
 		return collision_rectangle(x,y,(obj.bbox_right - obj.bbox_left) + x,(obj.bbox_bottom - obj.bbox_top) + y,_obj,true,false); //this is terrible i am aware
 	}

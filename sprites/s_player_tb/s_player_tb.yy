@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "player",
-    "path": "folders/Sprites/player.yy",
+    "name": "Manny",
+    "path": "folders/Sprites/Manny.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_player_tb",

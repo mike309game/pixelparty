@@ -51,3 +51,5 @@ draw_set_colour(c_white);
 draw_set_font(fntSmall);
 draw_text(windowWidth,0,infoString);
 TextAlignReset();*/
+/*draw_set_font(fntSmall);
+draw_text(0,0,"\n\n\nfadeValue " + string(fadeValue) + "\nfadeSpeed " + string(fadeSpeed));*/

@@ -7,7 +7,7 @@ gml_pragma("UnityBuild", "true");
 
 ini_open(working_directory + "/savedata"); //for settings
 
-#macro START_ROOM r_titlecards
+#macro START_ROOM r_hon1
 
 //if in release mode, make it always false, this will make all debug checks be removed from code because gamemaker removes absolutely unreachable code
 //if not in release mode, make it go check the actual flag
@@ -28,6 +28,7 @@ enum eFlag {
 	playerCanCollide = 1 << 7, //solid blocks will stop player?
 	cameraFocusOnPlayer = 1 << 8, //camera centers on player?
 	playerCanSetSprite = 1 << 9, //player can set its sprite automatically?
+	playerCanSetDepth = 1 << 10, //player automatically sets its depth based on its y
 	
 	debugEnabled = 1 << 61, //wether debug features are enabled
 	showPerfMeter = 1 << 62, //show p3d school performance meter
@@ -43,6 +44,7 @@ global.flag = (
 	eFlag.playerCanCollide |
 	eFlag.cameraFocusOnPlayer |
 	eFlag.playerCanSetSprite |
+	eFlag.playerCanSetDepth |
 	eFlag.debugEnabled |
 	eFlag.showPerfMeter
 );

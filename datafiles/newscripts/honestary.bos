@@ -2,5 +2,15 @@ $honestary1-seenIntro=#0;
 $honestary1-talkedToHonstay=#0;
 
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-<honestary1-HonstayDialogue>
+<honestary1-OpeningCutsceneHonstayDialogue>
+[textStart];
+[text]"honstay says they're gonna give manny a hand";
+[text]"that pointer sprite thing picks up manny";
+[textEnd];
+[instanceCreate]#99,!o_intropickmannyup;
+[halt];												halt until intro pick up obj is done doing its thing
+[textStart];
+[text]"honstay spouts out some stuff";
+[text]"you can progress now";
+[textEnd];
 [end];
