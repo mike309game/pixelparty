@@ -1,3 +1,4 @@
+randomise();
 //gpu_set_zwriteenable(1);
 //gpu_set_ztestenable(1);
 //gpu_set_alphatestenable(1); //gamemaker's alpha testing is bipolar and if some object's depth is deemed Funny it'll fuck up everything half opaque
@@ -7,7 +8,7 @@ gml_pragma("UnityBuild", "true");
 
 ini_open(working_directory + "/savedata"); //for settings
 
-#macro START_ROOM r_hon1
+#macro START_ROOM r_title
 
 //if in release mode, make it always false, this will make all debug checks be removed from code because gamemaker removes absolutely unreachable code
 //if not in release mode, make it go check the actual flag
@@ -80,8 +81,12 @@ global.inputMode = 1 * file_exists("RECORD.txt") + (2 * file_exists("PLAYBACK.tx
 global.inputBuffer = -1;
 global.inputBufferSize = 0;
 
+
+
 if(global.inputMode == 1) {
 	global.inputBuffer = buffer_create(1,buffer_grow,1);
+	buffer_write(global.inputBuffer, buffer_f64, random_get_seed()); //write rng
+	global.inputBufferSize += 8; //rng is 8 bytes
 } else if(global.inputMode == 2) {
 	var file = get_open_filename_ext("recording|*.pxparec*","",working_directory,"open recording");
 	if(file != "") {
@@ -90,6 +95,7 @@ if(global.inputMode == 1) {
 		buffer_seek(global.inputBuffer, buffer_seek_end, 0);
 		global.inputBufferSize = buffer_tell(global.inputBuffer);
 		buffer_seek(global.inputBuffer, buffer_seek_start, 0); //rewind
+		random_set_seed(buffer_read(global.inputBuffer, buffer_f64)); //get recording rng
 		
 		buffer_delete(compressedBuffer);
 	}

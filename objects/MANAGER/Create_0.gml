@@ -105,7 +105,6 @@ if(current_minute == 12 && current_hour == 11) { //there is no real significance
 animatedTitle = false;
 animatedTitleCounter = 0;
 
-randomise();
 if(irandom_range(0,255) == 63) {
 	animatedTitle = true;
 } else {

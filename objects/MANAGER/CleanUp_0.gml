@@ -23,12 +23,18 @@ ds_map_destroy(global.script_labels);
 
 if(buffer_exists(global.inputBuffer)) {
 	if(global.inputMode == 1) {
-		var compressedBuffer = buffer_compress(global.inputBuffer,0,global.inputBufferSize);
-		buffer_save(compressedBuffer, working_directory +
-			"Pixel Party Recording " +
+		var fname = "Pixel Party Recording " +
 			string(current_year) + "-" + string(current_month) + "-" + string(current_day) + " " +
-			string(current_hour) + "-" + string(current_minute) + "-" + string(current_second) + ".pxparecV2");
+			string(current_hour) + "-" + string(current_minute) + "-" + string(current_second) + ".pxparecV3";
+		
+		var compressedBuffer = buffer_compress(global.inputBuffer,0,global.inputBufferSize);
+		buffer_save(compressedBuffer, working_directory + fname);
 		buffer_delete(compressedBuffer);
+		
+		var fp = file_text_open_write(working_directory + "LATEST.txt");
+		file_text_write_string(fp, environment_get_variable("localappdata") + "\\PIXELPARTY\\" + fname);// file_text_writeln(fp);
+		file_text_close(fp);
+		
 	}
 	buffer_delete(global.inputBuffer);
 }

@@ -8,13 +8,17 @@ if(room == destination) {
 				movementer.realY = other.y << COLLPRECISIONSHIFTABLE;
 				UnfreezeAllInput();
 				FreezeInput(other.dir); //marker's dir is of eInput enum
+				//show_message("input being FROZEN is " + string(other.dir) + " and einput.down is " + string(eInput.down));
 				ForbidAllInputExcept(other.dir);
+				AssureGameFlag(eFlag.playerCanMove);
 				invalid = false;
 			}
 		}
 	}
 	if(invalid) { //failsafe
-		AssureGameFlag(eFlag.playerCanCollide | eFlag.playerCanTransition | eFlag.playerCanMove);
+		if(instance_exists(obj_player)) {
+			AssureGameFlag(eFlag.playerCanCollide | eFlag.playerCanTransition | eFlag.playerCanMove);
+		}
 		AllowAllInput();
 		UnfreezeAllInput();
 		instance_destroy();

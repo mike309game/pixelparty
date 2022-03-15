@@ -1,0 +1,1 @@
+NegateGameFlag(eFlag.playerCanMove);

@@ -7,5 +7,6 @@ if(!gotMe && GetGameFlag(eFlag.playerCanMove)) {
 	NegateGameFlag(eFlag.playerCanSetSprite | eFlag.playerCanMove); //don't let player move and change its sprite
 	other.sprite_index = s_manny_get_piece;
 	global.script_variables[? "pieces"] += 1;
-	event_perform(ev_alarm,0);
+	global.script_variables[? "gold"] += 5;
+	alarm[0] = 60*3;
 }

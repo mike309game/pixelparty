@@ -1,0 +1,1 @@
+AssureGameFlag(eFlag.playerCanSetSprite | eFlag.playerCanMove);

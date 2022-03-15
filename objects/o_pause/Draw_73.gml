@@ -3,12 +3,7 @@ surface_set_target(global.pausedsurface);
 	if(blackout) {
 		draw_rectangle_colour(0,0,320,240,0,0,0,0,0);
 	} else if(menuMode != 3) {
-		DrawMenuSimple(menu, 16, menuMode == 2 ? 150 + 24 : 150);
-		if(menuMode == 2) {
-			draw_set_colour(255 * abs(sin(global.time / 20 + 415874)));
-			draw_text(16, 150, "Really quit game?" + string(global.flag));
-			draw_set_colour(c_white);
-		}
+		DrawMenuSimple(menu, 16, 150);
 		
 		gpu_set_blendenable(false);
 		

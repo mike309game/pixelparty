@@ -50,17 +50,6 @@ switch(state) {
 		}
 		break;
 	case 6: //zoom in choices towards camera
-		/*if(choicerSelectedProgress[choicerChoice] == 45) {
-			//choicerX[choicerChoice] = 0;
-			//choicerZ[choicerChoice] = 0;
-			//choicerSelectedProgress[choicerChoice] = 0;
-			state = 7 + choicerChoice;
-			break;
-		}
-		choicerSelectedProgress[choicerChoice] = min(choicerSelectedProgress[choicerChoice] + 1, 45);
-		choicerX[choicerChoice] = lengthdir_x(choicerSelectedProgress[choicerChoice]*3.5, choicerDir[choicerChoice]);
-		choicerZ[choicerChoice] = lengthdir_y(choicerSelectedProgress[choicerChoice]*-3.5, choicerDir[choicerChoice]);*/
-		//12 * 5 = 60 for the z
 		
 		var targetX;
 		var actualProgress = EaseInBack(0,1,choicerSelectedProgress[choicerChoice] / 45);

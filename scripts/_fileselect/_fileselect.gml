@@ -1,8 +1,8 @@
 //this is a struct *just* because i don't want to copy paste identical code twice in the title screen and pause menu
 
-function FileselectInterface(saving) constructor {
+function FileselectInterface(_saving, _destination = room) constructor {
 	selectedFile = 0;
-	self.saving = saving;
+	saving = _saving;
 	
 	/*
 	saveinfo array:
@@ -16,6 +16,7 @@ function FileselectInterface(saving) constructor {
 	selectedFile = false;
 	saveInfo = ds_list_create();
 	savedGameCooldown = 0;
+	destination = _destination;
 	
 	RefreshSaveInfo();
 	
@@ -37,7 +38,12 @@ function FileselectInterface(saving) constructor {
 			saveInfo[|i * 4 + 1] = clamp(saveInfo[|i * 4 + 1] + ((fileIndex == i) ? 1 : -1), 0, 20);
 		}
 		if(selectedFile && --savedGameCooldown == 0) {
-			selectedFile = false;
+			if(destination != noone) {
+				AssureGameFlag(eFlag.fadeBlack);
+				Transition(destination, 99, 0, true);
+			} else {
+				selectedFile = false;
+			}
 		}
 		if(GetInputPressed(eInput.interact) && !selectedFile) {
 			if(saving) { //if trying to save a file
@@ -86,14 +92,11 @@ function FileselectInterface(saving) constructor {
 		var realSaveIndex = fileIndex * 4;
 		TextAlignCenter();
 		draw_set_font(f_jaxfont);
-		var playtimeSeconds = (saveInfo[|realSaveIndex + 3] / 60);
-		var playtimeMinutes = (playtimeSeconds / 60);
-		var playtimeHours = (playtimeMinutes / 60);
 		DrawTextSimpleShadow(160, 100,
 		selectedFile && saving ?
 		"FILE SAVED" :
 		(saveInfo[|realSaveIndex]
-		? "Save file " + string(fileIndex+1) + "\nPlay time: " + string(floor(playtimeHours)) + ":" + string_format(floor(playtimeMinutes % 60), 2, 0) + ":" + string_format(floor(playtimeSeconds % 60), 2, 0)
+		? "Save file " + string(fileIndex+1) + "\nPlay time: " + TimeToString(saveInfo[|realSaveIndex + 3])
 		: (saving ? "New save file" : "No save file")), alpha);
 		TextAlignReset();
 	}

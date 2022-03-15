@@ -210,6 +210,7 @@ Here,[d1] [dr]you can have the piece now.";
 	[textEnd];
 	
 	[instanceCreate]#15,!o_piecescriptspawn;
+	[instanceCreate]#5,!o_convenientglass;
 	[halt];
 	
 	[set]"level1-lexsieQuest-done",#1;			mark that we're done
@@ -306,9 +307,9 @@ IS SOOO GHREAT TO SEE YOU HERE!";
 
 [text]"GREAT TO HEAR,[d1] [dr]GREAT TO HEAR!";
 
-[label]"label-lv1-jarlLastLine";
-
 [set]"level1-jarl-talkedTo",#1;
+
+[label]"label-lv1-jarlLastLine";
 
 [text]"REMEMBER TO WRITE ME,[d1] [dr]DARLING!";
 
@@ -353,7 +354,8 @@ IN NORTHWEST OF DA COMPLIX!!!";
 		[text]"FANK U !!!!!";
 		[text]"HERE YOR PIECE!!!!!!!!";
 		[textEnd];
-		[callerUserEvent]#5;
+		[instanceCreate]#10,!o_npc_jarl; make jarl anti softlock
+		[callerUserEvent]#5; spew piece out
 		[set]"level1-catQuest-gotPiece",#1;
 		[jumpLabel]"label-lv1-catDone";
 		
@@ -445,5 +447,16 @@ years..";
 [callerUserEvent]#1; fade melvin out & check flag
 [end];
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+<level1-BuxyCorruptArea>
+[textStart];
+[text]"put the fuckin buxy dialogue here
+uwhrhauhraoutohtowhertyoh";
+[textEnd];
+[end];
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+<level1-CatJarlAntiSoftlock>
+[textStart];
+[text]"jarl anti softlock text here";
+[textEnd];
+[end];
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\

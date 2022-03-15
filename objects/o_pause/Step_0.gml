@@ -47,15 +47,15 @@ switch(menuMode) {
 		switch(menuReturn) {
 			case 0:
 				//SaveGame();
+				fileSelectMenu.destination = r_titlecards;
 				menuMode = 3;
 				break;
 			case 1:
 				menu.canMove = false;
-				waitingForFade = true;
-				FadeIn();
+				AssureGameFlag(eFlag.fadeBlack);
 				Music(sx_nothing);
-				Sound(sx_pause_quit,menuReturn == 1 ? 0.8 : 1);
-				audio_sound_gain(global.music,1,170)
+				Sound(sx_pause_quit);
+				Transition(r_titlecards, 99, 0, true);
 				break;
 			case 2:
 				menuMode = 0;
@@ -64,14 +64,21 @@ switch(menuMode) {
 		break;
 	case 3:
 		fileSelectMenu.Update();
+		if(!fileSelectMenu.selectedFile) { //if a file's been selected don't let player quit out of submenu
+			if(GetInput(eInput.o)) {
+				menuMode = 0;
+				fileSelectMenu.destination = noone;
+			}
+		}
 		break;
 }
 
 if(waitingForFade && MANAGER.fadeValue == 1) {
-	blackout = true;
-	FadeOut();
+	/*blackout = true;
+	FadeOut();*/
+	
 }
-if(blackout && MANAGER.fadeValue == 0) {
+/*if(blackout && MANAGER.fadeValue == 0) {
 	room_goto(r_title);
 	instance_destroy();
-}
+}*/

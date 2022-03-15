@@ -7,7 +7,7 @@ surfaceShow = 0;
 closing = false;
 waitingForFade = false;
 blackout = false;
-fileSelectMenu = new FileselectInterface(true);
+fileSelectMenu = new FileselectInterface(true, noone);
 
 Sound(sx_pause_open);
 

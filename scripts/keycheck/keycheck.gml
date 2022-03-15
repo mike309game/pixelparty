@@ -101,6 +101,7 @@ function FreezeInput(buttons) {
 	gml_pragma("forceinline");
 	global.inputFrozen |= buttons;
 	//ProcessInput(); //re process
+	//show_message("input being FROZEN is " + string(buttons) + " and callstack is " + CallstackString());
 }
 
 function UnfreezeInput(buttons) {
