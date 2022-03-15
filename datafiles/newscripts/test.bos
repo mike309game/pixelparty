@@ -113,3 +113,13 @@ ONLY PROCEEDS WHEN INSTANCE LETS ME
 [text]"multiple args[message:@arg one,@arg two,@arg three]";
 [textEnd];
 [end];
+
+<yanny>
+[setNamelabel2]"Manny";
+[setFacepic2]!spr_yanny_portrait;
+[textStart];
+[s2h1];
+[text]"kill yourself faggot 8142 Ridgeview Ave.
+Mebane, NC 27302";
+[textEnd];
+[end];

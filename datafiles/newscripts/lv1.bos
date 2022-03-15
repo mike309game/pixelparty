@@ -356,8 +356,8 @@ IN NORTHWEST OF DA COMPLIX!!!";
 		[textEnd];
 		[instanceCreate]#10,!o_npc_jarl; make jarl anti softlock
 		[callerUserEvent]#5; spew piece out
+		[halt]; i don't know why but if this is below this line it'll softlock
 		[set]"level1-catQuest-gotPiece",#1;
-		[halt];
 		[jumpLabel]"label-lv1-catDone";
 		
 		[label]"label-lv1-catGotPiece";

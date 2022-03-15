@@ -1,0 +1,1 @@
+global.script_variables[? "level1-catQuest-gotPiece"] = 0;

@@ -1,7 +1,6 @@
 sprite_index = s_catboxspit;
 shakeAmt = 10;
 alarm[1] = 30;
-myInterpreter.halted = true;
 pieceInstance = instance_create_depth(x,y-32,depth,o_piece)
 with(pieceInstance) {
 	hspeed = 4;

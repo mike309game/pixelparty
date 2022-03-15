@@ -128,6 +128,7 @@
     {"id":{"name":"mx_level2","path":"sounds/mx_level2/mx_level2.yy",},"order":7,},
     {"id":{"name":"o_npc_bully","path":"objects/o_npc_bully/o_npc_bully.yy",},"order":3,},
     {"id":{"name":"r_yisify","path":"rooms/r_yisify/r_yisify.yy",},"order":3,},
+    {"id":{"name":"spr_yanny_portrait","path":"sprites/spr_yanny_portrait/spr_yanny_portrait.yy",},"order":53,},
     {"id":{"name":"o_npc_tvset","path":"objects/o_npc_tvset/o_npc_tvset.yy",},"order":15,},
     {"id":{"name":"sx_shop_broke","path":"sounds/sx_shop_broke/sx_shop_broke.yy",},"order":12,},
     {"id":{"name":"s_bully_talk","path":"sprites/s_bully_talk/s_bully_talk.yy",},"order":3,},
