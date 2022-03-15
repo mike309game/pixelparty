@@ -357,6 +357,7 @@ IN NORTHWEST OF DA COMPLIX!!!";
 		[instanceCreate]#10,!o_npc_jarl; make jarl anti softlock
 		[callerUserEvent]#5; spew piece out
 		[set]"level1-catQuest-gotPiece",#1;
+		[halt];
 		[jumpLabel]"label-lv1-catDone";
 		
 		[label]"label-lv1-catGotPiece";
