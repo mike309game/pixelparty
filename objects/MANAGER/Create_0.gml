@@ -24,8 +24,13 @@ while(!file_text_eof(fp)) {
 }
 file_text_close(fp);
 
+alarm_set(1,20)
+
 // this is mikes code dont blame me - jay
 //penis -mike
+
+
+/*
 anim_title_table = ds_list_create()
 if(current_minute == 12 && current_hour == 11) { //there is no real significance to the tiem i just chose randomly
 	ds_list_add(anim_title_table,"　　　　　ＡＲＴＹ．");
@@ -100,16 +105,20 @@ if(current_minute == 12 && current_hour == 11) { //there is no real significance
 	ds_list_add(anim_title_table,"　　　　　　　　　　");
 	ds_list_add(anim_title_table,"　　　　　　　　　　");
 }
-#endregion
 
-animatedTitle = false;
-animatedTitleCounter = 0;
+
+
 
 if(irandom_range(0,255) == 63) {
 	animatedTitle = true;
 } else {
 	window_set_caption(titles[irandom_range(0,titlesCount-1)]);
 }
+*/
+#endregion
+
+animatedTitle = false;
+animatedTitleCounter = 0;
 
 if(DEBUGMODE) { //if debug mode make my debug object
 	instance_create_depth(0,0,0,o_mikedebug);
