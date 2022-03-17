@@ -97,7 +97,7 @@ function ScriptSysWarning(arg) {
 
 #macro release:SCRIPTSCOMPILED (true)
 #macro Default:SCRIPTSCOMPILED (false)
-#macro SCRIPTCOMPILEDNAME (working_directory + "/script02")
+#macro SCRIPTCOMPILEDNAME (working_directory + "/script03")
 
 //error checking
 global.errorCode = eErrorCode.success;
@@ -105,6 +105,7 @@ global.errorCode = eErrorCode.success;
 //create maps
 global.script_sections = ds_map_create();
 global.script_variables = ds_map_create();
+global.scriptVariablesInitial = ""; //for quitting game
 global.script_labels = ds_map_create();
 global.script_compiled = ds_map_create();
 
@@ -399,12 +400,16 @@ if(SCRIPTSCOMPILED) {
 	if(os_browser != browser_not_a_browser) { //html5 doesn't support file find first so i gotta make a file table
 		var table = [
 			"default.bos",
+			"dex.bos",
 			"global.bos",
 			"handlertest.bos",
 			"honestary.bos",
 			"lv1.bos",
+			"lv2.bos",
+			"lv3.bos",
 			"non lv specific quests.bos",
 			"test.bos",
+			"tutorial.bos",
 			"zglobals1.bos"
 		];
 		var len = array_length(table);
@@ -419,6 +424,8 @@ if(SCRIPTSCOMPILED) {
 		}
 	}
 }
+//ds_map_read(global.scriptVariablesInitial, ds_map_write(global.script_variables));
+global.scriptVariablesInitial = ds_map_write(global.script_variables);
 ScriptSysMessage("All done");
 //show_message("i'm outta here");
 //SerializeScript();

@@ -34,8 +34,8 @@
   ],
   "overriddenProperties": [],
   "parent": {
-    "name": "Intro stuff",
-    "path": "folders/Objects/Intro stuff.yy",
+    "name": "Titlecard stuff",
+    "path": "folders/Objects/Titlecard stuff.yy",
   },
   "resourceVersion": "1.0",
   "name": "o_yisifyintroletter",

@@ -16,7 +16,7 @@ if(room == destination) {
 		}
 	}
 	if(invalid) { //failsafe
-		if(instance_exists(obj_player)) {
+		if(marker == 9898) {
 			AssureGameFlag(eFlag.playerCanCollide | eFlag.playerCanTransition | eFlag.playerCanMove);
 		}
 		AllowAllInput();

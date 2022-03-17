@@ -1,5 +1,5 @@
 ///@desc force enable movement
-AssureGameFlag(eFlag.playerCanMove | eFlag.playerCanInteract | eFlag.playerCanTransition | eFlag.playerCanSetSprite);
+AssureGameFlag(eFlag.playerCanMove | eFlag.playerCanInteract | eFlag.playerCanTransition | eFlag.playerCanSetSprite | eFlag.playerCanCollide | eFlag.playerCanCollide);
 UnfreezeAllInput();
 AllowAllInput();
 FadeOut();

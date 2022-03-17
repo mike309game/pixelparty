@@ -461,3 +461,14 @@ uwhrhauhraoutohtowhertyoh";
 [textEnd];
 [end];
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+<level1-OtherSignMan>
+[textStart];
+[text]"insert other sign man dialogue here";
+[textEnd];
+[end];
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+<level1-LockedHouse>
+[textStart];
+[text]"House";
+[textEnd];
+[end];

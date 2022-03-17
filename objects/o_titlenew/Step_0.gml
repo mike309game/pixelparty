@@ -43,7 +43,11 @@ switch(state) {
 		}
 		break;
 	case 5: //choose choices
-		choicerChoice = nmod(choicerChoice + GetInputPressed(eInput.right,true) - GetInputPressed(eInput.left,true), 3);
+		var realChoicerChoice = nmod(choicerChoice + GetInputPressed(eInput.right,true) - GetInputPressed(eInput.left,true), 3);
+		if(realChoicerChoice != choicerChoice) {
+			choicerChoice = realChoicerChoice;
+			Sound(sx_title_move);
+		}
 		if(GetInput(eInput.x)) {
 			state++; //choicer zooming in state
 			Sound(sx_newgame);
@@ -66,7 +70,8 @@ switch(state) {
 		}
 		choicerX[choicerChoice] = lerp(targetX, 160, actualProgress*2);
 		choicerZ[choicerChoice] = lerp(0, -240, actualProgress);
-		if(choicerSelectedProgress[choicerChoice]++ == 45) {
+		choicerSelectedProgress[choicerChoice] += 1;
+		if(choicerSelectedProgress[choicerChoice] >= 45) {
 			//choicerX[choicerChoice] = 0;
 			//choicerZ[choicerChoice] = 0;
 			//choicerSelectedProgress[choicerChoice] = 0;
@@ -75,8 +80,12 @@ switch(state) {
 		}
 		break;
 	case 7: //new game state
-		state = 5;
-		ResetChoicerZoomAnim();
+		//state = 5;
+		//ResetChoicerZoomAnim();
+		ResetScriptVariables(); //reset stuffs
+		AssureGameFlag(eFlag.fadeBlack);
+		Transition(r_hon1, 99, 0, true);
+		state = 0; //just do nothing
 		break;
 	case 8: //load state
 		submenuAlpha += 0.1;

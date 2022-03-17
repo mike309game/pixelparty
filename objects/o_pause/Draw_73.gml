@@ -3,6 +3,11 @@ surface_set_target(global.pausedsurface);
 	if(blackout) {
 		draw_rectangle_colour(0,0,320,240,0,0,0,0,0);
 	} else if(menuMode != 3) {
+		if(menuMode == 0) {
+			DrawTextSimpleShadow(180,130-15,"Playtime: " + TimeToString(global.time) + "\nGold: " + string(global.script_variables[?"gold"]), 1, c_white, c_white, c_yellow, c_yellow);
+			draw_sprite(s_puzzle_collected, 0, 160, 150);
+			HonestaryDraw(string(global.script_variables[? "pieces"]), 160+68, 175, make_colour_hsv((global.time/4) % 256, 255, 255));
+		}
 		DrawMenuSimple(menu, 16, 150);
 		
 		gpu_set_blendenable(false);

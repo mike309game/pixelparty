@@ -14,6 +14,7 @@ if(room == destination) {
 } else {
 	if(MANAGER.fadeValue == 1 && room != r_interval) { //fade is done in room, goto interval screen
 		room_goto(r_interval);
+		alarm[1] = 12;
 		NegateGameFlag(eFlag.doFadeIn); //fade out
 		if(loadingScreen) {
 			Music(sx_nothing);
@@ -22,5 +23,14 @@ if(room == destination) {
 			MANAGER.fadeValue = 0; //do it immediately only if no loading screen
 			alarm[0] = 20; //20 frames of little wait
 		}
+	}
+}
+
+//loading text
+for(var i = 0; i < 10; i++) {
+	if(--letterCooldown[i] > 0) {
+		letterScale[i] = min(letterScale[i] + 0.05, 1.5);
+	} else {
+		letterScale[i] = max(letterScale[i] - 0.05, 1);
 	}
 }

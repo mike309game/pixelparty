@@ -41,3 +41,7 @@ randomShakeAmp = 0;
 //we start @ alarm 1 because of the script interpreter using alarm zero
 alarm[1] = 120; //after 2 secs, go to state 1, start showing manny
 alarm[2] = 120 + 120; //after 4 secs, fade in the normal manny and fade out the white manny
+
+ambience = audio_play_sound_on(global.musicEmitter, snd_amb_introloop, true, 1); //do this because Music() won't fit well for it
+audio_sound_gain(ambience, 0, 0);
+audio_sound_gain(ambience, 1, 15000);

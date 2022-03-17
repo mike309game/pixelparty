@@ -66,7 +66,7 @@ function FileselectInterface(_saving, _destination = room) constructor {
 		if(selectedFile) {
 			if(MANAGER.fadeValue == 1 && !audio_is_playing(sx_level_enter)) {
 				//LoadGame loads the game and returns room the player saved in, Transition returns the transition manager object, marker is 99 to force failsafe/default player location
-				(Transition(LoadGame(), 99, 0, true)).fadeBlackInDest = false;
+				(Transition(LoadGame(), 9898, 0, true)).fadeBlackInDest = false;
 			}
 		} else {
 			var realFileIndex = nmod(fileIndex + GetInputPressed(eInput.right,true) - GetInputPressed(eInput.left,true), MAXSAVEFILES);

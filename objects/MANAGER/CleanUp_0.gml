@@ -42,6 +42,7 @@ if(buffer_exists(global.inputBuffer)) {
 //clear rest
 ds_map_destroy(global.script_compiled);
 ds_map_destroy(global.script_variables);
+ds_map_destroy(global.scriptVariablesInitial);
 if(!SCRIPTSCOMPILED) {
 	ds_map_destroy(global.__scriptCommandMap);
 }
