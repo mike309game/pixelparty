@@ -158,7 +158,7 @@ camera_apply(global.mainCamera);
 
 draw_set_alpha(copyrightAlpha);
 draw_set_font(f_shop);
-DrawTextSimpleShadow(0, 220, "Copyright 2006-" + string(current_year) + " YISI-FY", copyrightAlpha);
+DrawTextSimpleShadow(3, 226, "Copyright 2006-" + string(current_year) + " YISI-FY", copyrightAlpha);
 draw_set_alpha(1);
 
 gpu_set_ztestenable(false);

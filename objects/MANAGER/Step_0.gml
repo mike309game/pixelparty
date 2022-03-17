@@ -50,7 +50,7 @@ if(global.musicTarget != global.musicPlaying) { //if music has changed
 
 #endregion
 
-#region title scroll
+/*#region title scroll
 if(animatedTitle) {
 	animatedTitleCounter += 0.1;
 	var title = ds_list_find_value(anim_title_table,floor(titlesCount));
@@ -61,6 +61,6 @@ if(animatedTitle) {
 		window_set_caption(title);
 	}
 }
-#endregion
+#endregion */
 
 //show_debug_message(global.setting.music)
