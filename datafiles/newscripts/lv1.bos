@@ -460,7 +460,8 @@ years..";
 to par!";
 [text]"level sector data may be corrupted or using 
 outdated formats";
-[text]"see 'PIXELPARTY Dev Manual' for details on level formatting";
+[text]"see 'PIXELPARTY Dev Manual' for details on level 
+formatting";
 [textEnd];
 [end];
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\

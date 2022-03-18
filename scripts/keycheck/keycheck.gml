@@ -70,7 +70,7 @@ enum eInput {
 	interact = eInput.x,
 	proceedText = eInput.x,
 	skipText = eInput.o,
-	boost = eInput.square
+	boost = eInput.o
 }
 
 function GetInput(buttons, mathable = false) { //mathable is for calculating math with the output
