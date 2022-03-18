@@ -3,9 +3,13 @@ $honestary1-talkedToHonstay=#0;
 
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 <honestary1-OpeningCutsceneHonstayDialogue>
+[setNamelabel1]"Honstay";
+[setNamelabel2]"Manny";
+[setFacepic1]!s_nothing;
+[setFacepic2]!s_manny_talk;
+
 [textStart];
-[text]"honstay says they're gonna give manny a hand";
-[text]"that pointer sprite thing picks up manny";
+[text]"Here... let me lend you a hand.";
 [textEnd];
 [instanceCreate]#99,!o_intropickmannyup;
 [halt];												halt until intro pick up obj is done doing its thing

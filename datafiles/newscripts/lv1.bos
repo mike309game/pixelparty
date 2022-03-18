@@ -361,7 +361,7 @@ IN NORTHWEST OF DA COMPLIX!!!";
 		[jumpLabel]"label-lv1-catDone";
 		
 		[label]"label-lv1-catGotPiece";
-			[text]"what else do you want from me";
+			[text]"wha???";
 
 [label]"label-lv1-catDone";
 
@@ -380,7 +380,7 @@ IN NORTHWEST OF DA COMPLIX!!!";
 
 [if]&level1-lexsieQuest-talkedOnce,"label-lv1-bullyCanBully";
 
-[text]"(standing sounds)";
+[text]"*standing sounds*";
 
 [jumpLabel]"label-lv1-bullyDone";
 
@@ -443,27 +443,44 @@ years..";
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 <level1-Melvin>
 [textStart];
-[text]"MELVIN LEVEL 1 DIALOGUE";
+[text]"...";
+[text]"who are you???";
+[text]"your kind is not welcome here.";
 [textEnd];
 [callerUserEvent]#1; fade melvin out & check flag
 [end];
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 <level1-BuxyCorruptArea>
+[setNamelabel1]"Buxy";
+[setFacepic1]!s_buxy_talk;
+
 [textStart];
-[text]"put the fuckin buxy dialogue here
-uwhrhauhraoutohtowhertyoh";
+[s1h2];
+[text]"hello![d1] [dr]this room is using data that is not up
+to par!";
+[text]"level sector data may be corrupted or using 
+outdated formats";
+[text]"see 'PIXELPARTY Dev Manual' for details on level formatting";
 [textEnd];
 [end];
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 <level1-CatJarlAntiSoftlock>
 [textStart];
-[text]"jarl anti softlock text here";
+[text]"You do not want to pass Jarl.";
 [textEnd];
 [end];
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 <level1-OtherSignMan>
+[setNamelabel1]"Sign";
+[setFacepic1]!s_sign_talk;
+[setNamelabel2]"Manny";
+[setFacepic2]!s_manny_talk;
+
 [textStart];
-[text]"insert other sign man dialogue here";
+[s1h2];
+[text]"Press SQUARE to gain a short burst of speed!";
+[s2h1];
+[text]"what";
 [textEnd];
 [end];
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\

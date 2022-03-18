@@ -203,6 +203,6 @@ global.gameevent[? "mev_1"] = 0
 globalvar f_boldfelony;
 f_boldfelony = font_add_sprite_ext(_f_boldfelony, "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-+", true, 1);
 globalvar f_jaxfont;
-f_jaxfont = font_add_sprite_ext(_f_jaxfont, "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!\"$%&'(),-./:;<=>?_© ", true, 1);
+f_jaxfont = font_add_sprite_ext(_f_jaxfont, "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!\"$%&'(),-./:;<=>?_©* ", true, 1);
 
 #endregion
