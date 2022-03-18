@@ -9,4 +9,5 @@ if(!gotMe && GetGameFlag(eFlag.playerCanMove)) {
 	global.script_variables[? "pieces"] += 1;
 	global.script_variables[? "gold"] += 5;
 	alarm[0] = 60*3;
+	depth = -9999;
 }

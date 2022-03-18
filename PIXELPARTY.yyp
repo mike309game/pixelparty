@@ -522,9 +522,7 @@
     {"CopyToMask":0,"filePath":"datafiles","resourceVersion":"1.0","name":"crlf.txt","resourceType":"GMIncludedFile",},
     {"CopyToMask":0,"filePath":"datafiles","resourceVersion":"1.0","name":"lf.txt","resourceType":"GMIncludedFile",},
     {"CopyToMask":0,"filePath":"datafiles","resourceVersion":"1.0","name":"test.txt","resourceType":"GMIncludedFile",},
-    {"ConfigValues":{"release":{"CopyToMask":"0",},},"CopyToMask":3035461389054378222,"filePath":"datafiles/newscripts","resourceVersion":"1.0","name":"lv1.bos","resourceType":"GMIncludedFile",},
     {"ConfigValues":{"release":{"CopyToMask":"0",},},"CopyToMask":3035461389054378222,"filePath":"datafiles/newscripts","resourceVersion":"1.0","name":"non lv specific quests.bos","resourceType":"GMIncludedFile",},
-    {"ConfigValues":{"release":{"CopyToMask":"0",},},"CopyToMask":3035461389054378222,"filePath":"datafiles/newscripts","resourceVersion":"1.0","name":"honestary.bos","resourceType":"GMIncludedFile",},
     {"ConfigValues":{"release":{"CopyToMask":"0",},},"CopyToMask":3035461389054378222,"filePath":"datafiles","resourceVersion":"1.0","name":"RECORD.txt","resourceType":"GMIncludedFile",},
     {"ConfigValues":{"release":{"CopyToMask":"0",},},"CopyToMask":3035461389054378222,"filePath":"datafiles/newscripts","resourceVersion":"1.0","name":"global.bos","resourceType":"GMIncludedFile",},
     {"ConfigValues":{"release":{"CopyToMask":"0",},},"CopyToMask":0,"filePath":"datafiles","resourceVersion":"1.0","name":"script02","resourceType":"GMIncludedFile",},
@@ -535,6 +533,8 @@
     {"ConfigValues":{"release":{"CopyToMask":"0",},},"CopyToMask":3035461389054378222,"filePath":"datafiles/newscripts","resourceVersion":"1.0","name":"dex.bos","resourceType":"GMIncludedFile",},
     {"ConfigValues":{"release":{"CopyToMask":"3035461389054378222",},},"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"copylatest.exe","resourceType":"GMIncludedFile",},
     {"ConfigValues":{"release":{"CopyToMask":"3035461389054378222",},},"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"script03","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/newscripts","resourceVersion":"1.0","name":"honestary.bos","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/newscripts","resourceVersion":"1.0","name":"lv1.bos","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
     "IDEVersion": "2022.2.1.618",

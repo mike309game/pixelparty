@@ -1,1 +1,2 @@
 NegateGameFlag(eFlag.playerCanTransition);
+SetDepth();

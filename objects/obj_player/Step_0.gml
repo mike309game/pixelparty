@@ -6,7 +6,7 @@ if(GetGameFlag(eFlag.playerCanMove)) {
 	inputY = GetInput(eInput.down,true) - GetInput(eInput.up,true);
 }
 
-if(GetInputPressed(eInput.o) && movementer.speedMax == 16 && movementer.moving) {
+if(GetInputPressed(eInput.boost) && movementer.speedMax == 16 && movementer.moving) {
 	movementer.speedMax = 35;
 	movementer.accelStop = 3;
 	walkAnimSpeed = 0.4;
