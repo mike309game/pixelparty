@@ -24,8 +24,6 @@ while(!file_text_eof(fp)) {
 }
 file_text_close(fp);
 
-alarm_set(1,20)
-
 // this is mikes code dont blame me - jay
 //penis -mike
 
@@ -106,15 +104,15 @@ if(current_minute == 12 && current_hour == 11) { //there is no real significance
 	ds_list_add(anim_title_table,"　　　　　　　　　　");
 }
 
-
+*/
 
 
 if(irandom_range(0,255) == 63) {
-	animatedTitle = true;
+	alarm_set(1,20);
 } else {
 	window_set_caption(titles[irandom_range(0,titlesCount-1)]);
 }
-*/
+
 #endregion
 
 animatedTitle = false;

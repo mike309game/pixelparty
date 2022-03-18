@@ -70,7 +70,7 @@ enum eInput {
 	interact = eInput.x,
 	proceedText = eInput.x,
 	skipText = eInput.o,
-	boost = eInput.o
+	boost = eInput.square
 }
 
 function GetInput(buttons, mathable = false) { //mathable is for calculating math with the output
@@ -168,7 +168,7 @@ function ProcessInput() {
 	global.inputPressed = (
 		(eInput.x *			(keyboard_check_pressed(eChar.z) || gamepad_button_check_pressed(0, gp_face1))) |
 		(eInput.o *			(keyboard_check_pressed(eChar.x) || gamepad_button_check_pressed(0, gp_face2))) |
-		(eInput.square *	gamepad_button_check_pressed(0, gp_face3)) | //not needed
+		(eInput.square *	(keyboard_check_pressed(eChar.x) || gamepad_button_check_pressed(0, gp_face3))) | //you said this is fine
 		(eInput.triangle *	gamepad_button_check_pressed(0, gp_face4)) | //not needed
 		
 		(eInput.up *		(keyboard_check_pressed(vk_up)		|| gamepad_button_check_pressed(0, gp_padu))) |
@@ -189,7 +189,7 @@ function ProcessInput() {
 	global.inputReleased = (
 		(eInput.x *			(keyboard_check_released(eChar.z) || gamepad_button_check_released(0, gp_face1))) |
 		(eInput.o *			(keyboard_check_released(eChar.x) || gamepad_button_check_released(0, gp_face2))) |
-		(eInput.square *	gamepad_button_check_released(0, gp_face3)) | //not needed
+		(eInput.square *	(keyboard_check_released(eChar.x) || gamepad_button_check_released(0, gp_face3))) | //you said this is fine
 		(eInput.triangle *	gamepad_button_check_released(0, gp_face4)) | //not needed
 		
 		(eInput.up *		(keyboard_check_released(vk_up)		|| gamepad_button_check_released(0, gp_padu))) |
