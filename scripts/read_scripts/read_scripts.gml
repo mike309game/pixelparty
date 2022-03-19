@@ -97,7 +97,7 @@ function ScriptSysWarning(arg) {
 
 #macro release:SCRIPTSCOMPILED (true)
 #macro Default:SCRIPTSCOMPILED (false)
-#macro SCRIPTCOMPILEDNAME (working_directory + "/script03")
+#macro SCRIPTCOMPILEDNAME (working_directory + "/script04")
 
 //error checking
 global.errorCode = eErrorCode.success;
