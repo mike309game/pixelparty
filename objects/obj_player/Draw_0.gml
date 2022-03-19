@@ -1,5 +1,9 @@
 draw_self();
 
+if(isHovering) {
+	draw_sprite(s_interact,0,((x - sprite_xoffset) + sprite_width / 2)+13,(y - sprite_yoffset)+12);
+}
+
 /*draw_set_font(f_jaxfont);
 draw_text(x,y,"The Quiiiiick");
 draw_sprite(s_lilhand,0,x+string_width("The Quiiiiick"),y);

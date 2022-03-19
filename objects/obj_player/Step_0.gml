@@ -60,8 +60,10 @@ var interacted = collision_rectangle(
 	yy2,
 	obj_interactable,false,false
 )
+isHovering = false;
 with(interacted) {
 	hovering = true;
+	other.isHovering = true;
 	if(GetInputPressed(eInput.interact) && GetGameFlag(eFlag.playerCanInteract | eFlag.playerCanMove)) {
 		event_user(0);
 	}
