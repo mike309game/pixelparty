@@ -18,8 +18,8 @@ $honestary1-talkedToHonstay=#0;
 [s1h2];
 [text]"Hello Manny, I'm glad you're here.";
 [text]"Things have been... strange around here.";
-[text]"I would immediately take you to the next HONESTARY 
-but[d1]..[dr]";
+[text]"I would immediately take you to the next 
+HONESTARY but[d1]...[dr]";
 [text]"The lift is unpowered and we will need at least 7 
 puzzle pieces to power it.";
 [text]"I would very much appreciate if you went looking 

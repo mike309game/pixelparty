@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"38ac4c0e-fcce-41d1-ad0b-4dcaf51b5e67","path":"sprites/s_hux_talk/s_hux_talk.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"38ac4c0e-fcce-41d1-ad0b-4dcaf51b5e67","path":"sprites/s_hux_talk/s_hux_talk.yy",},"LayerId":{"name":"8092c065-0caa-4c38-acc1-b46f047963b0","path":"sprites/s_hux_talk/s_hux_talk.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"s_hux_talk","path":"sprites/s_hux_talk/s_hux_talk.yy",},"resourceVersion":"1.0","name":"38ac4c0e-fcce-41d1-ad0b-4dcaf51b5e67","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"fc826dc8-13fd-4455-b359-d5ff0cd49739","path":"sprites/s_hux_talk/s_hux_talk.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"fc826dc8-13fd-4455-b359-d5ff0cd49739","path":"sprites/s_hux_talk/s_hux_talk.yy",},"LayerId":{"name":"8a7f3c28-0415-44b8-bda7-1f2f7d5738b1","path":"sprites/s_hux_talk/s_hux_talk.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"s_hux_talk","path":"sprites/s_hux_talk/s_hux_talk.yy",},"resourceVersion":"1.0","name":"fc826dc8-13fd-4455-b359-d5ff0cd49739","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"s_hux_talk","path":"sprites/s_hux_talk/s_hux_talk.yy",},
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"a414e5c9-8a98-4036-988b-eb1a93c9e469","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"38ac4c0e-fcce-41d1-ad0b-4dcaf51b5e67","path":"sprites/s_hux_talk/s_hux_talk.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"7b9439d0-a4bc-4948-9586-1d85a161cc3e","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"fc826dc8-13fd-4455-b359-d5ff0cd49739","path":"sprites/s_hux_talk/s_hux_talk.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -65,7 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"8092c065-0caa-4c38-acc1-b46f047963b0","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"8a7f3c28-0415-44b8-bda7-1f2f7d5738b1","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {

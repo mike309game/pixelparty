@@ -1,4 +1,5 @@
 draw_self();
+
 /*draw_set_font(f_jaxfont);
 draw_text(x,y,"The Quiiiiick");
 draw_sprite(s_lilhand,0,x+string_width("The Quiiiiick"),y);
