@@ -80,7 +80,7 @@ if(state == 3) {
 }
 
 
-DrawTextSimpleShadow(0,0,string(choiceEaseProgress));
+//DrawTextSimpleShadow(0,0,string(choiceEaseProgress));
 
 //draw black fade when talking to dex
 
