@@ -1,6 +1,6 @@
 draw_self();
 
-if(isHovering) {
+if(isHovering && GetGameFlag(eFlag.playerCanInteract | eFlag.playerCanMove)) {
 	draw_sprite(s_interact,0,((x - sprite_xoffset) + sprite_width / 2)+13,(y - sprite_yoffset)+12);
 }
 

@@ -531,9 +531,10 @@
     {"ConfigValues":{"release":{"CopyToMask":"0",},},"CopyToMask":3035461389054378222,"filePath":"datafiles/newscripts","resourceVersion":"1.0","name":"tutorial.bos","resourceType":"GMIncludedFile",},
     {"ConfigValues":{"release":{"CopyToMask":"0",},},"CopyToMask":3035461389054378222,"filePath":"datafiles/newscripts","resourceVersion":"1.0","name":"dex.bos","resourceType":"GMIncludedFile",},
     {"ConfigValues":{"release":{"CopyToMask":"3035461389054378222",},},"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"copylatest.exe","resourceType":"GMIncludedFile",},
-    {"ConfigValues":{"release":{"CopyToMask":"3035461389054378222",},},"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"script03","resourceType":"GMIncludedFile",},
+    {"ConfigValues":{"release":{"CopyToMask":"0",},},"CopyToMask":0,"filePath":"datafiles","resourceVersion":"1.0","name":"script03","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/newscripts","resourceVersion":"1.0","name":"honestary.bos","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/newscripts","resourceVersion":"1.0","name":"lv1.bos","resourceType":"GMIncludedFile",},
+    {"CopyToMask":3035461389054378222,"filePath":"datafiles","resourceVersion":"1.0","name":"script04","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
     "IDEVersion": "2022.2.1.618",
