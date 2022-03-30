@@ -9,3 +9,8 @@ for(var i = 0; i < 31; i++)
 
 character = "tb"
 
+sprite_index = asset_get_index("s_"+string(character)+"_down")
+
+// character MUST be based off the sprite name for example: s_tb_up
+// you would set the character var to "tb"
+

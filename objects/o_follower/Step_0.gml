@@ -1,16 +1,29 @@
 var playHor = GetInput(eInput.right,true) - GetInput(eInput.left,true)
 var playVer = GetInput(eInput.down,true) - GetInput(eInput.up,true)
 
-if obj_player.x > x
+switch obj_player.sprite_index
 	{
-		sprite_index = asset_get_index("s_"+string(character)+"_right")
-	} else {
-		sprite_index = asset_get_index("s_"+string(character)+"_left")
+		case s_manny_down:
+			sprite_index = asset_get_index("s_"+string(character)+"_down")
+			break;
+		case s_manny_up:
+			sprite_index = asset_get_index("s_"+string(character)+"_up")
+			break;
+		case s_manny_left:
+			sprite_index = asset_get_index("s_"+string(character)+"_left")
+			break;
+		case s_manny_right:
+			sprite_index = asset_get_index("s_"+string(character)+"_right")
+			break;
 	}
 	
-if obj_player.y > y
+if playHor = 0 && playVer = 0
 	{
-		sprite_index = asset_get_index("s_"+string(character)+"_down")
+		image_speed = 0
+		image_index = 0
 	} else {
-		sprite_index = asset_get_index("s_"+string(character)+"_up")
+		if GetGameFlag(eFlag.playerCanMove)
+			{
+				image_speed = 1.2
+			}
 	}
