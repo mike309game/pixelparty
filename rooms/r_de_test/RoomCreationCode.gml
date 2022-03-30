@@ -15,8 +15,7 @@ if(irandom_range(0,34532) == 69) {
 	layer_set_visible(lyr,true);
 }
 
-show_message("NOTE TO SELF DON'T FORGET TO FUCKING FINISH POLISHING THE INTERPRETER AND GLOBALS VS POINTERS and additional cmds");
-show_message("add type discrepancy checker in interpreter lol");
+
 
 /*repeat(20) {
 	instance_create_depth(800/2, 600/2, 0, obj_perlintest);
