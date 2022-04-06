@@ -1,8 +1,23 @@
 global shit
 
+SAMUEL!!!
+$samuel-beat1=#0;
+$samuel-beat2=#0;
+$samuel-beat3=#0;
+$samuel-beat4=#0;
+$samuel-beat5=#0;
+
+$party-tb=#0;
+
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 <global-glassWall>
 [textStart];
 [text]"It is impossible to get through.";
+[textEnd];
+[end];
+
+<global-empty>
+[textStart];
+[text]"Sorry, nothing.";
 [textEnd];
 [end];

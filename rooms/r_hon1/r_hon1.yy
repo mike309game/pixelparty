@@ -42,7 +42,7 @@
           ],"isDnd":false,"objectId":{"name":"o_marker","path":"objects/o_marker/o_marker.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":240.0,"y":160.0,"resourceVersion":"1.0","name":"inst_48A4F592","tags":[],"resourceType":"GMRInstance",},
         {"properties":[
             {"propertyId":{"name":"dir","path":"objects/o_marker/o_marker.yy",},"objectId":{"name":"o_marker","path":"objects/o_marker/o_marker.yy",},"value":"eInput.down","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
-          ],"isDnd":false,"objectId":{"name":"o_marker","path":"objects/o_marker/o_marker.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":1,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":80.0,"y":224.0,"resourceVersion":"1.0","name":"inst_7C8F3FE7","tags":[],"resourceType":"GMRInstance",},
+          ],"isDnd":false,"objectId":{"name":"o_marker","path":"objects/o_marker/o_marker.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":1,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":80.0,"y":216.0,"resourceVersion":"1.0","name":"inst_7C8F3FE7","tags":[],"resourceType":"GMRInstance",},
         {"properties":[
             {"propertyId":{"name":"dir","path":"objects/o_marker/o_marker.yy",},"objectId":{"name":"o_marker","path":"objects/o_marker/o_marker.yy",},"value":"eInput.down","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
           ],"isDnd":false,"objectId":{"name":"o_marker","path":"objects/o_marker/o_marker.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":2,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":400.0,"y":224.0,"resourceVersion":"1.0","name":"inst_46367ECA","tags":[],"resourceType":"GMRInstance",},
@@ -50,7 +50,9 @@
     {"instances":[
         {"properties":[
             {"propertyId":{"name":"destination","path":"objects/o_door/o_door.yy",},"objectId":{"name":"o_door","path":"objects/o_door/o_door.yy",},"value":"r_l2_r1","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
-          ],"isDnd":false,"objectId":{"name":"o_door","path":"objects/o_door/o_door.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.5,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":75.0,"y":212.0,"resourceVersion":"1.0","name":"inst_19778E5D","tags":[],"resourceType":"GMRInstance",},
+            {"propertyId":{"name":"canInteract","path":"objects/obj_interactable/obj_interactable.yy",},"objectId":{"name":"obj_interactable","path":"objects/obj_interactable/obj_interactable.yy",},"value":"True","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+            {"propertyId":{"name":"honestaryDoor","path":"objects/o_door/o_door.yy",},"objectId":{"name":"o_door","path":"objects/o_door/o_door.yy",},"value":"True","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+          ],"isDnd":false,"objectId":{"name":"o_door","path":"objects/o_door/o_door.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.5,"scaleY":1.0,"imageIndex":1,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":75.0,"y":212.0,"resourceVersion":"1.0","name":"inst_19778E5D","tags":[],"resourceType":"GMRInstance",},
         {"properties":[
             {"propertyId":{"name":"destination","path":"objects/o_door/o_door.yy",},"objectId":{"name":"o_door","path":"objects/o_door/o_door.yy",},"value":"r_l1_r1","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
             {"propertyId":{"name":"honestaryDoor","path":"objects/o_door/o_door.yy",},"objectId":{"name":"o_door","path":"objects/o_door/o_door.yy",},"value":"True","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
@@ -328,8 +330,8 @@
     "PhysicsWorldPixToMetres": 0.1,
   },
   "parent": {
-    "name": "Rooms",
-    "path": "folders/Rooms.yy",
+    "name": "honestaries",
+    "path": "folders/Rooms/honestaries.yy",
   },
   "resourceVersion": "1.0",
   "name": "r_hon1",

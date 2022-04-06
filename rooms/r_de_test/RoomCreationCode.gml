@@ -1,4 +1,8 @@
 Music(sx_nothing);
+SetGameFlag(eFlag.playerCanCollide,1)
+SetGameFlag(eFlag.playerCanMove,1)
+SetGameFlag(eFlag.playerCanInteract,1)
+SetGameFlag(eFlag.playerCanTransition,1)
 
 /*var int = instance_create_depth(0,0,-999999999,ScriptSectionInterpreter);
 with(int) {

@@ -20,3 +20,5 @@ footstepSound = Sound(sx_walk_cute, 1, 0, true);
 walkAnimSpeed = 0.2;
 
 isHovering = false;
+
+alarm_set(2,3)

@@ -83,4 +83,4 @@ if(GetGameFlag(eFlag.playerCanSetDepth)) {
 	SetDepth();
 }
 
-if GetInputPressed(eInput.select) then partyAdd("tb")
+if GetInputPressed(eInput.select) then partyAdd("tb",1)

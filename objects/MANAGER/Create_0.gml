@@ -108,9 +108,10 @@ if(current_minute == 12 && current_hour == 11) { //there is no real significance
 
 
 if(irandom_range(0,255) == 63) {
-	alarm_set(1,20);
-} else {
+	
 	window_set_caption(titles[irandom_range(0,titlesCount-1)]);
+} else {
+	alarm_set(1,20);
 }
 
 #endregion
