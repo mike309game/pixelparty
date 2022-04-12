@@ -8,6 +8,7 @@ $samuel-beat4=#0;
 $samuel-beat5=#0;
 
 $party-tb=#0;
+$race-mean=#0;
 
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 <global-glassWall>
@@ -19,5 +20,13 @@ $party-tb=#0;
 <global-empty>
 [textStart];
 [text]"Sorry, nothing.";
+[textEnd];
+[end];
+
+<global-fuckyou-race>
+[textStart];
+[text]"Wow, you fucking suck at this.[d1] 
+[dr]You're supposed to AVOID the objects retard.";
+[set]"global-fuckyou-race",#1;
 [textEnd];
 [end];

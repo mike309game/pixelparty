@@ -25,4 +25,3 @@ if(choosingRoom) {
 } else {
 	bgFade = 0;
 }
-if keyboard_check_pressed(ord("L")) then QuickInterpreter("level1-LexsieDialogue");

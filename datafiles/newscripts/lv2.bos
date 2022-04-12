@@ -1,1 +1,11 @@
 $level2-introSign=#0;
+
+<level2-raceGuyIntro>
+[setNamelabel1]"Max";
+[setNamelabel2]"Manny";
+[textStart];
+[s1h2];
+[text]"hey dude,[d1] [dr]wanna race?";
+[s2h1];
+[text]"wh[d1] 
+[dr]what for??";
