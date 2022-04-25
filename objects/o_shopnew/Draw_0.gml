@@ -3,21 +3,24 @@ var dexRealY = dexY - dexBobY;
 //draw shop bg
 draw_sprite(s_shop_bg,0,0,0);
 
+if !noDex  {
 //draw dex body
 draw_sprite(s_shop_dex, 0, 0, dexRealY);
 
 //draw dex coin toss region
 draw_sprite(s_shop_dex_flip, instance_exists(o_shopcoin), 0, dexRealY);
 
+}
 //draw desk
 draw_sprite(s_shop_desk, 0, 0, 0);
 
+if !noDex {
 //draw dex arm
 draw_sprite(s_shop_dex, 1, 0, dexY); //the arm does not bob
 
 //draw dex ear
 draw_sprite(s_shop_dex, 2, 0, dexRealY);
-
+}
 //draw choices
 
 draw_set_font(f_jaxfont);

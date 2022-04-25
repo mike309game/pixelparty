@@ -1,6 +1,6 @@
+//mx
 
-
-if GetInputPressed(eInput.interact) && GetGameFlag(eFlag.playerCanMove)
+if GetInputPressed(eInput.interact) && GetGameFlag(eFlag.playerCanMove) && !played
 	{
 		SetGameFlag(eFlag.playerCanMove,0)
 		audio_sound_gain(global.music,0,100)

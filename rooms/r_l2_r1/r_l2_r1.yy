@@ -57,6 +57,11 @@
     {"instances":[
         {"properties":[],"isDnd":false,"objectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":544.0,"y":576.0,"resourceVersion":"1.0","name":"inst_76336E18","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"o_samuel","path":"objects/o_samuel/o_samuel.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":656.0,"y":560.0,"resourceVersion":"1.0","name":"inst_5CDAFC3C","tags":[],"resourceType":"GMRInstance",},
+        {"properties":[
+            {"propertyId":{"name":"item","path":"objects/o_pickup/o_pickup.yy",},"objectId":{"name":"o_pickup","path":"objects/o_pickup/o_pickup.yy",},"value":"0","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+            {"propertyId":{"name":"sprite_index","path":"objects/o_pickup/o_pickup.yy",},"objectId":{"name":"o_pickup","path":"objects/o_pickup/o_pickup.yy",},"value":"s_held_ladder","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+            {"propertyId":{"name":"varSet","path":"objects/o_pickup/o_pickup.yy",},"objectId":{"name":"o_pickup","path":"objects/o_pickup/o_pickup.yy",},"value":"\"level2-placedLadder\"","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+          ],"isDnd":false,"objectId":{"name":"o_pickup","path":"objects/o_pickup/o_pickup.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":624.0,"y":336.0,"resourceVersion":"1.0","name":"inst_B2FE78B","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":-100,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":16,"gridY":16,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],"resourceVersion":"1.0","name":"Instances","tags":[],"resourceType":"GMRInstanceLayer",},
     {"tilesetId":{"name":"t_l2","path":"tilesets/t_l2/t_l2.yy",},"x":0,"y":0,"tiles":{"SerialiseWidth":60,"SerialiseHeight":50,"TileSerialiseData":[
 2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,
@@ -528,7 +533,7 @@
 ],},"visible":true,"depth":0,"userdefinedDepth":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":16,"gridY":16,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],"resourceVersion":"1.0","name":"main_map","tags":[],"resourceType":"GMRTileLayer",},
   ],
   "inheritLayers": false,
-  "creationCodeFile": "",
+  "creationCodeFile": "${project_dir}/rooms/r_l2_r1/RoomCreationCode.gml",
   "inheritCode": false,
   "instanceCreationOrder": [
     {"name":"inst_76336E18","path":"rooms/r_l2_r1/r_l2_r1.yy",},
@@ -555,6 +560,7 @@
     {"name":"inst_546F6C0A","path":"rooms/r_l2_r1/r_l2_r1.yy",},
     {"name":"inst_6DA10102","path":"rooms/r_l2_r1/r_l2_r1.yy",},
     {"name":"inst_5CDAFC3C","path":"rooms/r_l2_r1/r_l2_r1.yy",},
+    {"name":"inst_B2FE78B","path":"rooms/r_l2_r1/r_l2_r1.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

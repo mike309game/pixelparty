@@ -78,3 +78,15 @@ to her for me.";
 [text]"Dex doesn't seem interested in talking right now.";
 [textEnd];
 [end];
+
+<dex-Level2>
+[textStart];
+[text]"Nobody's here.";
+[textEnd];
+[end];
+
+<dex-Level2-talk>
+[textStart];
+[text]"blah blah add dialogue here";
+[textEnd];
+[end];

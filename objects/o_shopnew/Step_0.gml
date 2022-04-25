@@ -32,21 +32,32 @@ switch(state) {
 				Sound(sx_shop_move);
 			}
 			if(GetInputPressed(eInput.x)) {
-				Sound(sx_shop_select);
+				
 				switch(choiceSelected) {
 					case 0: //if "buy"
-						choiceEaseIn = false; //hide the choices
-						state = 2; //go to purchase state
+							if noDex
+								{
+									Sound(sx_shop_broke)
+								} else {
+									choiceEaseIn = false; //hide the choices
+									state = 2; //go to purchase state
+								}
 						break;
 					case 1: //if "talk"
-						interpreter = QuickInterpreter(talkSectionName); //make talk dialogue 
-						state = 0; //state 0 hangs until the interpreter dies
+							if noDex
+								{
+									Sound(sx_shop_broke)
+								} else {
+									interpreter = QuickInterpreter(talkSectionName); //make talk dialogue 
+									state = 0; //state 0 hangs until the interpreter dies
+								}
 						break;
 					case 2:
 						state = 99;
 						Transition(global.script_variables[? "dex-ExitRoom"], global.script_variables[? "dex-ExitMarker"]);
 						break;
 				}
+				if !audio_is_playing(sx_shop_broke) then Sound(sx_shop_select);
 			}
 		}
 		break;

@@ -30,3 +30,9 @@ $race-mean=#0;
 [set]"global-fuckyou-race",#1;
 [textEnd];
 [end];
+
+<global-placedHere>
+[textStart];
+[text]"Something can be placed here.[d1] [dr]But what..?";
+[textEnd];
+[end];

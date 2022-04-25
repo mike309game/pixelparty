@@ -79,4 +79,11 @@ shopItems = [
 	["Item name here", s_shop_item_temp, 69, "Flag name here"],
 ]
 
+noDex = false
+
 alarm[3] = 300;
+
+if room = r_l2_shop && !global.script_variables[? "level2-dexMission"]
+	{
+		noDex = true
+	}

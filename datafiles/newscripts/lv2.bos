@@ -1,5 +1,8 @@
 $level2-introSign=#0;
 
+$level2-dexMission=#0;
+$level2-placedLadder=#0;
+
 <level2-raceGuyIntro>
 [setNamelabel1]"Max";
 [setNamelabel2]"Manny";
@@ -9,3 +12,11 @@ $level2-introSign=#0;
 [s2h1];
 [text]"wh[d1] 
 [dr]what for??";
+[textEnd];
+[end];
+
+<level2-treehouse-balcony>
+[textStart];
+[text]"I'm not going back out now.";
+[textEnd];
+[end];

@@ -5,7 +5,10 @@
   },
   "solid": false,
   "visible": true,
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "s_l2_dexshop_coll",
+    "path": "sprites/s_l2_dexshop_coll/s_l2_dexshop_coll.yy",
+  },
   "persistent": false,
   "parentObjectId": {
     "name": "o_propbase",

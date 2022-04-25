@@ -8,7 +8,7 @@ gml_pragma("UnityBuild", "true");
 
 ini_open(working_directory + "/savedata"); //for settings
 
-#macro START_ROOM r_titlecards
+#macro START_ROOM r_de_test
 #macro release:START_ROOM (r_titlecards)
 
 //if in release mode, make it always false, this will make all debug checks be removed from code because gamemaker removes absolutely unreachable code
@@ -32,7 +32,7 @@ enum eFlag {
 	playerCanSetSprite = 1 << 9, //player can set its sprite automatically?
 	playerCanSetDepth = 1 << 10, //player automatically sets its depth based on its y
 	
-	debugEnabled = 0 << 61, //wether debug features are enabled
+	debugEnabled = 1 << 61, //wether debug features are enabled
 	showPerfMeter = 1 << 62, //show p3d school performance meter
 	saveCorrupted = 1 << 63 //this will only be on when the game fails to load a save file somehow
 }
@@ -207,3 +207,6 @@ globalvar f_jaxfont;
 f_jaxfont = font_add_sprite_ext(_f_jaxfont, "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!\"$%&'(),-./:;<=>?_©* ", true, 1);
 
 #endregion
+
+global.pickupInv = ds_list_create() 
+

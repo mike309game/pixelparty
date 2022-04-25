@@ -11,12 +11,27 @@ if(closing) {
 var menuReturn;
 switch(menuMode) {
 	case 0:
-		menuReturn = menu.ProcessOptions(
-			new MenuItem("Resume"),
-			new MenuItem("Options"),
-			new MenuItem("Quit"),
-		);
-		
+		switch room {
+			case r_l2_race:
+				{
+					menuReturn = menu.ProcessOptions(
+					new MenuItem("Resume"),
+					new MenuItem("Options"),
+					new MenuItem("Quit Race"),
+					);
+					break;
+				}
+			default:
+				{
+						menuReturn = menu.ProcessOptions(
+						new MenuItem("Resume"),
+						new MenuItem("Options"),
+						new MenuItem("Quit"),
+					);
+					break;
+				}
+		}
+	
 		switch(menuReturn) {
 			case 0:
 				menu.canMove = false;

@@ -6,13 +6,19 @@ function SaveVolumeSettings() {
 	ini_write_real("Volume", "Sound", global.soundMasterVolume);
 }
 
-function SaveGame() {
+function SaveGame(_roomspecified) {
 	var section = "SaveData" + string(global.saveFile);
 	ini_write_real(section, "Exists", 1);
 	//ini_write_string(section, "Name", global.script_variables[? "name"]);
 	ini_write_real(section, "Characters", global.script_variables[? "partyMembers"]);
 	ini_write_real(section, "Time", global.time);
-	ini_write_string(section, "Room", room_get_name(room)); //name cuz gms2 shuffles room ids sometimes
+	if _roomspecified != undefined
+		{
+			ini_write_string(section, "Room", room_get_name(_roomspecified)); //name cuz gms2 shuffles room ids sometimes
+		} else {
+			ini_write_string(section, "Room", room_get_name(room)); //name cuz gms2 shuffles room ids sometimes
+		}
+	
 	ini_write_string(section, "Flag", string(global.flag));
 	ini_write_string(section, "Values", ds_map_write(global.script_variables));
 	ini_close();

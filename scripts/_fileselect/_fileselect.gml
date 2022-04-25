@@ -51,7 +51,16 @@ function FileselectInterface(_saving, _destination = room) constructor {
 				global.script_variables[? "saveFile"] = fileIndex;
 				savedGameCooldown = 120;
 				selectedFile = true;
-				SaveGame();
+				switch room
+					{
+						case r_l2_race:
+							SaveGame(r_l2_r3);
+							break;
+						default:
+							SaveGame();
+							break;
+					}
+				// Me purposefully pissing off mike with my hacky ass solution
 				RefreshSaveInfo();
 			} else if(saveInfo[|fileIndex * 4]) { //if the save file exists and it's on load mode
 				global.saveFile = fileIndex;

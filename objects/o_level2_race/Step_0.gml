@@ -11,7 +11,7 @@ if start_timer >= 40
 if start_timer = 40
 	{
 		obst_spawner = 1
-		alarm_set(1,85)
+		alarm_set(1,50)
 	}
 	
 if obst_hits > 15 && !bullied
