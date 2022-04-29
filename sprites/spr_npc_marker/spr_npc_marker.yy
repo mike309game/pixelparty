@@ -94,7 +94,7 @@
   },
   "parent": {
     "name": "New event system",
-    "path": "folders/Mike/New event system.yy",
+    "path": "folders/mike/New event system.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_npc_marker",

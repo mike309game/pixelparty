@@ -25,8 +25,11 @@ $race-mean=#0;
 
 <global-fuckyou-race>
 [textStart];
-[text]"Wow, you fucking suck at this.[d1] 
-[dr]You're supposed to AVOID the objects retard.";
+[ac];
+[text]"Wow, you suck at this.";
+[ac];
+[text]"
+Try avoiding the obstacles next time.";
 [set]"global-fuckyou-race",#1;
 [textEnd];
 [end];

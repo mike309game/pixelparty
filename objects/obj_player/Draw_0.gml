@@ -4,6 +4,8 @@ if(isHovering && GetGameFlag(eFlag.playerCanInteract | eFlag.playerCanMove)) {
 	draw_sprite(s_interact,0,((x - sprite_xoffset) + sprite_width / 2)+13,(y - sprite_yoffset)+12);
 }
 
+//draw_line(x-2000, y, x+2000, y);
+
 /*draw_set_font(f_jaxfont);
 draw_text(x,y,"The Quiiiiick");
 draw_sprite(s_lilhand,0,x+string_width("The Quiiiiick"),y);

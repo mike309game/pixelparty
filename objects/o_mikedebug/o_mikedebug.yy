@@ -33,8 +33,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Mike",
-    "path": "folders/Mike.yy",
+    "name": "mike",
+    "path": "folders/mike.yy",
   },
   "resourceVersion": "1.0",
   "name": "o_mikedebug",

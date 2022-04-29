@@ -19,6 +19,19 @@ ini_open(working_directory + "/savedata"); //for settings
 
 #macro MAXSAVEFILES (4)
 
+#macro MAXINPUTDELAYFRAMES (120)
+
+/*
+
+whenever this gets intensive, completely null the macro and create another and use the new one
+after
+idk how to explain you don't need to do anything base
+
+*/
+
+#macro EVTLIVE if (live_call()) return live_result;
+#macro release:EVTLIVE
+
 enum eFlag {
 	playerCanMove = 1 << 0,
 	stopAll = 1 << 1, //stop what can be stopped
@@ -81,8 +94,6 @@ global.inputAllowed = int64(-1);
 global.inputMode = 1 * file_exists("RECORD.txt") + (2 * file_exists("PLAYBACK.txt"));
 global.inputBuffer = -1;
 global.inputBufferSize = 0;
-
-
 
 if(global.inputMode == 1) {
 	global.inputBuffer = buffer_create(1,buffer_grow,1);

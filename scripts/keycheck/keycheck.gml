@@ -208,6 +208,11 @@ function ProcessInput() {
 	) & global.inputAllowed;
 }
 
+/*function GetDelayedInput(frames) {
+	gml_pragma("forceinline");
+	return global.inputCircularBuffer[nmod(global.inputCircularBufferCurrent - frames, MAXINPUTDELAYFRAMES)];
+}*/
+
 //undertale moments
 
 /*function keycheck(key){
