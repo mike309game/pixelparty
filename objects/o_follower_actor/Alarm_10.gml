@@ -1,0 +1,1 @@
+///@desc allow getting the input

@@ -19,6 +19,11 @@ if(irandom_range(0,34532) == 69) {
 	layer_set_visible(lyr,true);
 }
 
+//for(var i = 1; i <= 59; i++) {
+//	with(instance_create_depth(0,0,0,o_follower_actor)) {
+//		delayFrames = 2 * i;
+//	}
+//}
 
 
 /*repeat(20) {
