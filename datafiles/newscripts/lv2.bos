@@ -1,11 +1,14 @@
 $level2-introSign=#0;
 
 $level2-dexMission=#0;
+
+$level2-pickedLadder=#0;
 $level2-placedLadder=#0;
 
 <level2-raceGuyIntro>
 [setNamelabel1]"Max";
 [setNamelabel2]"Manny";
+[setFacepic1]!s_dex_talk_alt_2
 [textStart];
 [s1h2];
 [text]"hey dude,[d1] [dr]wanna race?";
@@ -15,8 +18,37 @@ $level2-placedLadder=#0;
 [textEnd];
 [end];
 
+<level2-buck-dialogue>
+[setNamelabel1]"Buck";
+[setNamelabel2]"Manny";
+
+
 <level2-treehouse-balcony>
 [textStart];
 [text]"I'm not going back out now.";
+[textEnd];
+[end];
+
+<level2-treehouse-misc1>
+[textStart];
+[text]"There is a nice painting on the wall.";
+[textEnd];
+[end];
+
+<level2-treehouse-misc2>
+[textStart];
+[text]"There is a photograph of someone on the wall.";
+[textEnd];
+[end];
+
+<level2-treehouse-misc3>
+[textStart];
+[text]"The door is locked, better not try to open it.";
+[textEnd];
+[end];
+
+<level2-treehouse-misc4>
+[textStart];
+[text]"There is a nice painting on the wall.";
 [textEnd];
 [end];

@@ -12,7 +12,7 @@ function invCheck(itemID) // check for item in inventory
 	
 function invAdd(itemID) // add item
 	{
-		show_debug_message("item added")
+		show_debug_message("item added: "+string(itemID))
 		ds_list_insert(global.pickupInv,0,itemID)
 	}
 
