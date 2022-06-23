@@ -14,7 +14,15 @@
 draw_rectangle_colour(0,roomChosen*15-8,320,roomChosen*15+8,c_navy,c_navy,c_navy,c_navy,false);
 draw_set_alpha(1);*/
 
-if(choosingRoom) {
+if(menuShown) {
+	draw_set_alpha(bgFade);
+	//draw_rectangle_color(0,0,320,240,c_silver,c_silver,c_silver,c_silver,0); //bad idea i think
+	draw_set_alpha(1);
+	tapDebug.DrawCommands(tapDebugListCurrent);
+}
+
+//old code
+/*if(choosingRoom) {
 	draw_set_alpha(bgFade);
 	draw_rectangle_color(0,0,320,240,c_silver,c_silver,c_silver,c_silver,0);
 	draw_set_alpha(1);
@@ -34,4 +42,4 @@ if(choosingRoom) {
 	
 	draw_set_valign(fa_top);
 	draw_set_halign(fa_left);
-}
+}*/

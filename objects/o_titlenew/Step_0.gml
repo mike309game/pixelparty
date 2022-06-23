@@ -35,9 +35,9 @@ switch(state) {
 		backgroundColour = merge_colour(0xFFB255, 0xa755ff, min(choicersProgress,60) / 60);
 		bluePlanesZ = EaseInCubic(80, 1000, choicersProgress / 100);
 		redPlanesZ = EaseOutCubic(1000, 80, choicersProgress / 100);
-		choicerY[0] = EaseInOutBack(300, 145, min(choicersProgress+20,100) / 100);
-		choicerY[1] = EaseInOutBack(300, 145, min(choicersProgress+10,100) / 100);
-		choicerY[2] = EaseInOutBack(300, 145, choicersProgress / 100);
+		choicerY[0] = EaseInOutBack(300, 0, min(choicersProgress+20,100) / 100);
+		choicerY[1] = EaseInOutBack(300, 0, min(choicersProgress+10,100) / 100);
+		choicerY[2] = EaseInOutBack(300, 0, choicersProgress / 100);
 		if(choicersProgress == 100) { //anim is done
 			state++; //go to chooseable state
 		}
@@ -68,8 +68,9 @@ switch(state) {
 				targetX = (59 + ((160-59) * 2));
 				break;
 		}
-		choicerX[choicerChoice] = lerp(targetX, 160, actualProgress*2);
-		choicerZ[choicerChoice] = lerp(0, -240, actualProgress);
+		choicerX[choicerChoice] = lerp(targetX, 160, actualProgress * 2);
+		choicerY[choicerChoice] = lerp(0, 320, actualProgress);
+		choicerZ[choicerChoice] = (choicerSelectedProgress[choicerChoice] / 45) * 24;
 		choicerSelectedProgress[choicerChoice] += 1;
 		if(choicerSelectedProgress[choicerChoice] >= 45) {
 			//choicerX[choicerChoice] = 0;

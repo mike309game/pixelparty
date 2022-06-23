@@ -8,7 +8,7 @@ gml_pragma("UnityBuild", "true");
 
 ini_open(working_directory + "/savedata"); //for settings
 
-#macro START_ROOM r_de_test
+#macro START_ROOM r_l2_race_new
 #macro release:START_ROOM (r_titlecards)
 
 //if in release mode, make it always false, this will make all debug checks be removed from code because gamemaker removes absolutely unreachable code
@@ -29,7 +29,7 @@ idk how to explain you don't need to do anything base
 
 */
 
-#macro EVTLIVE if (live_call()) return live_result;
+#macro EVTLIVE if (live_call() && os_type == os_windows) return live_result;
 #macro release:EVTLIVE
 
 enum eFlag {
@@ -124,6 +124,12 @@ global.time = 0;
 
 global.camX = 0;
 global.camY = 0;
+
+global.windowWidth = 320;
+global.windowHeight = 240;
+global.windowCenterX = 160;
+global.windowCenterY = 120;
+global.gameSurfaceScale = 1;
 
 global.pausedsurface = noone;
 

@@ -97,7 +97,7 @@ function ScriptSysWarning(arg) {
 
 #macro release:SCRIPTSCOMPILED (true)
 #macro Default:SCRIPTSCOMPILED (false)
-#macro SCRIPTCOMPILEDNAME (working_directory + "/script04")
+#macro SCRIPTCOMPILEDNAME ("script05")
 
 //error checking
 global.errorCode = eErrorCode.success;
@@ -199,7 +199,7 @@ function CompileScriptReadable(fname) {
 		exit;
 	}
 	var char = 0; //this'll be both strings and ints
-	var fstring = ReadAssuredLf(working_directory + "/" + scriptslocation + "/" + fname);
+	var fstring = ReadAssuredLf(scriptslocation + "/" + fname);
 	var fpos = 0; //pointer in file TODO: does this respect utf8 )yes it seems to
 	var fLen = string_length(fstring);
 	if(/*string_lower*/(string_copy(fstring, 1, 6)) == "NEEDED") { //check if needed files exist then if they are compiled
@@ -417,7 +417,7 @@ if(SCRIPTSCOMPILED) {
 			CompileScriptReadable(table[i]);
 		}
 	} else {
-		var fname = file_find_first(working_directory + "/" + scriptslocation + "/*.bos",fa_directory);
+		var fname = file_find_first(scriptslocation + "/*.bos",fa_directory);
 		while(fname != "") { //compile all scripts in script directory
 			CompileScriptReadable(fname);
 			fname = file_find_next();

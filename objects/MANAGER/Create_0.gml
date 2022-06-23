@@ -1,7 +1,20 @@
 //exception_unhandled_handler(function(ex){show_message("oh no");return 1;});
 audio_group_load(agrp_sounds);
 
-
+touchInputInfo = [
+	[48-16,160-16, vk_up, false], //up
+	[48-16,224-16, vk_down, false], //down
+	[16-16,192-16, vk_left, false], //left
+	[80-16,192-16, vk_right, false], //right
+	
+	[129-16,217-16, vk_shift, false], //select
+	[193-16,216-16, vk_return, false], //start
+	
+	[272-16,224-16, eChar.z, false], //x
+	[304-16,192-16, eChar.x, false], //o
+	[240-16,192-16, eChar.x, false], //sqr
+	[272-16,160-16, eChar.x, false], //tri
+];
 
 //save_setting_load()
 

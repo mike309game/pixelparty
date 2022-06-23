@@ -1,4 +1,5 @@
 //this can be improved (don't create an info struct every call, have a vertex buffer)
+//addendum to above: use Sprite3D now lol
 
 function DrawSpriteNoCullingExt(sprite, index, x, y, sizex, sizey, angle, colour, alpha, z = 0){
 	gml_pragma("forceinline");
@@ -16,7 +17,8 @@ function DrawSpriteNoCullingExt(sprite, index, x, y, sizex, sizey, angle, colour
 	//set matrix
 	mtxset();
 	
-	draw_primitive_begin_texture(pr_trianglefan, sprite_get_texture(sprite, index));
+	//draw_primitive_begin_texture(pr_trianglefan, sprite_get_texture(sprite, index));
+	draw_primitive_begin_texture(pr_trianglefan, info.frames[index].texture);
 	draw_vertex_texture_colour(0,0,0,0,colour,alpha);
 	draw_vertex_texture_colour(width,0,1,0,colour,alpha);
 	draw_vertex_texture_colour(width,height,1,1,colour,alpha);

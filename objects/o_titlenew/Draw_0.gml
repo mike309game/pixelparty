@@ -7,9 +7,9 @@ draw_clear(backgroundColour);
 
 //set 3d projection pos
 if(debugPlacer) {
-	camera_set_view_mat(cam3d, matrix_build_lookat(0,-120/2,-70,0,0,0,0,0,1));
+	camera_set_view_mat(cam3d, matrix_build_lookat(0,120/2,-70,0,0,0,0,0,1));
 } else {
-	camera_set_view_mat(cam3d, matrix_build_lookat(0,0,0,0,1,0,0,0,1));
+	camera_set_view_mat(cam3d, matrix_build_lookat(0,0,0,0,-1,0,0,0,1));
 }
 
 //use the 3d projection
@@ -122,7 +122,7 @@ gpu_set_ztestenable(true);
 gpu_set_alphatestenable(true);
 
 //push floating ui matrix
-mtxpush(matrix_build(uiX,uiY,uiZ,uiXRot,uiYRot,uiZRot,1,1,1));
+mtxpush(matrix_build(uiX,uiY,uiZ,uiXRot,uiYRot,uiZRot,1,1,-1));
 
 //set the matrix
 mtxset();
@@ -131,7 +131,7 @@ mtxset();
 
 if(state < 7) {
 	for(var i = 0; i < 3; i++) {
-		DrawSpriteNoCullingExt(
+		/*DrawSpriteNoCullingExt(
 			s_title_files, //sprite
 			i, //index
 			choicerX[i], //x
@@ -142,7 +142,19 @@ if(state < 7) {
 			merge_colour(c_white,c_black,choicerSelectedProgress[i] / 45), //colour
 			1 - max(0, choicerSelectedProgress[choicerChoice] - (45-25)) / 20, //alpha
 			choicerZ[i] //z
-		);
+		);*/
+		DrawSprite3D(
+			choicerSprite, //sprite
+			i, //index
+			choicerX[i], //x
+			choicerY[i] + choicerSelectedProgress[i] / -1.2, //y
+			choicerZ[i], //z
+			0, //angle
+			1, //scalex
+			1, //scaley
+			merge_colour(c_white,c_black,choicerSelectedProgress[i] / 45), //colour
+			1 - max(0, choicerSelectedProgress[choicerChoice] - (45-25)) / 20, //alpha
+		)
 	}
 }
 

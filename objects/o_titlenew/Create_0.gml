@@ -1,3 +1,5 @@
+SetGameFlag(eFlag.playerCanMove, false);
+
 //blue 55B2FF rgb FFB255 bgr
 //redpink ff55a7 rgb a755ff bgr
 backgroundColour = 0xFFB255;
@@ -7,12 +9,12 @@ debugChangingWhat = 0;
 debugChangingVariable = "uiX";
 debugChangingRate = 8;
 
-uiX = 160;
-uiY = 120;
-uiZ = -120;
-uiXRot = 270;
+uiX = -160;//-160;
+uiY = -120;//-264;
+uiZ = 24;//24;
+uiXRot = 0;
 uiYRot = 0;
-uiZRot = 180;
+uiZRot = 0;
 
 //canProgress = false;
 //acceptInput = true;
@@ -52,6 +54,8 @@ choicerZ = array_create(3, 0);
 choicerX[0] = 59;
 choicerX[1] = (59 + ((160-59) * 1));
 choicerX[2] = (59 + ((160-59) * 2));
+
+choicerSprite = Sprite3D(s_title_files);
 
 //for zooming into the camera
 choicerSelectedProgress = array_create(3, 0); //0 - 45?
@@ -132,6 +136,7 @@ DrawPxpaLogo = function(x,y,colour,angle) {
 
 ResetChoicerZoomAnim = function() {
 	choicerX[choicerChoice] = (59 + ((160-59) * choicerChoice));
+	choicerY[choicerChoice] = 0;
 	choicerZ[choicerChoice] = 0;
 	choicerSelectedProgress[choicerChoice] = 0;
 }
