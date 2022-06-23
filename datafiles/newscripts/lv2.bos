@@ -1,11 +1,14 @@
 $level2-introSign=#0;
 
 $level2-dexMission=#0;
+
+$level2-pickedLadder=#0;
 $level2-placedLadder=#0;
 
 <level2-raceGuyIntro>
 [setNamelabel1]"Max";
 [setNamelabel2]"Manny";
+
 [textStart];
 [s1h2];
 [text]"hey dude,[d1] [dr]wanna race?";
@@ -15,8 +18,67 @@ $level2-placedLadder=#0;
 [textEnd];
 [end];
 
+<level2-buck-dialogue>
+[setNamelabel1]"Buck";
+[setNamelabel2]"Manny";
+[setFacepic1]!s_nothing;
+[setFacepic2]!s_manny_talk;
+[textStart];
+[text]"placeholder";
+[end];
+
+<level2-dexHelp>
+[setNamelabel1]"Dex";
+[setNamelabel2]"Manny";
+[setFacepic1]!s_dex_talk_alt_2;
+[setFacepic2]!s_manny_talk_smile;
+[textStart];
+[s2h1];
+[text]"Oh, hey Dex.";
+[s1h2];
+[text]"Oh, hey kid. Kind of in a pickle here.";
+[text]"I..[d1] uhh...[dr]
+locked myself out of my shop...";
+[s2h1];
+[text]"How did you do that?";
+[s1h2];
+[text]"I don't know![d1] [dr]I seem to have just misplaced my
+keys and now I can't find 'em.";
+[s2h1];
+[text]"I can help you, probably.";
+[s1h2];
+[text]"Really? If you do I can give you some coin 
+for your troubles.";
+[s2h1];
+[text]"That'd be great, I'll get on it.";
+[textEnd];
+
 <level2-treehouse-balcony>
 [textStart];
 [text]"I'm not going back out now.";
+[textEnd];
+[end];
+
+<level2-treehouse-misc1>
+[textStart];
+[text]"There is a nice painting on the wall.";
+[textEnd];
+[end];
+
+<level2-treehouse-misc2>
+[textStart];
+[text]"There is a photograph of someone on the wall.";
+[textEnd];
+[end];
+
+<level2-treehouse-misc3>
+[textStart];
+[text]"The door is locked, better not try to open it.";
+[textEnd];
+[end];
+
+<level2-treehouse-misc4>
+[textStart];
+[text]"There is a nice painting on the wall.";
 [textEnd];
 [end];

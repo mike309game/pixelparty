@@ -5,6 +5,7 @@
   },
   "solid": false,
   "visible": true,
+  "managed": true,
   "spriteMaskId": {
     "name": "spr_npc_marker",
     "path": "sprites/spr_npc_marker/spr_npc_marker.yy",

@@ -1,4 +1,5 @@
-Sound(sx_pause_quit)
+Sound(sx_shop_broke)
+Music(sx_nothing,1)
 
 alphix = 0
 timer = 0

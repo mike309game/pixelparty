@@ -115,11 +115,15 @@ ONLY PROCEEDS WHEN INSTANCE LETS ME
 [end];
 
 <yanny>
-[setNamelabel2]"Manny";
-[setFacepic2]!spr_yanny_portrait;
+[setNamelabel2]"Little Miss Mary";
 [textStart];
-[s2h1];
-[text]"kill yourself faggot 8142 Ridgeview Ave.
-Mebane, NC 27302";
+[s1h2];
+[text]"sOMETIMES";
+[text]"GOD TAKES MOMMIES";
+[text]"AND PUPPIES AWAY..";
+[text]"aND SoMETIMES...";
+[text]"jUST sOMETiMES...";
+[text]"[d1] [dr]";
+[text]"[d1][colour:#255,#1]......i dO[colour:#0,#1][dr]";
 [textEnd];
 [end];

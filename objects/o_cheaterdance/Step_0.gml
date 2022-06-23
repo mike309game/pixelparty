@@ -2,7 +2,7 @@ timer++
 
 if timer > 100
 	{
-		alphix = lerp(alphix,1,.02)
+		game_end()
 	}
 	
 if alphix >= .50 && GetInputPressed(eInput.interact)

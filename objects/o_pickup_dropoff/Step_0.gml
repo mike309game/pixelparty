@@ -1,4 +1,4 @@
-if place_meeting(x,y,obj_player) && GetInputPressed(eInput.interact) && !drawMe
+if place_meeting(x,y,obj_player) && GetInputPressed(eInput.interact) && !drawMe && GetGameFlag(eFlag.playerCanMove)
 	{
 		if invCheck(0)
 			{

@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "PIXELPARTY",
-    "path": "PIXELPARTY.yyp",
+    "name": "other",
+    "path": "folders/Sprites/other.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_yanny_portrait",

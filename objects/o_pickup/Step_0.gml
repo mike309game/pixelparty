@@ -2,6 +2,7 @@ if place_meeting(x,y,obj_player) && GetInputPressed(eInput.interact) && !doAni
 	{
 		doAni = true
 		Sound(sx_obj_pickup)
+		invAdd(item)
 	}
 	
 if doAni
@@ -14,9 +15,10 @@ if doAni
 		image_alpha = scale
 		
 		
-		if scale <= 0.001
+		if scale <= 0.1
 			{
-				invAdd(item)
+				global.script_variables[? varSet] = 1
+				//invAdd(item)
 				instance_destroy(id)
 			}
 	}
