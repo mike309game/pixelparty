@@ -27,8 +27,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "level2",
-    "path": "folders/Rooms/level2.yy",
+    "name": "race",
+    "path": "folders/Rooms/level2/race.yy",
   },
   "resourceVersion": "1.0",
   "name": "o_racenew",

@@ -51,6 +51,7 @@ for(var i = -30; i < 4; i++) {
 	vertex_submit(mdl, pr_trianglelist, terrainTex);
 	if(abs(i) % 2) {
 		DrawSprite3D(treeSprite, 0, -160, 0, 20, 0, 1, 1);
+	} else {
 		DrawSprite3D(treeSprite, 0, 180, 0, 20, 0, 1, 1);
 	}
 	mtxpop(); //pop offset
@@ -63,7 +64,13 @@ draw_vertex_color(16, 16, c_teal, 1);
 draw_vertex_color(0, 16, c_teal, 1);
 draw_primitive_end();*/
 
-DrawSprite3D(playerSprite, global.time / 10, -8 + playerX, 64, 16, 0, 1, 1);
+//DrawSprite3D(playerSprite, global.time / 10, -8 + playerX, 64, 16, 0, 1, 1);
+
+var len = ds_list_size(objects);
+for(var i = 0; i < len; i++) {
+	objects[|i].Draw();
+	
+}
 
 mtxpop(); //pop sane z
 mtxset(); //set matrix

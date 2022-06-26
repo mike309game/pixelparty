@@ -5,6 +5,7 @@
   },
   "solid": false,
   "visible": true,
+  "managed": true,
   "spriteMaskId": {
     "name": "s_level1_swingsetmask",
     "path": "sprites/s_level1_swingsetmask/s_level1_swingsetmask.yy",

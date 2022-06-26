@@ -12,7 +12,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "mx_honest1.mp3",
-  "duration": 57.6522141,
+  "duration": 57.652214,
   "parent": {
     "name": "music",
     "path": "folders/Sounds/music.yy",

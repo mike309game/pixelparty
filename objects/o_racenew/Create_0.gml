@@ -15,6 +15,17 @@ playerZ = 0;
 
 
 
+objects = ds_list_create();
+
+
+
+playerRacer = new raceobjRacer(Sprite3D(s_manny_up));
+playerRacer.isPlayer = true;
+raceFocus = playerRacer;
+ds_list_add(objects, playerRacer);
+
+
+
 
 
 

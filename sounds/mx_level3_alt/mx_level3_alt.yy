@@ -12,7 +12,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "mx_level3_alt.mp3",
-  "duration": 120.032623,
+  "duration": 120.03262,
   "parent": {
     "name": "music",
     "path": "folders/Sounds/music.yy",
