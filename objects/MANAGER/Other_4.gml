@@ -1,4 +1,4 @@
-level_sign_y = 240
+tlevel_sign_y = 240
 level_sign_timer = 0
 sign_do = 0
 
