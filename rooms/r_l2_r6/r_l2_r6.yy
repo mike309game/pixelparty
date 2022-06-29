@@ -21,6 +21,13 @@
         {"properties":[],"isDnd":false,"objectId":{"name":"o_hitbox","path":"objects/o_hitbox/o_hitbox.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":5.0,"scaleY":6.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":336.0,"y":352.0,"resourceVersion":"1.0","name":"inst_27CFAB18","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"o_hitbox","path":"objects/o_hitbox/o_hitbox.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":9.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":192.0,"y":432.0,"resourceVersion":"1.0","name":"inst_C7CF916","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"o_hitbox","path":"objects/o_hitbox/o_hitbox.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":9.0,"scaleY":5.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":48.0,"y":352.0,"resourceVersion":"1.0","name":"inst_299451B7","tags":[],"resourceType":"GMRInstance",},
+        {"properties":[
+            {"propertyId":{"name":"dir","path":"objects/o_transition/o_transition.yy",},"objectId":{"name":"o_transition","path":"objects/o_transition/o_transition.yy",},"value":"eInput.left","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+            {"propertyId":{"name":"destination","path":"objects/o_transition/o_transition.yy",},"objectId":{"name":"o_transition","path":"objects/o_transition/o_transition.yy",},"value":"r_l2_r2","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+          ],"isDnd":false,"objectId":{"name":"o_transition","path":"objects/o_transition/o_transition.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":2.5,"imageIndex":3,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":80.0,"y":312.0,"resourceVersion":"1.0","name":"inst_49D85CB7","tags":[],"resourceType":"GMRInstance",},
+        {"properties":[
+            {"propertyId":{"name":"dir","path":"objects/o_marker/o_marker.yy",},"objectId":{"name":"o_marker","path":"objects/o_marker/o_marker.yy",},"value":"eInput.right","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+          ],"isDnd":false,"objectId":{"name":"o_marker","path":"objects/o_marker/o_marker.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":3,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":112.0,"y":320.0,"resourceVersion":"1.0","name":"inst_7B8E8106","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":-200,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":16,"gridY":16,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],"resourceVersion":"1.0","name":"hitbox","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[
         {"properties":[],"isDnd":false,"objectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":112.0,"y":304.0,"resourceVersion":"1.0","name":"inst_5C39352F","tags":[],"resourceType":"GMRInstance",},
@@ -164,6 +171,8 @@
     {"name":"inst_27CFAB18","path":"rooms/r_l2_r6/r_l2_r6.yy",},
     {"name":"inst_C7CF916","path":"rooms/r_l2_r6/r_l2_r6.yy",},
     {"name":"inst_299451B7","path":"rooms/r_l2_r6/r_l2_r6.yy",},
+    {"name":"inst_49D85CB7","path":"rooms/r_l2_r6/r_l2_r6.yy",},
+    {"name":"inst_7B8E8106","path":"rooms/r_l2_r6/r_l2_r6.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,
@@ -187,8 +196,8 @@
     "PhysicsWorldPixToMetres": 0.1,
   },
   "parent": {
-    "name": "Rooms",
-    "path": "folders/Rooms.yy",
+    "name": "level2",
+    "path": "folders/Rooms/level2.yy",
   },
   "resourceVersion": "1.0",
   "name": "r_l2_r6",
