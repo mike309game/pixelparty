@@ -67,7 +67,7 @@ function Sprite3D(sprite) {
 	return data;
 }
 
-function DrawSprite3D(sprite3d, frame, x, y, z, angle, xscale, yscale, colour = c_white, alpha = 1) {
+function DrawSprite3D(sprite3d, frame, x, y, z, angle, xscale, yscale, colour = c_white, alpha = 1, xangle = 0) {
 	if(live_call(sprite3d, frame, x, y, z, angle, xscale, yscale, colour, alpha)) then return live_result;
 	frame = floor(frame % sprite3d[0]);
 	var frameIdx = frame * 9;
@@ -75,7 +75,7 @@ function DrawSprite3D(sprite3d, frame, x, y, z, angle, xscale, yscale, colour = 
 	//push pos & scale
 	mtxpush(matrix_build(x,y,z,90,0,0,xscale,1,yscale)); //-yscale cuz stupid z
 	//push angle
-	mtxpush(matrix_build(0,0,0,0,0,angle,1,1,1));
+	mtxpush(matrix_build(0,0,0,xangle,0,angle,1,1,1));
 	
 	//set matrix to stack top
 	mtxset();

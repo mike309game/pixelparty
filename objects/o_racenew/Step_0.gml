@@ -3,5 +3,13 @@ EVTLIVE;
 //playerX += hor;
 var len = ds_list_size(objects);
 for(var i = 0; i < len; i++) {
-	objects[|i].Step(undefined);
+	var obj = objects[|i];
+	obj.Step(obj.isPlayer ? global.input : 0);
+	if(i == raceFocus) {
+		camFocusRaceProgress = lerp(camFocusRaceProgress, obj.raceProgress, 0.1);
+	}
+}
+
+if(keyboard_check_pressed(vk_space)) {
+	raceFocus = (raceFocus + 1) % ds_list_size(objects);
 }

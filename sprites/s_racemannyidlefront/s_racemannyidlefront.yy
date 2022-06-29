@@ -2,20 +2,20 @@
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
-  "origin": 0,
+  "origin": 7,
   "preMultiplyAlpha": false,
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 0,
-  "bbox_right": 0,
-  "bbox_top": 0,
-  "bbox_bottom": 0,
+  "bbox_left": 1,
+  "bbox_right": 39,
+  "bbox_top": 2,
+  "bbox_bottom": 47,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 64,
-  "height": 64,
+  "width": 48,
+  "height": 48,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"9ff45118-bf5b-4565-995a-6e6b3ca70ef2","path":"sprites/s_raceMannyIdleFront/s_raceMannyIdleFront.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"9ff45118-bf5b-4565-995a-6e6b3ca70ef2","path":"sprites/s_raceMannyIdleFront/s_raceMannyIdleFront.yy",},"LayerId":{"name":"e68e1570-ae2d-47d0-9aa1-711b60f1491e","path":"sprites/s_raceMannyIdleFront/s_raceMannyIdleFront.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"s_raceMannyIdleFront","path":"sprites/s_raceMannyIdleFront/s_raceMannyIdleFront.yy",},"resourceVersion":"1.0","name":"9ff45118-bf5b-4565-995a-6e6b3ca70ef2","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"8b0f176d-5177-4b25-976a-10f0efa66f13","path":"sprites/s_raceMannyIdleFront/s_raceMannyIdleFront.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"8b0f176d-5177-4b25-976a-10f0efa66f13","path":"sprites/s_raceMannyIdleFront/s_raceMannyIdleFront.yy",},"LayerId":{"name":"83a72300-71cc-4658-b662-7b50627315a6","path":"sprites/s_raceMannyIdleFront/s_raceMannyIdleFront.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"s_raceMannyIdleFront","path":"sprites/s_raceMannyIdleFront/s_raceMannyIdleFront.yy",},"resourceVersion":"1.0","name":"8b0f176d-5177-4b25-976a-10f0efa66f13","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"s_raceMannyIdleFront","path":"sprites/s_raceMannyIdleFront/s_raceMannyIdleFront.yy",},
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"fb5de530-4210-41b8-a60a-7e53dd4480e7","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"9ff45118-bf5b-4565-995a-6e6b3ca70ef2","path":"sprites/s_raceMannyIdleFront/s_raceMannyIdleFront.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"42c5ad10-ec4b-4b53-8f23-b8ed9705bdf2","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"8b0f176d-5177-4b25-976a-10f0efa66f13","path":"sprites/s_raceMannyIdleFront/s_raceMannyIdleFront.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -54,8 +54,8 @@
     "backdropHeight": 768,
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
-    "xorigin": 0,
-    "yorigin": 0,
+    "xorigin": 24,
+    "yorigin": 48,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s_raceMannyIdleFront","path":"sprites/s_raceMannyIdleFront/s_raceMannyIdleFront.yy",},
@@ -65,7 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"e68e1570-ae2d-47d0-9aa1-711b60f1491e","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"83a72300-71cc-4658-b662-7b50627315a6","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
