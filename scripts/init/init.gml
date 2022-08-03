@@ -19,7 +19,7 @@ ini_open(working_directory + "/savedata"); //for settings
 
 #macro MAXSAVEFILES (4)
 
-#macro MAXINPUTDELAYFRAMES (120)
+//#macro MAXINPUTDELAYFRAMES (120)
 
 /*
 
@@ -76,6 +76,7 @@ if(DEBUGMODE) {
 	global.flagDefs[7] = "playerCanCollide";
 	global.flagDefs[8] = "cameraFocusOnPlayer";
 	global.flagDefs[9] = "playerCanSetSprite";
+	global.flagDefs[10] = "playerCanSetDepth";
 	
 	global.flagDefs[61] = "debugEnabled";
 	global.flagDefs[62] = "showPerfMeter";

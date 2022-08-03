@@ -12,7 +12,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "mx_title.mp3",
-  "duration": 34.6383324,
+  "duration": 34.638332,
   "parent": {
     "name": "music",
     "path": "folders/Sounds/music.yy",

@@ -22,7 +22,7 @@ yaw = yawItem.sliderValue;
 pitch = pitchItem.sliderValue;*/
 
 camera_set_proj_mat(cam3d, matrix_build_projection_perspective_fov(70, 4/3, 1, 16000));
-var lookat = matrix_build_lookat(0, 160, -90, playerX / 8, 0, -17, 0, 0, 1);
+var lookat = matrix_build_lookat(0, 160, -90, camFocusX / 8, 0, -17, 0, 0, 1);
 camera_set_view_mat(cam3d, lookat);
 //camera_set_view_mat(cam3d, MatrixViewYawPitch(x, y, z, yaw, pitch))
 gpu_set_ztestenable(true);
@@ -40,7 +40,7 @@ mtxset(); //set top
 var terrainTex = sprite_get_texture(s_racenew_terrain, 0);
 
 for(var i = -30; i < 4; i++) {
-	mtxpush(matrix_build(0,(32*i) + round(global.time / 0.2) % 64,0,0,0,0,1,1,1)); //offset for all of this
+	mtxpush(matrix_build(0,(32*i) + round(camFocusRaceProgress) % 64,0,0,0,0,1,1,1)); //offset for all of this
 	mtxset(); //set top
 	draw_primitive_begin(pr_trianglefan);
 	draw_vertex_color(-140, 0, c_teal, 1);
@@ -50,10 +50,9 @@ for(var i = -30; i < 4; i++) {
 	draw_primitive_end();
 	vertex_submit(mdl, pr_trianglelist, terrainTex);
 	if(abs(i) % 2) {
-		random_set_seed(i);
-		DrawSprite3D(treeSprite, 0, -160, 0, 20, irandom_range(-10,10), 1, 1);
-		DrawSprite3D(treeSprite, 0, 180, 0, 20, irandom_range(-10,10), 1, 1);
-		randomize();
+		DrawSprite3D(treeSprite, 0, -160, 0, 20, 0, 1, 1);
+	} else {
+		DrawSprite3D(treeSprite, 0, 160, 0, 20, 0, 1, 1);
 	}
 	mtxpop(); //pop offset
 }
@@ -65,8 +64,26 @@ draw_vertex_color(16, 16, c_teal, 1);
 draw_vertex_color(0, 16, c_teal, 1);
 draw_primitive_end();*/
 
-DrawSprite3D(playerSprite, global.time / 10, -8 + playerX, 64, 16, 0, 1, 1);
+//DrawSprite3D(playerSprite, global.time / 10, -8 + playerX, 64, 16, 0, 1, 1);
 
+mtxpush(matrix_build(0, (camFocusRaceProgress), 0, 0, 0, 0, 1, 1, 1)); //push raceprogress matrix
+mtxset(); //set matrix
+
+//shader_set(shUnprecise); //i don't know why, but this makes it feel like manny's pivot is on its top left
+gpu_set_alphatestenable(true);
+var len = ds_list_size(objects);
+for(var i = 0; i < len; i++) {
+	with(objects[|i]) {
+		if(raceProgress < other.camFocusRaceProgress + 1024 && raceProgress > other.camFocusRaceProgress - 82) { //cull out far objects
+			
+			Draw(); //execute object's draw routine
+		}
+	}
+}
+gpu_set_alphatestenable(false);
+shader_reset();
+
+mtxpop(); //pop raceprogress matrix
 mtxpop(); //pop sane z
 mtxset(); //set matrix
 

@@ -12,7 +12,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "mx_race.mp3",
-  "duration": 61.2832146,
+  "duration": 61.283215,
   "parent": {
     "name": "music",
     "path": "folders/Sounds/music.yy",

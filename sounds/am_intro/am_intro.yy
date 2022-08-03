@@ -12,7 +12,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "am_intro.wav",
-  "duration": 10.4198751,
+  "duration": 10.419875,
   "parent": {
     "name": "ambience",
     "path": "folders/Sounds/ambience.yy",

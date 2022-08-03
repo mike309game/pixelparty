@@ -12,7 +12,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "mx_test.ogg",
-  "duration": 40.4210625,
+  "duration": 40.421062,
   "parent": {
     "name": "music",
     "path": "folders/Sounds/music.yy",
