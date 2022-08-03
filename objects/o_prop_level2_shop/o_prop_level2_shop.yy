@@ -5,6 +5,7 @@
   },
   "solid": false,
   "visible": true,
+  "managed": true,
   "spriteMaskId": {
     "name": "s_l2_dexshop_coll",
     "path": "sprites/s_l2_dexshop_coll/s_l2_dexshop_coll.yy",

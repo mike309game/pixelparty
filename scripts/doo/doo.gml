@@ -21,3 +21,9 @@ function Music(song, loop = true) {
 	global.musicTarget = song;
 	global.musicLoops = loop;
 }
+
+function darkSetup()
+	{
+		Music(mx_darkness,1)
+		global.script_variables[?"darkness"] = 1
+	}

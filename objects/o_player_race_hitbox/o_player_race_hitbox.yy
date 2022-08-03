@@ -5,6 +5,7 @@
   },
   "solid": false,
   "visible": false,
+  "managed": true,
   "spriteMaskId": {
     "name": "s_race_boat_player",
     "path": "sprites/s_race_boat_player/s_race_boat_player.yy",

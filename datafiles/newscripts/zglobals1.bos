@@ -11,3 +11,5 @@ $saveFile=#0;
 $partyMembers=#1;
 $time=#0;
 $name=@Hattan;
+
+$darkness=#0;

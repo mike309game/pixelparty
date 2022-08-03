@@ -13,7 +13,7 @@ playerX = 0;
 playerY = 0;
 playerZ = 0;
 
-
+curTime = delta_time; // for randomness dont ask me about it
 
 
 

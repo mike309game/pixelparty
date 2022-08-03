@@ -45,7 +45,7 @@ enum eFlag {
 	playerCanSetSprite = 1 << 9, //player can set its sprite automatically?
 	playerCanSetDepth = 1 << 10, //player automatically sets its depth based on its y
 	
-	debugEnabled = 1 << 61, //wether debug features are enabled
+	debugEnabled = 0 << 61, //wether debug features are enabled
 	showPerfMeter = 1 << 62, //show p3d school performance meter
 	saveCorrupted = 1 << 63 //this will only be on when the game fails to load a save file somehow
 }

@@ -50,8 +50,10 @@ for(var i = -30; i < 4; i++) {
 	draw_primitive_end();
 	vertex_submit(mdl, pr_trianglelist, terrainTex);
 	if(abs(i) % 2) {
-		DrawSprite3D(treeSprite, 0, -160, 0, 20, 0, 1, 1);
-		DrawSprite3D(treeSprite, 0, 180, 0, 20, 0, 1, 1);
+		random_set_seed(i);
+		DrawSprite3D(treeSprite, 0, -160, 0, 20, irandom_range(-10,10), 1, 1);
+		DrawSprite3D(treeSprite, 0, 180, 0, 20, irandom_range(-10,10), 1, 1);
+		randomize();
 	}
 	mtxpop(); //pop offset
 }
