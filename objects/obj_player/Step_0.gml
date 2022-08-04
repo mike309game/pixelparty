@@ -82,3 +82,5 @@ if(GetGameFlag(eFlag.cameraFocusOnPlayer)) { //if can center on me
 if(GetGameFlag(eFlag.playerCanSetDepth)) {
 	SetDepth();
 }
+
+if GetInputPressed(eInput.select) then partyAdd("tb",1)

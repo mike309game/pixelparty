@@ -60,7 +60,7 @@ for(var i = -30; i < 4; i++) {
 	if(abs(i) % 2) {
 		DrawSprite3D(treeSprite, 0, -160, 0, 20, 0, 1, 1);
 	} else {
-		DrawSprite3D(treeSprite, 0, 180, 0, 20, 0, 1, 1);
+		DrawSprite3D(treeSprite, 0, 160, 0, 20, 0, 1, 1);
 	}
 	mtxpop(); //pop offset
 }

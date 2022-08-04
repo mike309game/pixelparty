@@ -1,4 +1,13 @@
-draw_self();
+if !global.script_variables[?"darkness"]
+	{
+		image_blend = make_colour_hsv(0,0,255);
+		draw_self();
+	} else {
+		image_blend = make_colour_hsv(0,0,128);
+		draw_self()
+		gpu_set_blendmode(bm_normal)
+	}
+
 
 if(isHovering && GetGameFlag(eFlag.playerCanInteract | eFlag.playerCanMove)) {
 	draw_sprite(s_interact,0,((x - sprite_xoffset) + sprite_width / 2)+13,(y - sprite_yoffset)+12);

@@ -36,7 +36,7 @@ switch(menuMode) {
 			case 0:
 				menu.canMove = false;
 				closing = true;
-				Sound(sx_pause_close)
+				if global.script_variables[?"darkness"] then Sound(sx_pause_close,0.5) else Sound(sx_pause_close)
 				audio_sound_gain(global.music,1,170);
 				break;
 			case 1:

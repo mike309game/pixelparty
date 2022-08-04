@@ -1,0 +1,7 @@
+<darkness-hr-intro>
+[textStart];
+[text]"Welcome.";
+[text]"[d1][dr]Welcome[d1] [dr]to[d1] [dr]The Horror Room.";
+[text]"[d1]...[dr]Enjoy.";
+[textEnd];
+[end];

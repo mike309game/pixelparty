@@ -1,5 +1,5 @@
 surface_set_target(global.pausedsurface);
-	draw_sprite_tiled(s_pause_bg,0,global.time/4,global.time/3);
+	draw_sprite_tiled(pauseBG,0,global.time/4,global.time/3);
 	if(blackout) {
 		draw_rectangle_colour(0,0,320,240,0,0,0,0,0);
 	} else if(menuMode != 3) {

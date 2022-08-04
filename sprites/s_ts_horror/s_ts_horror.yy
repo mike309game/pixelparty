@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"257f5497-0eb5-4047-9ecd-79b34503b2a0","path":"sprites/s_ts_horror/s_ts_horror.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"257f5497-0eb5-4047-9ecd-79b34503b2a0","path":"sprites/s_ts_horror/s_ts_horror.yy",},"LayerId":{"name":"958ea7f8-873c-4c42-80f2-322a6af026ab","path":"sprites/s_ts_horror/s_ts_horror.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"s_ts_horror","path":"sprites/s_ts_horror/s_ts_horror.yy",},"resourceVersion":"1.0","name":"257f5497-0eb5-4047-9ecd-79b34503b2a0","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"6ac87de8-b65b-4112-ac5e-bee739a131bb","path":"sprites/s_ts_horror/s_ts_horror.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"6ac87de8-b65b-4112-ac5e-bee739a131bb","path":"sprites/s_ts_horror/s_ts_horror.yy",},"LayerId":{"name":"0699665e-193e-483c-91f5-f97a1cb2f103","path":"sprites/s_ts_horror/s_ts_horror.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"s_ts_horror","path":"sprites/s_ts_horror/s_ts_horror.yy",},"resourceVersion":"1.0","name":"6ac87de8-b65b-4112-ac5e-bee739a131bb","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"s_ts_horror","path":"sprites/s_ts_horror/s_ts_horror.yy",},
@@ -37,12 +37,12 @@
     "autoRecord": true,
     "volume": 1.0,
     "length": 1.0,
-    "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
-    "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
+    "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore`1","elementType":"MessageEventKeyframe",},
+    "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore`1","elementType":"MomentsEventKeyframe",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"d8087e71-19ce-4fb9-acf7-648a642c30ba","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"257f5497-0eb5-4047-9ecd-79b34503b2a0","path":"sprites/s_ts_horror/s_ts_horror.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+            {"id":"eea026f4-ffc7-4092-8bc0-205efd3b2cc5","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"6ac87de8-b65b-4112-ac5e-bee739a131bb","path":"sprites/s_ts_horror/s_ts_horror.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe`1","elementType":"SpriteFrameKeyframe",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore`1","elementType":"SpriteFrameKeyframe",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -65,12 +65,12 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"958ea7f8-873c-4c42-80f2-322a6af026ab","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"0699665e-193e-483c-91f5-f97a1cb2f103","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
-    "name": "level_darkness",
-    "path": "folders/Sprites/level_darkness.yy",
+    "name": "horror room",
+    "path": "folders/Sprites/level_darkness/horror room.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_ts_horror",
