@@ -1,4 +1,5 @@
 EVTLIVE;
+playfieldWidth = mouse_x;
 //var hor = GetInput(eInput.right, true) - GetInput(eInput.left, true);
 //playerX += hor;
 var len = ds_list_size(objects);
@@ -11,5 +12,7 @@ for(var i = 0; i < len; i++) {
 }
 
 if(keyboard_check_pressed(vk_space)) {
+	objects[|raceFocus].isPlayer = false;
 	raceFocus = (raceFocus + 1) % ds_list_size(objects);
+	objects[|raceFocus].isPlayer = true;
 }

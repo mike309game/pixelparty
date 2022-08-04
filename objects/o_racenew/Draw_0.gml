@@ -43,12 +43,20 @@ for(var i = -30; i < 4; i++) {
 	mtxpush(matrix_build(0,(32*i) + round(camFocusRaceProgress) % 64,0,0,0,0,1,1,1)); //offset for all of this
 	mtxset(); //set top
 	draw_primitive_begin(pr_trianglefan);
-	draw_vertex_color(-140, 0, c_teal, 1);
-	draw_vertex_color(140, 0, c_teal, 1);
-	draw_vertex_color(140, 32, c_teal, 1);
-	draw_vertex_color(-140, 32, c_teal, 1);
+	draw_vertex_color(-playfieldWidth, 0, 0xf58059, 1);
+	draw_vertex_color(playfieldWidth, 0, 0xf58059, 1);
+	draw_vertex_color(playfieldWidth, 32, 0xf58059, 1);
+	draw_vertex_color(-playfieldWidth, 32, 0xf58059, 1);
 	draw_primitive_end();
-	vertex_submit(mdl, pr_trianglelist, terrainTex);
+	
+	var j = 1;
+	repeat(2) {
+		mtxpush(matrix_build(playfieldWidth*j,0,0,0,0,0,j,1,1));
+		mtxset();
+		vertex_submit(mdl, pr_trianglelist, terrainTex);
+		j = -1;
+		mtxpop();
+	}
 	if(abs(i) % 2) {
 		DrawSprite3D(treeSprite, 0, -160, 0, 20, 0, 1, 1);
 	} else {

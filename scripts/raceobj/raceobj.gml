@@ -93,8 +93,8 @@ function raceobjRacer(sprite) : raceobjBase() constructor {
 		}
 		raceProgress += accel;
 		
-		myLine.x1 = x - 32;
-		myLine.x2 = x + 32;
+		myLine.x1 = x - 24;
+		myLine.x2 = x + 24;
 		
 		myLine.y1 = y - raceProgress;
 		myLine.y2 = myLine.y1;
@@ -109,11 +109,9 @@ function raceobjRacer(sprite) : raceobjBase() constructor {
 }
 
 ///@desc Test line obj
-
-function raceobjTestline(sprite) : raceobjBase() constructor {
-	type = 1;
-	show_debug_message("made racer obj");
-	self.sprite = sprite;
+function raceobjTestline() : raceobjBase() constructor {
+	type = 999;
+	self.sprite = Sprite3D(s_raceRock);
 	y = 100;
 	accel = 0;
 	
@@ -127,15 +125,15 @@ function raceobjTestline(sprite) : raceobjBase() constructor {
 		if(input & eInput.square) {
 			accel = min(accel + 0.07, 6.3);
 		} else {
-			accel = max(accel - 0.03, 0.5);
+			//accel = max(accel - 0.03, 0.5);
+			accel = max(accel - 0.03, 0.);
 		}
 		raceProgress += accel;
 		
-		myLine.x1 = x - 32;
-		myLine.x2 = x + 32;
-		
-		myLine.y1 = y - raceProgress;
-		myLine.y2 = myLine.y1;
+		var colResult = other.CheckColl(x,y - raceProgress,x,(y - raceProgress) - 32);
+		if(colResult) {
+			show_debug_message(colResult);
+		}
 	}
 	
 	static DrawOld = Draw;
